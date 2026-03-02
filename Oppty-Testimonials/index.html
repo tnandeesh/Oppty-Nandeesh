@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppty Testimonials</title>
+    <style>
+        body {
+            background-color: #121214;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .section-tag {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        h2 span {
+            color: #ff6600;
+        }
+
+        .testimonials-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #1a1a1d;
+            border: 1px solid #2a2a2d;
+            padding: 30px;
+            width: 300px;
+            text-align: left;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .card h3 {
+            font-size: 14px;
+            margin: 0 0 5px 0;
+        }
+
+        .card .title {
+            color: #888;
+            font-size: 12px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #ff6600;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Large quotation mark decoration */
+        .card::after {
+            content: "”";
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 80px;
+            color: #2a2a2d;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .dots {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: #444;
+            border-radius: 50%;
+        }
+
+        .dot.active {
+            background-color: #fff;
+            width: 10px;
+            height: 10px;
+        }
+
+        .footer-text {
+            color: #aaa;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        .footer-heading {
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .footer-heading span {
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section-tag">Testimonials</div>
+    <h2>OUR CLIENTS <span>REVIEWS</span></h2>
+
+    <div class="testimonials-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h3>Anjali Sharma</h3>
+            <div class="stars">★★★★★</div>
+            <p>Oppty's e-commerce platform increased our online sales by 45% in just three months!</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <h3>Rohan Patel, Tech Entrepreneur</h3>
+            <div class="stars">★★★★★</div>
+            <p>Their AI-driven solutions optimized our workflows, saving us significant costs.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <h3>Priyanka Reddy, Marketing Head</h3>
+            <div class="stars">★★★★★</div>
+            <p>The responsive website Oppty built for us perfectly captures our brand's essence.</p>
+        </div>
+    </div>
+
+    <div class="dots">
+        <div class="dot"></div>
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+
+    <p class="footer-text">We are proud to partner with industry leaders.</p>
+    <h2 class="footer-heading">OUR VALUED <span>CLIENTS</span></h2>
+
+</body>
+</html>
+
