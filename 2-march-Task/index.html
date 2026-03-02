@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women in Healthcare Event</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .page-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- Main Content Area --- */
+        .main-content {
+            flex: 3;
+            padding: 20px 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .flag-icon {
+            width: 32px;
+            height: auto;
+            border: 1px solid #eee;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 400;
+            color: #222;
+        }
+
+        .sub-header {
+            margin-left: 44px;
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .hero-section {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .vertical-title {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: #5da9dd;
+            font-size: 24px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .image-container {
+            flex: 1;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .description {
+            margin-top: 25px;
+            margin-left: 44px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: 44px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #000;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* --- Sidebar Navigation --- */
+        .sidebar {
+            flex: 1;
+            background-color: #f4f8fb;
+            display: flex;
+            border-left: 1px solid #e0e6ed;
+        }
+
+        .nav-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid #d1d9e0;
+            padding-top: 20px;
+        }
+
+        .nav-column:last-child { border-right: none; }
+
+        .sidebar-flag {
+            width: 22px;
+            height: auto;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .nav-label {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            white-space: nowrap;
+            font-size: 19px;
+            color: #6a8ba8; /* Updated Blue-Grey Color */
+            letter-spacing: 0.2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <main class="main-content">
+            <div class="header-top">
+                <img src="indian-flag.jpg" class="flag-icon" alt="India">
+                <h1>Women in healthcare</h1>
+            </div>
+            <p class="sub-header">Thursday, March 5, 2026 | LinkedIn Live</p>
+
+            <div class="hero-section">
+                <div class="vertical-title">Women in healthcare</div>
+                <div class="image-container">
+                    <img src="women-in-healthcare-steering-ai-enabled-care-ecosystem-web.jpg" alt="Medical professionals">
+                </div>
+            </div>
+
+            <div class="description">
+                Our healthcare and life sciences forum will see women leaders discussing AI in healthcare, transforming healthcare, and impacting lives with innovation and tech.
+            </div>
+            <a href="#" class="read-more">READ MORE &rarr;</a>
+        </main>
+
+        <aside class="sidebar">
+            <div class="nav-column">
+                <img src="usa.png" class="sidebar-flag">
+                <span class="nav-label">SAP A&D Innovation Days '26</span>
+            </div>
+            <div class="nav-column">
+                <img src="belgium.jpg" class="sidebar-flag">
+                <span class="nav-label">TCS at Leaders in Logistics</span>
+            </div>
+            <div class="nav-column">
+                <img src="usa.png" class="sidebar-flag">
+                <span class="nav-label">TCS at NVIDIA GTC 2026</span>
+            </div>
+            <div class="nav-column">
+                <img src="usa.png" class="sidebar-flag">
+                <span class="nav-label">TCS at SSOW Conference 2026</span>
+            </div>
+            <div class="nav-column">
+                <img src="usa.png" class="sidebar-flag">
+                <span class="nav-label">TCS Life Sciences Forum</span>
+            </div>
+            <div class="nav-column">
+                <img src="usa.png" class="sidebar-flag">
+                <span class="nav-label">TCS at Adobe Summit 2026</span>
+            </div>
+            <div class="nav-column">
+                <img src="usa.png" class="sidebar-flag">
+                <span class="nav-label">TCS at Google Cloud Next</span>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
