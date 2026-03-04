@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bit Repository contact form</title>
+
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+    }
+
+    .forms {
+      display: flex;
+      gap: 80px;
+      margin-left: 20px;
+      margin-top: 20px;
+    }
+
+    data {
+      border: none;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 22px;
+      margin-bottom: 10px;
+      margin-left: 30%;
+    }
+
+    h2 {
+    font-weight: bold;
+    font-size: 18px;
+    }
+
+    label {
+      display: inline-block;
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      width: 200px;
+      padding: 6px;
+      padding-left: 22px;
+    }
+
+    textarea {
+      height: 80px;
+      vertical-align: top;
+    }
+
+    .row {
+      margin-bottom: 10px;
+    }
+
+    .required {
+      color: red;
+    }
+
+    button {
+      margin-left: 84px;
+      padding: 4px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Bit Repository contact form</h2>
+
+  <section class="forms">
+
+    <!-- Left Form -->
+    <form>
+      <data>
+        <h1>Contact Us</h1>
+
+        <div class="row">
+          <label>Name <span class="required">*</span></label>
+          <input type="text" required>
+        </div>
+
+        <div class="row">
+          <label>E-Mail <span class="required">*</span></label>
+          <input type="email" required>
+        </div>
+
+        <div class="row">
+          <label>Subject</label>
+          <input type="text">
+        </div>
+
+        <div class="row">
+          <label>Comment <span class="required">*</span></label>
+          <textarea required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </data>
+    </form>
+
+    <!-- Right Form -->
+    <form>
+      <data>
+        <h2>What do you think about this website?</h2>
+
+        <div class="row">
+          <label>Name <span class="required">*</span></label>
+          <input type="text" required>
+        </div>
+
+        <div class="row">
+          <label>Opinion <span class="required">*</span></label>
+          <textarea required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </data>
+    </form>
+
+  </section>
+
+</body>
+</html>
