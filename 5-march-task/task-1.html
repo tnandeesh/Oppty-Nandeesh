@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WNS Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"/>
+    <style>
+      :root {
+        --orange: #e85d3f;
+        --dark: #262626;
+        --light: #666;
+      }
+
+      body {
+        font-family: "poppins", serif;
+        margin: 0;
+        background: #f9fafb;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 40px;
+      }
+
+      .label {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .headline {
+        font-size: 36px;
+        color: var(--orange);
+        margin: 0;
+      }
+
+      .breadcrumb {
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--dark);
+      }
+
+      .breadcrumb span {
+        color: var(--orange);
+      }
+
+      .breadcrumb:hover {
+        color: var(--orange);
+      }
+      .bottom {
+        display: flex;
+        gap: 60px;
+        margin-top: 60px;
+        align-items: flex-start;
+      }
+
+      .text-section {
+        flex: 1;
+      }
+
+      .sub-headline {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .text {
+        font: 14.78 "Poppins-Regular", serif;
+        color: var(--light);
+        line-height: 1;
+        margin-bottom: 25px;
+      }
+
+      .read-more {
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--dark);
+      }
+
+      .read-more span {
+        color: var(--orange);
+      }
+
+      .read-more:hover {
+        color: var(--orange);
+      }
+
+      .video-card {
+        flex: 1;
+      }
+
+      .video-card img {
+        width: 100%;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <p class="label">Smarter by Design</p>
+      <h1 class="headline">Innovation Meets Execution</h1>
+      <a href="#" class="breadcrumb">Case Studies <span>&nearr;</span></a>
+
+      <div class="bottom">
+        <div class="text-section">
+          <h2 class="sub-headline">
+            British Gas & WNS: 15 Years of Innovation and Excellence
+          </h2>
+
+          <p class="text">
+            Jess Johnson, Head of Operational Excellence at British Gas, shares
+            how WNS' expertise in energy utilities and innovation helped drive
+            high service levels, improve NPS and ensure continuity even through
+            turbulence.
+          </p>
+
+          <a
+            href="https://www.youtube.com/watch?feature=shared&v=_hSFICJZnXg"
+            class="read-more"
+            target="_blank"
+            >Read More <span>&nearr;</span></a
+          >
+        </div>
+
+        <div class="video-card">
+          <img
+            src="Jess-Johnson.jpg"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
