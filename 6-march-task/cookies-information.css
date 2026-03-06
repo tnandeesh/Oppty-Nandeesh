@@ -1,0 +1,45 @@
+body{
+font-family: Arial, sans-serif;
+background:white;
+padding:20px;
+}
+
+h2{
+margin-top:20px;
+font-size:18px;
+}
+
+p{
+color:#555;
+font-size:14px;
+margin-top:5px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+background:white;
+}
+
+th, td{
+border:1px solid #dcdcdc;
+padding:10px;
+text-align:left;
+font-size:14px;
+}
+
+th{
+background:#f5f5f5;
+font-weight:bold;
+}
+
+/* link styling for domains */
+a{
+color: black;
+text-decoration:underline;
+}
+
+a:hover{
+color:#2a4edb;
+}
