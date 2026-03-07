@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Summer Harvest Bowl</title>
+
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #dce6de;
+        padding: 5px;
+      }
+
+      .card {
+        width: 420px;
+        background: #f5f3ef;
+        border-radius: 6px;
+        overflow: hidden;
+        margin: auto;
+        position: relative;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+      }
+
+      .image-section {
+        position: relative;
+        margin: 0;
+      }
+
+      .image-section img {
+        width: 100%;
+        display: block;
+      }
+
+      .ribbon {
+        position: absolute;
+        top: 20px;
+        right: -50px;
+        background: #e63946;
+        color: white;
+        padding: 8px 50px;
+        transform: rotate(45deg);
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .category {
+        color: #e76f51;
+        font-size: 12px;
+        letter-spacing: 3px;
+      }
+
+      .title {
+        font-family: cursive;
+        font-size: 36px;
+        color: #1d3557;
+        margin: 6px 0;
+      }
+
+      .description {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .line {
+        border-top: 1px dashed #ccc;
+        margin: 25px 0;
+      }
+
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .serves {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+      }
+
+      .prep {
+        border: 1px solid black;
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+
+      .nutrition {
+        background: #e7efe9;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .nutrition div {
+        font-size: 14px;
+      }
+
+      .nutrition span {
+        display: block;
+        font-size: 11px;
+        color: #777;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <section class="card">
+      <figure class="image-section">
+        <img src="../assets/food.png" alt="Summer Bowl" />
+        <div class="ribbon">CHEF'S PICK</div>
+      </figure>
+
+      <article class="content">
+        <p class="category">HEALTHY & ORGANIC</p>
+
+        <h1 class="title">Summer<br />Harvest Bowl.</h1>
+
+        <p class="description">
+          A vibrant assembly of garden-fresh greens, roasted seeds, and a zesty
+          citrus vinaigrette. Perfect for light lunches or a sophisticated side.
+        </p>
+
+        <div class="line"></div>
+
+        <div class="info-row">
+          <div class="serves">🍲 <span>Serves 4 People</span></div>
+          <div class="prep">25 MIN PREP</div>
+        </div>
+
+        <div class="nutrition">
+          <div>
+            320
+            <span style="color: #e63946;">CALORIES</span>
+          </div>
+
+          <div>
+            12g
+            <span>PROTEIN</span>
+          </div>
+
+          <div>
+            45g
+            <span>CARBS</span>
+          </div>
+
+          <div>
+            V
+            <span>VEGAN</span>
+          </div>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>

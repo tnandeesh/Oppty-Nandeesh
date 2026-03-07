@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Card</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#dfe8e1;
+    padding:40px;
+}
+
+/* wrapper */
+.wrapper{
+    position:relative;
+    width:420px;
+    margin:auto;
+}
+
+/* background card */
+.bg-card{
+    position:absolute;
+    top:25px;
+    left:25px;
+    width:100%;
+    height:100%;
+    background:#9ec7c7;
+    border-radius:6px;
+    z-index:0;
+}
+
+/* main card */
+.card{
+    position:relative;
+    background:#f4f2ee;
+    border-radius:6px;
+    overflow:hidden;
+    z-index:1;
+}
+
+/* image */
+.card img{
+    width:100%;
+    display:block;
+}
+
+/* ribbon */
+.ribbon{
+    position:absolute;
+    top:15px;
+    right:-40px;
+    background:#e74c3c;
+    color:white;
+    padding:8px 50px;
+    transform:rotate(45deg);
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* content */
+.content{
+    padding:30px;
+}
+
+/* category */
+.category{
+    color:#e76f51;
+    font-size:12px;
+    letter-spacing:3px;
+}
+
+/* title */
+.title{
+    font-size:36px;
+    color:#24324a;
+    margin:10px 0;
+}
+
+/* description */
+.description{
+    color:#6c7a89;
+    line-height:1.6;
+}
+
+/* line */
+.line{
+    border-top:1px dashed #ccc;
+    margin:25px 0;
+}
+
+/* info row */
+.info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.prep{
+    border:1px solid black;
+    padding:6px 10px;
+    font-size:12px;
+}
+
+/* nutrition */
+.nutrition{
+    background:#e7efe9;
+    margin-top:20px;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    text-align:center;
+}
+
+.nutrition div{
+    font-size:14px;
+}
+
+.nutrition span{
+    display:block;
+    font-size:11px;
+    color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="bg-card"></div>
+
+    <div class="card">
+
+        <div style="position:relative">
+            <img src="../assets/food.png">
+            <div class="ribbon">CHEF'S PICK</div>
+        </div>
+
+        <div class="content">
+
+            <p class="category">HEALTHY & ORGANIC</p>
+
+            <h2 class="title">Summer<br>Harvest Bowl.</h2>
+
+            <p class="description">
+            A vibrant assembly of garden-fresh greens, roasted seeds, and a 
+            zesty citrus vinaigrette. Perfect for light lunches or a 
+            sophisticated side.
+            </p>
+
+            <div class="line"></div>
+
+            <div class="info">
+                <div>🥗 Serves 4 People</div>
+                <div class="prep">25 MIN PREP</div>
+            </div>
+
+            <div class="nutrition">
+                <div>320 <span>CALORIES</span></div>
+                <div>12g <span>PROTEIN</span></div>
+                <div>45g <span>CARBS</span></div>
+                <div>V <span>VEGAN</span></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
