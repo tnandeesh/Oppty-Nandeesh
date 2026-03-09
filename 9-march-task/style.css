@@ -1,0 +1,196 @@
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#05060a;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0px 30px;
+}
+
+h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#9aa0a6;
+font-size:16px;
+}
+
+.dev{
+margin-bottom:60px;
+}
+
+.main-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+max-width:1200px;
+width:100%;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:#111116;
+border-radius:28px;
+padding:30px;
+border:1.5px solid transparent;
+transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+cursor:pointer;
+position:relative;
+}
+
+.card:hover{
+border-color:#4a4ae2;
+}
+
+.preview{
+background:#000;
+height:200px;
+border-radius:20px;
+margin-bottom:25px;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+position:relative;
+}
+
+h3{
+margin:0 0 10px 0;
+font-size:1.4rem;
+font-weight:600;
+}
+
+p{
+margin:0;
+color:var(--text-dim);
+line-height:1.5;
+font-size:0.95rem;
+}
+
+.soft-button{
+width:60px;
+height:60px;
+background:#111;
+border-radius:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fca311;
+font-size:1.5rem;
+box-shadow:8px 8px 15px #050505,-4px -4px 15px #222;
+}
+
+.perspective-container{
+perspective:1000px;
+}
+
+.perspective-box{
+width:120px;
+height:70px;
+background:linear-gradient(135deg,#6d28d9,#0ea5e9);
+border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:800;
+box-shadow:15px 15px 30px rgba(0,0,0,0.5);
+}
+
+.filter-circle{
+width:340px;
+height:200px;
+border-radius:30px;
+background:#fff;
+transition:0s;
+}
+
+.filter-circle:hover{
+background:linear-gradient(135deg,#ff6ec4,#ffd86f,#f9fbfb,#7c7cff);
+filter:blur(40px);
+}
+
+
+.scroll-track{
+display:flex;
+gap:15px;
+animation:scroll 5s linear infinite;
+}
+
+.scroll-item{
+min-width:100px;
+height:60px;
+background:#1a1a1a;
+border-radius:8px;
+opacity:0.5;
+}
+
+@keyframes scroll{
+from{transform:translateX(0);}
+to{transform:translateX(-50%);}
+}
+
+.aura-orb{
+width:70px;
+height:70px;
+background:#fff;
+border-radius:50%;
+box-shadow:30px #ff0055;
+transition:1s;
+animation: auraColors 5s linear infinite;
+}
+
+@keyframes auraColors{
+
+0%{
+box-shadow:0 0 30px #ff0055;
+}
+
+20%{
+box-shadow:0 0 30px #ffae00;
+}
+
+60%{
+box-shadow:0 0 30px #00ffcc;
+}
+
+70%{
+box-shadow:0 0 30px #0066ff;
+}
+
+80%{
+box-shadow:0 0 30px #00ffcc;
+}
+
+100%{
+box-shadow:0 0 30px #ff0055;
+}
+
+}
+
+.moving-blob{
+width:50px;
+height:50px;
+background:#ff0055;
+border-radius:50%;
+position:absolute;
+right:20%;
+bottom:20%;
+filter:blur(15px);
+}
+
+.glass-pane{
+width:120px;
+height:120px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:28px;
+}
