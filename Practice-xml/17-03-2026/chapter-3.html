@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//DTD CUP-BITS Book Interchange DTD v1.2//EN"
+"https://dtd.cambridge.org/schemas/2021/09/CUP-BITS-book1.dtd">
+
+<book xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<book-part book-part-type="chapter" id="chap3">
+
+        <book-part-meta>
+            <title-group>
+                <label>CHAPTER 3</label>
+            </title-group>
+        </book-part-meta>
+    </book-part>
+
+<body>
+
+<sec>
+    <title>Blockciphers</title>
+
+    <p>Blockciphers are the central tool in the design of protocols for shared-key cryptography (aka. symmetric) cryptography. They are the main available “technology” we have at our disposal. This
+chapter will take a look at these objects and describe the state of the art in their construction.</p>
+
+<p>It is important to stress that blockciphers are just tools—raw ingredients for cooking up something more useful. Blockciphers don’t, by themselves, do something that an end-user would care
+about. As with any powerful tool, one has to learn to use this one. Even an excellent blockcipher
+won’t give you security if you use don’t use it right. But used well, these are powerful tools indeed.
+Accordingly, an important theme in several upcoming chapters will be on how to use blockciphers
+well. We won’t be emphasizing how to design or analyze blockciphers, as this remains very much
+an art.</p>
+
+<p>This chapter gets you acquainted with some typical blockciphers, and discusses attacks on them.
+In particular we’ll look at two examples, DES and AES. DES is the “old standby.” It is currently
+the most widely-used blockcipher in existence, and it is of sufficient historical significance that every
+trained cryptographer needs to have seen its description. AES is a modern blockcipher, and it is
+expected to supplant DES in the years to come.
+</p>
+
+<sec_3_1>
+    <title><label>3.1</label> What is a blockcipher?</title>
+
+  <p>A blockcipher is a function <i>E: {0,1}k &#215; {0,1}n &#8594; {0,1}n</i>. This notation means that <i>E</i> takes two inputs, one being a <i>k</i>-bit string and the other an <i>n</i>-bit string, and returns an <i>n</i>-bit string. The first input is the key. The second might be called the plaintext, and the output might be called a ciphertext. The <i>key-length k</i> and the <i>block-length n</i> are parameters associated with the blockcipher. They vary from blockcipher to blockcipher, as of course does the design of the algorithm itself.</p>
+
+  <p>For each key <i>K &#8712; {0,1}k</i> we let <i>EK: {0,1}n &#8594; {0,1}n</i> be the function defined by <i>EK(M) = E(K, M)</i>. For any blockcipher, and any key <i>K</i>, it is required that the function <i>EK</i> be a <i>permutation</i> on <i>{0,1}n</i>. This means that it is a bijection (ie., a one-to-one and onto function) of <i>{0,1}n</i> to <i>{0,1}n</i>. (For every <i>C &#8712; {0,1}n</i> there is exactly one <i>M &#8712; {0,1}n</i> such that <i>EK(M) = C</i>.) Accordingly <i>EK</i> has an inverse, and we denote it <i>EK-1</i>. This function also maps <i>{0,1}n</i> to <i>{0,1}n</i>, and of course we have <i>EK-1(EK(M)) = M</i> and <i>EK(EK-1(C)) = C</i> for all <i>M, C &#8712; {0,1}n</i>. We let <i>E-1: {0,1}k &#215; {0,1}n &#8594; {0,1}n</i> be defined by <i>E-1(K, C) = EK-1(C)</i>. This is the inverse blockcipher to <i>E</i>.</p>
+
+  <!-- Page 40 -->
+  <p>Preferably, the blockcipher <i>E</i> is a public specified algorithm. Both the cipher <i>E</i> and its inverse <i>E-1</i> should be easily computable, meaning given <i>K, M</i> we can readily compute <i>E(K, M)</i>, and given <i>K, C</i> we can readily compute <i>E-1(K, C)</i>. By &#8220;readily compute&#8221; we mean that there are public and relatively efficient programs available for these tasks.</p>
+
+  <p>In typical usage, a random key <i>K</i> is chosen and kept secret between a pair of users. The function <i>EK</i> is then used by the two parties to process data in some way before they send it to each other. Typically, we will assume the adversary will be able to obtain some input-output examples for <i>EK</i>, meaning pairs of the form <i>(M, C)</i> where <i>C = EK(M)</i>. But, ordinarily, the adversary will not be shown the key <i>K</i>. Security relies on the secrecy of the key. So, as a first cut, you might think of the adversary&#8217;s goal as recovering the key <i>K</i> given some input-output examples of <i>EK</i>. The blockcipher should be designed to make this task computationally difficult. (Later we will refine the view that the adversary&#8217;s goal is key-recovery, seeing that security against key-recovery is a necessary but not sufficient condition for the security of a blockcipher.)</p>
+
+  <p>We emphasize that we&#8217;ve said absolutely nothing about what properties a blockcipher should have. A function like <i>EK(M) = M</i> is a blockcipher (the &#8220;identity blockcipher&#8221;), but we shall not regard it as a &#8220;good&#8221; one.</p>
+
+  <p>How do real blockciphers work? Let&#8217;s take a look at some of them to get a sense of this.</p>
+
+</sec_3_1>
+
+<sec_3_2>
+    <title><label>3.2</label>Data Encryption Standard (DES)</title>
+
+    <p>The Data Encryption Standard (DES) is the quintessential blockcipher. Even though it is now quite
+old, and on the way out, no discussion of blockciphers can really omit mention of this construction.
+DES is a remarkably well-engineered algorithm which has had a powerful influence on cryptography.
+It is in very widespread use, and probably will be for some years to come. Every time you use an
+ATM machine, you are using DES.
+</p>
+
+<sec_3_2_1>
+    <title><label>3.2.1</label>A brief history</title>
+
+  <p>In 1972 the NBS (National Bureau of Standards, now NIST, the National Institute of Standards and Technology) initiated a program for data protection and wanted as part of it an encryption algorithm that could be standardized. They put out a request for such an algorithm. In 1974, IBM responded with a design based on their &#8220;Lucifer&#8221; algorithm. This design would eventually evolve into the <i>DES</i>.</p>
+
+  <p><i>DES</i> has a key-length of <i>k</i> = 56 bits and a block-length of <i>n</i> = 64 bits. It consists of 16 rounds of what is called a &#8220;Feistel network.&#8221; We will describe more details shortly.</p>
+
+  <p>After NBS, several other bodies adopted <i>DES</i> as a standard, including ANSI (the American National Standards Institute) and the American Bankers Association.</p>
+
+  <p>The standard was to be reviewed every five years to see whether or not it should be re-adopted. Although there were claims that it would not be re-certified, the algorithm was re-certified again and again. Only recently did the work for finding a replacement begin in earnest, in the form of the <i>AES</i> (Advanced Encryption Standard) effort.</p>
+
+</sec_3_2_1>
+
+
+<sec_3_2_2>
+    <title><label>3.2.2</label>Construction</title>
+
+    <p>The DES algorithm is depicted in Fig. 3.1. It takes input a 56-bit key K and a 64 bit plaintext
+M. The key-schedule KeySchedule produces from the 56-bit key K a sequence of 16 subkeys, one <br/>
+
+    <figure>
+    <label>Figure 3.1</label>
+    <caption> The DES blockcipher. The text and other figures describe the subroutines
+KeySchedule,f,IP,IP−1.</caption>
+    <graphic xlink:href="fig3.1.jpg" mime-subtype="png"/>
+</figure>
+
+    <figure>
+    <label>Figure 3.2</label>
+    <caption>Tables describing the DES initial permutation IP and its inverse IP−1.</caption>
+    <graphic xlink:href="fig3.2.jpg" mime-subtype="png"/>
+</figure>
+
+for each of the rounds that follows. Each subkey is 48-bits long. We postpone the discussion of the
+KeySchedule algorithm</p>
+
+  <p>The initial permutation <i>IP</i> simply permutes the bits of <i>M</i>, as described by the table of Fig. 3.2. The table says that bit 1 of the output is bit 58 of the input; bit 2 of the output is bit 50 of the input; ... ; bit 64 of the output is bit 7 of the input. Note that the key is not involved in this permutation. The initial permutation does not appear to affect the cryptographic strength of the algorithm. It might have been included to slow-down software implementations.</p>
+
+  <p>The permuted plaintext is now input to a loop, which operates on it in 16 rounds. Each round takes a 64-bit input, viewed as consisting of a 32-bit left half and a 32-bit right half, and, under the influence of the sub-key <i>Kr</i>, produces a 64-bit output. The input to round <i>r</i> is <i>Lr&#8722;1 || Rr&#8722;1</i>, and the output of round <i>r</i> is <i>Lr || Rr</i>. Each round is what is called a Feistel round, named after Horst Feistel, one the IBM designers of a precursor of <i>DES</i>. Fig. 3.1 shows how it works, meaning how <i>Lr || Rr</i> is computed as a function of <i>Lr&#8722;1 || Rr&#8722;1</i>, by way of the function <i>f</i>, the latter depending on the sub-key <i>Kr</i> associated to the <i>r</i>-th round.</p>
+
+  <p>One of the reasons to use this round structure is that it is reversible, important to ensure that <i>DESK</i> is a permutation for each key <i>K</i>, as it should be to qualify as a blockcipher. Indeed, given <i>Lr || Rr</i> (and <i>Kr</i>) we can recover <i>Lr&#8722;1 || Rr&#8722;1</i> via <i>Rr&#8722;1 &#8592; Lr</i> and <i>Lr&#8722;1 &#8592; f(Kr, Lr) &#8853; Rr</i>.</p>
+
+  <p>Following the 16 rounds, the inverse of the permutation <i>IP</i>, also depicted in Fig. 3.2, is applied to the 64-bit output of the 16-th round, and the result of this is the output ciphertext.</p>
+
+  <p>A sequence of Feistel rounds is a common high-level design for a blockcipher. For a closer look we need to see how the function <i>f(&#183;, &#183;)</i> works. It is shown in Fig. 3.3. It takes a 48-bit subkey <i>J</i>
+    
+<figure>
+    <label>Figure 3.3</label>
+    <caption>The f-function of DES. The text and other figures describe the subroutines used.</caption>
+    <graphic xlink:href="fig3.3.jpg" mime-subtype="png"/>
+</figure>
+
+<figure>
+    <label>Figure 3.4</label>
+    <caption>Tables describing the expansion function E and final permutation P of the DES ffunction.</caption>
+    <graphic xlink:href="fig3.4.jpg" mime-subtype="png"/>
+</figure>
+
+    and a 32-bit input <i>R</i> to return a 32-bit output. The 32-bit <i>R</i> is first expanded into a 48-bit via the function <i>E</i> described by the table of Fig. 3.4. This says that bit 1 of the output is bit 32 of the input; bit 2 of the output is bit 1 of the input; ... ; bit 48 of the output is bit 1 of the input.</p>
+
+<p>Note the <i>E</i> function is quite structured. In fact barring that 1 and 32 have been swapped (see top left and bottom right) it looks almost sequential. Why did they do this? Who knows. That's the answer to most things about DES.</p>
+
+<p>Now the sub-key <i>J</i> is XORed with the output of the <i>E</i> function to yield a 48-bit result that we continue to denote by <i>R</i>. This is split into 8 blocks, each 6-bits long. To the <i>i</i>-th block we apply the function <i>Si</i> called the <i>i</i>-th S-box. Each S-box is a function taking 6 bits and returning 4 bits. The result is that the 48-bit <i>R</i> is compressed to 32 bits. These 32 bits are permuted according to the <i>P</i> permutation described in the usual way by the table of Fig. 3.4, and the result is the output of the <i>f</i> function. Let us now discuss the S-boxes.</p>
+
+<p>Each S-box is described by a table as shown in Fig. 3.5. Read these tables as follows. <i>Si</i> takes a 6-bit input. Write it as <i>b1b2b3b4b5b6</i>. Read <i>b3b4b5b6</i> as an integer in the range 0, . . . , 15, naming a column in the table describing <i>Si</i>. Let <i>b1b2</i> name a row in the table describing <i>Si</i>. Take the row <i>b1b2</i>, column <i>b3b4b5b6</i> entry of the table of <i>Si</i> to get an integer in the range 0, . . . , 15. The output of <i>Si</i> on input <i>b1b2b3b4b5b6</i> is the 4-bit string corresponding to this table entry.</p>
+
+<p>The S-boxes are the heart of the algorithm, and much effort was put into designing them to achieve various security goals and resistance to certain attacks.</p>
+
+<p>Finally, we discuss the key schedule. It is shown in Fig. 3.6. Each round sub-key <i>Kr</i> is formed by taking some 48 bits of <i>K</i>. Specifically, a permutation called <i>PC-1</i> is first applied to the 56-bit 
+    
+<figure>
+    <label>Figure 3.5</label>
+    <caption>The DES S-boxes</caption>
+    <graphic xlink:href="fig3.5.jpg" mime-subtype="png"/>
+</figure>
+
+    
+    key to yield a permuted version of it. This is then divided into two 28-bit halves and denoted <i>C0 || D0</i>. The algorithm now goes through 16 rounds. The <i>r</i>-th round takes input <i>Cr-1 || Dr-1</i>, computes <i>Cr || Dr</i>, and applies a function <i>PC-2</i> that extracts 48 bits from this 56-bit quantity. This is the sub-key <i>Kr</i> for the <i>r</i>-th round. The computation of <i>Cr || Dr</i> is quite simple. The bits of <i>Cr-1</i> are rotated to the left <i>j</i> positions to get <i>Cr</i>, and <i>Dr</i> is obtained similarly from <i>Dr-1</i>, where <i>j</i> is either 1 or 2, depending on <i>r</i>.</p>
+
+<figure>
+    <label>Figure 3.6</label>
+    <caption> The key schedule of DES. Here leftshiftj denotes the function that rotates its input to
+the left by j positions.</caption>
+    <graphic xlink:href="fig3.6.jpg" mime-subtype="png"/>
+</figure>
+
+<figure>
+    <label>Figure 3.7</label>
+    <caption>Tables describing the PC-1 and PC-2 functions used by the DES key schedule of Fig. 3.6.</caption>
+    <graphic xlink:href="fig3.7.jpg" mime-subtype="png"/>
+</figure>
+
+<p>Well now you know how DES works. Of course, the main questions about the design are: why, why and why? What motivated these design choices? We don't know too much about this, although we can guess a little. And one of the designers of DES, Don Coppersmith, has written a short paper which provides some information.</p>
+
+</sec_3_2_2>
+
+
+<sec_3_2_3>
+    <title><label>3.2.3</label>Speed</title>
+
+    <p>One of the design goals of DES was that it would have fast implementations relative to the technology of its time. How fast can you compute DES? In roughly current technology (well, nothing is current by the time one writes it down!) one can get well over 1 Gbit/sec on high-end VLSI. Specifically at least 1.6 Gbits/sec, maybe more. That's pretty fast. Perhaps a more interesting figure is that one can implement each DES S-box with at most 50 two-input gates, where the circuit</p>
+
+<p>has depth of only 3. Thus one can compute DES by a combinatorial circuit of about 8 * 16 * 50 = 6400 gates and depth of 3 * 16 = 48 gates.</p>
+
+<p>In software, on a fairly modern processor, DES takes something like 80 cycles per byte. This is disappointingly slow—not surprisingly, since DES was optimized for hardware and was designed before the days in which software implementations were considered feasible or desirable.</p>
+</sec_3_2_3>
+
+
+</sec_3_2>
+
+<sec_3_3>
+        <title><b><label>3.3</label> Key recovery attacks on blockciphers</b></title>
+        <p>Now that we know what a blockcipher looks like, let us consider attacking one. This is called
+cryptanalysis of the blockcipher.</p>
+<p>We fix a blockcipher E: {0,1}k ×{0,1}n →{0,1}n having key-size k and block size n. It is
+assumed that the attacker knows the description of E and can compute it. For concreteness, you
+can think of E as being DES.</p>
+<p>aistorically, cryptanalysis of blockciphers has focused on key-recovery. The cryptanalyst may
+think of the problem to be solved as something like this. A k-bit key T, called the target key, is
+chosen at random. Let q ≥ 0 be some integer parameter.</p>
+<p>Given: The adversary has a sequence of q input-output examples of ET,say <br />
+(M1,C1),...,(Mq,Cq)
+where Ci = ET(Mi)fori =1,...,qand M1,...,Mq are all distinct n-bit strings.<br />
+Find: The adversary wants to find the target key T.
+Let us say that a key K is consistent with the input-output examples (M1,C1),...,(Mq,Cq) if <br />
+EK(Mi)=Ci for all 1 ≤ i ≤ q.Welet<br />
+ConsE((M1,C1),...,(Mq,Cq)) <br />
+be the set of all keys consistent with the input-output examples (M1,C1),...,(Mq,Cq). Of course
+the target key T is in this set. But the set might be larger, containing other keys. Without
+asking further queries, a key-recovery attack cannot hope to differentiate the target key from other
+members of ConsE((M1,C1),...,(Mq,Cq)). Thus, the goal is sometimes viewed as simply being to
+find some key in this set. For practical blockciphers we expect that, if a few input-output examples
+are used, the size of the above set will be one, so the adversary can indeed find the target key. We
+will exemplify this when we consider specific attacks.</p>
+<p>Some typical kinds of “attack” that are considered within this framework: <br />
+Known-message attack: M1,...,Mq are any distinct points; the adversary has no control over
+them, and must work with whatever it gets.</p>
+<p>Chosen-message attack: M1,...,Mq are chosen by the adversary, perhaps even adaptively.
+That is, imagine it has access to an “oracle” for the function EK. It can feed the oracle M1 and
+get back C1 = EK(M1). It can then decide on a value M2, feed the oracle this, and get back C2,
+and so on.</p>
+<p>Clearly a chosen-message attack gives the adversary more power, but it may be less realistic in
+practice.</p>
+<p>The most obvious attack strategy is exhaustive key search. The adversary goes through all
+possible keys K∈{0,1}k until it finds one that explains the input-output pairs. Here is the attack
+in detail, using q = 1, meaning one input-output example. For i =1,...,2k let Ti denote the i-th
+k-bit string (in lexicographic order).</p>
+<p>This attack always returns a key consistent with the given input-output example (M1,C1). Whether
+or not it is the target key depends on the blockcipher. If one imagines the blockcipher to be random,
+then the blockcipher’s key length and block length are relevant in assessing if the above attack will
+find the “right” key. , The likelihood of the attack returning the target key can be increased by
+testing against more input-output examples:</p>
+<p>Afairly small vaue of q, say somewhat more than k/n, is enough that this attack will usually return
+the target key itself. For DES, q =1orq = 2 seems to be enough.</p>
+<p>Thus, no blockcipher is perfectly secure. It is always possible for an attacker to recover a consis
+tent key. A good blockcipher, however, is designed to make this task computationally prohibitive</p>
+<p>How long does exhaustive key-search take? Since we will choose q to be small we can neglect the
+difference in running time between the two versions of the attack above, and focus for simplicity on
+the first attack. In the worst case, it uses 2k computations of the blockcipher. However it could be
+less since one could get lucky. For example if the target key is in the first half of the search space,
+only 2k−1 computations would be used. So a better measure is how long it takes on the average.
+This is computations of the blockcipher. This is because the target key is chosen at random, so with
+probability 1/2k equals Ti, and in that case the attack uses iE-computations to find it.</p>
+<p>hus to make key-recovery by exhaustive search computationally prohibitive, one must make
+the key-length k of the blockcipher large enough.</p>
+<p>Let’s look at DES. We noted above that there is VLSI chip that can compute it at the rate of
+1.6 Gbits/sec. How long would key-recovery via exhaustive search take using this chip? Since a
+DES plaintext is 64 bits, the chip enables us to perform (1.6·109)/64 = 2.5·107 DES computations
+per second. To perform 255 computations (here k = 56) we thus need 255/(2.5 · 107) ≈ 1.44 · 109
+seconds, which is about 45.7 years. This is clearly prohibitive.</p>
+<p>It turns out that that DES has a property called key-complementation that one can exploit to
+reduce the size of the search space by one-half, so that the time to find a key by exhaustive search
+comes down to 22.8 years. But this is still prohibitive.</p>
+<p>Yet, the conclusion that DES is secure against exhaustive key search is actually too hasty. We
+will return to this later and see why.</p>
+<p>xhaustive key search is a generic attack in the sense that it works against any blockcipher.
+It only involves computing the blockcipher and makes no attempt to analyze the cipher and find
+and exploit weaknesses. Cryptanalysts also need to ask themselves if there is some weakness in the
+structure of the blockcipher they can exploit to obtain an attack performing better than exhaustive
+key search.</p>
+<p>For DES, the discovery of such attacks waited until 1990. Differential cryptanalysis is capable
+of finding a DES key using about 247 input-output examples (that is, q =247) in a chosen-message
+attack [1, 2]. Linear cryptanalysis [4] improved differential in two ways. The number of input
+output examples required is reduced to 244, and only a known-message attack is required. (An
+alternative version uses 242 chosen plaintexts [24].)</p>
+<p>These were major breakthroughs in cryptanalysis that required careful analysis of the DES
+construction to find and exploit weaknesses. Yet, the practical impact of these attacks is small.
+Why? Ordinarily it would be impossible to obtain 244 input-output examples. Furthermore, the
+storage requirement for these examples is prohibitive. A single input-output pair, consisting of a
+64-bit plaintext and 64-bit ciphertext, takes 16 bytes of storage. When there are 244 such pairs, we
+need 16 · 244 =2.81·1014 bits, or about 281 terabytes of storage, which is enormous.</p>
+<p>Linear and differential cryptanalysis were however more devastating when applied to other
+ciphers, some of which succumbed completely to the attack.</p>
+<p>So what’s the best possible attack against DES? The answer is exhaustive key search. What
+we ignored above is that the DES computations in this attack can be performed in parallel. In
+1993, Weiner argued that one can design a $1 million machine that does the exhaustive key search
+for DES in about 3.5 hours on the average [7]. His machine would have about 57,000 chips, each
+performing numerous DES computations. More recently, a DES key search machine was actually
+built by the Electronic Frontier Foundation, at a cost of $250,000 [5]. It finds the key in 56 hours,
+or about 2.5 days on the average. The builders say it will be cheaper to build more machines now
+that this one is built.</p>
+<p>Thus DES is feeling its age. Yet, it would be a mistake to take away from this discussion the
+impression that DES is a weak algorithm. Rather, what the above says is that it is an impressively
+strong algorithm. After all these years, the best practical attack known is still exhaustive key
+search. That says a lot for its design and its designers.</p>
+<p>Later we will see that we would like security properties from a blockcipher that go beyond
+resistance to key-recovery attacks. It turns out that from that point of view, a limitation of DES
+is its block size. Birthday attacks “break” DES with about q =232 input output examples. (The
+meaning of “break” here is very different from above.) Here 232 is the square root of 264, meaning
+to resist these attacks we must have bigger block size. The next generation of ciphers—things like
+AES—took this into account.</p>
+    </sec_3_3>
+
+<sec_3_4>
+        <title><b><label>3.4</label>Iterated-DES and DESX</b></title>
+        <p>The emergence of the above-discussed key-search engines lead to the view that in practice DES
+should be considered broken. Its shortcoming was its key-length of 56, not long enough to resist
+exhaustive key search.</p>
+<p>People looked for cheap ways to strengthen DES, turning it, in some simple way, into a cipher
+with a larger key length. One paradigm towards this end is iteration.</p>
+<sec>
+    <title><b><label>3.4.1</label>Double-DES</b></title>
+    <p>Let K1,K2 be 56-bit DES keys and let M be a 64-bit plaintext. Let</p>
+    <p>This defines a blockcipher 2DES: {0,1}112 ×{0,1}64 →{0,1}64 that we call Double-DES. It has a
+112-bit key, viewed as consisting of two 56-bit DES keys. Note that it is reversible, as required to
+be a blockcipher:</p>
+<p>he key length of 112 is large enough that there seems little danger of 2DES succumbing
+to an exhaustive key search attack, even while exploiting the potential for parallelism and special
+purpose hardware. On the other hand, 2DES also seems secure against the best known cryptanalytic
+techniques, namely differential and linear cryptanalysis, since the iteration effectively increases the
+number of Feistel rounds. This would indicate that 2DES is a good way to obtain a DES-based
+cipher more secure than DES itself.</p>
+<p>However, although 2DES has a key-length of 112, it turns out that it can be broken using
+about 257 DES and DES−1 computations by what is called a meet-in-the-middle attack, as we now
+illustrate. Let K1 K2 denote the target key and let C1 = 2DES(K1 K2,M1). The attacker, given
+M1,C1, is attempting to find K1 K2. We observe that</p>
+<p>This leads to the following attack. Below, for i =1,...,256 we let Ti denote the i-th 56-bit string
+(in lexicographic order):</p>
+<p>The set S above is likely to be quite large, of size about 256+56/264 =248, meaning the attack
+as written is not likely to return the target key itself. However, by using a few more input-output
+examples, it is easy to whittle down the choices in the set S until it is likely that only the target
+key remains.</p>
+<p>The attack makes 256 +256 =257 DES or DES−1 computations. The step of forming the set S
+can be implemented in linear time in the size of the arrays involved, say using hashing. (A naive
+strategy takes time quadratic in the size of the arrays.) Thus the running time is dominated by
+the DES,DES−1 computations.</p>
+<p>The meet-in-the-middle attack shows that 2DES is quite far from the ideal of a cipher where
+the best attack is exhaustive key search. However, this attack is not particularly practical, even if
+special purpose machines are designed to implement it. The machines could do the DES,DES−1
+computations quickly in parallel, but to form the set S the attack needs to store the arrays L,R,
+each of which has 256 entries, each entry being 64 bits. The amount of storage required is 8·257 ≈
+1.15 · 1018 bytes, or about 1.15 · 106 terabytes, which is so large that implementing the attack is
+impractical.</p>
+<p>here are some strategies that modify the attack to reduce the storage overhead at the cost of
+some added time, but still the attack does not appear to be practical.</p>
+<p>Since a 112-bit 2DES key can be found using 257 DES or DES−1 computations, we sometimes
+say that 2DES has an effective key length of 57.</p>
+</sec>
+<sec>
+    <title><b><label>3.4.2</label>Triple-DES</b></title>
+    <p>he triple-DES ciphers use three iterations of DES or DES−1. The three-key variant is defined by
+3DES3(K1 K2 K3,M) = DES(K3,DES−1(K2,DES(K1,M))) ,</p>
+<p> that 3DES3: {0,1}168 ×{0,1}64 →{0,1}64. The two-key variant is defined by
+3DES2(K1 K2,M) = DES(K2,DES−1(K1,DES(K2,M))) ,</p>
+<p>so that 3DES2: {0,1}112×{0,1}64 →{0,1}64. You should check that these functions are reversible
+so that they do qualify as blockciphers. The term “triple” refers to there being three applications
+of DES or DES−1. The rationale for the middle application being DES−1 rather than DES is that
+DES is easily recovered via</p>
+<p>As with 2DES, the key length of these ciphers appears long enough to make exhaustive key
+search prohibitive, even with the best possible engines, and, additionally, differential and linear
+cryptanalysis are not particularly effective because iteration effectively increases the number of
+Feistel rounds.</p>
+<p>3DES3 is subject to a meet-in-the-middle attack that finds the 168-bit key using about 2112
+computations of DES or DES−1, so that it has an effective key length of 112. There does not
+appear to be a meet-in-the-middle attack on 3DES2 however, so that its key length of 112 is also
+its effective key length.</p>
+<p>The 3DES2 cipher is popular in practice and functions as a canonical and standard replacement
+for DES. 2DES, although having the same effective key length as 3DES2 and offering what appears
+to be the same or at least adequate security, is not popular in practice. It is not entirely apparent
+why 3DES2 is preferred over 2DES, but the reason might be Equation (3.2).</p>
+
+</sec>
+<sec>
+    <tittle><b><label>3.4.3</label>DESX</b></title>
+        <P>Although 2DES,3DES3 and 3DES2 appear to provide adequate security, they are slow. The first
+is twice as slow as DES and the other two are three times as slow. It would be nice to have a
+DES based blockcipher that had a longer key than DES but was not significantly more costly.
+Interestingly, there is a simple design that does just this. Let K be a 56-bit DES key, let K1,K2
+be 64-bit strings, and let M be a 64-bit plaintext. Let</P>
+<p>This defines a blockcipher DESX: {0,1}184 ×{0,1}64 →{0,1}64. It has a 184-bit key, viewed as
+consisting of a 56-bit DES key plus two auxiliary keys, each 64 bits long. Note that it is reversible,
+as required to be a blockcipher:</p>
+<p>The key length of 184 is certainly enough to preclude exhaustive key search attacks. DESX is no
+more secure than DES against linear of differential cryptanalysis, but we already saw that these
+are not really practical attacks.</p>
+<p>There is a meet-in-the-middle attack on DESX. It finds a 184-bit DESX key using 2120 DES and
+DES−1 computations. So the effective key length of DESX seems to be 120, which is large enough
+for security.</p>
+<p>DESX is less secure than Double or Triple DES because the latter are more more resistant than
+DES to linear and differential cryptanalysis while DESX is only as good as DES itself in this regard.
+However, this is good enough; we saw that in practice the weakness of DES was not these attacks
+but rather the short key length leading to successful exhaustive search attacks. DESX fixes this,
+and very cheaply. In summary, DESX is popular because it is much cheaper than Double of Triple
+DES while providing adequate security.</p>
+</sec>
+<sec>
+    <tittle><b><label>3.4.4</label>Why a new cipher?</b></title>
+        <p>DESX is arguably a fine cipher. Nonetheless, there were important reasons to find and standardize
+a new cipher.</p>
+<p>We will see later that the security provided by a blockcipher depends not only on its key length
+and resistance to key-search attacks but on its block length. A blockcipher with block length n
+can be “broken” in time around 2n/2.Whenn = 64, this is 232, which is quite small. Although
+2DES,3DES3,3DES2,DESX have a higher (effective) key length than DES, they preserve its block
+size and thus are no more secure than DES from this point of view. It was seen as important to
+have a blockcipher with a block length n large enough that a 2n/2 time attack was not practical.
+This was one motivation for a new cipher.</p>
+<p>Perhaps the larger motivation was speed. Desired was a blockcipher that ran faster than DES
+in software.</p>
+</sec>
+    </sec_3_4>    
+
+<sec_3_5>
+    <title><label>3.5</label> Advanced Encryption Standard (AES)</title>
+
+    <p>In 1998 the National Institute of Standards and Technology (NIST/USA) announced a “competition” for a new blockcipher. The new blockcipher would, in time, replace DES. The relatively short key length of DES was the main problem that motivated the effort: with the advances in computing power, a key space of 256 keys was just too small. With the development of a new algorithm one could also take the opportunity to address the modest software speed of DES, making something substantially faster, and to increase the block size from 64 to 128 bits the choice of 64 bits for the block size can lead to security difficulties, as we shall later see. Unlike the design of DES, the new algorithm would be designed in the open and by the public.</p>
+
+<p>Fifteen algorithms were submitted to NIST. They came from around the world. A second round narrowed the choice to five of these algorithms. In the summer of 2001 NIST announced their choice: an algorithm called <i>Rijndael</i>. The algorithm should be embodied in a NIST FIPS (Federal Information Processing Standard) any day now; right now, there is a draft FIPS. <i>Rijndael</i> was designed by Joan Daemen and Vincent Rijmen (from which the algorithm gets its name), both from Belgium. It is descendent of an algorithm called <i>Square</i>.</p>
+
+
+<figure>
+    <label>Figure 3.8</label>
+    <caption>The function AES128. See the accompanying text and figures for definitions of the
+maps expand, S, shift-rows, mix-cols.</caption>
+    <graphic xlink:href="fig3.8.jpg" mime-subtype="png"/>
+</figure>
+
+<p>In this section we shall describe <i>AES</i>.</p>
+
+<p>A word about notation. Purists would prefer to reserve the term “<i>AES</i>” to refer to the standard, using the word “<i>Rijndael</i>” or the phrase “the <i>AES</i> algorithm” to refer to the algorithm itself. (The same naming pundits would have us use the acronym <i>DEA</i>, Data Encryption Algorithm, to refer to the algorithm of the <i>DES</i>, the Data Encryption Standard.) We choose to follow common convention and refer to both the standard and the algorithm as <i>AES</i>. Such an abuse of terminology never seems to lead to any misunderstandings. (Strictly speaking, <i>AES</i> is a special case of <i>Rijndael</i>. The latter includes more options for block lengths than <i>AES</i> does.)</p>
+
+<p>The <i>AES</i> has a block length of <i>n = 128</i> bits, and a key length <i>k</i> that is variable: it may be 128, 192 or 256 bits. So the standard actually specifies three different blockciphers: <i>AES128</i>, <i>AES192</i>, <i>AES256</i>. These three blockciphers are all very similar, so we will stick to describing just one of them, <i>AES128</i>. For simplicity, in the remainder of this section, <i>AES</i> means the algorithm <i>AES128</i>. We’ll write <i>C = AESK(M)</i> where <i>|K| = 128</i> and <i>|M| = |C| = 128</i>.</p>
+
+<p>We’re going to describe <i>AES</i> in terms of four additional mappings: <i>expand</i>, <i>S</i>, <i>shift-rows</i>, and <i>mix-cols</i>. The function <i>expand</i> takes a 128-bit string and produces a vector of eleven keys, (<i>K0, . . . , K10</i>). The remaining three functions bijectively map 128-bits to 128-bits. Actually, we’ll be more general for <i>S</i>, letting it be a map on (({0, 1})8)+. Let’s postpone describing all of these maps and start off with the high-level structure of <i>AES</i>, which is given in Fig. 3.8.</p>
+
+<p>Refer to Fig. 3.8. The value <i>s</i> is called the <i>state</i>. One initializes the state to <i>M</i> and the final state is the ciphertext <i>C</i> one gets by enciphering <i>M</i>. What happens in each iteration of the <b>for</b> loop is called a <i>round</i>. So <i>AES</i> consists of ten rounds. The rounds are identical except that each uses a different subkey <i>Ki</i> and, also, round 10 omits the call to <i>mix-cols</i>.</p>
+
+<p>To understand what goes on in <i>S</i> and <i>mix-cols</i> we will need to review a bit of algebra. Let us make a pause to do that. We describe a way to do arithmetic on bytes. Identify each byte <i>a = a7a6a5a4a3a2a1a0</i> with the formal polynomial <i>a7x7 + a6x6 + a5x5 + a4x4 + a3x3 + a2x2 + a1x + a0</i>. We can add two bytes by taking their bitwise <i>xor</i> (which is the same as the <i>mod-2</i> sum the corresponding polynomials). We can multiply two bytes to get a degree 14 (or less) polynomial, and then take the remainder of this polynomial by the fixed irreducible polynomial</p>
+
+<p>This remainder polynomial is a polynomial of degree at most seven which, as before, can be regarded as a byte. In this way, we can add and multiply any two bytes. The resulting algebraic structure has all the properties necessary to be called a <i>finite field</i>. In particular, this is one representation of the finite field known as <i>GF(28)</i>—the Galois field on <i>28 = 256</i> points. As a finite field, you can find the inverse of any nonzero field point (the zero-element is the zero byte) and you can distribute addition over multiplication, for example.</p>
+
+
+<p>Knowing how to multiply by <i>x = {02}</i> let’s you conveniently multiply by other quantities. For example, to compute <i>{a1} * {03}</i> compute <i>{a1} * ({02} + {01}) = {a1} * {02} + {a1} * {01} = {42} + {1b} + a1 = {f8}</i>. Try some more examples on your own.</p>
+
+<p>As we said, each nonzero byte <i>a</i> has a multiplicative inverse, <i>inv(a) = a-1</i>. The mapping we will denote <i>S : {0, 1}8 -> {0, 1}8</i> is obtained from the map <i>inv : a |-> a-1</i>. First, patch this map to make it total on <i>{0, 1}8</i> by setting <i>inv({00}) = {00}</i>. Then, to compute <i>S(a)</i>, first replace <i>a</i> by <i>inv(a)</i>, number the bits of <i>a</i> by <i>a = a7a6a5a4a3a2a1a0</i>, and return the value <i>a’</i>, where <i>a’ = a’7a’6a’5a’4a’3a’2a’1a’0</i> where</p>
+
+<p>All arithmetic is in <i>GF(2)</i>, meaning that addition of bits is their xor and multiplication of bits is the conjunction (and).</p>
+
+<p>All together, the map <i>S</i> is give by Fig. 3.9, which lists the values of <i>S(0), S(1), . . . , S(255)</i>.</p>
+
+<p>In fact, one could forget how this table is produced, and just take it for granted. But the fact is that it is made in the simple way we have said.</p>
+
+<p>Now that we have the function <i>S</i>, let us extend it (without bothering to change the name) to a function with domain (({0, 1})8)+. Namely, given an <i>m</i>-byte string <i>A = A[1] . . . A[m]</i>, set <i>S(A)</i> to be <i>S(A[1]) . . . S(A[m])</i>. In other words, just apply <i>S</i> bytewise.</p>
+
+<p>Now we’re ready to understand the first map, <i>S(s)</i>. One takes the 16-byte state <i>s</i> and applies the 8-bit lookup table to each of its bytes to get the modified state <i>s</i>.</p>
+
+<p>Moving on, the <i>shift-rows</i> operation works like this. Imagine plastering the 16 bytes of <i>s =</i></p>
+
+<figure>
+    <label>Figure 3.9</label>
+    <caption>The AES S-box, which is a function S : {0, 1}8 → {0, 1}8 specified by the following list.
+All values in hexadecimal. The meaning is: S(00) = 63, S(01) = 7c, ..., S(ff) = 16.</caption>
+    <graphic xlink:href="fig3.9.jpg" mime-subtype="png"/>
+</figure>
+
+<figure>
+    <label>Figure 3.10</label>
+    <caption> The AES128 key-expansion algorithm maps a 128-bit key K into eleven 128-bit subkeys, K0,...,K10. Constants (C1,..., C10) are ({02000000}, {04000000}, {08000000}, {10000000},
+{20000000}, {40000000}, {80000000}, {1B000000}, {36000000}, {6C000000}). All other notation
+is described in the accompanying text.</caption>
+    <graphic xlink:href="fig3.10.jpg" mime-subtype="png"/>
+</figure>
+
+<p>At this point we have described everything but the key-expansion map, <i>expand</i>. That map is given in Fig. 3.10.</p>
+
+<p>We have now completed the definition of <i>AES</i>. One key property is that <i>AES</i> is a blockcipher: the map is invertible. This follows because every round is invertible. That a round is invertible follows from each of its steps being invertible, which is a consequence of <i>S</i> being a permutation and the matrix used in <i>mix-cols</i> having an inverse.</p>
+
+<p>In the case of <i>DES</i>, the rationale for the design were not made public. Some explanation for different aspects of the design have become more apparent over time as we have watched the effects on <i>DES</i> of new attack strategies, but fundamentally, the question of why the design is as it is has not received a satisfying cipher. In the case of <i>AES</i> there was significantly more documentation of the rationale for design choices. (See the book <i>The design of Rijndael</i> by the designers [9]).</p>
+
+<p>Nonetheless, the security of blockciphers, including <i>DES</i> and <i>AES</i>, eventually comes down to the statement that “we have been unable to find effective attacks, and we have tried attacks along the following lines . . . .” If people with enough smarts and experience utter this statement, then it suggests that the blockcipher is good. Beyond this, it’s hard to say much. Yet, by now, our community has become reasonably experienced designing these things. It wouldn’t even be that hard a game were it not for the fact we tend to be agressive in optimizing the block-cipher’s speed. (Some may come to the opposite opinion, that it’s a very hard game, seeing just how many reasonable-looking blockciphers have been broken.) Later we give some vague sense of the sort of cleverness that people muster against blockciphers.</p>
+
+</sec_3_5>
+
+<sec_3_6>
+    <title><label>3.6</label>Limitations of key-recovery based security</title>
+
+
+    <p>As discussed above, classically, the security of blockciphers has been looked at with regard to key recovery. That is, analysis of a blockcipher <i>E</i> has focused primarily on the following question: given some number <i>q</i> of input-output examples (<i>M1, C1</i>), . . . , (<i>Mq, Cq</i>), where <i>T</i> is a random, unknown key and <i>Ci = ET(Mi)</i>, how hard is it for an attacker to find <i>T</i>? A blockcipher is viewed as “secure” if the best key-recovery attack is computationally infeasible, meaning requires a value of <i>q</i> or a running time <i>t</i> that is too large to make the attack practical. In the sequel, we refer to this as <i>security against key-recovery</i>.</p>
+
+<p>However, as a notion of security, security against key-recovery is quite limited. A good notion should be sufficiently strong to be useful. This means that if a blockcipher is secure, then it should be possible to use the blockcipher to make worthwhile constructions and be able to have some guarantee of the security of these constructions. But even a cursory glance at common blockcipher usages shows that good security in the sense of key recovery is not sufficient for security of the usages of blockciphers.</p>
+
+<p>As an example, consider that we typically want to think of <i>C = EK(M)</i> as an “encryption” of plaintext <i>M</i> under key <i>K</i>. An adversary in possession of <i>C</i> but not knowing <i>K</i> should find it computationally infeasible to recover <i>M</i>, or even some part of <i>M</i> such as its first half. Security against key-recovery is certainly necessary for this, because if the adversary could find <i>K</i> it could certainly compute <i>M</i>, via <i>M = EK-1(M)</i>. But security against key-recovery is not sufficient to ensure that <i>M</i> cannot be recovered given <i>K</i> alone. As an example, consider the blockcipher <i>E: {0,1}128 x {0,1}256 -> {0,1}256</i> defined by <i>EK(M) = AESK(M1) || M2</i> where <i>M1</i> is the first 128 bits of <i>M</i> and <i>M2</i> is the last 128 bits of <i>M</i>. Key recovery is as hard as for <i>AES</i>, but a ciphertext reveals the second half of the plaintext.</p>
+
+<p>This might seem like an artificial example. Many people, on seeing this, respond by saying: “But, clearly, <i>DES</i> and <i>AES</i> are not designed like this.” True. But that is missing the point. The point is that security against key-recovery alone does not make a “good” blockcipher.</p>
+
+<p>But then what does make a good blockcipher? This questions turns out to not be so easy to answer. Certainly one can list various desirable properties. For example, the ciphertext should not reveal half the bits of the plaintext. But that is not enough either. As we see more usages of ciphers, we build up a longer and longer list of security properties <i>SP1, SP2, SP3, . . .</i> that are necessary for the security of some blockcipher based application.</p>
+
+<p>Such a long list of necessary but not sufficient properties is no way to treat security. What we need is a single “master” property of a blockcipher which, if met, guarantees security of lots of natural usages of the cipher.</p>
+
+<p>Such a property is that the blockcipher be a <i>pseudorandom permutation (PRP)</i>, a notion explored in another chapter.</p>
+
+</sec_3_6>
+
+<sec_3_7>
+    <title><label>3.7</label>Problem</title>
+
+    <p><label>Problem 3.1</label> Show that for all <i>K</i> in {0, 1}56 and all <i>x</i> in {0, 1}64, <i>DESK(x) = complement(DEScomplement(K)(complement(x)))</i>. This is called the key-complementation property of <i>DES</i>.</p>
+
+<p><label>Problem 3.2</label> Explain how to use the key-complementation property of <i>DES</i> to speed up exhaustive key search by about a factor of two. Explain any assumptions that you make.</p>
+
+<p><label>Problem 3.3</label> Find a key <i>K</i> such that <i>DESK(·) = DESK-1(·)</i>. Such a key is sometimes called a “weak” key.</p>
+
+<p><label>Problem 3.4</label> As with <i>AES</i>, suppose we are working in the finite field with 28 elements, representing field points using the irreducible polynomial <i>m(x) = x8 + x4 + x3 + x + 1</i>. Compute the byte that is the result of multiplying bytes: {e1} * {05}</p>
+
+<p><label>Problem 3.5</label> For <i>AES</i>, we have given two different descriptions of <i>mix-cols</i>: one using matric multiplication (in <i>GF(28)</i>) and one based on multiplying by a fixed polynomial <i>c(x)</i> modulo a second fixed polynomial, <i>d(x) = x4 + 1</i>. Show that these two methods are equivalent.</p>
+
+<p><label>Problem 3.6</label> Verify that the matrix used for <i>mix-cols</i> has as its inverse the matrix shown in the figure. Explain why it is that all of the entries in this matrix begin with a zero.</p>
+
+<p><label>Problem 3.7</label> How many different permutations are there from 128 bits to 128 bits? How many different functions are there from 128 bits to 128 bits?</p>
+
+<p><label>Problem 3.8</label> Upper and lower bound, as best you can, the probability that a random function from 128 bits to 128 bits is actually a permutation.</p>
+
+<p><label>Problem 3.9</label> Without consulting any of the numerous public-domain implementations available, implement <i>AES</i>, on your own, from the spec or from the description provided by this chapter. Then test your implementation according to the test vectors provided in the <i>AES</i> documentation.</p>
+
+<p><label>Problem 3.10</label> Justify and then refute the following proposition: enciphering under <i>AES</i> can be implemented faster than deciphering.</p>
+
+<p><label>Problem 3.11</label> Choose a random <i>DES</i> key <i>K</i> in {0, 1}56. Let (<i>M, C</i>), where <i>C = DESK(M)</i>, be a single plaintext/ciphertext pair that an adversary knows. Suppose the adversary does an exhaustive key search to locate the lexicographically first key <i>T</i> such that <i>C = DEST(M)</i>. Estimate the probability that <i>T = K</i>. Discuss any assumptions you must make to answer this question.</p>
+
+</sec_3_7>
+
+</sec>
+
+</body>
+
+</book>
