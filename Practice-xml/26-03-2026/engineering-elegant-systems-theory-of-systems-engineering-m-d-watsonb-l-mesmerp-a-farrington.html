@@ -1,0 +1,1749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book
+    PUBLIC "-//DTD CUP-BITS Book Interchange DTD v1.2//EN" "https://dtd.cambridge.org/schemas/2021/09/CUP-BITS-book1.dtd">
+
+<book xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+    <book-part book-part-type="chapter" id="chap">
+
+        <book-part-meta>
+            <title-group>
+                <label>Chapter 1</label>
+                <title>ENGINEERING ELEGANT SYSTEMS</title>
+            </title-group>
+        </book-part-meta>
+    </book-part>
+
+    <body>
+
+        <sec>
+
+            <sec id="chap-1">
+
+                <p>Systems engineering today follows a sequence of events to produce a system. The process
+                    begins with understanding the application of the system and the desires of the identified system
+                    stakeholders. This understanding guides the definition of the system architecture. Systems engineers
+                    typically conduct a series of architecture trade studies that culminate in the selection of a
+                    specific
+                    system configuration. System design proceeds from this configuration definition executed by various
+                    engineering disciplines. Systems engineers often assume, sometimes implicitly, that the
+                    decomposition of the system functions to these various engineering disciplines is linear. They
+                    define this linear
+                    decomposition as a set of functional requirements and interface requirements for each subsystem.
+                    The separate engineering disciplines design the system functions and subsystems and integrate these
+                    functions and subsystems via interfaces into a consolidated system. System interactions are assumed
+                    to be contained by the interfaces and generate derived requirements for the subsystems traceable
+                    back
+                    to the system functions. System production and operations are considered in the development phase,
+                    and in turn, development information is used to define system production and operations activities
+                    that occur at the end of the design process. </p>
+
+                <p>This system engineering process can work well but it can also work poorly, or not at all.
+                    Often the approach to managing the sequence of events leads to very inelegant systems. Considering
+                    a  systems engineering process that can sometimes succeed and sometimes fail brings to the forefront
+                    a  number of questions, which include “What are we doing correctly?,” and “What are we doing
+                    wrong?,” and “How do we address this?” The answer to these questions leads to a new understanding
+                    of systems engineering to engineer elegant systems. These questions will be considered separately in
+                    the following paragraphs.</p>
+
+                <p>What are we doing correctly? Several aspects of systems engineering provide a template to
+                    engineer a system: system lifecycle, use of engineering disciplines in design, system testing, and
+                    configuration management (CM). The engineering lifecycle has an important sequence of events:
+                    Understanding the system application, defining the system architecture, selecting the system
+                    configuration,
+                    designing the system, testing the system, and then operating the system, is a correct sequence.
+                    There
+                    are many variations to the system development lifecycle (e.g., waterfall, spiral, block, agile) but
+                    they
+                    all use this basic construct. Figure 1 illustrates the differences between the NASA and Department
+                    of Defense system lifecycles.<sup>1</sup></p>
+
+
+
+                <fig id="fig_1">
+                    <label>Figure 1</label>
+                    <caption>System lifecycles.</caption>
+                    <graphic xlink:href="figure1.jpg" />
+                </fig>
+
+                <p>Another correct aspect of systems engineering is the use of engineering disciplines to develop
+                    the various subsystems. This is a well-established practice, based primarily on the physics or logic
+                    of the system as applied by the various engineering disciplines. Another valid emphasis in systems
+                    engineering is system testing. This is important to confirm engineering assumptions, uncertainties,
+                    and sensitivities. In addition, configuration management and associated reviews and analyses of
+                    performance and risks associated with the system configuration has also proven to be a durable
+                    and successful aspect of systems engineering. The level of effort and detail devoted to each of
+                    these
+                    practices should be tailored to the system based on factors such as system cost, complexity, and
+                    risk
+                    to humans or infrastructure. System production and operations activities are based on the system
+                    information generated during system development. These are all successful aspects of the engineering
+                    process used in system development and are the main reasons that we achieve system success.</p>
+
+                <p>So, what is missing? What are we doing wrong? There are several areas that need to be
+                    improved in systems engineering: Understanding of stakeholder value, system integration and
+                    design, linear assumptions in systems decomposition and configuration definition, identification of
+                    <target target-type="page" id="page_2">2</target>
+                    system interactions, understanding of production changes on system functionality, understanding
+                    of operational interactions, and understanding of organizational influences on system design and
+                    integration. System stakeholder values are often not connected well, or only loosely connected, to
+                    the actual system implementation. Stakeholder expectations are often biased by what is available
+                    rather than what new capabilities can be developed to meet their objectives. This makes new ideas
+                    difficult to match with expectations based on the stakeholder’s experience. These factors lead to
+                    inelegant systems that do not fully meet the expectations for the system. Poorly defined system
+                    design
+                    and integration (at the system level) leads to more emphasis on subsystem aspects than a balance of
+                    the system as a whole. Configuration management, which includes the capture and documentation
+                    of mechanical, electrical, and data interface requirements and design, is a necessary but not
+                    sufficient
+                    aspect of integration. Configuration management covers a large portion of the interfaces yet does
+                    not capture all system interactions because it often implicitly uses the previously mentioned linear
+                    assumptions. System decomposition and system integration (recomposing the system from its parts)
+                    using interface documentation are assumed linear and are usually mapped hierarchically. This is not
+                    true for all system functions. For example, nonlinear interrelationships, such as those encoded in
+                    software algorithms (including feedback loops) or created by fluid dynamics, can significantly
+                    affect
+                    systems functions, increasing uncertainty and creating unexpected sensitivities. The hierarchical
+                    representation does not reflect the complex interactions that occur among the subsystems and the
+                    system environment.
+                </p>
+
+                <p>In addition, there are many systems engineering processes that focus on technical management
+                    addressing the organizational side of systems engineering. Even within their organizational
+                    domain, these processes are limited. They do not address the organization as a whole, do not
+                    explicitly address the effects of the organization on the system design, and do not address system
+                    information flow through the organization. The technical planning portion of technical management is
+                    important early in the program. Although a Systems Engineering Management Plan (SEMP) can
+                    include some identification of information flow through the organization, this is not necessarily
+                    <target target-type="page" id="page_3">3</target>
+                    explicit and not consistently done. If the organizational understanding is not present in the SEMP,
+                    then the organization is not well understood and not likely tuned for good system information flow.
+                    A poor organization is not likely to create an elegant system.
+                </p>
+
+                <p>So, how do we address this? An approach to systems engineering is needed that focuses on
+                    the entire system, including the effects from the system’s designing and supporting organizations.
+                    Approaches and tools are needed to conduct system design from a holistic perspective, complementary
+                    with the disciplines perspectives. System stakeholder preferences can be captured by a system
+                    value model that enables comparison of the entire system design with the system expectations. System
+                    design then needs to be accomplished at the system level, rather than the discipline level. While
+                    the disciplines are governed by their discipline physics, what physics governs the integration of
+                    these
+                    disciplines? A new physics or some combination of the physics emanating from the disciplines and
+                    from other sources such as human and social sciences? Physics already contains the system
+                    integration relationships necessary to understand the integrated system. The approach to this
+                    systemintegrating physics is addressed as part of system integration in this Technical Publication
+                    (TP).
+                    Designing at the system level also requires system level design and analysis. System state variables
+                    are
+                    the integration points of the system and allow a coupling of the discipline designs into a system as
+                    a whole. Multidisciplinary optimization makes use of these state variables to design and analyze the
+                    system as a whole, incorporating the full set of system interactions and defining the best balance
+                    of
+                    all the subsystems for an optimized system design. Engineering statistics allow analysis of the
+                    system
+                    uncertainties and sensitivities leading to better balance of competing and cooperating influences
+                    and
+                    disciplines within the system and from outside the system. Full system testing is an important
+                    aspect
+                    of systems engineering. System level testing confirms the understanding of the system interactions
+                    as a whole and builds on the understanding gained from the system design and integration methods
+                    discussed in this TP.</p>
+
+                <p>Discipline integration is an aspect of systems engineering dealing with the organizational
+                    structure and information flow. Since these organizations are social structures, aspects of
+                    sociology can
+                    help explain how an organization functions, defining characteristics of the organizational
+                    structure,
+                    and the organizational communication. These characteristics are as important to systems engineering
+                    as the system design. Some aspects of the system design reside more in the organization than in the
+                    physical/logical design. The information flow through the organization and organizational structure
+                    is crucial to the development of an elegant system, as it deals with the integration of the
+                    disciplines
+                    that develop or operate the system. The flow of information through the decision structure is also
+                    important to minimize uncertainty in decisions made about the system. The ability to reconsider
+                    decisions outside the decision structure, when warranted, is also an important sociological aspect.
+                    Cognitive science and information theory provide important keys to understand system thinking and
+                    the flow of information through decision-making boards. A properly constructed SEMP can establish
+                    the key principles of discipline integration early in the system development lifecycle and provide
+                    a great aide in understanding and managing system information flow through the organization.
+                </p>
+
+                <p>This theory TP deals directly with the two systems engineering elements needed for
+                    development and operations at the system level: System design and integration and discipline
+                    integration. The approaches are defined so that a holistic system development and operational
+                    <target target-type="page" id="page_4">4</target>
+                    approach can be attained, enabling the engineering of elegant systems. The specific steps to execute
+                    these approaches are contained in the companion TP, “Engineering Elegant Systems: The Practice
+                    of Systems Engineering.”
+                </p>
+
+                <p>So, let us begin with a holistic definition of systems engineering, followed by the definition
+                    of a systems engineering framework that is supported by a set of postulates, hypotheses, principles
+                    and strategies. These are then applied to specific techniques for System Design and Integration, and
+                    Discipline Integration. This provides a theory enabling the engineering of elegant systems.</p>
+
+                <sec id="chap1-1">
+
+                    <label>1.1</label>
+                    <title>Theory of Systems Engineering</title>
+                    <p>Systems engineering is the engineering discipline that focuses on the whole system. Webster
+                        defines a system as ‘a set or arrangement of things so related or connected as to form a unity
+                        or
+                        organic whole.2 One can find systems in many contexts and they do not exist in true isolation.
+                        There
+                        are three system types: physical, social, or logical. Physical systems include those that are
+                        mechanical, electrical, chemical, biological, etc. Physical systems operate in environments
+                        whose interactions with the system significantly affect the system’s functions and performance.
+                        Social systems
+                        exist in expanding spheres of social environments. Social systems include organizational,
+                        corporate,
+                        regional, national, and international. These systems have structure and include culture.
+                        Regional
+                        and national cultures affect the local culture that, in turn, affects organizational social
+                        systems. For
+                        example, international efforts are affected by multiple national cultures. Software systems
+                        contain
+                        logical (mathematical) systems in the form of algorithms. Inputs affect logical systems and the
+                        physical and social environments affect these inputs when interacting with the human community
+                        and
+                        physical equipment. These system types exist in interrelationships of many systems that provide
+                        the
+                        specific services or functions intended by the user. Interactive gaming, for example, involves
+                        logical
+                        systems coupled through the social system of the users. </p>
+
+                    <p>Systems engineering must account for the ‘connections’ or interactions among the system
+                        functions and with the system environments. In many cases this includes physical, social, and
+                        logical
+                        interrelationships and environments. The systems engineer must account for these
+                        interrelationships
+                        and design them in such a way as to provide reliable, intended results for the system use (i.e.,
+                        a bestbalanced system). A mechanical, electrical, social, or software engineer may design the
+                        individual
+                        functions within a system. However, the integration of these functions with themselves and with
+                        the
+                        environment is the domain of the systems engineer.</p>
+
+                    <p>Systems are unique in their functions, environments, and interactions. Thus, the systems engineer
+                        must clearly understand the context for the system application and the defining integrating
+                        relationships of the system. One cannot approach systems engineering generically but must
+                        consider
+                        the unique characteristics and intended outcomes for the system.</p>
+
+                    <p>Considering all of these characteristics, systems engineering can be defined as: the engineering
+                        discipline that integrates the system functions, system environment, and the engineering
+                        disciplines necessary to produce and/or operate an elegant system.</p>
+
+                </sec>
+
+                <target target-type="page" id="page_5">5</target>
+
+
+                <sec id="chap1-2">
+                    <label>1.2</label>
+                    <title>Theory of Systems Engineering</title>
+
+                    <p>There are many different approaches used to investigate systems theory. Previous theories on
+                        systems provide some useful concepts from systems science but none have provided a definitive
+                        theory of systems engineering. Ludwig von Bertalanffy developed general systems theory in the
+                        1950’s.
+                        His empirical approach evaluated different types of systems and sought to define commonalities
+                        (i.e., isomorphism) between the different system types.3 W.R. Ashby followed a deductive
+                        approach,
+                        starting from the set of ‘all conceivable systems’ and then looking at their commonalities.4 Jay
+                        W.
+                        Forrester approached systems theory from a system dynamics viewpoint,5 considering how systems
+                        change over time and having broad application for all system types. Robert Rosen also worked on
+                        dynamical system theory for biological systems.<sup>6</sup></p>
+                    <p>The sociologist, Robert K. Merton, provided some insights into organizing the various systems
+                        theories. He described the idea of middle range theories: theories that bring together empirical
+                        relationships forming a middle range of theoretical construction. These are not general systems
+                        theories, but he anticipated that they would point toward a general theory as research advances
+                        our
+                        understanding and as relationships between the midrange theories are better understood. He
+                        points
+                        to many examples in sociology and physics where midrange theories are prevalent, e.g., William
+                        Gilbert on magnetism, Robert Boyle’s gas laws, Ludwig Boltzmann’s gas distribution, Darwin’s
+                        theory
+                        of the formation of coral reefs, theory of reference groups, theory of role sets.7 An expansion
+                        of this
+                        list includes Newton’s equations of motion, Maxwell’s equations of electromagnetic fields, laws
+                        of
+                        thermodynamics, etc. </p>
+                    <p>One can expect systems engineering, being an integration of various physical and social
+                        disciplines, to use a group of midrange theories. In the context of the entire system, the
+                        interrelationships
+                        between these disciplines may lead to more general observations, but at present, the midrange
+                        theories provide a starting point. The theory of systems engineering, then, consists of many
+                        parts derived
+                        from the supporting disciplines and system types. The theory of systems engineering is a
+                        midrange
+                        theory, integrating several different theories together to describe the discipline. </p>
+                    <p>The discipline of systems engineering starts with a rich mathematical basis stemming from
+                        the mathematics of each of the system types. The laws of physics govern the individual functions
+                        or
+                        components of a physical system with all the associated mathematical constructs. Similarly,
+                        logical
+                        systems are primarily mathematical algorithms producing an output from a specific set of inputs.
+                        Social systems, due to their immense complexity and highly coupled individual variables, are
+                        still
+                        developing in their mathematical constructs, with statistics being a key mathematical tool.</p>
+                    <p>The focus of systems engineering is on the interrelationships and integration of the system
+                        functions, not the individual functions themselves (e.g., the mechanical engineer is concerned
+                        with
+                        the pump as an individual unit, while the systems engineer is concerned with the function of the
+                        pump within the system, and the integration of the pump into the broader system context). Thus,
+                        systems engineering requires a broad understanding of the engineering and social disciplines and
+                        their mathematics, and then goes beyond them to focus on the integration of these disciplines.
+                        Mathematical tools of use to the systems engineer include statistics, information theory, matrix
+                        algebra, numerical analysis, control theory, Fourier analysis, and category theory. Each of
+                        these
+                        <target target-type="page" id="page_6">6</target>
+                        mathematical tools provides for the construction of integrated system models to support the
+                        holistic
+                        design and analysis of the system. Category theory provides the mathematical structure to
+                        integrate
+                        the other mathematical relationships into a complete system representation.
+                    </p>
+                    <p>The processes used to organize systems engineering practice are important and vary widely
+                        with the specific system and its unique characteristics. The processes organize the engineering
+                        approach but they are not the engineering. The focus of the systems engineer is first on the
+                        system
+                        rather than the process. The process organizes the engineering; it is simply an organizational
+                        means
+                        to conduct the engineering to achieve the intended system. The social aspects of the system
+                        define the
+                        processes and often aid in the communication and coordination among groups. Having the process
+                        properly structured for the system development and/or operations is necessary for an elegant
+                        system.
+                        Both the social and physical/logical aspects of the system determine the need for specific
+                        aspects of
+                        the process.</p>
+                    <p>These concepts form the foundation of systems engineering. A set of postulates, hypotheses,
+                        and principles captures these concepts as discussed in section 3. This foundation supports the
+                        definition of the systems engineering domain, system influences, mathematical basis, and general
+                        application methods.</p>
+                </sec>
+
+                <sec id="chap1-3">
+                    <label>1.3</label>
+                    <title>Characteristics of an Elegant System </title>
+
+                    <p>Engineering a system involves the development of a specific system configuration with its set
+                        of functions and interrelationships from a group of possible system configurations. Systems
+                        engineering intends to generate a system that best meets the needs of the intended system users.
+                        System
+                        elegance is a descriptive term often given to highly successful systems in this regard.
+                    </p>
+
+                    <p>The idea that the proper goal of systems engineering is to produce an elegant design was first
+                        introduced in a speech by Robert Frosch.8 He noted that he often got no response when he asked
+                        systems analysts, “Is it an elegant solution to a real problem?”They did not understand the
+                        question.
+                        Elegance is something you know when you see it, but is not something easily defined,
+                        particularly in
+                        the sense of a system. Webster defines elegance as a “dignified richness and grace.”9 This
+                        articulates
+                        an attitude of intent and a social response to the system. This definition identifies key system
+                        attributes. ‘Dignified grace’ conveys a notable ease of use or operation in a variety of
+                        applications. ‘Dignified richness’ conveys a notable robustness in application, a full
+                        achievement of the system intent,
+                        and a satisfaction of intent not fully specified. A term that provides further help with this
+                        definition
+                        is concinnity. Webster defines concinnity as ‘a skillful arrangement of parts, harmony, and
+                        elegance’.
+                        This conveys the idea of a well-organized system with skillfully defined system
+                        interrelationships.
+                        System aesthetics are accounted for in the idea of richness, grace, and harmony. An efficiency
+                        in the
+                        system layout and construction is also seen in the ‘skillful arrangement of parts, harmony’ of
+                        the
+                        system. A well-structured system is an efficient system. Perhaps one can state a  definition of
+                        system
+                        elegance as ‘a system that is robust in application, fully meeting specified and adumbrated
+                        intent, is
+                        well structured, and is graceful in operation.’</p>
+
+                    <p>Note that there should be a deep understanding of the system application in meeting intent
+                        without full specification in advance. This connotes the idea that, in meeting the intent of the
+                        system,
+                        <target target-type="page" id="page_7">7</target>
+                        there are aspects of the system capabilities where one can naturally extend or configure to meet
+                        application needs that are not well defined during system development. Working from options that
+                        meet
+                        the current system intent, one makes design choices that support natural extension or
+                        configuration
+                        of the system for future applications that may not be fully known. The evolution of Apple iPods
+                        to
+                        iPhones to iPads is an example of a system design that supported expanding capabilities not
+                        clearly
+                        seen at the beginning of the development. The idea of what they could do was there, but the
+                        specifics
+                        of how these would work in future applications were not fully clear.
+                    </p>
+
+                    <p>This brings to the front the ideas posed in the paper, “How do We Fix Systems Engineering”?10
+                        This paper defined elegance as a set of system characteristics (sometimes referred to as
+                        attributes).
+                        These characteristics provide some guidance in the engineering of elegant systems and provide a
+                        measure of what a good system design embodies. A set of questions presents the following
+                        characteristics:</p>
+
+                    <ul>
+                        <li>Efficacy: How well does the system achieve the intended outcomes? </li>
+                        <p>Efficacy provides a measure of how well the system achieves the intended outcomes.
+                            Understanding the context of the system application (or mission) and capturing the system
+                            concept as
+                            documented in the Concept of Operations establishes the outcome. As the system progresses
+                            through
+                            development, the systems engineer should check the progress against the intended outcomes.
+                            One
+                            should also check against intended outcomes during proposed modifications or upgrades. </p>
+                        <li>Efficiency: How economical is the design in terms of its performance and the resources
+                            required
+                            to build and operate it, with respect to competing alternatives?</li>
+                        <p>Efficiency deals with the idea of a best solution given the various system configuration
+                            options. It embodies the idea that the intended output is obtained from the system inputs
+                            with a  wellstructured system that has no unnecessary capacities. This necessitates a
+                            comparison of design
+                            options within all constraint and performance boundaries. The ability to compare
+                            configuration
+                            options early is paramount to selecting the most efficient design option for the intended
+                            outcomes.
+                            The Concept of Operations captures the selected option. One should update the efficiency
+                            measures
+                            of the system with each design phase (sometimes executed as design analysis cycles) to
+                            ensure the
+                            design or operational changes maintain the system efficiency.</p>
+                        <li>Robustness: How well does the system perform in unanticipated circumstances and in
+                            collateral
+                            usage?</li>
+                        <p>Efficiency deals with the idea of a best solution given the various system configuration
+                            options. It embodies the idea that the intended output is obtained from the system inputs
+                            with a  wellstructured system that has no unnecessary capacities. This necessitates a
+                            comparison of design
+                            options within all constraint and performance boundaries. The ability to compare
+                            configuration
+                            options early is paramount to selecting the most efficient design option for the intended
+                            outcomes.
+                            The Concept of Operations captures the selected option. One should update the efficiency
+                            measures
+                            of the system with each design phase (sometimes executed as design analysis cycles) to
+                            ensure the
+                            design or operational changes maintain the system efficiency.</p>
+                        <li>Unintended Consequences: What does the design do, or produce, that is unanticipated and
+                            unwanted?</li>
+                        <p>Unintended consequences are those results of systems development and operation not
+                            anticipated by the system design or in system operation. These unintended results have a
+                            variety of forms
+                            including system failures, environmental impacts, social impacts, legal ramifications,
+                            and/or political
+                            ramifications. These bring into view the various system constraints such as those arising
+                            from budget, schedule, policy, and law, and account for both physical and social
+                            consequences in the system
+                            development and operations. The source of these unintended consequences is generally human
+                            and
+                            social. The system’s physics do not fail or cease to exist. The system behaves unexpectedly
+                            because
+                            the system’s designers and operators do not fully understand all the interactions that the
+                            system can
+                            have among its own components and with the environment. Thus, recognizing and managing the
+                            factors that lead to unintended consequences is a key role of the systems engineer.</p>
+                    </ul>
+                    <p>Robert Frosch also indicated some of the qualities of a systems engineer needed to produce
+                        a practical, useful system. The Jet Propulsion Laboratory’s (JPL’s) Gentry Lee11 who laid out a
+                        set of
+                        10 characteristics of the systems engineer greatly expanded these qualities. Happenstance does
+                        not
+                        achieve elegance. Rather, a systems engineer knowledgeable of the systems integrating physics
+                        and
+                        mathematics governing the system and skilled in working with the people within the organization
+                        producing the system guides the design and organization to an elegant solution.</p>
+                    <p>Robert Frosch also indicated some of the qualities of a systems engineer needed to produce
+                        a practical, useful system. The Jet Propulsion Laboratory’s (JPL’s) Gentry Lee11 who laid out a
+                        set of
+                        10 characteristics of the systems engineer greatly expanded these qualities. Happenstance does
+                        not
+                        achieve elegance. Rather, a systems engineer knowledgeable of the systems integrating physics
+                        and
+                        mathematics governing the system and skilled in working with the people within the organization
+                        producing the system guides the design and organization to an elegant solution.</p>
+                    <p>Remember that the intent is to design, produce, and operate an elegant system. Starting with
+                        an elegant concept and ending with a poor system is not elegant. System elegance is an
+                        intentional
+                        achievement that one must actively and visibly manage during the entire system development and
+                        operation life cycles.</p>
+
+                </sec>
+
+                <sec id="chap1-4">
+
+                    <label>1.4</label>
+                    <title>Document Overview</title>
+
+                    <p>This TP structure addresses different aspects of systems engineering theory. Section 1 provides a
+                        definition of elegant systems engineering and lays out its characteristics. Section 2 describes
+                        the systems engineering framework, defining the major focuses of systems engineering. Section 3
+                        defines the set of systems engineering postulates, principles, strategies, and hypotheses that
+                        are foundational to the discipline. Section 4 provides the theoretical basis for system design
+                        and integration.
+                        This section presents the theory of the system integrating physics, system state variable
+                        approaches,
+                        system value modeling, multidisciplinary design optimization (MDO), system information flow,
+                        system autonomy, engineering statistics, system of systems, system representations, category
+                        theory
+                        application, system model integration, and lifecycle application. Section 5 presents the
+                        sociological
+                        basis for discipline integration, looking at the organizational structure and information flow
+                        during
+                        system development and operation. Section 6 provides a summary of the systems engineering
+                        processes and the importance of defining the system-specific processes in the SEMP. Section 7
+                        provides
+                        a short summary of this TP. These sections provide a foundation for Engineering Elegant Systems:
+                        The Practice of Systems Engineering, the companion volume to this TP. The appendices at the end
+                        capture some detailed technical data and a glossary. Appendix A contains the derivation of the
+                        rocket equation from the exergy balance equation for a rocket. Appendix B is a summary of system
+                        complexity heuristics considered within the consortium, followed by the references.</p>
+
+                </sec>
+
+            </sec>
+
+            <sec id="chap2">
+                <label>2</label>
+                <title>SYSTEMS ENGINEERING FRAMEWORK</title>
+
+                <p>Systems engineering as a discipline is comprised of two main elements: system design and
+                    integration and discipline integration. In this framework, these two elements encompass four
+                    components: mission context, system integrating physics, organizational structure and information
+                    flow,
+                    and policy and law. Figure 2 illustrates this systems engineering framework</p>
+
+                <fig id="fig_2">
+                    <label>Figure 2</label>
+                    <caption>ystems engineering framework relationships.</caption>
+                    <graphic xlink:href="figure2.jpg" />
+                </fig>
+
+                <p>System design and integration consists of the physical and logical aspects of the system.
+                    System integrating physics includes the system integrating logic (for logical systems) as the
+                    control
+                    of many systems is based on logic (i.e., software). The software must have input on the system state
+                    to affect the intended system control, and is thus coupled with the physical system. Environmental
+                    interactions such as thermal or radiation, where hardware bit errors create logical anomalies in the
+                    operation of the system, affect software. Also, included as part of system integrating physics are
+                    the
+                    human system integration aspects where the physical and logical functional design must consider
+                    human physiology and psychology. This couples the user, operator, maintainer, and manufacturer
+                    to the system structure, and forms a bridge with the social systems that build, operate, and use the
+                    system. Mission context affects both the physical/logical system aspects as well as the social
+                    aspects.
+                    The physical/logical choices made for the system can emphasize or amplify the social aspects of the
+                    mission context. For example, when a planetary satellite is intended to explore Neptune, the social
+                    <target target-type="page" id="page_10">10</target>
+                    perturbations are small. When the physics determines that a nuclear-powered satellite is necessary
+                    for this distance from the Sun, much greater social concern is generated due to potential
+                    interaction
+                    of the nuclear device with the Earth’s environment in the unlikely occurrence of an accident during
+                    launch. In this example, mission context influence of the physical system can be seen on the social
+                    response.
+                </p>
+
+                <p>The social aspects are a major element defined by the organizational structure and information flow,
+                    and in the policy and law. Organizational structure and information flow deal with
+                    the maintenance and flow of system information within the organization to which sociological
+                    approaches apply. Information flow is a key element in designing and operating an elegant system.
+                    Systems engineering, working with program management, assures that the organizational structure
+                    supports the necessary flow of information among the system disciplines and assures the design
+                    captures this information flow. Gaps, barriers, and organizational reservoirs of information in the
+                    flow
+                    of information through the organization are the main organizational concern of systems engineers.
+                    Configuration management and data management provide support in this area. Program managers
+                    and line managers deal with the fiscal, political, and human capital concerns. The system design and
+                    operations represent the knowledge of the system residing in the organizational structure.</p>
+
+                <p>Policy and law are social influences on the system. Policy and law certainly influence the
+                    physical/logical aspects of the system (e.g., requiring a crash-proof casing for the nuclear power
+                    cell
+                    for launch for the Neptune mission) but are included with the social aspects of the system due to
+                    their social origins.</p>
+
+            </sec>
+            <target target-type="page" id="page_11">11</target>
+
+
+            <sec id="chap3">
+                <p>Considering the systems engineering approaches that are working and those that are missing, the NASA
+                    Systems Engineering Research Consortium began to consider the basis for the two
+                    focuses of systems engineering (System Design and Integration, and Discipline Integration). The
+                    concept of elegance drives consideration of how to achieve an elegant system. System interactions
+                    (subsystem interactions, environment interactions, manufacturing tooling interactions) are a key
+                    element in systems engineering. Social interaction forces that reside within the organization and in
+                    the
+                    policy and law environment must also be accounted. This led to the definition of basic concepts
+                    driving systems engineering.</p>
+
+                <p>The Systems Engineering Research Consortium identified a set of postulates, principles,
+                    strategies, and hypotheses to articulate the basic concepts that guide systems engineering. The
+                    postulates and hypotheses emerged looking at the work of Ludwig Boltzmann and his postulates on gas
+                    distributions as an early example of how to characterize the interactions of complex systems. This
+                    led us to articulate a set of underlying postulates and hypotheses of systems engineering. The
+                    application of the postulates led to their expansion as a set of principles. A set of strategies
+                    have also been
+                    formulated from the papers on the Discipline of Systems Engineering. This definition work leads to
+                    the 7 postulates, 14 principles, 8 strategies, and 3 hypotheses stated in this section. The
+                    postulates
+                    and principles define the domain of systems engineering as well as the system aspects and system
+                    influences that are of concern to the systems engineer. The strategies were formulated as concepts
+                    to
+                    enable an improved form of model-based systems engineering and are linked to the postulates,
+                    principles, and hypotheses. The strategies address an approach to putting the postulates and
+                    principles
+                    into system modeling practice. The hypotheses contain implications stemming from the seeds of
+                    a holistic mathematical basis for systems engineering.</p>
+
+                <sec id="chap3.1">
+                    <label>3.1</label>
+                    <title>Systems Engineering Postulates</title>
+
+                    <p>A postulate is something assumed without proof to be true, real, or necessary.12 The postulates
+                        of systems engineering identify the basis for the discipline. These are further expanded by a
+                        set
+                        of principles in section 3.2.</p>
+
+                    <ul>
+                        <li> Postulate 1: Systems engineering is system specific and context dependent in application.
+                        </li>
+
+                        <p>– Description: This is the first and foundational statement on systems engineering. The
+                            product
+                            (i.e., the system) and its operational environment drives systems engineering and the
+                            system’s integrating physics, logic, and social and cognitive relationships (i.e., context)
+                            that are foundational to
+                            the specific product or system. Essential to this is the understanding of the mission or use
+                            of the
+                            product as stated by the product goals. This includes the aspects of the system needed to
+                            operate in
+                            an elegant manner and thus considers the entire system lifecycle.</p>
+                        <target target-type="page" id="page_12">12</target>
+
+                        <p>– Evidence: The ubiquitous tailoring of systems engineering approaches provides strong
+                            support for this postulate. Tailoring is the manifestation of making the processes fit the
+                            system context.
+                            Systems engineering must be consistent with the system being developed or operated. Our
+                            research
+                            surveying the ‘NASA 17 Systems Engineering Processes’ provides support for this postulate
+                            indicating 72% of companies interviewed have systems engineering processes unique to their
+                            product. More
+                            than 7% of the respondents13 do not follow a standard process.</p>
+
+                        <p>– Implications: This postulate states that any application of systems engineering should be
+                            organized based on consideration of the system being developed or operated and the
+                            characteristics of
+                            the engineering organization. The systems engineering methods applied to a product will and
+                            should
+                            vary in emphasis and application based on the nature of that product, its environment, its
+                            organization, and context.</p>
+
+                        <li> Postulate 2: The systems engineering domain consists of subsystems, their interactions
+                            among
+                            themselves, and their interactions with the system environment.</li>
+
+                        <p>– Description: From a physical, logical, and structural sense, a system is not a single
+                            mechanical,
+                            or electrical, or chemical entity; it encompasses a set of interacting subsystems. Systems
+                            engineering
+                            is concerned with combining multiple subsystems of various physical and logical types into
+                            a  bestbalanced functional whole to accomplish the mission goals. This whole includes
+                            considering the
+                            human role in system operations and maintenance, taking into account human capabilities and
+                            limitations. This postulate is a mathematical definition of a system containing both the
+                            system objects
+                            (subsystems) and system interactions. This postulate addresses the system integration
+                            aspects of
+                            systems engineering. Postulate 3 addresses the discipline integration aspects below.</p>
+
+                        <p>– Evidence: The individual engineering disciplines generally deal with the development of
+                            their
+                            specific functions extremely well. When these functions are integrated with each other and
+                            with the
+                            environment, the inter-relationships drive the final system performance including emergent
+                            properties not evident from the individual subsystem functions. This is particularly true
+                            when human
+                            inputs contribute to the emergent properties, where humans can be both a source of
+                            resilience and
+                            adaptability as well as a source of error or degradation in system performance (the
+                            determination
+                            of which is often based on how well the system design incorporates consideration of human
+                            factors engineering principles and practices). Thus, the engineering of the individual
+                            functions is well
+                            addressed while the integration of the engineering functions is what makes these functions a
+                            system.
+                            The domain of systems engineering is the set of these integrated relationships.</p>
+
+                        <p>– Implications: The systems engineer focuses on the interaction of these subsystems, not as
+                            a  design
+                            engineer focused on the details, but as a well-versed integrator. These system interactions,
+                            including
+                            interactions with the system environment and human interactions, can drive the design as
+                            strongly
+                            as the subsystem functions themselves and, when coupled, can potentially create unexpected
+                            system responses. Human System Integration (HSI) focuses on the human interactions
+                            explicitly. The
+                            systems engineer must predict and manage all of these system responses. Note that subsystems
+                            can
+                            be treated as systems in a limited sense, taking into account the external dependencies on
+                            the other
+                            subsystems. Subsystems may not be independently functional outside of the system context
+                            they
+                            are designed. Providing a mathematical basis for the system, this postulate frames the basic
+                            entities
+                            needed to represent a system. </p>
+
+                        <target target-type="page" id="page_1">1</target>
+
+                        <li> Postulate 3: The function of systems engineering is to integrate engineering and science
+                            disciplines
+                            in an elegant manner.</li>
+
+                        <p>– Description: The systems engineering discipline is its own engineering discipline, but it
+                            is not
+                            independent from other engineering, science, and social disciplines. Systems engineering
+                            seeks to
+                            integrate and incorporate the other engineering and social disciplines solutions and designs
+                            in an elegant manner to produce an elegant system throughout the system lifecycle. This
+                            postulate addresses
+                            the discipline integration aspects of systems engineering. Postulate 2 above addresses the
+                            system
+                            integration aspects.</p>
+
+                        <p>– Evidence: Any engineered complex system is developed by multiple engineering (e.g.,
+                            aerospace,
+                            chemical, civil, electrical, mechanical), science, and social disciplines with many social
+                            aspects influencing the integration. These engineering disciplines with social influences
+                            work in an integrated
+                            fashion, formally and informally, to produce these systems.</p>
+                        <p>– Implications: The interaction of these disciplines is a focus of systems engineering.
+                            Systems engineers integrate information deriving from the various disciplines via a detailed
+                            understanding of their
+                            interactions. This requires a basic understanding of each discipline involved in the
+                            engineering of the
+                            system as well as an understanding of the organizational relationships. Note that for
+                            subsystems and
+                            assemblies, the system integration can be more engineering discipline based. Systems
+                            engineering
+                            recognizes and accounts for these disciple integration functions as part of discipline
+                            integration. The
+                            systems engineer must be cognizant of the organizational and sociological influences on the
+                            system
+                            development and operations. The systems engineer in conjunction with program management also
+                            guides the engineering of these relationships.</p>
+
+                        <li> Postulate 4: Systems engineering influences and is influenced by organizational structure
+                            and culture</li>
+
+                        <p>– Description: The technical aspects of the system are not the only focus of systems
+                            engineering.
+                            The system under development drives the development process which has a corresponding
+                            influence
+                            on the structure of the system’s developmental and operational organizations. Similarly, the
+                            structure of the organization has an influence on the engineering of the system. These
+                            factors also impact
+                            the culture of the organization.
+                            – Evidence: Organizational mirroring provides examples where the organization maps to system
+                            functions. Our research in Biased Information Sharing (sec. 5.2) also shows that system
+                            technical
+                            margin is maintained by the organization and not always clearly identifiable in the system
+                            design.
+                            – Implications: The systems engineer must be cognizant of the culture, the organizational
+                            interactions, and their potential impact on the design of the system. The systems engineer
+                            must understand
+                            how information flows through the organization, is filtered and interpreted by the
+                            organization, and
+                            is captured by the system design or operational procedures. The systems engineer should work
+                            with
+                            project management and line management to address issues in organizational information flow
+                            and
+                            culture to improve the elegance of the system.</p>
+
+                        <target target-type="page" id="page_13">13</target>
+
+                        <li>Postulate 5: Systems engineering influences and is influenced by budget, schedule, policy,
+                            and law</li>
+
+                        <p>– Description: Every project has overarching constraints that extend beyond the physical and
+                            environmental. Specifically, most, if not all, projects have a limited budget and schedule.
+                            In addition,
+                            all systems must conform to established organizational and government policy and laws. These
+                            policies and laws put additional constraints on budgets, schedules, and technical solutions
+                            and provide
+                            a context in which the system is developed and operated. In addition, the system design
+                            choices also
+                            influence these factors. Government policy and law is based on the understanding of
+                            legislators on
+                            which systems can actually achieve their intents. Similarly, corporate/company policy is
+                            influenced
+                            by the types of systems the corporation or company chooses to develop, and vice versa.
+                            – Evidence: Every project has these constraints. Infinite budgets or schedules do not exist.
+                            Policy
+                            and law application pervade our systems. Government policy and law are based on the
+                            legislators’
+                            understanding of solutions needed to accomplish their intents. Similarly, corporate/company
+                            budgets and schedules are based on the executives’ understanding of the budget and timeframe
+                            necessary to develop a system. This understanding can be seen in budget and schedule
+                            allocations, which
+                            encompass both a total funding and a timeframe understanding, that are provided by the
+                            government or corporate/company executives.
+                            – Implications: Social choices drive the establishment of these constraints. People make
+                            choices to
+                            define budget limits, schedule limits, policies, and laws, whether at the national or
+                            organizational
+                            level. Physical and logical solutions through these constraints can be assessed by social
+                            choice
+                            theory. These choices are based on an understanding of the system’s abilities to achieve the
+                            government and corporate/company executives’ intents. This understanding drives the
+                            interactions
+                            with budget and schedule allocations and the policies put in place. Similarly, the available
+                            budget,
+                            available expected duration, existing policy and law interact with and can influence choices
+                            in the
+                            development of a system</p>
+
+
+                        <li>Postulate 6: Systems engineering spans the entire system lifecycle.</li>
+
+                        <p>– Description: Systems engineering is not just a development phase activity but continues
+                            throughout system operation, decommissioning, and disposal. Organizational relationships and
+                            goals change
+                            as the system progresses through these phases, but systems engineering continues to
+                            integrate the
+                            system functions and the system disciplines throughout all phases of the system lifecycle.
+                            Operations
+                            engineering is responsible for the operation of the system. Systems engineering is
+                            responsible for the
+                            various changes and upgrades to the system capabilities.
+                            – Evidence: The necessity of systems engineering during the development phases is well
+                            understood. During the operational phases, systems engineering is still essential as the
+                            system goes through
+                            maintenance upgrades, new application adaptations, obsolescence-driven redesigns, etc. In
+                            addition, during decommissioning and disposal, systems engineering is essential to deal with
+                            the proper
+                            decommissioning and dispositioning of the system and supporting infrastructure, ensuring
+                            conformance with policy and laws affecting the system disposal.
+                            <target target-type="page" id="page_1">1</target>
+
+                            – Implications: As the system progresses through its lifecycle, the need for systems
+                            engineering
+                            changes. A shift takes place from development to operations in terms of the scope of changes
+                            and
+                            organizational responsibility. Operations engineering is responsible for operating the
+                            system while
+                            systems engineering is responsible for the system changes and upgrades. The baseline
+                            operational
+                            system then becomes the medium in which operational phase system changes take place. The
+                            organization changes significantly as the system transitions from development to operations.
+                            Organizational relationships and needs are different. Culture can be very different. All of
+                            this affects the
+                            system and must be dealt with in systems engineering. Another organizational change and
+                            culture
+                            shift occurs after operations during decommissioning and disposal.
+                        </p>
+
+                        <li>Postulate 7: Understanding of the system evolves as the system development or operation
+                            progresses. </li>
+
+                        <p>– Description: A deeper understanding of the system as a whole is gained as the system
+                            progresses
+                            through development and operations. As the system progresses through development, more
+                            detailed
+                            decisions are needed, and as understanding deepens, these detailed decisions can be made.
+                            – Evidence: This deepening of understanding is seen in any system development. The technical
+                            assessment process shows this as systems progress from concept review to requirements review
+                            to
+                            design review to acceptance review. Lessons learned from the operations phase are abundant
+                            for any
+                            system once operation begins. This deepening of understanding of the system and its
+                            application
+                            enables commercial product upgrades or new models.
+                            – Implications: Requirements are derived as the system design progresses. Thus, while
+                            mission
+                            requirements (i.e., part of understanding the mission context) are defined at the beginning
+                            of development, the system requirements cannot be established upfront. They are a function
+                            of the design
+                            choices made and are understood progressively throughout the development phase. This also
+                            applies
+                            to cost and schedules, particularly for new systems where the development or operations
+                            result in
+                            unexpected changes. Similarly, systems engineers develop models to predict system
+                            capabilities, and
+                            then refine these models as testing and operational experience is achieved. System models
+                            gain fidelity as the design progresses and the interaction between subsystem design maturity
+                            and system model
+                            maturity must be managed by the systems engineer. These system models become the basis of
+                            system
+                            operations, as discussed in section 4.13.2. </p>
+
+                        <li> Postulate 7 Corollary: Understanding of the system degrades during operations if system
+                            understanding is not maintained.</li>
+
+                        <p>– Description: Understanding of the system regresses if organizational changes occur
+                            (postulate 4)
+                            due to inactivity of an organizational element (loss of experience), retirement of key
+                            experienced
+                            individuals, or closure of suppliers.
+                            <target target-type="page" id="page_1">1</target>
+
+                            – Evidence: Regression of system understanding can be seen in some lifecycle extension
+                            activities.
+                            When system understanding is not actively maintained, the basis of system specifications
+                            become
+                            unclear and some systems have been found not to perform (either underperform or overperform)
+                            to
+                            their system specifications. This loss of understanding can impair long-term operations as
+                            operator
+                            errors can increase. In addition, operational procedures can lose their basis and it can
+                            become difficult to determine when the system should be retired or maintained as the system
+                            ages.
+                            – Implications: If the system basis is not maintained, then the understanding of why certain
+                            procedures or specifications were defined can be lost. This becomes problematic for aging
+                            systems, particularly as they reach the generational gap for the workforce after 20 years of
+                            service.
+                        </p>
+                    </ul>
+
+                </sec>
+
+                <sec id="chap3-2">
+
+                    <label>3.2</label>
+                    <table>Systems Engineering Principles</table>
+                    <p>Systems engineering postulates form the basis of the principles of systems engineering.
+                        Principles are accepted truth which apply throughout the discipline. These truths build on the
+                        systems
+                        engineering postulates and serve as a guide to the application of systems engineering.</p>
+
+                    <ul>
+                        <li>Principle 1: Systems engineering integrates the system and the disciplines considering the
+                            budget
+                            and schedule constraints.</li>
+                        <p>– Description: This is the application of postulate 5. Systems engineering solutions must
+                            address
+                            the stakeholder’s needs and their constraints. Budget and schedule constrains the
+                            development and
+                            integration of the system, the operation and maintenance of the system, and the integration
+                            of the
+                            disciplines developing or operating the system. Note that budget is the amount allocated to
+                            execute
+                            the system development or operation and is not the actual cost. A focus of systems
+                            engineering is
+                            to keep the system cost within the budget or recommend when the solution space defined by
+                            budget
+                            and schedule does not meet the intended system application. In addition, other expectations
+                            and
+                            constraints such as environmental impacts, economic impacts, or social impacts may also
+                            affect the
+                            system solution options. The systems engineer must account for each of these to ensure a
+                            system is
+                            developed and operated to satisfy the stakeholder’s needs and constraints as captured by the
+                            mission
+                            context.
+                            – Evidence: Solutions defined in response to stakeholder needs drive system cost, schedule,
+                            and
+                            other expectations and constraints. System budget and schedule problems result from a lack
+                            of
+                            understanding of the best balance of the system within the resource allocations provided and
+                            the
+                            technical needs of the stakeholders. Unexpected consequences can be realized by systems
+                            where environmental impacts, economic impacts, social impacts, etc. are not recognized or
+                            understood.
+                            – Implications: System solutions account for not only the technical performance (including
+                            human
+                            factors) but also must fit the allocated budget, schedule for development and operation, and
+                            other
+                            expectations and constraints (e.g., environmental impact, social impact). The systems
+                            engineer must
+                            understand the cost, schedule, and other impacts as well as they understand the technical
+                            performance of the system. The systems engineer develops this understanding from the initial
+                            concept
+                            definition and maintains it through the system lifecycle. </p>
+                        <li> Principle 2: Complex systems build complex systems.</li>
+                        <li>– Description: This principle is fundamental to the execution of systems engineering. The
+                            systems
+                            engineer must deal with both the complex system (the organization) that develops the system
+                            and the
+                            complex system itself. This dual focus forms the basis of systems engineering. The systems
+                            engineer
+                            is responsible for both integration of the system functions and the integration of the
+                            disciplines
+                            developing these functions. The social interaction within organizations working on complex
+                            systems
+                            is itself complex and is a strong driver in budget and schedule efficiency or inefficiency.
+                            Configuration
+                            Management (CM) and Data Management (DM) are key systems engineering capabilities providing
+                            for effective management of the information about the system from the different disciplines
+                            that
+                            flow through the complex organizational structure. Postulates 2 and 3 also capture this
+                            duality
+                            when the systems engineer is responsible for both integration of the systems discipline
+                            functions
+                            and interactions defined in postulate 2 and the development organization disciplines defined
+                            in
+                            postulate 3.
+                            – Evidence: Major system failures have occurred due to the lack of information flow through
+                            the organization. Organizational structures, particularly for large system developments, are
+                            highly
+                            socially diverse with diversity in people, the engineering disciplines, and the
+                            organizational culture.
+                            Projects with more than one company involved see this organizational complexity increase
+                            tremendously. It is difficult in some organizational structures to understand how to share
+                            the information
+                            and what information to share.
+                            – Implications: Complexity resides not only in the system but also in the organization(s)
+                            developing
+                            and operating complex systems. Thus, systems engineers must deal with both the complexity of
+                            the system and the complexity of the development and operation organization(s).
+                            Understanding
+                            the system integrating perspective (defined in sec. 4.2) provides an engineering basis to
+                            understand
+                            what information should be shared. This guides the management of information flow. CM and DM
+                            provide tools and approaches that aid the systems engineer in managing the complex
+                            information
+                            flow through the organizational structures. </li>
+                        <li> Principle 3: A focus of systems engineering during the development phase is a progressively
+                            deeper
+                            understanding of the interactions, sensitivities, and behaviors of the system, stakeholder
+                            needs, and
+                            its operational environment.</li>
+                        <p>– Description: This principle is the application of postulate 7. What you do upfront does not
+                            fully
+                            define systems engineering and it does not fade as one progresses through the system
+                            development.
+                            Instead, the knowledge captured, maintained, and improved by systems engineering deepens as
+                            the
+                            discipline organizations complete their development work and the system functions are
+                            integrated.
+                            This deepening of understanding enables the systems engineering decisions necessary to
+                            produce
+                            an elegant system. The focus of systems engineering is on understanding the interactions of
+                            the
+                            system, many of which are not apparent until system integration (e.g., physical integration,
+                            logical
+                            integration), as current systems engineering tools often do not allow sufficiently deep
+                            understanding
+                            of system interactions (which we are addressing with tools discussed in secs. 4 and 5). This
+                            leads to
+                            a continuous reduction in system uncertainties and identification of system sensitivities.
+                            The systems
+                            engineer should understand the behavior of the system, including the emergent behaviors,
+                            prior to
+                            19
+                            the operational phase. As the development progresses, the systems engineer seeks the best
+                            balance of
+                            performance, cost, schedule, and risk.
+                            – Evidence: In practice, this deepening of understanding is in any system development or
+                            operation. The technical assessment process shows this as systems progress from concept
+                            review to requirements review to design review to acceptance review. Lessons learned from
+                            the operations phase are
+                            abundant for any system. This deepening of understanding of the system and its application
+                            drives
+                            commercial product upgrades or new models. Regression of system understanding can also occur
+                            in
+                            some lifecycle extension activities. When system understanding is not maintained, the basis
+                            of system specification becomes unclear and some systems have been found not to perform
+                            (either underperform or overperform) to their system specifications. In addition,
+                            operational procedures can lose
+                            their basis and be difficult to determine when they should be retired or maintained as the
+                            system ages.
+                            – Implications: Systems engineers derive requirements as the system design progresses. Thus,
+                            while systems engineers define the mission requirements (i.e., part of understanding the
+                            mission
+                            context) at the beginning of development, the system requirements are defined progressively.
+                            They
+                            are a function of the design choices made and understood progressively throughout the
+                            development
+                            phase. This also applies to cost and schedules, particularly for new systems where the
+                            development
+                            or operations result in unexpected changes. Similarly, systems engineers develop models to
+                            predict
+                            system capabilities, and then refine these models as they obtain testing and operational
+                            experience.
+                            System models gain fidelity as the design progresses and the systems engineer must manage
+                            the interaction between subsystem design maturity and system model maturity. These system
+                            models become
+                            the basis of system operations, as discussed in section 4.13.2. If the system basis is not
+                            maintained,
+                            then the understanding of why certain procedures or specifications where defined can be
+                            lost. This
+                            becomes problematic for aging systems, particularly as they reach the generational gap for
+                            the workforce after 20 years of service.
+                            There are several subprinciples to this progressively deeper understanding of the system
+                            interactions, sensitivities, and behaviors.
+                            – Subprinciple 3(a): Mission context is defined based on the understanding of the
+                            stakeholder needs and constraints.
+                            The understanding and definition of the mission context (i.e., the system application) is
+                            essential to a well-developed and operated system. An understanding of the stakeholder needs
+                            and
+                            constraints on the system defines the mission context. This requires an understanding of the
+                            stakeholders’ relationship to the system in operation. Different stakeholders have different
+                            perspectives
+                            on what is important (developer versus operator versus maintainer versus general community).
+                            For
+                            example, the manufacturer (and developer), the driver, mechanic, and general public are all
+                            stakeholders for an automobile. The perspectives that each of these provide is different and
+                            can be either
+                            enforcing or conflicting. The manufacturer is concerned with production costs and appeal to
+                            customers. The driver is concerned with the general appearance, amenities, and ease of
+                            operation. The
+                            mechanic is concerned with accessibility to the vehicle’s engine and components. The general
+                            public
+                            is concerned with safety and environmental impacts. The definition of the system application
+                            must
+                            bring together all of these perspectives.
+                            20
+                            – Subprinciple 3(b): Requirements and models reflect the understanding of the system.
+                            The accuracy and completeness of system requirements and system models reflect the
+                            understanding of the system. A system that is not well understood leads to poorly stated
+                            requirements, requirement gaps, and inaccurate system models and representations. An
+                            objective of system
+                            engineering is to understand the system (principle 4(a)) which then leads to the proper
+                            specification
+                            of requirements and proper representation of the system in the system models.
+                            – Subprinciple 3(c): Requirements are specific, agreed-to preferences by the developing
+                            organization.
+                            Preferences are held by individuals. The organization as a whole, however, must at some
+                            point consolidate these individual preferences and agree on specific values (i.e.,
+                            performance, cost,
+                            schedule) that the system will achieve. These agreed-to preferences along with some
+                            agreement on
+                            the uncertainty in their measure are the system requirements. These are specific to the
+                            system being
+                            developed and the requirements (agreements) that are necessary for the successful completion
+                            of the
+                            system should be carefully defined as part of systems engineering. Integration of the
+                            disciplines is
+                            dependent on these requirements (agreements) between the different disciplines developing or
+                            operating the system. Configuration management is an important systems engineering function
+                            in maintaining these requirements (agreements) and managing their change in a consistent and
+                            coherent
+                            manner.
+                            – Subprinciple 3(d): Requirements and design are progressively elaborated as the development
+                            progresses.
+                            Mission requirements are defined early in the understanding of the system as a part of
+                            mission context. The remaining technical requirements are derived based on system design
+                            decisions that
+                            progress throughout the development phase. Subsystem requirements are not defined completely
+                            until Preliminary Design Review (PDR), and component requirements may not be fully defined
+                            until
+                            Critical Design Review (CDR).
+                            – Subprinciple 3(e): Hierarchical structures are not sufficient to fully model system
+                            interactions and couplings.
+                            System interactions and couplings are varied, involving serial, parallel, nested, and
+                            looping relationships. Often there are multiple peer relationships that provide connections
+                            among system
+                            functions and the environment. Looping, nested, and peer relationships support interactions
+                            and
+                            couplings not seen in hierarchical structures, which generally only indicate parent/child
+                            relationships.
+                            In addition, hierarchical structures do not distinguish subtle interaction effects from
+                            strong interaction effects.
+                            – Subprinciple 3(f): A Product Breakdown Structure (PBS) provides a structure to integrate
+                            cost and schedule with system functions.
+                            21
+                            The PBS integrates cost and schedule with the system functions and components. Cost and
+                            schedule are defining constraints (postulate 5) on the system and must be clearly integrated
+                            to the
+                            system functions and operations. The PBS provides the integration of the system functions
+                            (defined
+                            by the Goal-Function Tree in sec. 4.6.1), the system component cost from the cost modeling
+                            tool,
+                            and the system schedule from the scheduling tool. Configuration management is important to
+                            ensure
+                            the PBS reflects the baseline system functions, cost, and schedule. A separate version can
+                            be used for
+                            trading options. The project manager is concerned with labor allocations through the Work
+                            Breakdown Structure (WBS). The systems engineer is concerned with the system unit cost and
+                            the driving
+                            cost components seen through the PBS.
+                            – Subprinciple 3(g): As the system progresses through development, a deeper understanding
+                            of the organizational relationships needed to develop the system are gained.
+                            As the organization works through the development activities, new relationships may be
+                            defined and the magnitude of these relationships may change as the design matures.
+                            Organizational
+                            groups that do not have information to share in early development may be critical in sharing
+                            information late in the development. Similarly, organizational groups that may be critical
+                            at the concept
+                            development phase may complete the transfer of information, becoming less critical to
+                            information
+                            flow as the development matures.
+                            – Subprinciple 3(h): Systems engineering achieves an understanding of the system’s value to
+                            the system stakeholders.
+                            System success is contingent on stakeholders’ expectations, not on the system requirements,
+                            models, and design information. System success melds the system as designed and as built
+                            with the
+                            system as expected by the stakeholders. Often, systems engineers assume that the
+                            requirements reflect
+                            the stakeholder expectations. This is difficult to accomplish in practice due to the melding
+                            of external
+                            stakeholder expectations with developer expectations. Thus, requirements do not clearly
+                            reflect the
+                            stakeholder (internal or external) expectations in many system developments. System value
+                            models
+                            appear to provide a mathematical basis to define and guide the system development with
+                            stakeholder
+                            expectations.
+                            – Subprinciple 3(i): Systems engineering seeks a best balance of functions and interactions
+                            within the system budget, schedule, technical, and other expectations and constraints.
+                            In accounting for all of the system needs and constraints defined in the system’s mission
+                            context (i.e., system’s application), the systems engineer seeks to obtain a best balance of
+                            all of the
+                            stakeholders’ differing preferences. This best balance provides a system that most fully
+                            meets the
+                            system context (i.e., resource allocations, political, economic, social, technological,
+                            environmental,
+                            and legal factors, and the differing stakeholders’ preferences). This balance requires a
+                            thorough
+                            understanding of the system and its mission context in order to achieve a best balance
+                            within the full
+                            system context.</p>
+
+
+                        <li>Principle 4: Systems engineering has a critical role through the entire system lifecycle.
+                        </li>
+
+                        <p>– Description: This is the application of postulate 6. Systems engineering is not just a
+                            development
+                            phase activity but continues throughout system operation, decommissioning, and disposal. The
+                            organizational relationships and goals change as the system progresses through these phases,
+                            but systems
+                            engineering continues to integrate the system functions and the system disciplines
+                            throughout all
+                            phases of the system lifecycle. Operations engineering is responsible for the operation of
+                            the system.
+                            Systems engineering is responsible for the various changes/upgrades to the system
+                            capabilities.
+                            – Evidence: Systems engineering is well understood during the development phases. During the
+                            operational phases, systems engineering is still essential as the system goes through
+                            maintenance
+                            upgrades, new application adaptations, obsolescence driven redesigns, etc. In addition,
+                            during
+                            decommissioning and disposal, systems engineering is essential to deal with the proper
+                            decoupling
+                            of the system and its infrastructure, and ensuring conformance with policy and laws
+                            affecting the
+                            system disposal.
+                            – Implications: As the system progresses through its lifecycle, the need for systems
+                            engineering
+                            changes. A shift takes place from development to operations in terms of the scope of changes
+                            and
+                            organizational responsibility. Operations engineering is responsible for operating the
+                            system while
+                            systems engineering is responsible for the system changes/upgrades. The baseline operational
+                            system,
+                            then, becomes the medium in which operational phase system changes take place. The
+                            organization
+                            changes significantly as the system transitions from development to operations.
+                            Organizational relationships and needs are different. Culture can be very different. All of
+                            this affects the system and
+                            systems engineering must deal with these organizational changes. Another organizational
+                            change
+                            and culture shift occurs during decommissioning and disposal.
+                            A set of subprinciples defines the specific aspects of systems engineering throughout all of
+                            the
+                            system lifecycle phases:
+                            – Subprinciple 4(a): Systems engineering obtains an understanding of the system.
+                            Understanding the system is essential to the successful development of any system. The
+                            level of understanding possessed by the systems engineer underpins everything they do in
+                            terms of
+                            engineering the system. This includes understanding of system function and interactions
+                            defined in
+                            postulate 2 in the system context defined in postulate 1.
+                            – Subprinciple 4(b): Systems engineering defines the mission context (system application).
+                            The systems engineer integrates all of the different stakeholder preferences and resource
+                            allocations (budge and schedule) to produce a well-founded understanding of the mission
+                            context
+                            (i.e., system application). The mission context evolves from this integration and
+                            understanding
+                            activity and is the essential starting point for system development and operations
+                            activities.</p>
+
+                        <target target-type="page" id="page_1">1</target>
+
+                        <p>— Subprinciple 4(c): Systems engineering models the system.</p>
+
+                        <p>Systems engineering develops and maintains system-level models to aid in the design and
+                            analysis of the system. System modeling provides a means to understand the system including
+                            its functions and interactions. Section 4 describes specific system-level modeling
+                            approaches.</p>
+
+                        <p>— Subprinciple 4(d): Systems engineering designs and analyzes the system.</p>
+
+                        <p>Systems engineering performs design and analysis at the system level. Ideally, this is not
+                            merely a cognitive integration of the results of various discipline models, but rather uses
+                            system-level models to perform design at the system level. This then informs the
+                            system-level guidance to the discipline design to ensure the design closes at the system
+                            level as design analysis cycles are conducted. System analysis of the integrated results
+                            from the discipline analysis is then performed based on the system-integrating
+                            physics/logic.</p>
+
+                        <p>— Subprinciple 4(e): Systems engineering tests the system.</p>
+
+                        <p>System engineering is a critical contributor to system testing. The system engineer should
+                            define test objectives at the system level to ensure testing not only accomplishes specific
+                            discipline test objectives but also at the system level test objectives. This can involve
+                            separate system tests, modification of discipline tests for system-level objectives, or
+                            system-level integrated analysis of data from separate discipline tests to obtain a
+                            system-level understanding.</p>
+
+                        <p>— Subprinciple 4(f): Systems engineering has an essential role in the assembly and
+                            manufacturing of the system.</p>
+
+                        <p>The manufacturing of the system is an integrated activity between the system components and
+                            the tooling. In addition, changes during manufacturing often have system level implications
+                            and can unexpectedly change system interactions. While this subphase is the purview of the
+                            manufacturing engineer, the systems engineer must stay involved to understand changes,
+                            update models, and perform analysis to ensure manufacturing change impacts are identified
+                            and understood at the system level.</p>
+
+                        <p>— Subprinciple 4(g): Systems engineering has an essential role during operations,
+                            maintenance, and decommissioning.</p>
+
+                        <p>Systems engineering has a key role in system operations which feature a host of system
+                            interactions. We obtain further understanding of the system interactions as the system
+                            operational experiences mature. These lead to updates of system models used for operations,
+                            and potential system maintenance upgrades or fixes. Similarly, systems engineering provides
+                            the understanding during decommissioning in how to deintegrate the system.</p>
+
+                        <li> Principle 5: Systems engineering is based on a middle range set of theories.</li>
+
+                        <p>— Description: There are many types of systems simply categorized as physical systems,
+                            logical systems, social systems, or some combination. Since there is not a unified theory of
+                            physics, a unified theory of logic, nor a unified theory of sociology, then there is not a
+                            unified theory of systems engineering. Instead, systems engineering derives from a set of
+                            middle range theories which form the basis of the system and the engineering of the system.
+                            As discussed in section 1.2, systems theory exists in various forms (e.g., general systems
+                            theory, system dynamics) and seeks to define the unique system aspects of the system. System
+                            theory does not replace the physical, logical, or social basis of a system but seeks to look
+                            at the interactions among the different aspects of the system. All of these system
+                            theoretical bases have a mathematical underpinning. Category theory provides a mathematical
+                            structure that integrates the system physical, logical, and social aspects. This system
+                            provides the mathematical framework of the system. Systems engineering then has three
+                            theoretical bases represented in the subprinciples below. These categories are system
+                            specific physics/logic systems engineering theoretical basis, mathematical basis, and
+                            sociological theoretical basis.</p>
+
+                        <p>— Evidence: Systems exist as either physical systems, logical systems, social systems, or
+                            some combination of these. These systems incorporate all of the sciences that define their
+                            physical, logical, and social nature. Category theory provides the mathematical definition
+                            of a system. Category theory provides the mathematical structure to identify the system
+                            theoretical aspects from the physical, logical, and social functions and interrelationships
+                            of the system. Sociological principles define organizational information flow paths, gaps,
+                            and barriers. These principles also provide the basis for understanding system interactions
+                            with social systems as part of the system context.</p>
+
+                        <p>There are several theories that are important to systems engineering, which enable a
+                            mathematical basis for the discipline. Systems engineers, in engineering the system, manage
+                            information about the system and its interactions as defined in postulate 2, using this
+                            information to make development and operational decisions. The laws and relationships
+                            defined in the information theory govern the information on the system. This also applies to
+                            the management of system information through the organization as contained in postulate 3.
+                            Systems engineers use this information to control the system design or system operations.
+                            This implies the use of concepts from control theory to control the information flow about
+                            the system and in defining the control methods to be used to control system states within
+                            relevant acceptable ranges over time. Statistical engineering is also a significant
+                            mathematical tool that supports systems understanding and accounts for uncertainties and
+                            sensitivities as indicated by postulate 2.</p>
+
+                        <p>Below are eight theoretical bases for systems engineering. These modeling bases provide a
+                            structure to model the various aspects of the system, bringing in the theoretical bases
+                            defined in this principle.</p>
+
+                        <p>(1) Systems Theory Basis: Postulate 2 derives this basis. Systems engineering uses key
+                            concepts such as the division between system and the environment, and the recursive nature
+                            of systems engineering concepts as they apply to different ‘levels’ of the system.</p>
+
+                        <p>(2) Decision and Value Theory Basis: Rational decision making about the design of a system
+                            requires mapping of stakeholder preferences into a single scale of value. Hypothesis (3)
+                            below states that this is a feasible approach.</p>
+
+                        <p>(3) Model Basis: System information is represented and maintained in models, and exported to
+                            documents when needed. Sections 4 and 5 discuss specific system-level models.</p>
+
+                        <p>(4) State Basis: Systems representations maximize use of state variables, and functions are
+                            defined as mappings from input states to output states. Section 4.6 addresses this
+                            explicitly.</p>
+
+                        <p>(5) Goal Basis: Systems exist to achieve goals, which are represented as constraints on the
+                            output state variables of functions. Section 4.6 also addresses this explicitly.</p>
+
+                        <p>(6) Control Basis: Constraints on function output state variables are achieved by using the
+                            physical laws to control those state variables within their ranges.</p>
+
+                        <p>(7) Knowledge Basis: Individuals and organizations construct and maintain knowledge of the
+                            system. Systems engineering takes advantage of existing knowledge structures and improves
+                            formation of new knowledge across them. Information theory is an important part of this
+                            basis. This knowledge basis is a key aspect of discipline integration discussed in section
+                            5.</p>
+
+                        <p>(8) Predictive Basis: Knowledge of the system is inherently uncertain. Uncertainties must be
+                            modeled probabilistically to understand the level of confidence in system knowledge so as to
+                            enable proper decision making.</p>
+
+                        <p>— Implications: This middle range set of theories provides a complete basis for the systems
+                            engineer to understand a system. The specific application will be specific to each system
+                            (i.e., the theories needed for a cyber system are very different from those needed to build
+                            a ship). This structure provides for these differences and allows the systems engineer to
+                            incorporate the theories needed to understand both the system and the organization
+                            developing or operating the system. The systems engineer does not need expertise to design
+                            each component of the system. The systems engineer is the expert in how to integrate these
+                            components into the intended system. This requires a broad understanding of several
+                            disciplines rather than a deep understanding in only one. The systems engineer must
+                            communicate clearly among the engineering disciplines, including understanding terminology
+                            differences and the use of similar terms to mean something different to a particular
+                            discipline (e.g., to an optical engineer $\omega$ is the angular frequency of light while to
+                            the mechanical engineer working on the same system it means the angular rotational velocity
+                            of a component). Systems engineers should translate terminology and not try to enforce
+                            commonality among the engineering disciplines.</p>
+
+                        <p>— Subprinciple 5(a): Systems engineering has a physical/logical basis specific to the system.
+                        </p>
+
+                        <p>Systems engineering incorporates the fundamental physical and logical mathematical concepts
+                            specific to the system. Thus, the mathematical basis of systems engineering incorporates the
+                            mathematical basis of the system physics/logic. The systems engineer must recognize that
+                            these differ for different system types (postulate 1).</p>
+
+
+                        <li>Principle 6: Systems engineering maps and manages the discipline interactions within the
+                            organization.</li>
+
+                        <p>— Description: The correspondence of the organization to the system (whether the
+                            organizational structure mirrors the system structure or not) is an essential mapping
+                            activity in managing the information flow and engineering of the system. The maturity of the
+                            engineering organization establishes the need for organizational structure formality.
+                            Successful development of a system by organizations inexperienced in that specific system
+                            will require structure that is more formal. Seasoned organizations with a specific system
+                            can operate successfully with little formal organization. Note that project management and
+                            organizational line management are concerned with organizational unit responsibilities and
+                            personnel matters. A concern of the systems engineer is how these units interact as part of
+                            system knowledge and understanding (system information) flows through the organization. The
+                            systems engineer works with project management and line management to resolve identified
+                            system information gaps or barriers in the organizational structure as these gaps and
+                            barriers will lead to flaws in system design, manufacturing, and operation. System dynamics
+                            models provide an approach to model this principle as discussed in section 5.6.1.</p>
+
+                        <p>— Evidence: The engineering disciplines each create their building blocks of the system in
+                            coordination with other engineering disciplines. For example, system dynamics drive the
+                            structural loads,</p>
+
+                        <p>System efficiency increases at the expense of subsystem efficiency. Integrated performance of
+                            the system drives the best balance of system performance. Independent subsystem optimization
+                            leads to poorer system performance and system efficiency goes down. Appropriate information
+                            interchange among the engineering disciplines aids in the recognition of impacts to the
+                            overall system balance.</p>
+
+                        <p>— Implications: Systems engineers are responsible for understanding how the organizational
+                            structure and culture affect the flow of information about the system. The systems engineer
+                            ensures proper interaction between the engineering disciplines as they produce their aspect
+                            of the system. Similarly, in operations, the disciplines must work together to ensure
+                            consistent and intended system operation and maintenance. Creating a map of this information
+                            flow aides in understanding how this flow occurs within the organization. Where difficulties
+                            are identified, the systems engineer should discuss potential changes for improvement with
+                            project management and organizational (i.e., line) management. Adjusting systems engineering
+                            process flows may handle some difficult situations. Some may require organizational changes
+                            by the project manager or line management. These changes may solve one issue and make
+                            another information flow path more difficult in complex organizations. The systems engineer
+                            should evaluate each change and strive for the best balance of systems engineering process
+                            application with project and line organization structures.</p>
+
+
+                        <li> Principle 7: Decision quality depends on the system knowledge present in the decisionmaking
+                            process.</li>
+
+                        <p>— Description: This principle derives from postulate 2. Engineering organizations often
+                            create trade study or task teams to investigate and resolve specific problems, which is a
+                            process of organizational flattening. Decision effectiveness depends on involving the right
+                            decision makers with a sufficiently complete understanding of the decision context and the
+                            decision need. Decisions are process dependent. Information needed by the decision makers
+                            directly drives the decision methods.</p>
+
+                        <p>— Evidence: Decisions made without a full understanding of the impacts on all phases of the
+                            system are known to be flawed in practice. These decisions lead to impacts to subsystems,
+                            enabling systems, and interoperating systems when the knowledge of these systems is not
+                            present among the decision makers.</p>
+
+                        <p>— Implications: Good decision quality requires the right knowledge be present in the
+                            decision-making process. This drives the membership of boards in the decision-making
+                            process, membership on trade study teams, Integrated Product Team structures, and the
+                            approach for external coordination. Systems engineers should avoid decision-making processes
+                            where the system knowledge needed for the system decision is fragmented. Fragmented decision
+                            bodies lead to system decisions that do not properly balance all aspects of the system and
+                            the impacts to the enabling systems and interoperating systems.</p>
+
+
+                        <li>Principle 8: Both policy and law must be properly understood to not overly constrain or
+                            underconstrain the system implementation.</li>
+
+                        <p>— Description: This is the application of postulate 5. Policy and law act as important
+                            constraints on the system. Requirements should not always contain policy and law though they
+                            are often written in a requirement-like format. The context for the policies and laws is
+                            much different, often being much looser than requirements and more likely reflecting
+                            high-level system expectations than specific system functional or operational choices.
+                            Often, most interpret policy as having more flexibility than law. The systems engineer
+                            should understand how much flexibility is acceptable by those who set the policy (whether
+                            government or organizational) and those who pass the laws.</p>
+
+                        <p>— Evidence: Government policy and law are based on the legislators’ understanding of
+                            solutions needed to accomplish their intents. Similarly, corporate/company budgets and
+                            schedules are based on the executives understanding of the budget and timeframe necessary to
+                            develop a system. There are many examples where policy and law have influenced engineering
+                            solutions substantially including the nuclear power industry, field-testing of recombinant
+                            DNA in agriculture, and use of growth hormones in dairy cows¹⁴ as well as impacts of the
+                            Clean Water Act on Boston Harbor.¹⁵ Policy engineering (understanding both policy and the
+                            engineering solutions driven by policy) has been cited as an important industrial effort to
+                            ensure policy and law do not overconstrain or underconstrain industry implementation.¹⁶
+                            Proper engineering understanding of policy and law as well as properly written policy and
+                            law reflecting engineering solutions in industry are essential for any industries’ health.
+                            Universities have also developed curriculum to teach engineering students how to properly
+                            understand and interpret policy and law.¹⁷</p>
+
+                        <p>— Implications: Overconstraining the system due to misunderstanding of policy and law can
+                            lead to ineffective and, therefore, inelegant solutions. The system may not have all
+                            necessary functions and, in some cases, good solutions may not be seen as viable.
+                            Underconstraining the system can lead to exceedances in budget and/or schedule.
+                            Underconstrained systems are a source of unintended consequences, particularly with regard
+                            to environment or social impacts. It is essential that the systems engineer understand how
+                            the policy and law apply to the system appropriately and how the appropriately applied
+                            policy and law then constrain the system solutions.</p>
+
+
+                        <li>Principle 9: Systems engineering decisions are made under uncertainty, accounting for risk.
+                        </li>
+
+                        <p>— Description: This principle derives from postulates 2, 3, 4, and 7. Systems engineers
+                            progressively understand information about the system through the development process and
+                            through the operations process. There are several sources of uncertainty in the development
+                            and operations. Some of this is natural based on the progressive understanding of the
+                            system. Uncertainty exists due to the inability to predict the future with certainty and
+                            decision which require an understanding of a future system state naturally have a risk in
+                            the state not actually being realized. Uncertainty arises from many aspects of systems
+                            engineering, including limited knowledge on system environments and social aspects of the
+                            organization that affects information maintenance, creation, and flow. Systems engineering
+                            must also understand sensitivities to ensure the proper focus on the different
+                            uncertainties. Systems engineering models the uncertainty and sensitivities throughout the
+                            process. Risk in decision making comes from the need for a sufficient understanding of the
+                            system context and the knowledge that uncertainty does exist even as understanding improves.
+                        </p>
+
+                        <p>— Evidence: Systems engineering risk processes exist to address this reality. The inability
+                            to predict future decisions and their impacts leads to risk in the decisions about the
+                            system. Selected system solutions have assumptions on what factors may or may not manifest
+                            themselves. In addition, the unknown factors can drive risk unexpectedly. Systems engineers
+                            will recognize many of these factors as the system proceeds through development and
+                            operations, but they may not recognize them at the time needed for the decision.</p>
+
+                        <p>— Implications: Systems engineers are responsible for understanding the system and the system
+                            solution implications. Systems engineering must properly identify and track risk factor
+                            through the development. Systems engineers may realize new risks at any point in the
+                            development or operations lifecycle phases. As the system decisions are made, the risks
+                            associated with the decision become apparent.</p>
+
+                        <li>Principle 10: Verification is a demonstrated understanding of all the system functions and
+                            interactions in the operational environment.</li>
+
+                        <p>— Description: Ideally, requirements are level (i.e., at the same level of detail in the
+                            design) and balanced in their representation of system functions and interactions. In
+                            practice, requirements are not level and balanced in their representation of system
+                            functions and interactions. Verification seeks to prove that the system will perform as the
+                            designers expect, based on their understanding represented in requirements, models, and
+                            designs. This leads to the principle that the proper performance of system functions (i.e.,
+                            outputs are within required ranges for a given input state) is the focus of system
+                            verification. If requirements are truly level and balanced, then requirements verification
+                            can provide system function verification. If the requirements are not truly level and
+                            balanced, then the focus of system verification should be on the system functions directly.
+                            By focusing on the proper system functions, a verification approach can be defined for the
+                            system that focuses on its successful application.</p>
+
+                        <p>— Evidence: Testing at assembly and subsystem levels focus on the functions that these parts
+                            of the system provide. They are defined based on the design (rather than the requirements)
+                            of the assembly or subsystem that embodies the functions that it is to provide. The tests
+                            often focus on the outputs of the unit under test for a given set of inputs (e.g., a
+                            transfer function test). This testing approach is embodied in discipline engineering and
+                            extends directly to the system level. The system level verification includes the holistic
+                            set of system functions, their interactions, and the interactions with the environment as
+                            stated in postulate 2.</p>
+
+                        <p>— Implications: System engineers should focus on the system functions and their interactions
+                            during system verification. Requirements can be verified through their relationship to the
+                            system functions. Focusing on verification of requirement directly can lead to duplication
+                            of verification activities (i.e., analysis, inspection, and test) and can miss aspects of
+                            the system design defined lower in the detailed design. An efficacious and efficient system
+                            verification focuses on the set of verification activities that indicate the system
+                            functions, their interactions, and the interactions with the environment are as intended and
+                            expected by the design team.</p>
+
+                        <li>Principle 11: Validation is a demonstrated understanding of the system’s value to the system
+                            stakeholders.</li>
+
+                        <p>— Description: System validation is based on stakeholder expectations, not on the system
+                            requirements, models, and design information. It allows the comparison of the system as
+                            designed and then the system as built with the system as expected by the stakeholders. It is
+                            often assumed that the requirements reflect the stakeholder expectations. This is difficult
+                            to accomplish in practice due to difficulties with the convergence of external stakeholder
+                            expectations with developer expectations. Thus, requirements do not clearly reflect the
+                            stakeholder (internal or external) expectations in many system developments. System value
+                            models appear to provide a mathematical basis to define and guide the system development
+                            with stakeholder expectations. Section 4.8 discusses this more.</p>
+
+                        <p>— Evidence: System value models (sec. 4.8.2) are based on a mathematical representation of
+                            stakeholder preferences. This mathematical representation provides a basis function to
+                            compare the system design attributes directly with the system intentions.</p>
+
+                        <p>— Implications: By focusing on the value the system provides to the stakeholders, the systems
+                            engineer has a clear approach to perform validation separate from verification. System
+                            validation now has an important and mathematically distinct complement to system
+                            verification.</p>
+
+
+                        <li>Principle 12: Systems engineering solutions are constrained based on the decision timeframe
+                            for
+                            the system need.</li>
+
+                        <p>— Description: This principle deals with constraints imposed on engineering decision and
+                            system configuration options based on when the system is needed for operations. The systems
+                            engineering solution for a system is formed by the context of the current state of the art
+                            and emerging available technologies. For example, what formed the context for air passenger
+                            travel in 1933 (mail and passenger transport)¹⁸ was very different from the context found in
+                            1965 (transatlantic jet transport).¹⁹ With the pace of technological advancements, the
+                            available solution sets for a given system can change noticeably over as a little as 5 to 10
+                            years, such as seen in the electronics industry over the last five decades. Thus, the
+                            decision timeframe is an important aspect of the solution set available to the systems
+                            engineer.</p>
+
+                        <p>— Evidence: A model rocket can be designed and built in a few weeks. A large rocket carrying
+                            cargo and/or crew to orbit currently takes 10 years. Similarly, a model airplane can be
+                            designed and flown in a few weeks. A modern jet fighter may take 10 years or longer. If you
+                            have a year to deliver a system, that is going to limit you to existing (or possibly some
+                            emerging) technology. If you have 20 years, you can spend a good amount of time developing
+                            new technologies to improve the system performance, manufacturability, etc.</p>
+
+                        <p>— Implications: Systems engineers need to understand the timeframe they have to deliver a
+                            completed system and the implications that has to the system solution set. The timeframe for
+                            the system need (whether that is market driven, national policy driven, or natural event
+                            driven) is an early filter on solution space. The solutions that are included or excluded
+                            must be understood well enough to be able to determine their fit with the system need
+                            timeframe. The first step is to gain the understanding necessary to define what solutions
+                            fit within this timeframe.</p>
+
+
+                        <li>Principle 13: Stakeholder expectations change with advancement in technology and
+                            understanding of system application.</li>
+
+                        <p>— Description: Over time, the degree of consistency in stakeholder and user preferences tends
+                            to diminish due to environmental changes, emerging technologies, or changes in the makeup of
+                            stakeholder and user communities. For systems with long lifecycle phases, these communities
+                            and their preferences can change significantly. This is seen primarily in the operations
+                            phase and can also occur in the development phase of long developments. This variation
+                            becomes more pronounced as the system lifetime increases. And with more variation in
+                            stakeholders and stakeholder preferences, changes can be introduced to the system that can
+                            impact the system’s ability to adapt to these preferences or stretch out long-duration
+                            system developments. System robustness in application can provide pathways for changing
+                            system uses. The DC-3 aircraft²⁰ is a good example of an aircraft that has proven highly
+                            adaptable to uses and highly reliable in operation. The changing missions of the B-52
+                            Stratofortress²¹ over the lifecycle is another good example of an aircraft that has been
+                            robust in application. A key to managing these socially-driven changes is to recognize how
+                            the system can be evolved or migrated to new applications and when these shifts indicate the
+                            need for a different system, indicating the time for the current system to move into
+                            decommissioning.</p>
+
+                        <p>— Evidence: This is a normal occurrence in the practice of systems engineering. The systems
+                            engineering processes deal with the change in stakeholder expectations. These changes are a
+                            major source of change in mission context and system requirements.</p>
+
+                        <p>— Implications: This leads to instability in expectations for the system and in the system
+                            requirements. The systems engineers must be aware of these changes and account for them as
+                            early as possible. Early identification can provide for lower impacts to system development
+                            cost and schedule and to system operational change timeframes. Systems where stakeholder
+                            expectations have the potential to change should employ more flexible system engineering
+                            process application (e.g., agile systems engineering) to accommodate the changes as the
+                            system moves through the lifecycle.</p>
+
+
+                        <li>Principle 14: The real physical system is the only perfect representation of the system.
+                        </li>
+
+                        <p>— Description: This principle provides a statement of the idea that has long been espoused
+                            among statistical modelers. The physical system is the only perfect (complete, full) model
+                            of the system. Or stating more simply, the perfect model of the system is the system itself.
+                        </p>
+
+                        <p>— Proof: Kullback-Liebler information provides a definition for ‘ideal’ information.²² This
+                            information measure indicates how close a particular model matches the real physical system.
+                        </p>
+
+                        <p>where:<br />
+                            I = information distance between the physical system and the model<br />
+                            f = physical system<br />
+                            g = model of the system<br />
+                            x = physical variables<br />
+                            θ = model parameters.</p>
+
+                        <p>Note that θ is typically an estimation of the actual system physical variables. Setting this
+                            relationship to zero provides a relationship to define the differences in a given model to
+                            the real system, and provides proof that the perfect model of the system is the system
+                            itself.</p>
+
+                        <p>Also note that copies of systems are not physically identical. Copies of the system are
+                            similar, not identical. This is evidenced where systems do not have identical behavior.
+                            Hence, a car can have a manufacturing failure while most will not exhibit this failure.
+                            Thus, the physical system only represents itself identically and no other physical copies of
+                            the system.</p>
+
+                        <p>— Implications: This provides a mathematical proof of the idea that has long been espoused
+                            among statistical modelers. A perfect model, being the system itself, means all other models
+                            have limitations that must be recognized. There are various system models that can show
+                            various aspects of the system, but no system model can perfectly show the complete system.
+                            In addition, one copy of the physical system is not identical with another copy of the
+                            system. Thus, variation in copies of the same physical system is to be expected at various
+                            tolerance levels depending on the design and fabrication approaches.</p>
+
+                    </ul>
+
+                </sec>
+
+
+                <sec id="chap3-3">
+
+                    <p>Based on the current postulates and principles discussed above, there are several strategies of
+                        systems engineering. These strategies are approaches to systems engineering modeling that flow
+                        out
+                        from the mathematical basis defined in subprinciple 5(b). These strategies provide the basic
+                        approach
+                        to engineer a system at the system level.</p>
+
+                    <ul>
+
+                        <li>Strategy 1: System Theory Strategies</li>
+                        <li>Strategy 2: Value Theory Strategies</li>
+                        <li>Strategy 3: Model Strategies</li>
+                        <li>Strategy 4: State Strategies</li>
+                        <li>Strategy 5: Goal Strategies</li>
+                        <li>Strategy 6: Control Strategies</li>
+                        <li>Strategy 7: Knowledge Strategies</li>
+                        <li>Strategy 8: Predictive Strategies</li>
+
+                    </ul>
+
+
+                </sec>
+
+                <sec id="" ></sec>
+
+
+                </sec>
+
+
+    </body>
+
+</book>

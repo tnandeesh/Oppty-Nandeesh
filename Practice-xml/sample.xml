@@ -1,22 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//DTD CUP-BITS Book Interchange DTD v1.2//EN"
-"https://dtd.cambridge.org/schemas/2021/09/CUP-BITS-book1.dtd">
+<!DOCTYPE book PUBLIC "-//DTD CUP-BITS Book Interchange DTD v1.2//EN" "https://dtd.cambridge.org/schemas/2021/09/CUP-BITS-book1.dtd">
 
 <book xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
-<book-part book-part-type="chapter" id="chap">
+    <book-part book-part-type="chapter" id="chap">
 
-    <book-part-meta>
-        <title-group>
-            <label></label>
-            <title>  </title>
-        </title-group>
-    </book-part-meta>
-</book-part>
+        <book-part-meta>
+            <title-group>
+                <label>Chapter 1</label>
+                <title>ENGINEERING ELEGANT SYSTEMS</title>
 
-<body>
+            </title-group>
+        </book-part-meta>
 
-</body>
+    <body>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis odio saepe,
+            similique fuga architecto asperiores minus illo dolorem, vel possimus vero molestiae
+            laboriosam in exercitationem neque? Ipsam impedit nostrum nisi!</p>
+
+            <sup></sup>
+
+        <fig id="fig_1_2">
+            <label>Figure 1.2</label>
+            <caption> Elementary notation from formal-language theory</caption>
+            <graphic xlink:href="figure4_2.jpg" />
+        </fig>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Major</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3741255</td>
+                    <td>Martha Jones</td>
+                    <td>Computer Science</td>
+                </tr>
+                <tr>
+                    <td>3971244</td>
+                    <td>Victor Nim</td>
+                    <td>Russian Literature</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <fig id="tab_1_1">
+            <label>Table 1.2</label>
+            <caption> Elementary notation Table</caption>
+        </fig>
+
+        <target target-type="page" id="page_99">99</target>
+
+
+    </body>
+
+        </book-part>
 
 </book>

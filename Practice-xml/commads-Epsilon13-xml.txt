@@ -1,0 +1,351 @@
+Ctrl-@			set-mark
+Ctrl-A			beginning-of-line
+Ctrl-B			backward-character
+Ctrl-D			delete-character
+Ctrl-E			end-of-line
+Ctrl-F			forward-character
+Ctrl-G			abort
+Ctrl-H			backward-delete-character
+Ctrl-I			subroutine html-indent-cmd
+Ctrl-J			normal-character
+Ctrl-K			kill-line
+Ctrl-L			insert-latex-commands
+Ctrl-M			enter-key
+Ctrl-N			down-line
+Ctrl-O			open-line
+Ctrl-P			up-line
+Ctrl-Q			quoted-insert
+Ctrl-R			reverse-incremental-search
+Ctrl-S			incremental-search
+Ctrl-T			transpose-characters
+Ctrl-U			argument
+Ctrl-V			next-page
+Ctrl-W			kill-region
+Ctrl-Y			yank
+Ctrl-Z			scroll-up
+Ctrl-[			alt-prefix
+Ctrl-^			ctrl-prefix
+Ctrl-_			help
+<Space>
+to			normal-characte
+"
+#			subroutine html-redirect-active-key
+$
+to			normal-character
+(
+)			subroutine html-redirect-active-key
+*
+to			normal-character
+9
+:			subroutine html-redirect-active-key
+;
+to			normal-character
+\
+]			subroutine html-redirect-active-key
+^
+to			normal-character
+z
+{			subroutine html-redirect-active-key
+|			normal-character
+}			subroutine html-redirect-active-key
+~			normal-character
+Ctrl-?			backward-delete-character
+<#0x80>
+to			normal-character
+<#0xffff>
+F1			help
+F2			named-command
+F3			pull-word
+F4			bind-to-key
+F5			show-bindings
+F6			what-is
+F7			cd
+F8			set-variable
+F9			undo
+F10			redo
+F11			previous-buffer
+F12			next-buffer
+N-5			center-window
+<BackspaceKey>		backward-delete-character
+<NumHelp>		help
+<Ins>			overwrite-mode
+<End>			end-of-window
+<Down>			down-line
+<PgDn>			next-page
+<Left>			backward-character
+<Right>			forward-character
+<Home>			beginning-of-window
+<Up>			up-line
+<PgUp>			previous-page
+<Del>			delete-character
+Mouse-<Left>		mouse-select
+Mouse-<Right>		mouse-to-tag
+Mouse-<Center>		mouse-center
+Mouse-<Move>		mouse-move
+Mouse-<DLeft>		mouse-select
+Mouse-<DRight>		mouse-to-tag
+Mouse-<DCenter>		mouse-center
+Mouse-<MenuSel>		subroutine menu-invoked
+Mouse-<Resize>		subroutine win-resize
+Mouse-<Wheel>		subroutine mouse-wheel-key
+Mouse-<DragDrop>	subroutine drag-drop-handler
+Mouse-<WinExit>		exit
+Mouse-<WinHelpReq>	subroutine menu-invoked
+Mouse-<GetFocus>	subroutine get-focus
+Mouse-<LoseFocus>	subroutine lose-focus
+Mouse-<LostSel>		subroutine lost-selection
+Mouse-<MouseLeftWin>	subroutine mouse-leaving-window
+Mouse-<MouseInWin>	subroutine mouse-leaving-window
+Shift-F1		context-help
+Shift-F3		view-process
+Shift-F4		pause-macro
+Shift-F5		read-session
+Shift-F6		change-show-spaces
+Shift-F7		file-query-replace
+Shift-F8		view-web-site
+Shift-F9		print-region
+Shift-F10		context-menu
+Shift-N-<Ins>		yank
+Shift-<BackspaceKey>	backward-delete-character
+Shift-<TabKey>		back-to-tab-stop
+Shift-<Ins>		yank
+Shift-<Del>		kill-region
+Ctrl-F2			compare-windows
+Ctrl-F3			write-state
+Ctrl-F4			last-kbd-macro
+Ctrl-F6			set-show-graphic
+Ctrl-F7			copy-to-file
+Ctrl-F8			show-variable
+Ctrl-F9			undo-changes
+Ctrl-F10		redo-changes
+Ctrl-F11		undo-movements
+Ctrl-F12		redo-movements
+Ctrl-<NumPlus>		next-tag
+Ctrl-<NumMinus>		previous-tag
+Ctrl-<NumStar>		jump-to-last-bookmark
+Ctrl-<TabKey>		previous-window
+Ctrl-<NumSlash>		browse-symbol
+Ctrl-<Spacebar>		set-mark
+Ctrl-<Ins>		copy-region
+Ctrl-<End>		goto-end
+Ctrl-<Down>		forward-sentence
+Ctrl-<PgDn>		shrink-window
+Ctrl-<Left>		backward-word
+Ctrl-<Right>		forward-word
+Ctrl-<Home>		goto-beginning
+Ctrl-<Up>		backward-sentence
+Ctrl-<PgUp>		enlarge-window
+Ctrl-Shift-<TabKey>	switch-buffers
+Alt-Ctrl-B		backward-level
+Alt-Ctrl-C		show-connections
+Alt-Ctrl-F		forward-level
+Alt-Ctrl-H		backward-kill-word
+Alt-Ctrl-I		indent-under
+Alt-Ctrl-K		kill-level
+Alt-Ctrl-M		insert-mathused
+Alt-Ctrl-P		insert-pgtag
+Alt-Ctrl-R		reverse-regex-search
+Alt-Ctrl-S		regex-search
+Alt-Ctrl-T		insert-textused
+Alt-Ctrl-W		append-next-kill
+Alt-Ctrl-\		indent-region
+Alt-Ctrl-^		ctrl-prefix
+Alt-<Space>		invoke-windows-menu
+Alt-!			shell-command
+Alt-#			insert-ascii
+Alt-%			query-replace
+Alt-&			replace-string
+Alt-'			list-definitions
+Alt-)			find-delimiter
+Alt-*			regex-replace
+Alt-<Comma>		beginning-of-window
+Alt--			argument
+Alt-<Dot>		end-of-window
+Alt-/			set-bookmark
+Alt-0			argument
+Alt-1			go-xml-line
+Alt-2			argument
+Alt-3			final-3g-validation
+Alt-4			highlights-parse-error
+Alt-5			non-ascii
+Alt-6
+to			argument
+Alt-9
+Alt-;			indent-for-comment
+Alt-<			goto-beginning
+Alt-=			html-find-matching-tag
+Alt->			goto-end
+Alt-?			help
+Alt-@			set-mark
+Alt-B			html-backward-tag
+Alt-D			html-delete-tag
+Alt-E			html-close-last-tag
+Alt-F			html-forward-tag
+Alt-L			html-list-mismatched-tags
+Alt-Q			prefix-fill-paragraph
+Alt-R			xml-sort-by-attribute-name
+Alt-[			backward-paragraph
+Alt-\			delete-horizontal-space
+Alt-]			forward-paragraph
+Alt-a			tagging
+Alt-b			backward-word
+Alt-c			capitalize-word
+Alt-d			kill-word
+Alt-e			forward-sentence
+Alt-f			forward-word
+Alt-g			jump-to-column
+Alt-h			mark-paragraph
+Alt-i			html-list-element-nesting
+Alt-j			jump-to-last-bookmark
+Alt-k			kill-sentence
+Alt-l			lowercase-word
+Alt-m			to-indentation
+Alt-o			quick-dired-command
+Alt-q			html-fill-paragraph
+Alt-r			query-replace
+Alt-s			center-line
+Alt-t			transpose-words
+Alt-u			uppercase-word
+Alt-v			previous-page
+Alt-w			copy-region
+Alt-x			named-command
+Alt-y			yank-pop
+Alt-z			scroll-down
+Alt-{			scroll-left
+Alt-|			filter-region
+Alt-}			scroll-right
+Alt-~			change-modified
+Alt-Ctrl-?		backward-kill-word
+Alt-F2			show-menu
+Alt-F3			compile-buffer
+Alt-F4			exit
+Alt-F7			grep
+Alt-F8			edit-variables
+Alt-F9			print-buffer
+Alt-N-<End>		next-window
+Alt-N-<Down>		forward-paragraph
+Alt-N-<PgDn>		page-right
+Alt-N-<Left>		beginning-of-line
+Alt-N-<Right>		end-of-line
+Alt-N-<Home>		previous-window
+Alt-N-<Up>		backward-paragraph
+Alt-N-<PgUp>		page-left
+Alt-N-<Del>		backward-kill-level
+Alt-<NumMinus>		argument
+Alt-<NumStar>		regex-replace
+Alt-<BackspaceKey>	backward-kill-word
+Alt-<End>		next-window
+Alt-<Down>		forward-paragraph
+Alt-<PgDn>		page-right
+Alt-<Left>		beginning-of-line
+Alt-<Right>		end-of-line
+Alt-<Home>		previous-window
+Alt-<Up>		backward-paragraph
+Alt-<PgUp>		page-left
+Alt-<Del>		backward-kill-level
+Ctrl-C Ctrl-A		align-region
+Ctrl-C Ctrl-C		stop-process
+Ctrl-C Ctrl-O		spell-correct
+Ctrl-C Ctrl-R		comment-region
+Ctrl-C Ctrl-[		alt-prefix
+Ctrl-C Ctrl-^		ctrl-prefix
+Ctrl-C #		resume-client
+Ctrl-C <		mail-unquote
+Ctrl-C >		mail-quote-region
+Ctrl-C Mouse-<Move>	subroutine mouse-get-another
+Ctrl-C Mouse-<Resize>	subroutine win-resize
+Ctrl-C Mouse-<GetFocus>	subroutine get-focus
+Ctrl-C Mouse-<LoseFocus> subroutine lose-focus
+Ctrl-C Mouse-<LostSel>	subroutine lost-selection
+Ctrl-C Mouse-<MouseLeftWin> subroutine mouse-leaving-window
+Ctrl-C Mouse-<MouseInWin> subroutine mouse-leaving-window
+Ctrl-C Alt-Ctrl-^	ctrl-prefix
+Ctrl-C Alt-d		insert-date
+Ctrl-C Alt-i		copy-include-file-name
+Ctrl-C Alt-n		copy-file-name
+Ctrl-C Alt-q		mail-fill-paragraph
+Ctrl-X Ctrl-B		bufed
+Ctrl-X Ctrl-C		exit
+Ctrl-X Ctrl-D		kill-window
+Ctrl-X Ctrl-E		push
+Ctrl-X Ctrl-F		find-file
+Ctrl-X Ctrl-H		highlight-region
+Ctrl-X Ctrl-I		indent-rigidly
+Ctrl-X Ctrl-K		kill-current-buffer
+Ctrl-X Ctrl-L		find-linked-file
+Ctrl-X Ctrl-M		start-process
+Ctrl-X Ctrl-N		next-position
+Ctrl-X Ctrl-O		delete-blank-lines
+Ctrl-X Ctrl-P		previous-position
+Ctrl-X Ctrl-Q		change-read-only
+Ctrl-X Ctrl-R		redo-changes
+Ctrl-X Ctrl-S		save-file
+Ctrl-X Ctrl-T		transpose-lines
+Ctrl-X Ctrl-U		undo-changes
+Ctrl-X Ctrl-V		visit-file
+Ctrl-X Ctrl-W		write-file
+Ctrl-X Ctrl-X		exchange-point-and-mark
+Ctrl-X Ctrl-Z		exit-level
+Ctrl-X Ctrl-[		alt-prefix
+Ctrl-X Ctrl-^		ctrl-prefix
+Ctrl-X #		mark-rectangle
+Ctrl-X (		start-kbd-macro
+Ctrl-X )		end-kbd-macro
+Ctrl-X +		enlarge-window-interactively
+Ctrl-X <Comma>		pluck-tag
+Ctrl-X -		shrink-window-interactively
+Ctrl-X <Dot>		goto-tag
+Ctrl-X /		set-named-bookmark
+Ctrl-X 0		kill-window
+Ctrl-X 1		one-window
+Ctrl-X 2		split-window
+Ctrl-X 5		split-window-vertically
+Ctrl-X ;		set-comment-column
+Ctrl-X <		previous-buffer
+Ctrl-X =		show-point
+Ctrl-X >		next-buffer
+Ctrl-X @		enlarge-window-horizontally
+Ctrl-X ^		enlarge-window
+Ctrl-X b		select-buffer
+Ctrl-X c		compare-windows
+Ctrl-X d		dired
+Ctrl-X e		last-kbd-macro
+Ctrl-X f		set-fill-column
+Ctrl-X g		goto-line
+Ctrl-X h		mark-whole-buffer
+Ctrl-X i		insert-file
+Ctrl-X j		jump-to-named-bookmark
+Ctrl-X k		kill-buffer
+Ctrl-X l		count-lines
+Ctrl-X m		make
+Ctrl-X n		next-window
+Ctrl-X o		next-window
+Ctrl-X p		previous-window
+Ctrl-X r		redo
+Ctrl-X s		save-all-buffers
+Ctrl-X u		undo
+Ctrl-X w		write-region
+Ctrl-X x		copy-to-scratch
+Ctrl-X y		insert-scratch
+Ctrl-X z		zoom-window
+Ctrl-X <NumPlus>	enlarge-window-interactively
+Ctrl-X <NumMinus>	shrink-window-interactively
+Ctrl-X <Down>		move-to-window
+Ctrl-X <Left>		move-to-window
+Ctrl-X <Right>		move-to-window
+Ctrl-X <Up>		move-to-window
+Ctrl-X Mouse-<Move>	subroutine mouse-get-another
+Ctrl-X Mouse-<Resize>	subroutine win-resize
+Ctrl-X Mouse-<Wheel>	subroutine mouse-wheel-key
+Ctrl-X Mouse-<DragDrop>	subroutine drag-drop-repeat
+Ctrl-X Mouse-<GetFocus>	subroutine get-focus
+Ctrl-X Mouse-<LoseFocus> subroutine lose-focus
+Ctrl-X Mouse-<LostSel>	subroutine lost-selection
+Ctrl-X Mouse-<MouseLeftWin> subroutine mouse-leaving-window
+Ctrl-X Mouse-<MouseInWin> subroutine mouse-leaving-window
+Ctrl-X Alt-Ctrl-I	tabify-region
+Ctrl-X Alt-Ctrl-^	ctrl-prefix
+Ctrl-X Alt-<Comma>	select-tag-file
+Ctrl-X Alt-<Dot>	tag-files
+Ctrl-X Alt-i		untabify-region
+Ctrl-X Alt-n		bind-last-macro
