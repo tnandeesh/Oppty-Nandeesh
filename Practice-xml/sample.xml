@@ -1,64 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book PUBLIC "-//DTD CUP-BITS Book Interchange DTD v1.2//EN" "https://dtd.cambridge.org/schemas/2021/09/CUP-BITS-book1.dtd">
-
 <book xmlns:xlink="http://www.w3.org/1999/xlink">
-
-
-    <book-part book-part-type="chapter" id="chap">
-
-        <book-part-meta>
-            <title-group>
-                <label>Chapter 1</label>
-                <title>ENGINEERING ELEGANT SYSTEMS</title>
-
-            </title-group>
-        </book-part-meta>
-
-    <body>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis odio saepe,
-            similique fuga architecto asperiores minus illo dolorem, vel possimus vero molestiae
-            laboriosam in exercitationem neque? Ipsam impedit nostrum nisi!</p>
-
-            <sup></sup>
-
-        <fig id="fig_1_2">
-            <label>Figure 1.2</label>
-            <caption> Elementary notation from formal-language theory</caption>
-            <graphic xlink:href="figure4_2.jpg" />
-        </fig>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Student ID</th>
-                    <th>Name</th>
-                    <th>Major</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>3741255</td>
-                    <td>Martha Jones</td>
-                    <td>Computer Science</td>
-                </tr>
-                <tr>
-                    <td>3971244</td>
-                    <td>Victor Nim</td>
-                    <td>Russian Literature</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <fig id="tab_1_1">
-            <label>Table 1.2</label>
-            <caption> Elementary notation Table</caption>
-        </fig>
-
-        <target target-type="page" id="page_99">99</target>
-
-
-    </body>
-
-        </book-part>
-
+<book-part book-part-type="chapter" id="chap">
+<book-part-meta>
+<title-group>
+<label>Chapter 1</label>
+<title>ENGINEERING ELEGANT SYSTEMS</title>
+</title-group>
+</book-part-meta>
+<body>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis excepturi aliquam, rem temporibus quas, eligendi quos sequi non atque, doloribus ut consequuntur esse modi incidunt dolores quasi dignissimos porro quisquam!
+Exercitationem commodi harum beatae eius aliquid molestias ipsum maxime accusantium rem, perspiciatis quod eum nemo tempora reiciendis consectetur veniam reprehenderit odit ducimus dicta numquam velit quos necessitatibus? Sed, odio accusamus.</p>
+<p><i>consectetur adipisicing elit.</i>ncidunt dolores quasi dignissimos porro quisquam!</p>
+<sup>1</sup>
+<sub>2</sub>
+<i>italic</i>
+</sec>
+<sec id="chap2">
+</sec>
+<sec id="chap3">
+</sec>
+<sec id="chap4">
+</sec>
+</sec>
+<target target-type="page" id="page_99">99</target>
+</body>
+</book-part>
 </book>
+
+
+<book-part book-part-type="Book" id="Book6">
+<book-part-meta>
+<title>
+<label>Book 6</label>
+<title/>
+</book-part-meta>
+<body>
+
+</body>
+</book-part>
