@@ -9,33 +9,82 @@
 </title-group>
 </book-part-meta>
 <body>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis excepturi aliquam, rem temporibus quas, eligendi quos sequi non atque, doloribus ut consequuntur esse modi incidunt dolores quasi dignissimos porro quisquam!
-Exercitationem commodi harum beatae eius aliquid molestias ipsum maxime accusantium rem, perspiciatis quod eum nemo tempora reiciendis consectetur veniam reprehenderit odit ducimus dicta numquam velit quos necessitatibus? Sed, odio accusamus.</p>
-<p><i>consectetur adipisicing elit.</i>ncidunt dolores quasi dignissimos porro quisquam!</p>
-<sup>1</sup>
-<sub>2</sub>
-<i>italic</i>
-</sec>
-<sec id="chap2">
-</sec>
-<sec id="chap3">
-</sec>
-<sec id="chap4">
-</sec>
-</sec>
+
 <target target-type="page" id="page_99">99</target>
 </body>
 </book-part>
 </book>
-
-
-<book-part book-part-type="Book" id="Book6">
-<book-part-meta>
-<title>
-<label>Book 6</label>
-<title/>
-</book-part-meta>
-<body>
-
-</body>
-</book-part>
+<letter id="l_1">
+<to>
+<name>Mr. Edward Vermylen</name>
+<company>A. Zerega’s Sons, Inc.</company>
+<address>28 Front St.
+Brooklyn, N.Y. 11201</address>
+<p>Dear Mr. Vermylen,</p>
+<p role="indent">Your company has been one of our good customers for fourteen years. Naturally, we are very grateful
+for your patronage and are eager to give you the speedy, efficient service you deserve. However, we regret to
+say that it isn’t possible for us to do that when your trucks bring us a large shipment late in the afternoon, as
+they did on November 10. Why? Because many other customers make late afternoon deliveries also. Naturally,
+that causes congestion. That means your trucks are held up unavoidably at the pier and sometimes even your
+freight is delayed.</p>
+<p role="indent">That’s bad, but it can be avoided. If you make your deliveries at the pier in the morning when possible,
+your trucks will be able to keep moving, your freight will get immediate attention, and our workers will get
+home early at night to enjoy a dinner of the delicious macaroni and noodles that you manufacture.
+Regardless of when your shipments arrive, we shall always cheerfully do all in our power to serve you
+promptly. You are busy. Please don’t trouble to answer this note.
+</p>
+<regards>
+<p>Yours truly,</p>
+<name>J----- B-----, supt.</name>
+</regards>
+</letter>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
