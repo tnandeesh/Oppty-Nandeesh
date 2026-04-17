@@ -1,0 +1,4275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book-part book-part-type="chapter" id="chapter5">
+<book-part-meta>
+<title-group>
+<title>CHAPTER OVERVIEW</title>
+</title-group>
+</book-part-meta>
+<body>
+<sec id="5">
+<label>5</label>
+
+<title>General Stress Analysis</title>
+   
+<para role="non-indent">The results presented in earlier modules for trusses, beams, and other simple shapes provide much of the information needed in design of load-bearing structures. However, materials and structural engineers routinely need to estimate stresses and deflections in geometrically more irregular articles. This is the function of stress analysis, by which we mean the collection of theoretical and experimental techniques that goes beyond the direct-analysis approach used up to now. This is a career field in its own right, and these modules will limit themselves to outlining only a few of its principal features.</para>
+
+<ol>
+   <list-item>5.1: Closed-Form Solutions</list-item>
+   <list-item>5.2: Experimental Solutions</list-item>
+   <list-item>5.3: Finite Element Analysis</list-item>
+   <list-item>5.4: Linear Viscoelasticity</list-item>
+</ol>
+   
+<para role="non-indent">Thumbnail: Example results of Finite Element Analysis computational simulation of a generic superelastic nitinol stent. Open Stent Design, developed by Confluent Medical Technologies (formerly Nitinol Devices and Components, NDC). Analysis by Karthikeyan Senthilnathan, Abaqus Standard from DS Simulia. OSS-Crimp-FEA-08. (CC BY 2.0 Generic; Craig Bonsignore via Flickr)</para>
+
+<hr/>
+
+<para role="non-indent">This page titled 5: General Stress Analysis is shared under a CC BY-NC-SA 4.0 license and was authored, remixed, and/or curated by David Roylance (MIT OpenCourseWare) via source content that was edited to the style and standards of the LibreTexts platform.</para>
+
+<sec id="5_1">
+<label>5.1</label>
+<title> Closed-Form Solutions</title>
+
+<sec id="5_1">
+<title>Introduction</title>
+
+<para role="non-indent">During most of its historical development, the science of Mechanics of Materials relied principally on closed-form (not computational) mathematical theorists. Much of their work represents mathematical intuition and skill of a very high order, challenging even for advanced researchers of today. This theory is taught primarily in graduate subjects, but is outlined here both to provide some background that will be useful in the Module on Fracture and as a preliminary introduction to these more advanced subjects.</para>
+</sec>
+
+<sec id="5_1_1">
+<label>5.1.1</label>
+<title>Governing equations</title>
+
+<para role="non-indent">We have earlier shown (see Module 9) how the spatial gradients of the six Cauchy stresses are related by three equilibrium equations that can be written in pseudovector form as</para>
+
+<math display='block'>
+ <mrow>
+  <msup>
+   <mi>L</mi>
+   <mi>T</mi>
+  </msup>
+  <mi>&#x03C3;</mi><mo>=</mo><mn>0</mn></mrow>
+</math>
+
+<para role="non-indent">These are augmented by six constitutive equations which can be written for linear elastic materials as (see Module 11)
+
+<math display='block'>
+ <mrow>
+  <mi>&#x03C3;</mi><mo>=</mo><mi>D</mi><mo>&#x2208;</mo></mrow>
+</math>
+
+
+and six kinematic or strain-displacement equations (Module 8)</para>
+
+<math display='block'>
+ <mrow>
+  <mi>&#x03C3;</mi><mo>=</mo><mi>L</mi><mi>u</mi></mrow>
+</math>
+
+<para role="non-indent">These fifteen equations must be satisfied by the fifteen independent functions (three displacements , six strains , and six stresses  ). These functions must also satisfy boundary conditions on displacement</para>
+
+<math display='block'>
+ <mrow>
+  <mi>u</mi><mo>=</mo><mover accent='true'>
+   <mi>u</mi>
+   <mo>&#x005E;</mo>
+  </mover>
+  <mi>&#x0020;</mi><mi>o</mi><mi>n</mi><mi>&#x0020;</mi><msub>
+   <mi>&#x0393;</mi>
+   <mi>u</mi>
+  </msub>
+  </mrow>
+</math>
+
+<para role="non-indent">where  is the portion of the boundary on which the displacements are prescribed. The remainder of the boundary must then,, on which the stresses must satisfy Cauchy�s relation:</para>
+
+<math display='block'>
+ <mrow>
+  <mi>&#x03C3;</mi><mover accent='true'>
+   <mi>n</mi>
+   <mo>&#x005E;</mo>
+  </mover>
+  <mo>=</mo><mover accent='true'>
+   <mi>T</mi>
+   <mo>&#x005E;</mo>
+  </mover>
+  <mi>o</mi><mi>n</mi><msubsup>
+   <mi>&#x0393;</mi>
+   <mi>T</mi>
+   <mrow></mrow>
+  </msubsup>
+  </mrow>
+</math>
+
+<para role="non-indent">In the familiar cantilevered beam shown in Figure 5.1.1,In the familiar cantilevered beam shown in Figure displacement and slope. All other points on the beam boundary make up with a load of P at the loading point A and a specified
+
+<fig id="fig_5_1_1">
+<label>Fig 5.1.1</label>
+<caption>Cantilevered beam.</caption>
+<graphic href="figure5.1.3.jpg"/>
+</fig>
+
+With structures such as the beam that have simple geometries, solutions can be obtained by the direct method we have used in earlier modules: an expression for the displacements is written, from which the strains and stresses can be obtained, and the stresses then balanced against the externally applied loads. (Exercise   provides another example of this process.) In situations not having this geometrical simplicity, the analyst must carry out a mathematical solution, seeking functions of stress, strain and displacement that satisfy both the governing equations and the boundary conditions.</para>
+
+<para role="non-indent">Currently, practical problems are likely to be solved by computational approximation, but it is almost always preferable to obtain a closed-form solution if at all possible. The mathematical result will show the functional importance of the various parameters, such as loading condi- tions or material properties, in a way a numerical solution cannot, and is therefore more useful in guiding design decisions. For this reason, the designer should always begin an analysis of load-bearing structures by searching for closed-form solutions of the given, or similar, problem. Several compendia of such solutions are available, the book by Roark(W.C. Young, Roark�s Formulas for Stress and Strain, McGraw-Hill, New York, 1989.) being a useful example.</para>
+
+<para role="non-indent">However, there is always a danger in performing this sort of "handbook engineering" blindly, and this section is intended partly to illustrate the mathematical concepts that underlie many of these published solutions. It is probably true that most of the problems that can be solved mathematically have already been completed; these are the classical problems of applied mechanics, and they often require a rather high level of mathematical sophistication. The classic text by Timoshenko and Goodier(S. Timoshenko and J.N. Goodier, Theory of Elasticity, McGraw-Hill, New York, 1951.) is an excellent source for further reading in this area.</para>
+
+</sec>
+
+<sec id="5_1_2">
+<label>5.1.2</label>
+<title>The Airy stress function</title>
+
+<para role="non-indent">Expanding the kinematic or strain-displacement equations (Equation 5.1.3) in two dimensions gives the familiar forms:</para>
+
+<math display='block'>
+ <mtable columnalign='left'>
+  <mtr>
+   <mtd>
+    <msub>
+     <mo>&#x2208;</mo>
+     <mi>x</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><mi>u</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>x</mi></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <msub>
+     <mo>&#x2208;</mo>
+     <mi>y</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><mi>v</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>y</mi></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <msub>
+     <mi>&#x03D2;</mi>
+     <mrow>
+      <mi>x</mi><mi>y</mi></mrow>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><mi>v</mi></mrow>
+     <mrow>
+      <mi>d</mi><mi>x</mi></mrow>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><mi>u</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>y</mi></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <msub>
+       <mo>&#x2208;</mo>
+       <mi>x</mi>
+      </msub>
+      </mrow>
+     <mrow>
+      <mo>&#x2202;</mo><msup>
+       <mi>y</mi>
+       <mn>2</mn>
+      </msup>
+      </mrow>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <msub>
+       <mo>&#x2208;</mo>
+       <mi>y</mi>
+      </msub>
+      </mrow>
+     <mrow>
+      <mo>&#x2202;</mo><msup>
+       <mi>x</mi>
+       <mn>2</mn>
+      </msup>
+      </mrow>
+    </mfrac>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <msub>
+       <mi>&#x03D2;</mi>
+       <mrow>
+        <mi>x</mi><mi>y</mi></mrow>
+      </msub>
+      </mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>x</mi><mo>&#x2202;</mo><mi>y</mi></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+<para role="non-indent">Since three strains   are written in terms of only two displacements , they cannot be specified arbitrarily; a relation must exist between the three strains. If   is differentiated twice by  and then   we have directly</para>
+
+<para role="non-indent">In order for the displacements to be so differentiable, they must be continuous functions, which means physically that the body must deform in a compatible manner, i.e. without developing cracks or overlaps. For this reason Equation 5.1.7 is called the compatibility equation for strains, since the continuity of the body is guaranteed if the strains satisfy it.</para>
+
+<para role="non-indent">The compatibility equation can be written in terms of the stresses rather than the strains by recalling the constitutive equations for elastic plane stress:</para>
+
+<math display='block'>
+ <mtable columnalign='left'>
+  <mtr>
+   <mtd>
+    <msub>
+     <mo>&#x2208;</mo>
+     <mi>x</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mi>E</mi>
+    </mfrac>
+    <mfenced>
+     <mrow>
+      <msub>
+       <mi>&#x03C3;</mi>
+       <mi>y</mi>
+      </msub>
+      <mo>&#x2212;</mo><mi>&#x03C5;</mi><msub>
+       <mi>&#x03C3;</mi>
+       <mi>y</mi>
+      </msub>
+      </mrow>
+    </mfenced>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <msub>
+     <mo>&#x2208;</mo>
+     <mi>y</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mi>E</mi>
+    </mfrac>
+    <mfenced>
+     <mrow>
+      <msub>
+       <mi>&#x03C3;</mi>
+       <mi>y</mi>
+      </msub>
+      <mo>&#x2212;</mo><mi>&#x03C5;</mi><msub>
+       <mi>&#x03C3;</mi>
+       <mi>z</mi>
+      </msub>
+      </mrow>
+    </mfenced>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mi>&#x03D2;</mi><mi>x</mi><mi>y</mi><mo>=</mo><msub>
+     <mfrac>
+      <mn>1</mn>
+      <mi>G</mi>
+     </mfrac>
+     
+     <mrow></mrow>
+    </msub>
+    <msub>
+     <mi>T</mi>
+     <mrow>
+      <mi>x</mi><mi>y</mi></mrow>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <mn>2</mn><mfenced>
+       <mrow>
+        <mn>1</mn><mo>+</mo><mi>&#x03C5;</mi></mrow>
+      </mfenced></mrow>
+     <mi>E</mi>
+    </mfrac>
+    <mi>T</mi>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+
+<para role="non-indent">Substituting these in Equation 5.1.7 gives</para>
+
+<math display='block'>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mo>&#x2202;</mo>
+     <mn>2</mn>
+    </msup>
+    </mrow>
+   <mrow>
+    <mo>&#x2202;</mo><msup>
+     <mi>y</mi>
+     <mn>2</mn>
+    </msup>
+    </mrow>
+  </mfrac>
+  <mfenced>
+   <mrow>
+    <msub>
+     <mi>&#x03C3;</mi>
+     <mi>x</mi>
+    </msub>
+    <mo>&#x2212;</mo><mi>&#x03C5;</mi><msub>
+     <mi>&#x03C3;</mi>
+     <mi>y</mi>
+    </msub>
+    </mrow>
+  </mfenced><mo>+</mo><mfrac>
+   <mrow>
+    <msup>
+     <mo>&#x2202;</mo>
+     <mn>2</mn>
+    </msup>
+    </mrow>
+   <mrow>
+    <mo>&#x2202;</mo><msup>
+     <mi>x</mi>
+     <mn>2</mn>
+    </msup>
+    </mrow>
+  </mfrac>
+  <mfenced>
+   <mrow>
+    <msub>
+     <mi>&#x03C3;</mi>
+     <mi>y</mi>
+    </msub>
+    <mo>&#x2212;</mo><mi>&#x03C5;</mi><msub>
+     <mi>&#x03C3;</mi>
+     <mi>x</mi>
+    </msub>
+    </mrow>
+  </mfenced><mo>=</mo><mn>2</mn><mfenced>
+   <mrow>
+    <mn>1</mn><mo>+</mo><mi>&#x03C5;</mi></mrow>
+  </mfenced><msup>
+   <mrow>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <msub>
+       <mi>T</mi>
+       <mrow>
+        <mi>x</mi><mi>y</mi></mrow>
+      </msub>
+      </mrow>
+     <mrow>
+      <msub>
+       <mo>&#x2202;</mo>
+       <mi>x</mi>
+      </msub>
+      <msub>
+       <mo>&#x2202;</mo>
+       <mi>y</mi>
+      </msub>
+      </mrow>
+    </mfrac>
+    </mrow>
+   <mrow></mrow>
+  </msup>
+  </mrow>
+</math>
+
+
+<para role="non-indent">Stresses satisfying this relation guarantee compatibility of strain.</para>
+
+<para role="non-indent">The stresses must also satisfy the equilibrium equations, which in two dimensions can be written</para>
+
+<math display='block'>
+ <mtable columnalign='left'>
+  <mtr>
+   <mtd>
+    <mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><msub>
+       <mi>&#x03C3;</mi>
+       <mi>x</mi>
+      </msub>
+      </mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>x</mi></mrow>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><msub>
+       <mi>&#x03C4;</mi>
+       <mrow>
+        <mi>x</mi><mi>y</mi></mrow>
+      </msub>
+      </mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>y</mi></mrow>
+    </mfrac>
+    <mo>=</mo><mn>0</mn>
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><msub>
+       <mi>&#x03C4;</mi>
+       <mrow>
+        <mi>x</mi><mi>y</mi></mrow>
+      </msub>
+      </mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>x</mi></mrow>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><msub>
+       <mi>&#x03C3;</mi>
+       <mi>y</mi>
+      </msub>
+      </mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>y</mi></mrow>
+    </mfrac>
+    <mo>=</mo><mn>0</mn>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+<para role="non-indent">As a means of simplifying the search for functions whose derivatives obey these rules, G.B. Airy (1801�1892) defined a stress function  from which the stresses could be obtained by differenti- ation:</para>
+
+<math display='block'>
+ <mtable columnalign='left'>
+  <mtr>
+   <mtd>
+    <msub>
+     <mi>&#x03C3;</mi>
+     <mi>x</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <mi>&#x03D5;</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><msup>
+       <mi>y</mi>
+       <mn>2</mn>
+      </msup>
+      </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <msub>
+     <mi>&#x03C3;</mi>
+     <mi>y</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <mi>&#x03D5;</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><msup>
+       <mi>x</mi>
+       <mn>2</mn>
+      </msup>
+      </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <msub>
+     <mi>T</mi>
+     <mrow>
+      <mi>x</mi><mi>y</mi></mrow>
+    </msub>
+    <mo>=</mo><mo>&#x2212;</mo><mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <mi>&#x03D5;</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>x</mi><mo>&#x2202;</mo><mi>y</mi></mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+
+<para role="non-indent">Direct substitution will show that stresses obtained from this procedure will automatically satisfy the equilibrium equations. This maneuver is essentially limited to two-dimensional problems, but with that proviso it provides a great simplification in searching for valid functions for the stresses.</para>
+
+<para role="non-indent">Now substituting these into Equation 5.1.9, we have
+
+<math display='block'>
+ <mrow>
+  <mfrac>
+   <mrow>
+    <msup>
+     <mo>&#x2202;</mo>
+     <mn>4</mn>
+    </msup>
+    <mi>&#x03D5;</mi></mrow>
+   <mrow>
+    <mo>&#x2202;</mo><msup>
+     <mi>x</mi>
+     <mn>4</mn>
+    </msup>
+    </mrow>
+  </mfrac>
+  <mo>+</mo><mn>2</mn><mfrac>
+   <mrow>
+    <msup>
+     <mo>&#x2202;</mo>
+     <mn>4</mn>
+    </msup>
+    <mi>&#x03D5;</mi></mrow>
+   <mrow>
+    <mo>&#x2202;</mo><msup>
+     <mi>x</mi>
+     <mn>2</mn>
+    </msup>
+    <mo>&#x2202;</mo><msup>
+     <mi>y</mi>
+     <mn>2</mn>
+    </msup>
+    </mrow>
+  </mfrac>
+  <mo>+</mo><mfrac>
+   <mrow>
+    <msup>
+     <mo>&#x2202;</mo>
+     <mn>4</mn>
+    </msup>
+    <mi>&#x03D5;</mi></mrow>
+   <mrow>
+    <mo>&#x2202;</mo><msup>
+     <mi>y</mi>
+     <mn>4</mn>
+    </msup>
+    </mrow>
+  </mfrac>
+  <mo>&#x2261;</mo><msup>
+   <mo>&#x2207;</mo>
+   <mn>2</mn>
+  </msup>
+  <mfenced>
+   <mrow>
+    <msup>
+     <mo>&#x2207;</mo>
+     <mn>2</mn>
+    </msup>
+    <mi>&#x03D5;</mi></mrow>
+  </mfenced><mo>&#x2261;</mo><msup>
+   <mo>&#x2207;</mo>
+   <mn>4</mn>
+  </msup>
+  <mi>&#x03D5;</mi><mo>=</mo><mn>0</mn></mrow>
+</math>
+
+
+Any function   that satisfies this relation will satisfy the governing relations for equilibrium, geometric compatibility, and linear elasticity. Of course, many functions could be written that satisfy the compatibility equation; for instance setting   would always work. But to make the solution correct for a particular stress analysis, the boundary conditions on stress and displacement must be satisfied as well. This is usually a much more difficult undertaking, and no general solution that works for all cases exists. It can be shown, however, that a solution satisfying both the compatibility equation and the boundary conditions is unique; i.e. that it is the only correct solution.</para>
+</sec>
+
+<sec id="5_1_3">
+<label>5.1.3</label>
+<title>Stresses around a circular hole</title>
+
+<fig id="fig_5_1_2">
+<label>Fig 5.1.3</label>
+<caption>Circular hole in a uniaxially stressed plate</caption>
+<graphic href="figure5_1_3.jpg" />
+</fig>
+
+<para role="non-indent">To illustrate the use of the Airy function approach, we will outline the important work of Kirsch(G. Kirsch, VDI, vol. 42, 1898; described in Timoshenko  Goodier, op. cit..), who obtained a solution for the influence on the stresses of a hole placed in the material. This is vitally important in analyzing such problems as rivet holes used in joining, and the effect of a manufacturing void in initiating failure. Consider a thin sheet as illustrated in Figure , infinite in lateral dimensions but containing a circular hole of radius , and subjected to a uniaxial stress . Using circular  coordinates centered on the hole, the compatibility equation for  is In these circular coordinates, the stresses are obtained from  as</para>
+
+<math display='block'>
+ <mtable columnalign='left'>
+  <mtr>
+   <mtd>
+    <msub>
+     <mi>&#x03C3;</mi>
+     <mi>r</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mn>1</mn>
+     <mi>r</mi>
+    </mfrac>
+    <mfrac>
+     <mrow>
+      <mo>&#x2202;</mo><mi>&#x03D5;</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><mi>r</mi></mrow>
+    </mfrac>
+    <mo>+</mo><mfrac>
+     <mn>1</mn>
+     <mrow>
+      <msup>
+       <mi>r</mi>
+       <mn>2</mn>
+      </msup>
+      </mrow>
+    </mfrac>
+    <mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <mi>&#x03D5;</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><msup>
+       <mi>&#x03B8;</mi>
+       <mn>2</mn>
+      </msup>
+      </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <msub>
+     <mi>&#x03C3;</mi>
+     <mi>&#x03B8;</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <msup>
+       <mo>&#x2202;</mo>
+       <mn>2</mn>
+      </msup>
+      <mi>&#x03D5;</mi></mrow>
+     <mrow>
+      <mo>&#x2202;</mo><msup>
+       <mi>r</mi>
+       <mn>2</mn>
+      </msup>
+      </mrow>
+    </mfrac>
+    
+   </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <msub>
+     <mi>T</mi>
+     <mi>r</mi>
+    </msub>
+    <mi>&#x03B8;</mi><mo>=</mo><mo>&#x2212;</mo><mfrac>
+     <mo>&#x2202;</mo>
+     <mrow>
+      <mo>&#x2202;</mo><mi>r</mi></mrow>
+    </mfrac>
+    <mfenced>
+     <mrow>
+      <mfrac>
+       <mn>1</mn>
+       <mn>1</mn>
+      </mfrac>
+      <mfrac>
+       <mrow>
+        <mo>&#x2202;</mo><mi>&#x03D5;</mi></mrow>
+       <mrow>
+        <mo>&#x2202;</mo><mi>&#x03B8;</mi></mrow>
+      </mfrac>
+      </mrow>
+    </mfenced>
+   </mtd>
+  </mtr>
+ </mtable>
+ 
+</math>
+
+<sec id="5_1">
+  <tittle>Stress Functions</tittle>
+
+  <p role="noindent">Far from the hole, the stresses must become the far-field values as the Mohr procedure gives the radial and tangential stress components in circular coordinates as:</p>
+
+  <math display="block">
+    <mtable columnalign="left">
+      <mtr>
+        <mtd>
+          <msub>
+            <mi>&#x03C3;</mi>
+            <mi>r</mi>
+          </msub>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>x</mi>
+              </msub>
+              <mo>+</mo>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>y</mi>
+              </msub>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+          <mo>+</mo>
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>x</mi>
+              </msub>
+              <mo>&#x2212;</mo>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>y</mi>
+              </msub>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+          <mi>cos</mi>
+          <mn>2</mn>
+          <mi>&#x03B8;</mi>
+          <mo>+</mo>
+          <msub>
+            <mi>&#x03C4;</mi>
+            <mi>xy</mi>
+          </msub>
+          <mi>sin</mi>
+          <mn>2</mn>
+          <mi>&#x03B8;</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <msub>
+            <mi>&#x03C3;</mi>
+            <mi>&#x03B8;</mi>
+          </msub>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>x</mi>
+              </msub>
+              <mo>+</mo>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>y</mi>
+              </msub>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+          <mo>&#x2212;</mo>
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>x</mi>
+              </msub>
+              <mo>&#x2212;</mo>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>y</mi>
+              </msub>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+          <mi>cos</mi>
+          <mn>2</mn>
+          <mi>&#x03B8;</mi>
+          <mo>&#x2212;</mo>
+          <msub>
+            <mi>&#x03C4;</mi>
+            <mi>xy</mi>
+          </msub>
+          <mi>sin</mi>
+          <mn>2</mn>
+          <mi>&#x03B8;</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+  </math>
+
+  <p role="noindent">Since the normal stresses vary cosinusoidally and the shear stresses vary sinusoidally (the <math display="inline"><mi>sin</mi><mn>2</mn><mi>&#x03B8;</mi></math> factor) and the shear stresses vary as <math display="inline"><mo>&#x2212;</mo><mi>sin</mi><mn>2</mn><mi>&#x03B8;</mi></math>, an acceptable stress function could be of the form:</p>
+
+  <p role="noindent">When this is substituted into Equation 5.1.11, an ordinary differential equation in <math display="inline"><mi>f</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo></math> is obtained:</p>
+
+  <math display="block">
+    <mrow>
+      <mo stretchy="false">(</mo>
+      <mfrac>
+        <msup>
+          <mi>d</mi>
+          <mn>2</mn>
+        </msup>
+        <mrow>
+          <mi>d</mi>
+          <msup>
+            <mi>r</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mfrac>
+      <mo>+</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mi>r</mi>
+      </mfrac>
+      <mfrac>
+        <mi>d</mi>
+        <mrow>
+          <mi>d</mi>
+          <mi>r</mi>
+        </mrow>
+      </mfrac>
+      <mo>&#x2212;</mo>
+      <mfrac>
+        <mn>4</mn>
+        <msup>
+          <mi>r</mi>
+          <mn>2</mn>
+        </msup>
+      </mfrac>
+      <mo stretchy="false">)</mo>
+      <mo stretchy="false">(</mo>
+      <mfrac>
+        <msup>
+          <mi>d</mi>
+          <mn>2</mn>
+        </msup>
+        <mrow>
+          <mi>d</mi>
+          <msup>
+            <mi>r</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mfrac>
+      <mo>+</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mi>r</mi>
+      </mfrac>
+      <mfrac>
+        <mi>d</mi>
+        <mrow>
+          <mi>d</mi>
+          <mi>r</mi>
+        </mrow>
+      </mfrac>
+      <mo>&#x2212;</mo>
+      <mfrac>
+        <mn>4</mn>
+        <msup>
+          <mi>r</mi>
+          <mn>2</mn>
+        </msup>
+      </mfrac>
+      <mo stretchy="false">)</mo>
+      <mi>f</mi>
+      <mo>=</mo>
+      <mn>0</mn>
+    </mrow>
+  </math>
+
+  <p role="noindent">This has the general solution:</p>
+
+  <math display="block">
+    <mi>f</mi>
+    <mo stretchy="false">(</mo>
+    <mi>r</mi>
+    <mo stretchy="false">)</mo>
+    <mo>=</mo>
+    <mi>A</mi>
+    <msup>
+      <mi>r</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <mi>B</mi>
+    <msup>
+      <mi>r</mi>
+      <mn>4</mn>
+    </msup>
+    <mo>+</mo>
+    <mi>C</mi>
+    <mo>+</mo>
+    <mfrac>
+      <mi>D</mi>
+      <msup>
+        <mi>r</mi>
+        <mn>2</mn>
+      </msup>
+    </mfrac>
+  </math>
+
+  <p role="noindent">The stress functions obtained from Eqns. 5.1.17 and 5.1.18 is now used to write expressions for the stresses according to Equations 5.1.14, and the constants determined using the boundary conditions at Eqns. 5.1.15 and 5.1.16; this gives:</p>
+
+  <p role="noindent">Substituting these values into the expressions for stress and replacing the <math display="inline"><mi>&#x03B8;</mi></math> terms was temporarily removed, the final expressions for the stresses are:</p>
+
+  <math display="block">
+    <mtable columnalign="left">
+      <mtr>
+        <mtd>
+          <msub>
+            <mi>&#x03C3;</mi>
+            <mi>r</mi>
+          </msub>
+          <mo>=</mo>
+          <mfrac>
+            <mi>T</mi>
+            <mn>2</mn>
+          </mfrac>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mo>&#x2212;</mo>
+          <mfrac>
+            <msup>
+              <mi>a</mi>
+              <mn>2</mn>
+            </msup>
+            <msup>
+              <mi>r</mi>
+              <mn>2</mn>
+            </msup>
+          </mfrac>
+          <mo stretchy="false">)</mo>
+          <mo>+</mo>
+          <mfrac>
+            <mi>T</mi>
+            <mn>2</mn>
+          </mfrac>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mo>&#x2212;</mo>
+          <mfrac>
+            <mrow>
+              <mn>4</mn>
+              <msup>
+                <mi>a</mi>
+                <mn>2</mn>
+              </msup>
+            </mrow>
+            <msup>
+              <mi>r</mi>
+              <mn>2</mn>
+            </msup>
+          </mfrac>
+          <mo>+</mo>
+          <mfrac>
+            <mrow>
+              <mn>3</mn>
+              <msup>
+                <mi>a</mi>
+                <mn>4</mn>
+              </msup>
+            </mrow>
+            <msup>
+              <mi>r</mi>
+              <mn>4</mn>
+            </msup>
+          </mfrac>
+          <mo stretchy="false">)</mo>
+          <mi>cos</mi>
+          <mn>2</mn>
+          <mi>&#x03B8;</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <msub>
+            <mi>&#x03C3;</mi>
+            <mi>&#x03B8;</mi>
+          </msub>
+          <mo>=</mo>
+          <mfrac>
+            <mi>T</mi>
+            <mn>2</mn>
+          </mfrac>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mfrac>
+            <msup>
+              <mi>a</mi>
+              <mn>2</mn>
+            </msup>
+            <msup>
+              <mi>r</mi>
+              <mn>2</mn>
+            </msup>
+          </mfrac>
+          <mo stretchy="false">)</mo>
+          <mo>&#x2212;</mo>
+          <mfrac>
+            <mi>T</mi>
+            <mn>2</mn>
+          </mfrac>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mfrac>
+            <mrow>
+              <mn>3</mn>
+              <msup>
+                <mi>a</mi>
+                <mn>4</mn>
+              </msup>
+            </mrow>
+            <msup>
+              <mi>r</mi>
+              <mn>4</mn>
+            </msup>
+          </mfrac>
+          <mo stretchy="false">)</mo>
+          <mi>cos</mi>
+          <mn>2</mn>
+          <mi>&#x03B8;</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <msub>
+            <mi>&#x03C4;</mi>
+            <mrow>
+              <mi>r</mi>
+              <mi>&#x03B8;</mi>
+            </mrow>
+          </msub>
+          <mo>=</mo>
+          <mo>&#x2212;</mo>
+          <mfrac>
+            <mi>T</mi>
+            <mn>2</mn>
+          </mfrac>
+          <mo stretchy="false">(</mo>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mfrac>
+            <mrow>
+              <mn>2</mn>
+              <msup>
+                <mi>a</mi>
+                <mn>2</mn>
+              </msup>
+            </mrow>
+            <msup>
+              <mi>r</mi>
+              <mn>2</mn>
+            </msup>
+          </mfrac>
+          <mo>&#x2212;</mo>
+          <mfrac>
+            <mrow>
+              <mn>3</mn>
+              <msup>
+                <mi>a</mi>
+                <mn>4</mn>
+              </msup>
+            </mrow>
+            <msup>
+              <mi>r</mi>
+              <mn>4</mn>
+            </msup>
+          </mfrac>
+          <mo stretchy="false">)</mo>
+          <mi>sin</mi>
+          <mn>2</mn>
+          <mi>&#x03B8;</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+  </math>
+
+  <p role="noindent">As seen in the plot of Figure 5.1.8, the stress reaches a maximum value of
+    <math display="inline">
+      <msub><mi>&#x03C3;</mi><mi>&#x03B8;</mi></msub>
+      <mo>=</mo>
+      <mn>3</mn>
+      <mi>T</mi>
+    </math>
+    at the periphery of the hole at <math display="inline"><mi>&#x03B8;</mi><mo>=</mo><mi>&#x03C0;</mi><mo>/</mo><mn>2</mn></math>, at a diametrical position transverse to the loading direction of <math display="inline"><mi>&#x03C3;</mi><mo>=</mo><mi>T</mi></math>. The stress concentration factor (SCF) for this problem is therefore 3. The <math display="inline"><msub><mi>&#x03C3;</mi><mi>&#x03B8;</mi></msub></math> function slowly falls to zero at the positions <math display="inline"><mi>&#x03B8;</mi><mo>=</mo><mn>0</mn></math> and <math display="inline"><mi>&#x03C0;</mi></math>, so it must to satisfy the stress-free boundary condition at the periphery of the hole.</p>
+
+  <fig id="fig_5.1.8">
+    <label>Fig 5.1.8</label>
+    <caption>Figure 5.1.8: Stresses near circular hole: (a) Cartesian, (b) far-field stresses applied in y-direction, (c) Variations of <math display="inline"><msub><mi>&#x03C3;</mi><mi>&#x03B8;</mi></msub></math> along x-axis.</caption>
+  </fig>
+
+  <sec id="5_1_size_independence">
+    <p role="noindent">Note that for the case of a circular hole the SCF does not depend on the size of the hole: any hole, no matter how small, increases the local stresses near the hole by a factor of three. This is a very serious consideration in the design of structures that must be drilled and riveted in assembly. This is the case in construction of most jetliner fuselages, the skin of which must withstand substantial stresses as the differential cabin pressure is cycled by approximately 10 psi during each flight. The high-stress regime near the rivet holes has a dangerous propensity to nucleate fatigue cracks, and several catastrophic aircraft failures have been traced to exactly this cause.</p>
+
+    <p role="noindent">Note also that the stress concentration effect is confined to the region quite close to the hole, with the stresses falling to their far-field values within three or so hole diameters. This is a manifestation of St. Venant's principle (the French scientist Barre de Saint-Venant (1797�1886)) is one of the great pioneers in mechanics of materials, which is a commonsense statement that the influence of a perturbation in the stress field is largely confined to the region of the disturbance. This principle is extremely useful in engineering approximations, but of course the stress concentration near the disturbance itself must be kept in mind.</p>
+
+    <p role="noindent">When at the beginning of this section we took the size of the plate to be "infinite in lateral extent," we really meant that the stress conditions at the plate edges were far enough away from the hole that they did not influence the stress state near the hole. With the Kirsch solution now in hand, we can be more realistic about this: the plate must be three or so times larger than the hole, or the far-field solution will be unreliable.</p>
+  </sec>
+
+  <sec id="5_1_complex_functions">
+    <tittle>Complex functions</tittle>
+
+    <p role="noindent">In many problems of practical interest, it is convenient to use stress functions as complex functions of two variables. We will see that these have the ability to satisfy the governing equations automatically, leaving only adjustments needed to match the boundary conditions. For this reason, complex variable methods play an important role in theoretical stress analysis, and even in this introductory treatment we wish to illustrate the power of the method. To outline a few necessary relations, consider <math display="inline"><mi>&#x03C6;</mi></math> to be a complex number in Cartesian coordinates <math display="inline"><mi>z</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>iy</mi></math> in polar coordinates <math display="inline"><mi>z</mi><mo>=</mo><mi>r</mi><msup><mi>e</mi><mrow><mi>i</mi><mi>&#x03B8;</mi></mrow></msup></math>:</p>
+
+    <math display="block">
+      <mi>z</mi>
+      <mo>=</mo>
+      <mi>x</mi>
+      <mo>+</mo>
+      <mi>i</mi>
+      <mi>y</mi>
+      <mo>=</mo>
+      <mi>r</mi>
+      <msup>
+        <mi>e</mi>
+        <mrow>
+          <mi>i</mi>
+          <mi>&#x03B8;</mi>
+        </mrow>
+      </msup>
+    </math>
+
+    <p role="noindent">where <math display="inline"><mi>i</mi><mo>=</mo><msqrt><mrow><mo>&#x2212;</mo><mn>1</mn></mrow></msqrt></math>. An analytic function <math display="inline"><mi>f</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math> is one whose derivatives depend on <math display="inline"><mi>z</mi></math> only, and takes the form:</p>
+
+    <math display="block">
+      <mi>f</mi>
+      <mo stretchy="false">(</mo>
+      <mi>z</mi>
+      <mo stretchy="false">)</mo>
+      <mo>=</mo>
+      <mi>&#x03C6;</mi>
+      <mo stretchy="false">(</mo>
+      <mi>x</mi>
+      <mo>,</mo>
+      <mi>y</mi>
+      <mo stretchy="false">)</mo>
+      <mo>+</mo>
+      <mi>i</mi>
+      <mi>&#x03C8;</mi>
+      <mo stretchy="false">(</mo>
+      <mi>x</mi>
+      <mo>,</mo>
+      <mi>y</mi>
+      <mo stretchy="false">)</mo>
+    </math>
+
+    <p role="noindent">where <math display="inline"><mi>&#x03C6;</mi></math> and <math display="inline"><mi>&#x03C8;</mi></math> are real functions of <math display="inline"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></math>. It is easily shown that these must satisfy the Cauchy-Riemann equations:</p>
+
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>&#x03C6;</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>x</mi>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>&#x03C8;</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>y</mi>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>&#x03C6;</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>y</mi>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mo>&#x2212;</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>&#x03C8;</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>x</mi>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+
+    <p role="noindent">If the first of these is differentiated with respect to <math display="inline"><mi>x</mi></math> and the second with respect to <math display="inline"><mi>y</mi></math> and the results added, we obtain:</p>
+
+    <math display="block">
+      <msup>
+        <mo>&#x2207;</mo>
+        <mn>2</mn>
+      </msup>
+      <mi>&#x03C6;</mi>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <msup>
+            <mo>&#x2202;</mo>
+            <mn>2</mn>
+          </msup>
+          <mi>&#x03C6;</mi>
+        </mrow>
+        <mrow>
+          <mo>&#x2202;</mo>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mfrac>
+      <mo>+</mo>
+      <mfrac>
+        <mrow>
+          <msup>
+            <mo>&#x2202;</mo>
+            <mn>2</mn>
+          </msup>
+          <mi>&#x03C6;</mi>
+        </mrow>
+        <mrow>
+          <mo>&#x2202;</mo>
+          <msup>
+            <mi>y</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mfrac>
+      <mo>=</mo>
+      <mn>0</mn>
+    </math>
+
+    <p role="noindent">This is Laplace's equation, and any function that satisfies this equation is termed a harmonic function. Equivalently, <math display="inline"><mi>&#x03C8;</mi></math> could have been obtained in favor of <math display="inline"><mi>&#x03C6;</mi></math> to give <math display="inline"><msup><mo>&#x2207;</mo><mn>2</mn></msup><mi>&#x03C8;</mi><mo>=</mo><mn>0</mn></math>, so both the real and imaginary parts of any complex function provide solutions to Laplace's equation. Now consider a function of the form <math display="inline"><mi>w</mi><mo>=</mo><mi>&#x03C6;</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>+</mo><mi>i</mi><mi>&#x03C8;</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></math>; it can be shown by direct differentiation that:</p>
+
+    <p role="noindent">i.e. any function of the form <math display="inline"><mi>w</mi></math> where <math display="inline"><mi>&#x03C6;</mi></math> is harmonic, satisfies Equation 5.1.12, and many thus be used as a stress function. Basically, it can be shown that <math display="inline"><msup><mo>&#x2207;</mo><mn>4</mn></msup><mi>&#x03C6;</mi><mo>=</mo><mn>0</mn></math> for such <math display="inline"><mi>&#x03C6;</mi></math>; also, as well, as <math display="inline"><msub><mi>&#x03C6;</mi><mi>i</mi></msub></math>. In general, a suitable stress function can be obtained from any two analytic functions <math display="inline"><mi>&#x03A9;</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math> and <math display="inline"><mi>&#x03C7;</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math>:</p>
+
+    <math display="block">
+      <mi>U</mi>
+      <mo>=</mo>
+      <mi>Re</mi>
+      <mo stretchy="false">[</mo>
+      <mover>
+        <mi>z</mi>
+        <mo>&#x00AF;</mo>
+      </mover>
+      <mi>&#x03A9;</mi>
+      <mo stretchy="false">(</mo>
+      <mi>z</mi>
+      <mo stretchy="false">)</mo>
+      <mo>+</mo>
+      <mi>&#x03C7;</mi>
+      <mo stretchy="false">(</mo>
+      <mi>z</mi>
+      <mo stretchy="false">)</mo>
+      <mo stretchy="false">]</mo>
+    </math>
+
+    <p role="noindent">where <math display="inline"><mi>Re</mi></math> indicates the real part of the complex expression. The stresses corresponding to this function are obtained as:</p>
+
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>&#x03C3;</mi>
+              <mi>x</mi>
+            </msub>
+            <mo>+</mo>
+            <msub>
+              <mi>&#x03C3;</mi>
+              <mi>y</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>4</mn>
+            <mi>Re</mi>
+            <mo stretchy="false">[</mo>
+            <msup>
+              <mi>&#x03A9;</mi>
+              <mo>&#x2032;</mo>
+            </msup>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">]</mo>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>&#x03C3;</mi>
+              <mi>y</mi>
+            </msub>
+            <mo>&#x2212;</mo>
+            <msub>
+              <mi>&#x03C3;</mi>
+              <mi>x</mi>
+            </msub>
+            <mo>+</mo>
+            <mn>2</mn>
+            <mi>i</mi>
+            <msub>
+              <mi>&#x03C4;</mi>
+              <mi>xy</mi>
+            </msub>
+            <mo>=</mo>
+            <mn>4</mn>
+            <msup>
+              <mi>&#x03A9;</mi>
+              <mo>&#x2032;&#x2032;</mo>
+            </msup>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mo>+</mo>
+            <mn>2</mn>
+            <msup>
+              <mi>&#x03C7;</mi>
+              <mo>&#x2032;&#x2032;</mo>
+            </msup>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+
+  </sec>
+
+
+  <sec id="5_1_elliptical_hole">
+    <tittle>Stresses around an elliptical hole</tittle>
+
+    <p role="noindent">where the primes indicate differentiation with respect to <math display="inline"><mi>z</mi></math> and the overbar indicates the conjugate function obtained by replacing <math display="inline"><mi>i</mi></math> with <math display="inline"><mo>&#x2212;</mo><mi>i</mi></math>, hence <math display="inline"><mover><mi>z</mi><mo>&#x00AF;</mo></mover><mo>=</mo><mi>x</mi><mo>&#x2212;</mo><mi>iy</mi></math>.</p>
+
+    <p role="noindent">In a development very important to the theory of fracture, Inglis (C.E. Inglis, "Stresses in a Plate Due to the Presence of Cracks and Sharp Corners," Transactions of the Institution of Naval Architects, Vol. 55, London, 1913, pp. 219�230.) used complex potential functions to extend Kirsch's work to treat the stress field around a plate containing an elliptical rather than circular hole. This permits crack-like geometries to be treated by making the minor axis of the ellipse small. It is convenient to work in elliptical <math display="inline"><mi>&#x03BE;</mi><mi>&#x03B7;</mi></math> coordinates, as shown in Figure 4, defined as:</p>
+
+    <math display="block">
+      <mi>x</mi>
+      <mo>=</mo>
+      <mi>c</mi>
+      <mi>cosh</mi>
+      <mi>&#x03BE;</mi>
+      <mi>cos</mi>
+      <mi>&#x03B7;</mi>
+      <mo>,</mo>
+      <mspace width="1em"/>
+      <mi>y</mi>
+      <mo>=</mo>
+      <mi>c</mi>
+      <mi>sinh</mi>
+      <mi>&#x03BE;</mi>
+      <mi>sin</mi>
+      <mi>&#x03B7;</mi>
+    </math>
+
+    <fig id="fig_5.1.4_elliptical">
+      <label>Fig 5.1.4</label>
+      <caption>Figure 4: Elliptical coordinates.</caption>
+    </fig>
+
+    <p role="noindent">where <math display="inline"><mi>c</mi></math> is a constant. If <math display="inline"><mi>&#x03B7;</mi></math> is eliminated this is seen to be equivalent to:</p>
+
+    <math display="block">
+      <mfrac>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <mrow>
+          <msup>
+            <mi>c</mi>
+            <mn>2</mn>
+          </msup>
+          <msup>
+            <mi>cosh</mi>
+            <mn>2</mn>
+          </msup>
+          <mi>&#x03BE;</mi>
+        </mrow>
+      </mfrac>
+      <mo>+</mo>
+      <mfrac>
+        <msup>
+          <mi>y</mi>
+          <mn>2</mn>
+        </msup>
+        <mrow>
+          <msup>
+            <mi>c</mi>
+            <mn>2</mn>
+          </msup>
+          <msup>
+            <mi>sinh</mi>
+            <mn>2</mn>
+          </msup>
+          <mi>&#x03BE;</mi>
+        </mrow>
+      </mfrac>
+      <mo>=</mo>
+      <mn>1</mn>
+    </math>
+
+    <p role="noindent">On the boundary of the ellipse <math display="inline"><mi>&#x03BE;</mi><mo>=</mo><msub><mi>&#x03BE;</mi><mn>0</mn></msub></math>, so we can write <math display="inline"><mi>a</mi><mo>=</mo><mi>c</mi><mi>cosh</mi><msub><mi>&#x03BE;</mi><mn>0</mn></msub></math>, <math display="inline"><mi>b</mi><mo>=</mo><mi>c</mi><mi>sinh</mi><msub><mi>&#x03BE;</mi><mn>0</mn></msub></math>, so <math display="inline"><mi>a</mi></math> and <math display="inline"><mi>b</mi></math> are constants. On the boundary, then:</p>
+
+    <math display="block">
+      <mfrac>
+        <msup>
+          <mi>x</mi>
+          <mn>2</mn>
+        </msup>
+        <msup>
+          <mi>a</mi>
+          <mn>2</mn>
+        </msup>
+      </mfrac>
+      <mo>+</mo>
+      <mfrac>
+        <msup>
+          <mi>y</mi>
+          <mn>2</mn>
+        </msup>
+        <msup>
+          <mi>b</mi>
+          <mn>2</mn>
+        </msup>
+      </mfrac>
+      <mo>=</mo>
+      <mn>1</mn>
+    </math>
+
+    <p role="noindent">which is recognized as the Cartesian equation of an ellipse, with <math display="inline"><mi>a</mi></math> and <math display="inline"><mi>b</mi></math> being the major and minor radii. The elliptical coordinates can be written in terms of complex variables as:</p>
+
+    <math display="block">
+      <mi>z</mi>
+      <mo>=</mo>
+      <mi>c</mi>
+      <mi>cosh</mi>
+      <mi>&#x03B6;</mi>
+      <mo>,</mo>
+      <mspace width="1em"/>
+      <mi>&#x03B6;</mi>
+      <mo>=</mo>
+      <mi>&#x03BE;</mi>
+      <mo>+</mo>
+      <mi>i</mi>
+      <mi>&#x03B7;</mi>
+    </math>
+
+    <p role="noindent">As the boundary of the ellipse is traversed, <math display="inline"><mi>&#x03BE;</mi></math> remains constant at <math display="inline"><msub><mi>&#x03BE;</mi><mn>0</mn></msub></math> while <math display="inline"><mi>&#x03B7;</mi></math> varies from 0 to <math display="inline"><mn>2</mn><mi>&#x03C0;</mi></math>. Hence the stresses must be periodic in <math display="inline"><mi>&#x03B7;</mi></math> with period <math display="inline"><mn>2</mn><mi>&#x03C0;</mi></math> while becoming equal to the far-field uniaxial stress <math display="inline"><msub><mi>&#x03C3;</mi><mi>y</mi></msub><mo>=</mo><msub><mi>&#x03C3;</mi><mn>0</mn></msub><mo>,</mo><msub><mi>&#x03C3;</mi><mi>x</mi></msub><mo>=</mo><msub><mi>&#x03C4;</mi><mi>xy</mi></msub><mo>=</mo><mn>0</mn></math> far from the ellipse. Equation 5.1.26 then gives:</p>
+
+    <math display="block">
+      <mrow>
+        <mo>{</mo>
+        <mfrac>
+          <mrow>
+            <mi>&#x03A9;</mi>
+            <mo>&#x2032;</mo>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+          <mrow>
+            <mi>sinh</mi>
+            <mi>&#x03B6;</mi>
+          </mrow>
+        </mfrac>
+        <mo>+</mo>
+        <mfrac>
+          <mrow>
+            <mi>&#x03C7;</mi>
+            <mo>&#x2032;&#x2032;</mo>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+          <mrow>
+            <mi>sinh</mi>
+            <mi>&#x03B6;</mi>
+          </mrow>
+        </mfrac>
+        <mo>}</mo>
+        <mi>c</mi>
+        <mo>&#x2192;</mo>
+        <mi>&#x03C3;</mi>
+      </mrow>
+    </math>
+
+    <p role="noindent">These boundary conditions can be satisfied by potential functions in the forms:</p>
+
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mi>&#x03A9;</mi>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mi>A</mi>
+            <mi>cosh</mi>
+            <mi>&#x03B6;</mi>
+            <mo>+</mo>
+            <mi>B</mi>
+            <mi>sinh</mi>
+            <mi>&#x03B6;</mi>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mi>&#x03C7;</mi>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mi>C</mi>
+            <mi>&#x03B6;</mi>
+            <mo>+</mo>
+            <mi>D</mi>
+            <msup>
+              <mi>e</mi>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>&#x03BE;</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mi>cosh</mi>
+            <mi>&#x03B6;</mi>
+            <mo>+</mo>
+            <mi>E</mi>
+            <msup>
+              <mi>e</mi>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>&#x03BE;</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mi>sinh</mi>
+            <mi>&#x03B6;</mi>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+
+    <p role="noindent">where <math display="inline"><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>C</mi><mo>,</mo><mi>D</mi><mo>,</mo><mi>E</mi></math> are constants to be determined from the boundary conditions. When this is done the complex potentials are given as:</p>
+
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <mi>&#x03A9;</mi>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfrac>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mn>0</mn>
+              </msub>
+              <mn>4</mn>
+            </mfrac>
+            <mi>c</mi>
+            <mo stretchy="false">[</mo>
+            <mo stretchy="false">(</mo>
+            <mn>1</mn>
+            <mo>+</mo>
+            <msup>
+              <mi>e</mi>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>&#x03BE;</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mo stretchy="false">)</mo>
+            <mi>sinh</mi>
+            <mi>&#x03B6;</mi>
+            <mo>&#x2212;</mo>
+            <msup>
+              <mi>e</mi>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>&#x03BE;</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mi>cosh</mi>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">]</mo>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mi>&#x03C7;</mi>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mo>&#x2212;</mo>
+            <mfrac>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mn>0</mn>
+              </msub>
+              <mn>4</mn>
+            </mfrac>
+            <mi>c</mi>
+            <mo stretchy="false">[</mo>
+            <mi>&#x03B6;</mi>
+            <mo>&#x2212;</mo>
+            <msup>
+              <mi>e</mi>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>&#x03BE;</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mi>sinh</mi>
+            <mi>&#x03B6;</mi>
+            <mo stretchy="false">(</mo>
+            <mn>1</mn>
+            <mo>&#x2212;</mo>
+            <msup>
+              <mi>e</mi>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>2</mn>
+                <msub>
+                  <mi>&#x03BE;</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mo>&#x2212;</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <msup>
+              <mi>e</mi>
+              <mrow>
+                <mo>&#x2212;</mo>
+                <mn>4</mn>
+                <msub>
+                  <mi>&#x03BE;</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </msup>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">]</mo>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+
+    <p role="noindent">The stresses <math display="inline"><msub><mi>&#x03C3;</mi><mi>&#x03BE;</mi></msub></math> and <math display="inline"><msub><mi>&#x03C3;</mi><mi>&#x03B7;</mi></msub></math> can be obtained by using these in Eqns. 5.1.26. However, the amount of labor in carrying out these substitutions isn't to be sneezed at, and before computers were generally available the Inglis solution was of somewhat limited use in probing the nature of the stress field near crack tips.</p>
+
+    <fig id="fig_5.1.5_elliptical_stress">
+      <label>Fig 5.1.5</label>
+      <caption>Figure 5: Stress field in the vicinity of an elliptical hole, with uniaxial stress applied in y-direction. (a) Contours of <math display="inline"><msub><mi>&#x03C3;</mi><mi>y</mi></msub></math>. (b) Contours of <math display="inline"><msub><mi>&#x03C3;</mi><mi>x</mi></msub></math>.</caption>
+    </fig>
+
+    <p role="noindent">Figure 5 shows stress contours computed by Cook and Gordon (J.E. Gordon, The Science of Structures and Materials, Scientific American Library, New York, 1988.) from the Inglis equations. A strong stress concentration of the stress <math display="inline"><msub><mi>&#x03C3;</mi><mi>y</mi></msub></math> is noted at the periphery of the hole, as would be expected. The horizontal stress <math display="inline"><msub><mi>&#x03C3;</mi><mi>x</mi></msub></math> goes to zero at this same position, as it must to satisfy the boundary conditions there. Note however that <math display="inline"><msub><mi>&#x03C3;</mi><mi>x</mi></msub></math> exhibits a mild stress concentration (one fifth of that for <math display="inline"><msub><mi>&#x03C3;</mi><mi>y</mi></msub></math>) a little distance away from the hole. If the material has planes of weakness along the <math display="inline"><mi>y</mi></math>-direction, for instance as between the fibrils in wood or many other biological structures, the stress <math display="inline"><msub><mi>&#x03C3;</mi><mi>x</mi></msub></math> could cause a split to open up in the <math display="inline"><mi>y</mi></math>-direction just ahead of the main crack. This would act to blunt and arrest the crack, and thus impart a measure of toughness to the material. This effect is sometimes called the Cook-Gordon toughening mechanism.</p>
+
+    <p role="noindent">The mathematics of the Inglis solution are simpler at the surface of the elliptical hole, since here the normal component <math display="inline"><msub><mi>&#x03C3;</mi><mi>&#x03BE;</mi></msub></math> must vanish. The tangential stress component can then be computed directly:</p>
+
+    <math display="block">
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mi>&#x03B7;</mi>
+      </msub>
+      <msub>
+        <mo>|</mo>
+        <mrow>
+          <mi>&#x03BE;</mi>
+          <mo>=</mo>
+          <msub>
+            <mi>&#x03BE;</mi>
+            <mn>0</mn>
+          </msub>
+        </mrow>
+      </msub>
+      <mo>=</mo>
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mn>0</mn>
+      </msub>
+      <mrow>
+        <mo>[</mo>
+        <mfrac>
+          <mrow>
+            <mi>sinh</mi>
+            <mn>2</mn>
+            <msub>
+              <mi>&#x03BE;</mi>
+              <mn>0</mn>
+            </msub>
+            <mo>+</mo>
+            <msub>
+              <mi>&#x03C3;</mi>
+              <mi>x</mi>
+            </msub>
+            <mo>/</mo>
+            <msub>
+              <mi>&#x03C3;</mi>
+              <mn>0</mn>
+            </msub>
+          </mrow>
+          <mrow>
+            <mi>cosh</mi>
+            <mn>2</mn>
+            <msub>
+              <mi>&#x03BE;</mi>
+              <mn>0</mn>
+            </msub>
+            <mo>&#x2212;</mo>
+            <mi>cos</mi>
+            <mn>2</mn>
+            <mi>&#x03B7;</mi>
+          </mrow>
+        </mfrac>
+        <mo>&#x2212;</mo>
+        <mn>1</mn>
+        <mo>]</mo>
+      </mrow>
+    </math>
+
+    <p role="noindent">The greatest stress occurs at the end of the major axis <math display="inline"><mo stretchy="false">(</mo><mi>&#x03B7;</mi><mo>=</mo><mi>&#x03C0;</mi><mo>/</mo><mn>2</mn><mo stretchy="false">)</mo></math>:</p>
+
+    <math display="block">
+      <msub>
+        <mrow>
+          <mo stretchy="false">(</mo>
+          <msub>
+            <mi>&#x03C3;</mi>
+            <mi>&#x03B7;</mi>
+          </msub>
+          <mo stretchy="false">)</mo>
+        </mrow>
+        <mi>max</mi>
+      </msub>
+      <mo>=</mo>
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mn>0</mn>
+      </msub>
+      <mo stretchy="false">(</mo>
+      <mn>1</mn>
+      <mo>+</mo>
+      <mn>2</mn>
+      <mfrac>
+        <mi>a</mi>
+        <mi>b</mi>
+      </mfrac>
+      <mo stretchy="false">)</mo>
+    </math>
+
+    <p role="noindent">This can also be written in terms of the radius of curvature <math display="inline"><mi>&#x03C1;</mi></math> at the tip of the major axis as:</p>
+
+    <math display="block">
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mi>max</mi>
+      </msub>
+      <mo>=</mo>
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mn>0</mn>
+      </msub>
+      <mo stretchy="false">(</mo>
+      <mn>1</mn>
+      <mo>+</mo>
+      <mn>2</mn>
+      <msqrt>
+        <mfrac>
+          <mi>a</mi>
+          <mi>&#x03C1;</mi>
+        </mfrac>
+      </msqrt>
+      <mo stretchy="false">)</mo>
+    </math>
+
+    <p role="noindent">This result is immediately useful: it is clear that large cracks are worse than small ones (the local stress increases with crack size <math display="inline"><mi>a</mi></math>) and it is also obvious that sharp cracks (decreasing <math display="inline"><mi>&#x03C1;</mi></math>) are worse than rounded ones. Note also that the stress <math display="inline"><msub><mi>&#x03C3;</mi><mi>y</mi></msub></math> increases without bound as the crack tip radius <math display="inline"><mi>&#x03C1;</mi></math> goes to zero, i.e. for a perfectly sharp crack. This is a mathematical stress singularity, of obvious importance in fracture mechanics.</p>
+
+  </sec>
+
+  <sec id="5_1_sharp_crack">
+    <tittle>Stresses near a sharp crack</tittle>
+
+    <p role="noindent">limit as the crack becomes sharper <math display="inline"><mi>&#x03C1;</mi><mo>&#x2192;</mo><mn>0</mn></math>, so the concept of a stress concentration factor becomes difficult to use for very sharp cracks. When the major and minor axes of the ellipse are the same <math display="inline"><mi>b</mi><mo>=</mo><mi>a</mi></math>, the result becomes identical to that of the circular hole outlined earlier.</p>
+
+    <fig id="fig_5.1.6_sharp_crack">
+      <label>Fig 5.1.6</label>
+      <caption>Figure 6: Sharp crack in an infinite sheet.</caption>
+    </fig>
+
+    <p role="noindent">The Inglis solution is difficult to apply, especially as the crack becomes sharp. A more tractable and now more widely used approach was developed by Westergaard (Westergaard, H.M., "Bearing Pressures and Cracks," Transactions, Am. Soc. Mech. Engrs., Journal of Applied Mechanics, Vol. 5, p. 49, 1939.), which treats a sharp crack of length <math display="inline"><mn>2</mn><mi>a</mi></math> in a thin but infinitely wide sheet (see Figure 6). The stresses that act perpendicularly to the crack-free surfaces (the crack "flanks") must be zero, while at distances far from the crack they must approach the far-field imposed stresses. Consider a harmonic function <math display="inline"><mi>&#x03C6;</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math> with first and second derivatives <math display="inline"><msup><mi>&#x03C6;</mi><mo>&#x2032;</mo></msup><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math> and <math display="inline"><msup><mi>&#x03C6;</mi><mo>&#x2032;&#x2032;</mo></msup><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math>, and first and second integrals <math display="inline"><mover accent="true"><mi>&#x03C6;</mi><mo>&#x00AF;</mo></mover><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math> and <math display="inline"><mover accent="true"><mover accent="true"><mi>&#x03C6;</mi><mo>&#x00AF;</mo></mover><mo>&#x00AF;</mo></mover><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math>. Westergaard constructed a stress function as:</p>
+
+    <math display="block">
+      <mi>&#x03A6;</mi>
+      <mo>=</mo>
+      <mi>Re</mi>
+      <mover accent="true">
+        <mover accent="true">
+          <mi>&#x03C6;</mi>
+          <mo>&#x00AF;</mo>
+        </mover>
+        <mo>&#x00AF;</mo>
+      </mover>
+      <mo stretchy="false">(</mo>
+      <mi>z</mi>
+      <mo stretchy="false">)</mo>
+      <mo>+</mo>
+      <mi>y</mi>
+      <mi>Im</mi>
+      <mover accent="true">
+        <mi>&#x03C6;</mi>
+        <mo>&#x00AF;</mo>
+      </mover>
+      <mo stretchy="false">(</mo>
+      <mi>z</mi>
+      <mo stretchy="false">)</mo>
+    </math>
+
+    <p role="noindent">It can be shown directly that the stresses derived from this function satisfy the equilibrium, compatibility, and constitutive relations. The function <math display="inline"><mi>&#x03C6;</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math> needed here is a harmonic function such that the stresses approach the far-field value of <math display="inline"><mi>&#x03C3;</mi></math> at infinity, but are zero at the crack flanks except at the crack tip where the stress becomes unbounded:</p>
+
+    <math display="block">
+      <msub>
+        <mi>&#x03C6;</mi>
+        <mi>z</mi>
+      </msub>
+      <mo>=</mo>
+      <mrow>
+        <mo>{</mo>
+        <mtable columnalign="left">
+          <mtr>
+            <mtd>
+              <mfrac>
+                <mi>&#x03C3;</mi>
+                <mn>0</mn>
+              </mfrac>
+              <mo>&#x2212;</mo>
+              <mn>0</mn>
+              <mo>&lt;</mo>
+              <mi>c</mi>
+              <mo>&lt;</mo>
+              <mn>4</mn>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>y</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>0</mn>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mrow>
+                  <mi>i</mi>
+                  <mi>j</mi>
+                </mrow>
+              </msub>
+              <mo>&#x2192;</mo>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mn>0</mn>
+              </msub>
+              <mspace width="1em"/>
+              <mtext>far from crack</mtext>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mrow>
+    </math>
+    <p role="noindent">These conditions are satisfied by complex functions of the form:</p>
+    <math display="block">
+      <mi>&#x03C6;</mi>
+      <mo stretchy="false">(</mo>
+      <mi>z</mi>
+      <mo stretchy="false">)</mo>
+      <mo>=</mo>
+      <mfrac>
+        <msub>
+          <mi>&#x03C3;</mi>
+          <mn>0</mn>
+        </msub>
+        <msqrt>
+          <mrow>
+            <mn>1</mn>
+            <mo>&#x2212;</mo>
+            <msup>
+              <mrow>
+                <mo stretchy="false">(</mo>
+                <mi>a</mi>
+                <mo>/</mo>
+                <mi>z</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+        </msqrt>
+      </mfrac>
+    </math>
+
+    <p role="noindent">This gives the needed singularity for <math display="inline"><mi>&#x03C6;</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></math> and the other boundary conditions can be verified directly as well. The stresses are now found by suitable differentiations of the stress function; for instance:</p>
+
+    <math display="block">
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mi>y</mi>
+      </msub>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <msup>
+            <mo>&#x2202;</mo>
+            <mn>2</mn>
+          </msup>
+          <mi>&#x03A6;</mi>
+        </mrow>
+        <mrow>
+          <mo>&#x2202;</mo>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mfrac>
+      <mo>=</mo>
+      <mi>Re</mi>
+      <mi>&#x03C6;</mi>
+      <mo stretchy="false">(</mo>
+      <mi>z</mi>
+      <mo stretchy="false">)</mo>
+      <mo>+</mo>
+      <mi>y</mi>
+      <mi>Im</mi>
+      <msup>
+        <mi>&#x03C6;</mi>
+        <mo>&#x2032;</mo>
+      </msup>
+      <mo stretchy="false">(</mo>
+      <mi>z</mi>
+      <mo stretchy="false">)</mo>
+    </math>
+
+    <p role="noindent">In terms of the distance <math display="inline"><mi>r</mi></math> from the crack tip, this becomes:</p>
+
+    <math display="block">
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mi>y</mi>
+      </msub>
+      <mo>=</mo>
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mn>0</mn>
+      </msub>
+      <msqrt>
+        <mfrac>
+          <mi>a</mi>
+          <mrow>
+            <mn>2</mn>
+            <mi>r</mi>
+          </mrow>
+        </mfrac>
+      </msqrt>
+      <mo>&#x22C5;</mo>
+      <mfrac>
+        <mn>1</mn>
+        <msqrt>
+          <mrow>
+            <mi>cos</mi>
+            <mfrac>
+              <mi>&#x03B8;</mi>
+              <mn>2</mn>
+            </mfrac>
+            <mo stretchy="false">(</mo>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mi>sin</mi>
+            <mfrac>
+              <mi>&#x03B8;</mi>
+              <mn>2</mn>
+            </mfrac>
+            <mi>sin</mi>
+            <mfrac>
+              <mrow>
+                <mn>3</mn>
+                <mi>&#x03B8;</mi>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msqrt>
+      </mfrac>
+      <mo>+</mo>
+      <mo>&#x22EF;</mo>
+    </math>
+
+    <p role="noindent">where these are the initial terms of a series approximation. Near the crack tip, where <math display="inline"><mi>r</mi><mo>&#x226A;</mo><mi>a</mi></math>, we can write:</p>
+
+    <math display="block">
+      <msub>
+        <mrow>
+          <mo stretchy="false">(</mo>
+          <msub>
+            <mi>&#x03C3;</mi>
+            <mi>y</mi>
+          </msub>
+          <mo stretchy="false">)</mo>
+        </mrow>
+        <mi>max</mi>
+      </msub>
+      <mo>=</mo>
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mn>0</mn>
+      </msub>
+      <msqrt>
+        <mfrac>
+          <mi>a</mi>
+          <mrow>
+            <mn>2</mn>
+            <mi>r</mi>
+          </mrow>
+        </mfrac>
+      </msqrt>
+      <mo>=</mo>
+      <mfrac>
+        <mi>K</mi>
+        <msqrt>
+          <mrow>
+            <mn>2</mn>
+            <mi>&#x03C0;</mi>
+            <mi>r</mi>
+          </mrow>
+        </msqrt>
+      </mfrac>
+    </math>
+
+    <p role="noindent">where <math display="inline"><mi>K</mi><mo>=</mo><msub><mi>&#x03C3;</mi><mn>0</mn></msub><msqrt><mrow><mi>&#x03C0;</mi><mi>a</mi></mrow></msqrt></math> is the stress intensity factor, with units of <math display="inline"><mi>MPa</mi><msqrt><mi>m</mi></msqrt></math> or <math display="inline"><mi>psi</mi><msqrt><mi>in</mi></msqrt></math>. (The factor <math display="inline"><mi>&#x03C0;</mi></math> seems redundant here since it appears in the same powers in both the numerator and denominator, but it is usually included as written here for agreement with the older literature.) We will see in the Module on Fracture that the stress intensity factor is a commonly used measure of the driving force for crack propagation, and thus underlies much of modern fracture mechanics. The dependency of the stress on distance from the crack is singular, with a <math display="inline"><mn>1</mn><mo>/</mo><msqrt><mi>r</mi></msqrt></math> dependency. The K factor scales the intensity of the overall stress distribution, with the stress always becoming unbounded as the crack tip is approached.</p>
+
+  </sec>
+  <sec id="exercises_5_1">
+    <tittle>Exercises</tittle>
+    <exercise id="exercise_5.1.1">
+      <label>Exercise 5.1.1</label>
+      <p role="noindent">Expand the governing equations (Eqns. 5.1.1 � 5.1.3) in two Cartesian dimensions. Identify the unknown functions. How many equations and unknowns are there?</p>
+    </exercise>
+
+    <exercise id="exercise_5.1.2">
+      <label>Exercise 5.1.2</label>
+      <p role="noindent">Consider a thick-walled pressure vessel of inner radius <math display="inline"><msub><mi>r</mi><mi>i</mi></msub></math> and outer radius <math display="inline"><msub><mi>r</mi><mi>o</mi></msub></math> subjected to an internal pressure <math display="inline"><msub><mi>p</mi><mi>i</mi></msub></math> and an external pressure <math display="inline"><msub><mi>p</mi><mi>o</mi></msub></math>.</p>
+
+      <fig id="fig_exercise_5.1.2">
+        <label>Fig Exercise 5.1.2</label>
+        <caption>Thick-walled pressure vessel with inner radius <math display="inline"><msub><mi>r</mi><mi>i</mi></msub></math>, outer radius <math display="inline"><msub><mi>r</mi><mi>o</mi></msub></math>, and pressures <math display="inline"><msub><mi>p</mi><mi>i</mi></msub></math> and <math display="inline"><msub><mi>p</mi><mi>o</mi></msub></math>.</caption>
+      </fig>
+
+      <p role="noindent">Assume a trial solution for the radial displacement of the form <math display="inline"><mi>u</mi><mo stretchy="false">(</mo><mi>r</mi><mo stretchy="false">)</mo><mo>=</mo><mi>A</mi><mi>r</mi><mo>+</mo><mi>B</mi><mo>/</mo><mi>r</mi></math>; this relation can be shown to satisfy the governing equations for equilibrium, strain-displacement, and stress-strain governing equations.</p>
+      <p role="noindent">(a) Evaluate the constants <math display="inline"><mi>A</mi></math> and <math display="inline"><mi>B</mi></math> using the boundary conditions:</p>
+
+      <math display="block">
+        <msub>
+          <mi>&#x03C3;</mi>
+          <mi>r</mi>
+        </msub>
+        <msub>
+          <mo>|</mo>
+          <mrow>
+            <mi>r</mi>
+            <mo>=</mo>
+            <msub>
+              <mi>r</mi>
+              <mi>i</mi>
+            </msub>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mo>&#x2212;</mo>
+        <msub>
+          <mi>p</mi>
+          <mi>i</mi>
+        </msub>
+        <mo>,</mo>
+        <mspace width="1em"/>
+        <msub>
+          <mi>&#x03C3;</mi>
+          <mi>r</mi>
+        </msub>
+        <msub>
+          <mo>|</mo>
+          <mrow>
+            <mi>r</mi>
+            <mo>=</mo>
+            <msub>
+              <mi>r</mi>
+              <mi>o</mi>
+            </msub>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mo>&#x2212;</mo>
+        <msub>
+          <mi>p</mi>
+          <mi>o</mi>
+        </msub>
+        <mo>=</mo>
+        <mn>0</mn>
+      </math>
+
+      <p role="noindent">(b) Then show that:</p>
+
+      <math display="block">
+        <msub>
+          <mi>&#x03C3;</mi>
+          <mi>r</mi>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>r</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <msub>
+              <mi>p</mi>
+              <mi>i</mi>
+            </msub>
+            <msubsup>
+              <mi>r</mi>
+              <mi>i</mi>
+              <mn>2</mn>
+            </msubsup>
+            <mo stretchy="false">(</mo>
+            <msup>
+              <mi>r</mi>
+              <mn>2</mn>
+            </msup>
+            <mo>&#x2212;</mo>
+            <msubsup>
+              <mi>r</mi>
+              <mi>o</mi>
+              <mn>2</mn>
+            </msubsup>
+            <mo stretchy="false">)</mo>
+            <mo>+</mo>
+            <msub>
+              <mi>p</mi>
+              <mi>o</mi>
+            </msub>
+            <msubsup>
+              <mi>r</mi>
+              <mi>o</mi>
+              <mn>2</mn>
+            </msubsup>
+            <mo stretchy="false">(</mo>
+            <msubsup>
+              <mi>r</mi>
+              <mi>i</mi>
+              <mn>2</mn>
+            </msubsup>
+            <mo>&#x2212;</mo>
+            <msup>
+              <mi>r</mi>
+              <mn>2</mn>
+            </msup>
+            <mo stretchy="false">)</mo>
+          </mrow>
+          <mrow>
+            <msup>
+              <mi>r</mi>
+              <mn>2</mn>
+            </msup>
+            <mo stretchy="false">(</mo>
+            <msubsup>
+              <mi>r</mi>
+              <mi>o</mi>
+              <mn>2</mn>
+            </msubsup>
+            <mo>&#x2212;</mo>
+            <msubsup>
+              <mi>r</mi>
+              <mi>i</mi>
+              <mn>2</mn>
+            </msubsup>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </mfrac>
+      </math>
+    </exercise>
+
+    <exercise id="exercise_5.1.3">
+      <label>Exercise 5.1.3</label>
+      <p role="noindent">Justify the boundary conditions given in Eqns. 5.1.14 for stress in circular coordinates <math display="inline"><msub><mi>&#x03C3;</mi><mi>r</mi></msub><mo>,</mo><msub><mi>&#x03C4;</mi><mrow><mi>r</mi><mi>&#x03B8;</mi></mrow></msub></math> appropriate to a uniaxially loaded plate containing a circular hole.</p>
+    </exercise>
+
+    <exercise id="exercise_5.1.4">
+      <label>Exercise 5.1.4</label>
+      <p role="noindent">Show that the Airy function <math display="inline"><mi>&#x03A6;</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></math> defined by Eqns. 5.1.11 satisfies the equilibrium equations.</p>
+    </exercise>
+
+    <exercise id="exercise_5.1.5">
+      <label>Exercise 5.1.5</label>
+      <p role="noindent">Show that stress functions in the form of quadratic or cubic polynomials
+        <math display="inline">
+          <mi>&#x03A6;</mi>
+          <mo>=</mo>
+          <mi>a</mi>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <mi>b</mi>
+          <mi>x</mi>
+          <mi>y</mi>
+          <mo>+</mo>
+          <mi>c</mi>
+          <msup>
+            <mi>y</mi>
+            <mn>2</mn>
+          </msup>
+        </math>
+        and
+        <math display="inline">
+          <mi>&#x03A6;</mi>
+          <mo>=</mo>
+          <mi>a</mi>
+          <msup>
+            <mi>x</mi>
+            <mn>3</mn>
+          </msup>
+          <mo>+</mo>
+          <mi>b</mi>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mi>y</mi>
+          <mo>+</mo>
+          <mi>c</mi>
+          <mi>x</mi>
+          <msup>
+            <mi>y</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <mi>d</mi>
+          <msup>
+            <mi>y</mi>
+            <mn>3</mn>
+          </msup>
+        </math>
+        automatically satisfy the governing relation <math display="inline"><msup><mo>&#x2207;</mo><mn>4</mn></msup><mi>&#x03A6;</mi><mo>=</mo><mn>0</mn></math>.
+      </p>
+    </exercise>
+
+    <exercise id="exercise_5.1.6">
+      <label>Exercise 5.1.6</label>
+      <p role="noindent">Write the stresses <math display="inline"><msub><mi>&#x03C3;</mi><mi>x</mi></msub><mo>,</mo><msub><mi>&#x03C3;</mi><mi>y</mi></msub><mo>,</mo><msub><mi>&#x03C4;</mi><mi>xy</mi></msub></math> corresponding to the quadratic and cubic stress functions of the previous problem.</p>
+    </exercise>
+
+    <exercise id="exercise_5.1.7">
+      <label>Exercise 5.1.7</label>
+      <p role="noindent">Choose the constants in the quadratic stress function of the previous two problems so as to represent (a) simple tension, (b) biaxial tension, and (c) pure shear of a rectangular plate.</p>
+
+      <fig id="fig_exercise_5.1.7">
+        <label>Fig Exercise 5.1.7</label>
+        <caption>(a) Simple tension, (b) Biaxial tension, (c) Pure shear of a rectangular plate.</caption>
+      </fig>
+    </exercise>
+
+    <exercise id="exercise_5.1.8">
+      <label>Exercise 5.1.8</label>
+      <p role="noindent">Choose the constants in the cubic stress function of the previous problems so as to represent pure bending induced by couples applied to vertical sides of a rectangular plate.</p>
+
+      <fig id="fig_exercise_5.1.8">
+        <label>Fig Exercise 5.1.8</label>
+        <caption>Pure bending induced by couples <math display="inline"><mi>M</mi></math> applied to vertical sides of a rectangular plate.</caption>
+      </fig>
+    </exercise>
+
+    <exercise id="exercise_5.1.9">
+      <label>Exercise 5.1.9</label>
+      <p role="noindent">Consider a cantilevered beam of rectangular cross section and width <math display="inline"><mi>b</mi><mo>=</mo><mn>1</mn></math>, loaded at the free end <math display="inline"><mi>x</mi><mo>=</mo><mn>0</mn></math> with a force <math display="inline"><mi>P</mi></math>. At the free end, the boundary conditions on stress can be written <math display="inline"><msub><mi>&#x03C3;</mi><mi>x</mi></msub><mo>=</mo><msub><mi>&#x03C3;</mi><mi>y</mi></msub><mo>=</mo><mn>0</mn></math> and:</p>
+
+      <math display="block">
+        <msub>
+          <mo>&#x222B;</mo>
+          <mrow>
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>&#x03C4;</mi>
+          <mi>xy</mi>
+        </msub>
+        <mi>d</mi>
+        <mi>A</mi>
+        <mo>=</mo>
+        <mo>&#x2212;</mo>
+        <mi>P</mi>
+      </math>
+
+      <p role="noindent">The horizontal edges are not loaded, so we also have that <math display="inline"><msub><mi>&#x03C4;</mi><mi>xy</mi></msub><mo>=</mo><mn>0</mn></math> at <math display="inline"><mi>y</mi><mo>=</mo><mo>&#x00B1;</mo><mi>c</mi></math> where <math display="inline"><mn>2</mn><mi>c</mi><mo>=</mo><mi>d</mi><mi>A</mi><mo>/</mo><mi>dy</mi></math>.</p>
+
+      <p role="noindent">(a) Show that these conditions are satisfied by a stress function of the form:</p>
+
+      <math display="block">
+        <mi>&#x03A6;</mi>
+        <mo>=</mo>
+        <mi>b</mi>
+        <mi>x</mi>
+        <msup>
+          <mi>y</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>+</mo>
+        <mi>d</mi>
+        <msup>
+          <mi>y</mi>
+          <mn>3</mn>
+        </msup>
+      </math>
+
+      <p role="noindent">(b) Evaluate the constants to show that the stresses can be written:</p>
+
+      <math display="block">
+        <mtable columnalign="left">
+          <mtr>
+            <mtd>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>x</mi>
+              </msub>
+              <mo>=</mo>
+              <mo>&#x2212;</mo>
+              <mfrac>
+                <mrow>
+                  <mi>P</mi>
+                  <mi>y</mi>
+                </mrow>
+                <mi>I</mi>
+              </mfrac>
+              <mo>,</mo>
+              <mspace width="1em"/>
+              <msub>
+                <mi>&#x03C3;</mi>
+                <mi>y</mi>
+              </msub>
+              <mo>=</mo>
+              <mn>0</mn>
+              <mo>,</mo>
+              <mspace width="1em"/>
+              <msub>
+                <mi>&#x03C4;</mi>
+                <mi>xy</mi>
+              </msub>
+              <mo>=</mo>
+              <mfrac>
+                <mi>P</mi>
+                <mrow>
+                  <mn>2</mn>
+                  <mi>I</mi>
+                </mrow>
+              </mfrac>
+              <mo stretchy="false">[</mo>
+              <msup>
+                <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mfrac>
+                    <mi>d</mi>
+                    <mn>2</mn>
+                  </mfrac>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+              <mo>&#x2212;</mo>
+              <msup>
+                <mi>y</mi>
+                <mn>2</mn>
+              </msup>
+              <mo stretchy="false">]</mo>
+            </mtd>
+          </mtr>
+        </mtable>
+      </math>
+      <p role="noindent">in agreement with the elementary theory of beam bending (Module 13).</p>
+    </exercise>
+  </sec>
+</sec>
+<sec id="5_2">
+<label>5.2:</label><tittle> Experimental Solutions</tittle>
+<sec id="5_2_1"> 
+<tittle>Introduction</tittle>
+<p role="noindent">As was seen in previous modules, stress analysis even of simple-appearing geometries can lead to complicated mathematical maneuvering. Actual articles -- engine crankshafts, medical prostheses, tennis rackets, etc. -- have boundary shapes that cannot easily be described mathematically, and even if they were it would be extremely difficult to fit solutions of the governing equations to them. One approach to this impasse is the experimental one, in which we seek to construct a physical laboratory model that somehow reveals the stresses in a measurable way.</p>
+<p role="noindent">It is the nature of forces and stresses that they cannot be measured directly. It is the effect of a force that is measurable: when we weigh an object on a spring scale, we are actually measuring the stretching of the spring, and then calculating the force from Hooke's law. Experimental stress analysis, then, is actually experimental strain analysis. The difficulty is that strains in the linear elastic regime are almost always small, on the order of 1% or less, and the art in this field is that of detecting and interpreting small displacements. We look for phenomena that exhibit large and measurable changes due to small and difficult-to-measure displacements. There a number of such techniques, and three of these will be outlined brief y in the sections to follow. A good deal of methodology has been developed around these and other experimental methods, and both further reading(Manual on Experimental Stress Analysis, Third Edition, Society of Experimental Stress Analysis (now Society of Experimental Mechanics), 1978.) and laboratory practice would be required to put become competent in this area.</p>
+<sec id="5_2_2"><tittle>Strain gages</tittle>
+<p role="noindent">The term "strain gage" usually refers to a thin wire or foil, folded back and forth on itself and bonded to the specimen surface as seen in Figure 1, that is able to generate an electrical measure of strain in the specimen. As the wire is stretched along with the specimen, the wire's electrical resistance  changes both because its length  is increased and its cross-sectional area  is reduced. For many resistors, these variables are related by the simple expression discovered in 1856 by Lord Kelvin: where here  is the material's resistivity. To express the effect of a strain   in the wire's long direction on the electrical resistance, assume a circular wire with   and take logarithms: The total differential of this expression gives Since</p>
+ <fig id="fig_5.2.1">
+<label>Fig 5.2.1</label>
+<caption>Figure 1: Wire resistance stain gage</caption>
+</fig>
+<math display='block'>
+ <mtable columnalign='left'>
+  <mtr>
+   <mtd>
+    <mi>R</mi><mo>=</mo><mfrac>
+     <mrow>
+      <mi>p</mi><mi>L</mi></mrow>
+     <mi>A</mi>
+    </mfrac>
+    </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <msub>
+     <mo>&#x2208;</mo>
+     <mi>r</mi>
+    </msub>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <mi>d</mi><mi>r</mi></mrow>
+     <mi>r</mi>
+    </mfrac>
+    <mo>=</mo><mo>&#x2212;</mo><mi>v</mi><mfrac>
+     <mrow>
+      <mi>d</mi><mi>L</mi></mrow>
+     <mi>L</mi>
+    </mfrac>
+    </mtd>
+  </mtr>
+  <mtr>
+   <mtd>
+    <mfrac>
+     <mrow>
+      <mi>d</mi><mi>R</mi></mrow>
+     <mi>R</mi>
+    </mfrac>
+    <mo>=</mo><mfrac>
+     <mrow>
+      <mi>d</mi><mi>p</mi></mrow>
+     <mi>p</mi>
+    </mfrac>
+    <mo stretchy='false'>(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>v</mi><mo stretchy='false'>)</mo><mfrac>
+     <mrow>
+      <mi>d</mi><mi>L</mi></mrow>
+     <mi>L</mi>
+    </mfrac>
+    </mtd>
+  </mtr>
+ </mtable>
+</math>
+<p>then</p>
+ <p role="indent">P.W. Bridgeman (1882 - 1961) in 1929 studied the effect of volume change on electrical resistance and found these to vary proportionally:</p>
+ <math display='block'>
+ <mfrac>
+  <mrow>
+   <mi>d</mi><mi>p</mi></mrow>
+  <mi>P</mi>
+ </mfrac>
+ <mo>=</mo><msub>
+  <mi>&#x03B1;</mi>
+  <mi>R</mi>
+ </msub>
+ <mfrac>
+  <mrow>
+   <mi>d</mi><mi>V</mi></mrow>
+  <mi>V</mi>
+ </mfrac>
+</math>
+<p role="indent">where  <math display='block'>
+ <msub>
+  <mi>&#x03B1;</mi>
+  <mi>R</mi>
+ </msub>
+ </math>
+ is the constant of proportionality between resistance change and volume change. Writing the volume change in terms of changes in length and area, this becomes Hence</p>
+ <math display='block'>
+ <mfrac>
+  <mrow>
+   <mfrac bevelled='true'>
+    <mrow>
+     <mi>d</mi><mi>R</mi></mrow>
+    <mi>R</mi>
+   </mfrac>
+   </mrow>
+  <mo>&#x2208;</mo>
+ </mfrac>
+ <mo>=</mo><mo stretchy='false'>(</mo><mn>1</mn><mo>+</mo><mn>2</mn><mi>v</mi><mo stretchy='false'>)</mo><mo>+</mo><msub>
+  <mi>&#x03B1;</mi>
+  <mi>R</mi>
+ </msub>
+ <mo stretchy='false'>(</mo><mn>1</mn><mo>&#x2212;</mo><mn>2</mn><mi>v</mi><mo stretchy='false'>)</mo>
+</math>
+<p role="indent">This quantity is called the gage factor, GF. Constantan, a 45/55 nickel/copper alloy, <math display='block'> <msub>  <mi>&#x03B1;</mi>  <mi>R</mi> </msub> <mo>=</mo><mn>113</mn></math>
+has  , giving  .
+This material also has a low temperature coefficient of resistivity, which reduces the temperature sensitivity of the strain gage.</p>
+<p role="indent">Figure 2: Wheatstone bridge circuit for strain gages.</p>
+<p role="indent">A change in resistance of only 2%, which would be generated by a gage with   at 1% strain, would not be noticeable on a simple ohmmeter. For this reason strain gages are almost always connected to a Wheatstone-bridge circuit as seen in Figure 2. The circuit can be adjusted by means of the variable resistance  to produce a zero output voltage  before strain is applied to the gage. Typically the gage resistance is approximately 350 and the excitation voltage is near . When the gage resistance is changed by strain, the bridge is unbalanced and a voltage appears on the output according to the relation
+<math display='block'>
+ <mfrac>
+  <mrow>
+   <msub>
+    <mi>V</mi>
+    <mrow>
+     <mi>o</mi><mi>u</mi><mi>t</mi></mrow>
+   </msub>
+   </mrow>
+  <mrow>
+   <msub>
+    <mi>V</mi>
+    <mrow>
+     <mi>i</mi><mi>n</mi></mrow>
+   </msub>
+   </mrow>
+ </mfrac>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <mi>&#x0394;</mi><mi>R</mi></mrow>
+  <mrow>
+   <mn>2</mn><msub>
+    <mi>R</mi>
+    <mn>0</mn>
+   </msub>
+   </mrow>
+ </mfrac>
+</math>
+<p role="indent">where <math display='block'> <msub><mi>R</mi>  <mn>0</mn></msub></math>
+  is the nominal resistance of the four bridge elements. The output voltage is easily measured because it is a deviation from zero rather than being a relatively small change superimposed on a much larger quantity; it can thus be amplified to suit the needs of the data acquisition system.</p>
+<p role="indent">Temperature compensation can be achieved by making a bridge element on the opposite side of the bridge from the active gage, say
+ , an inactive gage that is placed near the active gage but not bonded to the specimen. Resistance changes in the active gage due to temperature will then be offset be an equal resistance change in the other arm of the bridge.</p>
+ <fig id="fig_5.2.3">
+<label>Fig 5.2.3</label>
+<caption>Figure 3: Cancellation of bending effects.</caption>
+</fig>
+<p role="indent">It is often difficult to mount a tensile specimen in the testing machine without inadvertently applying bending in addition to tensile loads. If a single gage were applied to the convex- outward side of the specimen, its reading would be erroneously high. Similarly, a gage placed on the concave-inward or compressive-tending side would read low. These bending errors can be eliminated by using an active gage on each side of the specimen as shown in Figure 3 and wiring them on the same side of the Wheatstone bridge, e.g.  and 	. The tensile component of bending on one side of the specimen is accompanied by an equal but compressive component
+on the other side, and these will generate equal but opposite resistance changes in . The effect of bending will therefore cancel, and the gage combination will measure only the tensile strain (with doubled sensitivity, since both  and  are active).
+<p role="indent">The strain in the gage direction can be found directly from the gage factor (Equation 5.2.1). When the direction of principal stress is unknown, strain gage rosettes are useful; these employ multiple gages on the same film backing, oriented in different directions. The rectangular three-gage rosette shown in Figure 4 uses two gages oriented perpendicularly, and a third gage oriented at 45 to the first two.</p>
+ <p role="indent">For the specific case of a 0-45-90 rosette, the orientation of the principal strain axis can be given directly by(M. Hetenyi, ed.,
+Handbook of Experimental Stress Analysis, Wiley, New York, 1950.)</p>
+ <math display='block'>
+ <mi>tan</mi><mn>2</mn><mi>&#x03B8;</mi><mo>=</mo><mfrac>
+  <mrow>
+   <mn>2</mn><msub>
+    <mo>&#x2208;</mo>
+    <mi>b</mi>
+   </msub>
+   <mo>&#x2212;</mo><msub>
+    <mo>&#x2208;</mo>
+    <mi>a</mi>
+   </msub>
+   <mo>&#x2212;</mo><msub>
+    <mo>&#x2208;</mo>
+    <mi>c</mi>
+   </msub>
+   </mrow>
+  <mrow>
+   <msub>
+    <mo>&#x2208;</mo>
+    <mi>a</mi>
+   </msub>
+   <mo>&#x2212;</mo><msub>
+    <mo>&#x2208;</mo>
+    <mi>c</mi>
+   </msub>
+   </mrow>
+ </mfrac>
+ 
+</math>
+<p role="indent">and the principal strains are</p>
+<math display='block'>
+ <msub>
+  <mo>&#x2208;</mo>
+  <mrow>
+   <mn>1</mn><mo>,</mo><mn>2</mn></mrow>
+ </msub>
+ <mo>=</mo><mfrac>
+  <mrow>
+   <msub>
+    <mo>&#x2208;</mo>
+    <mi>a</mi>
+   </msub>
+   <mo>+</mo><msub>
+    <mo>&#x2208;</mo>
+    <mi>c</mi>
+   </msub>
+   </mrow>
+  <mn>2</mn>
+ </mfrac>
+ <munder accentunder='true'>
+  <mo>+</mo>
+  <mo>_</mo>
+ </munder>
+ <mfrac>
+  <mrow>
+   <msqrt>
+    <mrow>
+     <msup>
+      <mrow>
+       <mo stretchy='false'>(</mo><msub>
+        <mo>&#x2208;</mo>
+        <mi>a</mi>
+       </msub>
+       <mo>&#x2212;</mo><msub>
+        <mo>&#x2208;</mo>
+        <mi>b</mi>
+       </msub>
+       <mo stretchy='false'>)</mo></mrow>
+      <mn>2</mn>
+     </msup>
+     <mo>+</mo><msup>
+      <mrow>
+       <mo stretchy='false'>(</mo><msub>
+        <mo>&#x2208;</mo>
+        <mi>b</mi>
+       </msub>
+       <mo>&#x2212;</mo><msub>
+        <mo>&#x2208;</mo>
+        <mi>c</mi>
+       </msub>
+       <mo stretchy='false'>)</mo></mrow>
+      <mn>2</mn>
+     </msup>
+     </mrow>
+   </msqrt>
+   </mrow>
+  <mn>2</mn>
+ </mfrac>
+ </math>
+ <sec id="example5.2.1">
+<p role="indent">Graphical solutions based on Mohr's circles are also useful for reducing gage output data.</p>
+<fig id="fig_5.2.4">
+<label>Fig 5.2.4</label>
+<caption>Figure 4:Strain rosette.</caption>
+</fig>
+</sec>
+<p role="indent">Strain gages are used very extensively, and critical structures such as aircraft may be instrumented with hundreds of gages during testing. Each gage must be bonded carefully to the structure, and connected by its two leads to the signal conditioning unit that includes the excitation voltage source and the Wheatstone bridge. This can obviously be a major instrumentation chore, with computer-aided data acquisition and reduction a practical necessity.</p>
+
+<sec id="5_2_3">
+  <tittle>Photoelasticity</tittle>
+  <p role="noindent">Wave-retardance strain gages are probably the principal devices used in experimental stress analysis today, but they have the disadvantage of monitoring strain only at a single location. Photoelasticity and moire methods, to be outlined in the following sections, are more complicated in concept and application but have the ability to provide full-field displays of the strain distribution. The transient nature of these displays can be so valuable that it may be unnecessary to convert them to numerical values, although the conversion can be done if desired.</p>
+  <sec id="5_2_3_1">
+    <tittle>Light Propagation</tittle>
+    <p role="noindent">Photoelasticity employs a property of many transparent polymers and inorganic glasses called birefringence. To explain this phenomenon, recall the definition of refractive index, <math display="inline"><mi>n</mi></math>, which is the ratio of the speed of light <math display="inline"><mi>c</mi></math> in the medium to that in vacuum:</p>
+    <math display="block">
+      <mi>n</mi>
+      <mo>=</mo>
+      <mfrac>
+        <mi>c</mi>
+        <msub>
+          <mi>c</mi>
+          <mi>medium</mi>
+        </msub>
+      </mfrac>
+    </math>
+    <fig id="fig_5.2.5">
+      <label>Fig 5.2.5</label>
+      <caption>Figure 5: Light propagation.</caption>
+    </fig>
+    <p role="noindent">As the light beam travels in space (see Figure 5), its electric field vector <math display="inline"><mover><mi>E</mi><mo>&#x2192;</mo></mover></math> oscillates up and down at angular frequency <math display="inline"><mi>&#x03C9;</mi></math> in a fixed plane, defined for given light beam as the polarization plane. (This is the <em>plane-polarized</em> or <em>linearly-polarized</em> case.) The rate at which the refractive index depends on the orientation of plane of polarization and birefringence of the birefringence is the difference in index:</p>
+    <math display="block">
+      <mi>&#x0394;</mi>
+      <mi>n</mi>
+      <mo>=</mo>
+      <msub>
+        <mi>n</mi>
+        <mn>1</mn>
+      </msub>
+      <mo>&#x2212;</mo>
+      <msub>
+        <mi>n</mi>
+        <mn>2</mn>
+      </msub>
+    </math>
+    <p role="noindent">We use the refractive indices on the two planes. These two planes that produce the maximum <math display="inline"><msub><mi>n</mi><mn>1</mn></msub></math> are the principal optical planes. As shown in Figure 6, a birefringent material can be viewed simplistically as a Newton tablet that resolves an arbitrarily oriented electric field vector into two components aligned with the two principal optical planes, after which each component will transit the material at a different speed according to Equation 5.2.4. The two components will eventually exit the material, again traveling at the same speed but having been shifted in phase from one another by an amount related to the difference in transit times.</p>
+    <fig id="fig_5.2.6">
+      <label>Fig 5.2.6</label>
+      <caption>Figure 6: Stressed model of birefringent material.</caption>
+    </fig>
+    <p role="noindent">A photoelastic material is one in which the birefringence depends on the applied stress, and many such materials can be described to a good approximation by the stress-optical law:</p>
+    <math display="block">
+      <mi>&#x0394;</mi>
+      <mi>n</mi>
+      <mo>=</mo>
+      <msub>
+        <mi>C</mi>
+        <mi>&#x03C3;</mi>
+      </msub>
+      <mo stretchy="false">(</mo>
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mn>1</mn>
+      </msub>
+      <mo>&#x2212;</mo>
+      <msub>
+        <mi>&#x03C3;</mi>
+        <mn>2</mn>
+      </msub>
+      <mo stretchy="false">)</mo>
+    </math>
+    <p role="noindent">where <math display="inline"><msub><mi>C</mi><mi>&#x03C3;</mi></msub></math> is the stress-optical coefficient, and the quantity in the second parentheses is the difference between the two principal stresses in the plane normal to the light propagation direction; this is just twice the maximum shear stress in that plane. The stress-optical coefficient is generally different for different wavelengths of light.</p>
+    <p role="noindent">The stress distribution in an irregularly shaped body can be viewed by replacing the actual structure (probably scaled up or down to size for convenience) by a birefringent material such as epoxy. If the structure is statically determinate, the stresses in the model will be the same as in the in the actual structure, in spite of the difference in modulus. To make the birefringent effect visible, the model is placed between crossed polarizers in an apparatus known as a polariscope. (Polarizers, such as Polaroid, a polymer sheet containing oriented iodide crystals, can essentially pass birefringent materials that pass only light polarized in the polarizer's principal optical plane.)</p>
+   <p role="noindent">The radiation source can produce either conventional white (polychromatic) or filtered (monochromatic) light. The electric field vector of light striking the first polarizer with an arbitrary orientation can be resolved into two components as shown in Figure 7.</p>
+    <fig id="fig_5.2.7">
+      <label>Fig 5.2.7</label>
+      <caption>Figure 7: The circular polariscope arrangement.</caption>
+    </fig>
+  </sec>
+  <sec id="5_2_3_2">
+    <tittle>The Analyzer</tittle>
+    <p role="noindent">In the polarization direction and the other perpendicular to it. The polarizer will block the transverse component, allowing the parallel component to pass through to the specimen. This polarized component can be written as:</p>
+    <math display="block">
+      <msub>
+        <mi>E</mi>
+        <mn>0</mn>
+      </msub>
+      <mo>=</mo>
+      <msub>
+        <mi>a</mi>
+        <mn>0</mn>
+      </msub>
+      <mi>cos</mi>
+      <mi>&#x03C9;</mi>
+      <mi>t</mi>
+    </math>
+    <p role="noindent">The birefringent specimen will decompose this component into two further components, along each of the principal stress directions; these can be written as:</p>
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>E</mi>
+              <mi>a</mi>
+            </msub>
+            <mo>=</mo>
+            <mi>a</mi>
+            <mi>cos</mi>
+            <mi>&#x03B1;</mi>
+            <mo>&#x22C5;</mo>
+            <mi>cos</mi>
+            <mi>&#x03C9;</mi>
+            <mi>t</mi>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>E</mi>
+              <mi>b</mi>
+            </msub>
+            <mo>=</mo>
+            <mi>a</mi>
+            <mi>sin</mi>
+            <mi>&#x03B1;</mi>
+            <mo>&#x22C5;</mo>
+            <mi>cos</mi>
+            <mi>&#x03C9;</mi>
+            <mi>t</mi>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+    <p role="noindent">where <math display="inline"><mi>&#x03B1;</mi></math> is the (unknown) angle the principal stress planes make with the polarization direction. Each of these two components passes through the specimen, but at different speeds as given by Equation 5.2.4. After traveling through the specimen a distance <math display="inline"><mi>h</mi></math>, a distance through the specimen, they can be written as:</p>
+    <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>E</mi>
+              <mi>a</mi>
+            </msub>
+            <mo>=</mo>
+            <mi>a</mi>
+            <mi>cos</mi>
+            <mi>&#x03B1;</mi>
+            <mo>&#x22C5;</mo>
+            <mi>cos</mi>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03C9;</mi>
+            <mi>t</mi>
+            <mo>&#x2212;</mo>
+            <msub>
+              <mi>&#x03B4;</mi>
+              <mi>a</mi>
+            </msub>
+            <mo stretchy="false">)</mo>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>E</mi>
+              <mi>b</mi>
+            </msub>
+            <mo>=</mo>
+            <mi>a</mi>
+            <mi>sin</mi>
+            <mi>&#x03B1;</mi>
+            <mo>&#x22C5;</mo>
+            <mi>cos</mi>
+            <mo stretchy="false">(</mo>
+            <mi>&#x03C9;</mi>
+            <mi>t</mi>
+            <mo>&#x2212;</mo>
+            <msub>
+              <mi>&#x03B4;</mi>
+              <mi>b</mi>
+            </msub>
+            <mo stretchy="false">)</mo>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+    <p role="noindent">These two components then fall on the second polarizer, oriented at 90� to the first and known as the analyzer. Each is again resolved into components parallel and perpendicular to the analyzer axis. The analyzer blocks the perpendicular components but transmits the parallel components passed through. The transmitted component can be written as:</p>
+    <math display="block">
+      <msub>
+        <mi>E</mi>
+        <mi>T</mi>
+      </msub>
+      <mo>=</mo>
+      <mi>a</mi>
+      <mi>sin</mi>
+      <mn>2</mn>
+      <mi>&#x03B1;</mi>
+      <mo>&#x22C5;</mo>
+      <mi>sin</mi>
+      <mfrac>
+        <mi>&#x0394;</mi>
+        <mn>2</mn>
+      </mfrac>
+      <mo>&#x22C5;</mo>
+      <mi>sin</mi>
+      <mo stretchy="false">(</mo>
+      <mi>&#x03C9;</mi>
+      <mi>t</mi>
+      <mo>&#x2212;</mo>
+      <mfrac>
+        <mi>&#x0394;</mi>
+        <mn>2</mn>
+      </mfrac>
+      <mo stretchy="false">)</mo>
+    </math>
+    <p role="noindent">This is of the form <math display="inline"><msub><mi>E</mi><mi>T</mi></msub><mo>=</mo><msub><mi>A</mi><mn>0</mn></msub><mi>sin</mi><mo stretchy="false">(</mo><mi>&#x03C9;</mi><mi>t</mi><mo>&#x2212;</mo><mi>&#x03B8;</mi><mo stretchy="false">)</mo></math>, where <math display="inline"><msub><mi>A</mi><mn>0</mn></msub></math> is amplitude. Note the angle <math display="inline"><mi>&#x03B1;</mi></math> is zero, no light will be transmitted regardless of retardation <math display="inline"><mi>&#x0394;</mi></math>. If <math display="inline"><mi>&#x03B1;</mi><mo>=</mo><mn>0</mn></math>, light will be transmitted (if retardation is non-zero).</p>
+    <p role="noindent">The case for which <math display="inline"><mi>&#x03B1;</mi><mo>=</mo><mn>0</mn></math> occurs when the principal stress planes are aligned with the polarizer/analyzer axes. All positions on the model at which this is true thus produce an extinction of the transmitted light. These are seen as dark lines called isoclinics, since they indicate locations of equal inclination of the principal stress axes. By rotating the polarizer and analyzer together (keeping them crossed), it is possible to evaluate the principal stress orientation at every point in the model, giving a complete picture of polarization orientations, if desired, to give an even more complete picture of stress directions.</p>
+    <p role="noindent">Positions of zero retardation (principal stresses equal) also extinguish the transmitted light; the light coming through the polarizer-analyzer passes another one of the material's optical axes another one of the fringe order. Positions such as these, where the difference of principal stresses <math display="inline"><mo stretchy="false">(</mo><msub><mi>&#x03C3;</mi><mn>1</mn></msub><mo>&#x2212;</mo><msub><mi>&#x03C3;</mi><mn>2</mn></msub><mo stretchy="false">)</mo></math> is a constant, form dark lines in the observed field. In general, alternating light areas and dark fringes are seen, corresponding to increasing orders of extinction.</p>
+  </sec>
+</sec>
+<sec id="5_2_4">
+  <tittle>Moire</tittle>
+   <fig id="fig_5.2.8">
+    <label>Fig 5.2.8</label>
+    <caption>Figure 8: Photoelastic patterns stress around (a) a circular hole and (b) a sharp crack.</caption>
+  </fig>
+   <p role="noindent">Close fringe spacing indicates a steep stress gradient, similar to elevation lines on a topographical contour map. Figure 8 shows the patterns around a circular hole and a sharp crack stress raiser. It may suffice simply to observe the locations of high fringe density to note the presence of stress concentrations, which could then be eliminated by suitable design modifications (such as rounding corners or relocating design geometries in low-stress locations). In color regions of the model, the polychromatic light is used: brightly colored lines rather than dark fringes are observed, with each color being the complement of that color that has been brought into extinction according to Equation 5.2.8; these colors are termed isochromatics.</p>
+   <p role="noindent">Converting the fringe patterns to numerical stress values is usually straightforward but tedious, since the fringes are related to the stress difference <math display="inline"><msub><mi>&#x03C3;</mi><mn>1</mn></msub><mo>&#x2212;</mo><msub><mi>&#x03C3;</mi><mn>2</mn></msub></math> rather than a single stress. At a free boundary, however, the stress components normal to the boundary must be zero, which means that the stress tangential to the boundary is a principal stress and is given directly by the fringe order there. The reduction of photoelastic patterns to numerical stress values usually involves beginning at these free surfaces, and then working gradually into the interior of the body using a graphical procedure.</p>
+   <sec id="5_2_4_1">
+    <tittle>Moire</tittle>
+     <p role="noindent">The term 'moire' is spelled with a small "e" and derives out from laissez-moire's sense but from a French term for silk fabric that shows a pattern of light and dark bands. Bands of this sort are also developed by the superposition of two almost identical gratings, such as might be seen when looking through two window screens having slightly different spacing. Figure 9 demonstrates that fringes can be developed if the grid (or screen) undergoes a rotation as well as different orientations. The fringes change dramatically for even small rotations or strains in the gratings, and this visual amplification of motion can be used in detecting and quantifying strain in the specimen.</p>
+     <fig id="fig_5.2.9">
+      <label>Fig 5.2.9</label>
+      <caption>Figure 9: Moire fringes developed by difference in line pitch (a) and line orientation (b). (Prof. Fu-Pen Chiang, SUNY Stony Brook.)</caption>
+    </fig>
+     <p role="noindent">As a simple illustration of moire strain analysis, assume a grating of vertical lines (of spacing/line frequency <math display="inline"><mi>p</mi></math>) is bonded to the specimen and that this is observed by looking through another 'reference' grating of the same panel pitch but not bonded to the specimen. Now let the specimen undergo a strain relative to the reference grid: the specimen is stretched to a period of <math display="inline"><mrow><mi>p</mi><mo>+</mo><mi>&#x03B4;</mi><mi>p</mi></mrow></math>. A dark fringe will appear where the lines from the two gratings superimpose, and one dark fringe <math display="inline"><msub><mi>N</mi><mi>f</mi></msub></math> will have accumulated a slip of the full incremental split <math display="inline"><mi>p</mi></math> <math display="inline"><msub><mi>N</mi><mi>f</mi></msub></math> will have accumulated a reference pitch distance. The distance between fringes is then:</p>
+     <math display="block">
+      <mi>&#x0394;</mi>
+      <mo>=</mo>
+      <mfrac>
+        <mi>p</mi>
+        <mrow>
+          <mi>&#x03B5;</mi>
+        </mrow>
+      </mfrac>
+    </math>
+     <p role="noindent">The normal strain <math display="inline"><msub><mi>&#x03B5;</mi><mi>x</mi></msub></math> in the horizontal direction is now given directly from the fringe spacing as:</p>
+     <math display="block">
+      <msub>
+        <mi>&#x03B5;</mi>
+        <mi>x</mi>
+      </msub>
+      <mo>=</mo>
+      <mfrac>
+        <mi>p</mi>
+        <mi>&#x0394;</mi>
+      </mfrac>
+    </math>
+     <p role="noindent">Fringes will also develop if the specimen grid undergoes a rotation relative to the reference grid: if the rotation is small, then there will be seen when looking through two windows having slightly different spacing. Figure 9 demonstrates that fringes can be developed if the grid (or screen) undergoes a rotation as well as different orientations. The fringes change dramatically for even small rotations or strains in the gratings.</p>
+     <p role="noindent">This angle is also the shear strain <math display="inline"><msub><mi>&#x03B3;</mi><mi>xy</mi></msub></math>:</p>
+     <math display="block">
+      <msub>
+        <mi>&#x03B3;</mi>
+        <mi>xy</mi>
+      </msub>
+      <mo>=</mo>
+      <mfrac>
+        <mi>p</mi>
+        <msub>
+          <mi>&#x0394;</mi>
+          <mi>s</mi>
+        </msub>
+      </mfrac>
+    </math>
+     <p role="noindent">Consider now the interference fringes that develop between a vertical reference grid and an arbitrarily displaced specimen grid (obliquely vertical). The zero-order <math display="inline"><mo stretchy="false">(</mo><mi>N</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo></math> fringe is that corresponding to positions having zero horizontal displacement; the first-order <math display="inline"><mo stretchy="false">(</mo><mi>N</mi><mo>=</mo><mn>1</mn><mo stretchy="false">)</mo></math> fringe corresponds to positions of exactly one pitch distance, etc. The horizontal displacement <math display="inline"><mi>u</mi></math> is given directly by the fringe order <math display="inline"><mi>N</mi></math> in the horizontal direction:</p>
+     <math display="block">
+      <mi>u</mi>
+      <mo>=</mo>
+      <mi>N</mi>
+      <mo>&#x22C5;</mo>
+      <mi>p</mi>
+    </math>
+ 
+    <p role="noindent">so the strain is given as the slope of the fringe:</p>
+ 
+    <math display="block">
+      <msub>
+        <mi>&#x03B5;</mi>
+        <mi>x</mi>
+      </msub>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <mo>&#x2202;</mo>
+          <mi>u</mi>
+        </mrow>
+        <mrow>
+          <mo>&#x2202;</mo>
+          <mi>x</mi>
+        </mrow>
+      </mfrac>
+      <mo>=</mo>
+      <mi>p</mi>
+      <mfrac>
+        <mrow>
+          <mo>&#x2202;</mo>
+          <mi>N</mi>
+        </mrow>
+        <mrow>
+          <mo>&#x2202;</mo>
+          <mi>x</mi>
+        </mrow>
+      </mfrac>
+    </math>
+     <p role="noindent">Similarly, a moire pattern developed between two originally horizontal grids, characterized by fringes <math display="inline"><msub><mi>N</mi><mi>v</mi></msub></math> <math display="inline"><mo>=</mo><mi>N</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></math> gives the vertical strains:</p>
+     <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>&#x03B5;</mi>
+              <mi>y</mi>
+            </msub>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>v</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>y</mi>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mi>p</mi>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>N</mi>
+                  <mi>v</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>y</mi>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>&#x03B3;</mi>
+              <mi>xy</mi>
+            </msub>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>u</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>y</mi>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>v</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>x</mi>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mi>p</mi>
+            <mo stretchy="false">(</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>N</mi>
+                  <mi>u</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>y</mi>
+              </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <mfrac>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msub>
+                  <mi>N</mi>
+                  <mi>v</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <mi>x</mi>
+              </mrow>
+            </mfrac>
+            <mo stretchy="false">)</mo>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+     <p role="noindent">The bending strains are found from the slopes of both fringe sets (with grid pitch <math display="inline"><mi>p</mi></math>):</p>
+     <math display="block">
+      <mtable columnalign="left">
+        <mtr>
+          <mtd>
+            <msub>
+              <mi>&#x03BA;</mi>
+              <mi>x</mi>
+            </msub>
+            <mo>=</mo>
+            <mo>&#x2212;</mo>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mo>&#x2202;</mo>
+                  <mn>2</mn>
+                </msup>
+                <mi>w</mi>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msup>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mo>&#x2212;</mo>
+            <mi>p</mi>
+            <mfrac>
+              <mrow>
+                <msup>
+                  <mo>&#x2202;</mo>
+                  <mn>2</mn>
+                </msup>
+                <msub>
+                  <mi>N</mi>
+                  <mi>w</mi>
+                </msub>
+              </mrow>
+              <mrow>
+                <mo>&#x2202;</mo>
+                <msup>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msup>
+              </mrow>
+            </mfrac>
+          </mtd>
+        </mtr>
+      </mtable>
+    </math>
+     <p role="noindent">Figure 10 shows the vertical displacement fringes for a circular hole in a plate subjected to loading in the <math display="inline"><mi>y</mi></math> direction. The vertical strain <math display="inline"><msub><mi>&#x03B5;</mi><mi>y</mi></msub></math> is proportional to the difference between these fringes, each of which is a contour of constant vertical displacement. The strain is larger along the <math display="inline"><mi>y</mi></math>-axis in the vicinity of the hole than in the periphery of the hole, and smaller at the points in the periphery of the hole.</p>
+     <fig id="fig_5.2.10">
+      <label>Fig 5.2.10</label>
+      <caption>Figure 10: Moire patterns of the vertical displacements of a bar with a hole under pure tension. (Prof. Fu-Pen Chiang, SUNY-Stony Brook.)</caption>
+    </fig>
+   </sec>
+    <sec id="exercises_5_2">
+    <tittle>Exercises</tittle>
+     <exercise id="exercise_5.2.1">
+      <label>Exercise 5.2.1</label>
+      <p role="noindent">A <strong>0�/45�/90�</strong> three-arm strain gage rosette bonded to a steel specimen gives readings
+        <math display="inline">
+          <msub><mo>&#x2208;</mo><mn>0</mn></msub>
+          <mo>=</mo>
+          <mn>175</mn>
+          <mi>&#x03BC;</mi>
+        </math>,
+        <math display="inline">
+          <msub><mo>&#x2208;</mo><mn>45</mn></msub>
+          <mo>=</mo>
+          <mn>150</mn>
+          <mi>&#x03BC;</mi>
+        </math>, and
+        <math display="inline">
+          <msub><mo>&#x2208;</mo><mn>90</mn></msub>
+          <mo>=</mo>
+          <mo>&#x2212;</mo>
+          <mn>120</mn>
+          <mi>&#x03BC;</mi>
+        </math>.
+        Determine the principal stresses and the orientation of the principal planes at the gage location.
+      </p>
+    </exercise>
+     <exercise id="exercise_5.2.2">
+      <label>Exercise 5.2.2</label>
+      <p role="noindent">Repeat the previous problem, but with gage readings
+        <math display="inline">
+          <msub><mo>&#x2208;</mo><mn>0</mn></msub>
+          <mo>=</mo>
+          <mn>150</mn>
+          <mi>&#x03BC;</mi>
+        </math>,
+        <math display="inline">
+          <msub><mo>&#x2208;</mo><mn>45</mn></msub>
+          <mo>=</mo>
+          <mn>200</mn>
+          <mi>&#x03BC;</mi>
+        </math>, and
+        <math display="inline">
+          <msub><mo>&#x2208;</mo><mn>90</mn></msub>
+          <mo>=</mo>
+          <mn>125</mn>
+          <mi>&#x03BC;</mi>
+        </math>.
+      </p>
+    </exercise>
+   </sec>
+</sec>
+<sec id="5.3">
+<label>5.3</label>
+<title>Finite Element Analysis</title>
+
+
+<sec id="5.3.introduction">
+<title>Introduction</title>
+
+<p>Finite element analysis (FEA) has become commonplace in recent years, and is now the basis of a multibillion dollar per year industry. Numerical solutions to even very complicated stress problems can now be obtained routinely using FEA, and the method is so important that even introductory treatments of Mechanics of Materials &#x2013; such as these modules &#x2013; should outline its principal features.</p>
+
+<p>In spite of the great power of FEA, the disadvantages of computer solutions must be kept in mind when using this and similar methods: they do not necessarily reveal how the stresses are influenced by important problem variables such as materials properties and geometrical features, and errors in input data can produce wildly incorrect results that may be overlooked by the analyst. Perhaps the most important function of theoretical modeling is that of sharpening the designer&#x2019;s intuition; users of finite element codes should plan their strategy toward this end, supplementing the computer simulation with as much closed-form and experimental analysis as possible.</p>
+
+<p>Finite element codes are less complicated than many of the word processing and spreadsheet packages found on modern microcomputers. Nevertheless, they are complex enough that most users do not find it effective to program their own code. A number of prewritten commercial codes are available, representing a broad price range and compatible with machines from microcomputers to supercomputers (C.A. Brebbia, ed., Finite Element Systems, A Handbook, Springer-Verlag, Berlin, 1982.). However, users with specialized needs should not necessarily shy away from code development, and may find the code sources available in such texts as that by Zienkiewicz (O.C. Zienkiewicz and R.L. Taylor, The Finite Element Method, McGraw-Hill Co., London, 1989.) to be a useful starting point. Most finite element software is written in Fortran, but some newer codes such as felt are in C or other more modern programming languages.</p>
+
+<p>In practice, a finite element analysis usually consists of three principal steps:</p>
+
+<list type="1">
+<li>
+<p><bold>Preprocessing:</bold> The user constructs a model of the part to be analyzed in which the geometry is divided into a number of discrete subregions, or &#x201C;elements,&#x201D; connected at discrete points called &#x201C;nodes.&#x201D; Certain of these nodes will have fixed displacements, and others will have prescribed loads. These models can be extremely time consuming to prepare, and commercial codes vie with one another to have the most user-friendly graphical &#x201C;pre-processor&#x201D; to assist in this rather tedious chore. Some of these preprocessors can overlay a mesh on a preexisting CAD file, so that finite element analysis can be done conveniently as part of the computerized drafting-and-design process.</p>
+</li>
+<li>
+<p><bold>Analysis:</bold> The dataset prepared by the preprocessor is used as input to the finite element code itself, which constructs and solves a system of linear or nonlinear algebraic equations</p>
+<math display='block'>
+<mrow>
+<msub>
+<mi>K</mi>
+<mrow><mi>i</mi><mi>j</mi></mrow>
+</msub>
+<msub>
+<mi>u</mi>
+<mi>j</mi>
+</msub>
+<mo>=</mo>
+<msub>
+<mi>f</mi>
+<mi>i</mi>
+</msub>
+</mrow>
+</math>
+<p>where <bold>u</bold> and <bold>f</bold> are the displacements and externally applied forces at the nodal points. The formation of the <bold>K</bold> matrix is dependent on the type of problem being attacked, and this module will outline the approach for truss and linear elastic stress analyses. Commercial codes may have very large element libraries, with elements appropriate to a wide range of problem types. One of FEA&#x2019;s principal advantages is that many problem types can be addressed with the same code, merely by specifying the appropriate element types from the library.</p>
+</li>
+<li>
+<p><bold>Postprocessing:</bold> In the earlier days of finite element analysis, the user would pore through reams of numbers generated by the code, listing displacements and stresses at discrete positions within the model. It is easy to miss important trends and hot spots this way, and modern codes use graphical displays to assist in visualizing the results. A typical postprocessor display overlays colored contours representing stress levels on the model, showing a full-field picture similar to that of photoelastic or moire experimental results.</p>
+</li>
+</list>
+<p>The operation of a specific code is usually detailed in the documentation accompanying the software, and vendors of the more expensive codes will often offer workshops or training sessions as well to help users learn the intricacies of code operation. One problem users may have even after this training is that the code tends to be a &#x201C;black box&#x201D; whose inner workings are not understood. In this module we will outline the principles underlying most current finite element stress analysis codes, limiting the discussion to linear elastic analysis for now. Understanding this theory helps dissipate the black-box syndrome, and also serves to summarize the analytical foundations of solid mechanics.</p>
+</sec>
+<sec id="5.3.matrix-analysis-of-trusses">
+<title>Matrix analysis of trusses</title>
+<p>Pin-jointed trusses, discussed more fully in Module 5, provide a good way to introduce FEA concepts. The static analysis of trusses can be carried out exactly, and the equations of even complicated trusses can be assembled in a matrix form amenable to numerical solution. This approach, sometimes called &#x201C;matrix analysis,&#x201D; provided the foundation of early FEA development.</p>
+<p>Matrix analysis of trusses operates by considering the stiffness of each truss element one at a time, and then using these stiffnesses to determine the forces that are set up in the truss elements by the displacements of the joints, usually called &#x201C;nodes&#x201D; in finite element analysis. Then noting that the sum of the forces contributed by each element to a node must equal the force that is externally applied to that node, we can assemble a sequence of linear algebraic equations in which the nodal displacements are the unknowns and the applied nodal forces are known quantities. These equations are conveniently written in matrix form, which gives the method its name:</p>
+<math display='block'>
+<mrow>
+<mfenced open='[' close=']'>
+<mtable>
+<mtr>
+<mtd><msub><mi>K</mi><mn>11</mn></msub></mtd>
+<mtd><msub><mi>K</mi><mn>12</mn></msub></mtd>
+<mtd><mo>&#x22EF;</mo></mtd>
+<mtd><msub><mi>K</mi><mrow><mn>1</mn><mi>n</mi></mrow></msub></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>K</mi><mn>21</mn></msub></mtd>
+<mtd><msub><mi>K</mi><mn>22</mn></msub></mtd>
+<mtd><mo>&#x22EF;</mo></mtd>
+<mtd><msub><mi>K</mi><mrow><mn>2</mn><mi>n</mi></mrow></msub></mtd>
+</mtr>
+<mtr>
+<mtd><mo>&#x22EE;</mo></mtd>
+<mtd><mo>&#x22EE;</mo></mtd>
+<mtd><mo>&#x22EF;</mo></mtd>
+<mtd><mo>&#x22EE;</mo></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>K</mi><mrow><mi>n</mi><mn>1</mn></mrow></msub></mtd>
+<mtd><msub><mi>K</mi><mrow><mi>n</mi><mn>2</mn></mrow></msub></mtd>
+<mtd><mo>&#x22EF;</mo></mtd>
+<mtd><msub><mi>K</mi><mrow><mi>n</mi><mi>n</mi></mrow></msub></mtd>
+</mtr>
+</mtable>
+</mfenced>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><msub><mi>u</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>u</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><mo>&#x22EE;</mo></mtd></mtr>
+<mtr><mtd><msub><mi>u</mi><mi>n</mi></msub></mtd></mtr>
+</mtable>
+</mfenced>
+<mo>=</mo>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><msub><mi>f</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>f</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><mo>&#x22EE;</mo></mtd></mtr>
+<mtr><mtd><msub><mi>f</mi><mi>n</mi></msub></mtd></mtr>
+</mtable>
+</mfenced>
+</mrow>
+</math>
+<p>Here <italic>u</italic><sub><italic>i</italic></sub> and <italic>f</italic><sub><italic>j</italic></sub> indicate the deflection at the ith node and the force at the <italic>j</italic><sup>th</sup> node (these would actually be vector quantities, with subcomponents along each coordinate axis). The <italic>K</italic><sub><italic>ij</italic></sub> coefficient array is called the global stiffness matrix, with the <italic>ij</italic> component being physically the influence of the <italic>j</italic><sup>th</sup> displacement on the <italic>i</italic><sup>th</sup> force. The matrix equations can be abbreviated as</p>
+<math display='block'>
+<mrow>
+<msub><mi>K</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
+<msub><mi>u</mi><mi>j</mi></msub>
+<mo>=</mo>
+<msub><mi>f</mi><mi>i</mi></msub>
+<mspace width='1em'/>
+<mtext>or</mtext>
+<mspace width='1em'/>
+<mi mathvariant='bold'>K</mi>
+<mi mathvariant='bold'>u</mi>
+<mo>=</mo>
+<mi mathvariant='bold'>f</mi>
+</mrow>
+</math>
+<p>using either subscripts or boldface to indicate vector and matrix quantities.</p>
+<p>Either the force externally applied or the displacement is known at the outset for each node, and it is impossible to specify simultaneously both an arbitrary displacement and a force on a given node. These prescribed nodal forces and displacements are the boundary conditions of the problem. It is the task of analysis to determine the forces that accompany the imposed displacements, and the displacements at the nodes where known external forces are applied.</p>
+</sec>
+<sec id="5.3.stiffness-matrix-single-element">
+<title>Stiffness matrix for a single truss element</title>
+<p>As a first step in developing a set of matrix equations that describe truss systems, we need a relationship between the forces and displacements at each end of a single truss element. Consider such an element in the <italic>x</italic>&#x2212;<italic>y</italic> plane as shown in Figure 1, attached to nodes numbered <italic>i</italic> and <italic>j</italic> and inclined at an angle <italic>&#x03B8;</italic> from the horizontal.</p>
+<fig id="fig_1">
+<label>Fig 1</label>
+<caption>Individual truss element.</caption>
+<graphic href="figure1_individual_truss_element.jpg"/>
+</fig>
+<p>Considering the elongation vector <italic>&#x03B4;</italic> to be resolved in directions along and transverse to the element, the elongation in the truss element can be written in terms of the differences in the displacements of its end points:</p>
+<p>where <italic>u</italic> and <italic>v</italic> are the horizontal and vertical components of the deflections, respectively. (The displacements at node <italic>i</italic> drawn in Figure 1 are negative.) This relation can be written in matrix form as:</p>
+<math display='block'>
+<mrow>
+<mi>&#x03B4;</mi>
+<mo>=</mo>
+<mfenced open='[' close=']'>
+<mtable>
+<mtr>
+<mtd><mo>&#x2212;</mo><mi>c</mi></mtd>
+<mtd><mo>&#x2212;</mo><mi>s</mi></mtd>
+<mtd><mi>c</mi></mtd>
+<mtd><mi>s</mi></mtd>
+</mtr>
+</mtable>
+</mfenced>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><msub><mi>u</mi><mi>i</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>v</mi><mi>i</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>u</mi><mi>j</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>v</mi><mi>j</mi></msub></mtd></mtr>
+</mtable>
+</mfenced>
+</mrow>
+</math>
+<p>Here <italic>c</italic> = cos <italic>&#x03B8;</italic> and <italic>s</italic> = sin <italic>&#x03B8;</italic>.</p>
+<p>The axial force <italic>P</italic> that accompanies the elongation <italic>&#x03B4;</italic> is given by Hooke&#x2019;s law for linear elastic bodies as <italic>P</italic> = (<italic>AE</italic>/<italic>L</italic>)<italic>&#x03B4;</italic>. The horizontal and vertical nodal forces are shown in Figure 2; these can be written in terms of the total axial force as:</p>
+<fig id="fig_2">
+<label>Fig 2</label>
+<caption>Components of nodal force.</caption>
+<graphic href="figure2_components_nodal_force.jpg"/>
+</fig>
+<math display='block'>
+<mrow>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><msub><mi>f</mi><mrow><mi>x</mi><mi>i</mi></mrow></msub></mtd></mtr>
+<mtr><mtd><msub><mi>f</mi><mrow><mi>y</mi><mi>i</mi></mrow></msub></mtd></mtr>
+<mtr><mtd><msub><mi>f</mi><mrow><mi>x</mi><mi>j</mi></mrow></msub></mtd></mtr>
+<mtr><mtd><msub><mi>f</mi><mrow><mi>y</mi><mi>j</mi></mrow></msub></mtd></mtr>
+</mtable>
+</mfenced>
+<mo>=</mo>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><mo>&#x2212;</mo><mi>c</mi></mtd></mtr>
+<mtr><mtd><mo>&#x2212;</mo><mi>s</mi></mtd></mtr>
+<mtr><mtd><mi>c</mi></mtd></mtr>
+<mtr><mtd><mi>s</mi></mtd></mtr>
+</mtable>
+</mfenced>
+<mi>P</mi>
+<mo>=</mo>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><mo>&#x2212;</mo><mi>c</mi></mtd></mtr>
+<mtr><mtd><mo>&#x2212;</mo><mi>s</mi></mtd></mtr>
+<mtr><mtd><mi>c</mi></mtd></mtr>
+<mtr><mtd><mi>s</mi></mtd></mtr>
+</mtable>
+</mfenced>
+<mfrac>
+<mrow><mi>A</mi><mi>E</mi></mrow>
+<mi>L</mi>
+</mfrac>
+<mi>&#x03B4;</mi>
+</mrow>
+</math>
+
+<math display='block'>
+<mrow>
+<mo>=</mo>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><mo>&#x2212;</mo><mi>c</mi></mtd></mtr>
+<mtr><mtd><mo>&#x2212;</mo><mi>s</mi></mtd></mtr>
+<mtr><mtd><mi>c</mi></mtd></mtr>
+<mtr><mtd><mi>s</mi></mtd></mtr>
+</mtable>
+</mfenced>
+<mfrac>
+<mrow><mi>A</mi><mi>E</mi></mrow>
+<mi>L</mi>
+</mfrac>
+<mfenced open='[' close=']'>
+<mtable>
+<mtr>
+<mtd><mo>&#x2212;</mo><mi>c</mi></mtd>
+<mtd><mo>&#x2212;</mo><mi>s</mi></mtd>
+<mtd><mi>c</mi></mtd>
+<mtd><mi>s</mi></mtd>
+</mtr>
+</mtable>
+</mfenced>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><msub><mi>u</mi><mi>i</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>v</mi><mi>i</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>u</mi><mi>j</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>v</mi><mi>j</mi></msub></mtd></mtr>
+</mtable>
+</mfenced>
+</mrow>
+</math>
+
+<p>Carrying out the matrix multiplication:</p>
+
+<math display='block'>
+<mrow>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><msub><mi>f</mi><mrow><mi>x</mi><mi>i</mi></mrow></msub></mtd></mtr>
+<mtr><mtd><msub><mi>f</mi><mrow><mi>y</mi><mi>i</mi></mrow></msub></mtd></mtr>
+<mtr><mtd><msub><mi>f</mi><mrow><mi>x</mi><mi>j</mi></mrow></msub></mtd></mtr>
+<mtr><mtd><msub><mi>f</mi><mrow><mi>y</mi><mi>j</mi></mrow></msub></mtd></mtr>
+</mtable>
+</mfenced>
+<mo>=</mo>
+<mfrac>
+<mrow><mi>A</mi><mi>E</mi></mrow>
+<mi>L</mi>
+</mfrac>
+<mfenced open='[' close=']'>
+<mtable>
+<mtr>
+<mtd><msup><mi>c</mi><mn>2</mn></msup></mtd>
+<mtd><mi>c</mi><mi>s</mi></mtd>
+<mtd><mo>&#x2212;</mo><msup><mi>c</mi><mn>2</mn></msup></mtd>
+<mtd><mo>&#x2212;</mo><mi>c</mi><mi>s</mi></mtd>
+</mtr>
+<mtr>
+<mtd><mi>c</mi><mi>s</mi></mtd>
+<mtd><msup><mi>s</mi><mn>2</mn></msup></mtd>
+<mtd><mo>&#x2212;</mo><mi>c</mi><mi>s</mi></mtd>
+<mtd><mo>&#x2212;</mo><msup><mi>s</mi><mn>2</mn></msup></mtd>
+</mtr>
+<mtr>
+<mtd><mo>&#x2212;</mo><msup><mi>c</mi><mn>2</mn></msup></mtd>
+<mtd><mo>&#x2212;</mo><mi>c</mi><mi>s</mi></mtd>
+<mtd><msup><mi>c</mi><mn>2</mn></msup></mtd>
+<mtd><mi>c</mi><mi>s</mi></mtd>
+</mtr>
+<mtr>
+<mtd><mo>&#x2212;</mo><mi>c</mi><mi>s</mi></mtd>
+<mtd><mo>&#x2212;</mo><msup><mi>s</mi><mn>2</mn></msup></mtd>
+<mtd><mi>c</mi><mi>s</mi></mtd>
+<mtd><msup><mi>s</mi><mn>2</mn></msup></mtd>
+</mtr>
+</mtable>
+</mfenced>
+<mfenced open='{' close='}'>
+<mtable>
+<mtr><mtd><msub><mi>u</mi><mi>i</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>v</mi><mi>i</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>u</mi><mi>j</mi></msub></mtd></mtr>
+<mtr><mtd><msub><mi>v</mi><mi>j</mi></msub></mtd></mtr>
+</mtable>
+</mfenced>
+</mrow>
+</math>
+
+<p>The quantity in brackets, multiplied by <italic>AE/L</italic>, is known as the &#x201C;element stiffness matrix&#x201D; <italic>k</italic><sub><italic>ij</italic></sub>. Each of its terms has a physical significance, representing the contribution of one of the displacements to one of the forces. The global system of equations is formed by combining the element stiffness matrices from each truss element in turn, so their computation is central to the method of matrix structural analysis. The principal difference between the matrix truss method and the general finite element method is in how the element stiffness matrices are formed; most of the other computer operations are the same.</p>
+</sec>
+
+<sec id="5.3.assembly-multiple-elements">
+<title>Assembly of multiple element contributions</title>
+
+<fig id="fig_3">
+<label>Fig 3</label>
+<caption>Element contributions to total nodal force.</caption>
+<graphic href="figure3_element_contributions.jpg"/>
+</fig>
+
+<p>The next step is to consider an assemblage of many truss elements connected by pin joints. Each element meeting at a joint, or node, will contribute a force there as dictated by the displacements of both that element&#x2019;s nodes (see Figure 3). To maintain static equilibrium, all element force contributions <italic>f</italic><sub><italic>i</italic></sub><sup>elem</sup> at a given node must sum to the force <italic>f</italic><sub><italic>i</italic></sub><sup>ext</sup> that is externally applied at that node:</p>
+
+<math display='block'>
+<mrow>
+<msubsup><mi>f</mi><mi>i</mi><mtext>ext</mtext></msubsup>
+<mo>=</mo>
+<munder><mo>&#x2211;</mo><mtext>elem</mtext></munder>
+<msubsup><mi>f</mi><mi>i</mi><mtext>elem</mtext></msubsup>
+<mo>=</mo>
+<mfenced open='(' close=')'>
+<mrow>
+<munder><mo>&#x2211;</mo><mtext>elem</mtext></munder>
+<msubsup><mi>k</mi><mrow><mi>i</mi><mi>j</mi></mrow><mtext>elem</mtext></msubsup>
+<msub><mi>u</mi><mi>j</mi></msub>
+</mrow>
+</mfenced>
+<mo>=</mo>
+<mfenced open='(' close=')'>
+<mrow>
+<munder><mo>&#x2211;</mo><mtext>elem</mtext></munder>
+<msubsup><mi>k</mi><mrow><mi>i</mi><mi>j</mi></mrow><mtext>elem</mtext></msubsup>
+</mrow>
+</mfenced>
+<msub><mi>u</mi><mi>j</mi></msub>
+<mo>=</mo>
+<msub><mi>K</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
+<msub><mi>u</mi><mi>j</mi></msub>
+</mrow>
+</math>
+<p>Each element stiffness matrix <italic>k</italic><sub><italic>ij</italic></sub><sup>elem</sup> is added to the appropriate location of the overall, or &#x201C;global&#x201D; stiffness matrix <italic>K</italic><sub><italic>ij</italic></sub> that relates all of the truss displacements and forces. This process is called &#x201C;assembly.&#x201D; The index numbers in the above relation must be the &#x201C;global&#x201D; numbers assigned to the truss structure as a whole. However, it is generally convenient to compute the individual element stiffness matrices using a local scheme, and then to have the computer convert to global numbers when assembling the individual matrices.</p>
+ <sec id="example_5.3.1" content-type="example">
+<label>Example 5.3.1</label>
+<p>The assembly process is at the heart of the finite element method, and it is worthwhile to do a simple case by hand to see how it really works. Consider the two-element truss problem of Figure 4, with the nodes being assigned arbitrary &#x201C;global&#x201D; numbers from 1 to 3. Since each node can in general move in two directions, there are 3 &#x00D7; 2 = 6 total degrees of freedom in the problem. The global stiffness matrix will then be a 6 &#x00D7; 6 array relating the six displacements to the six externally applied forces. Only one of the displacements is unknown in this case, since all but the vertical displacement of node 2 (degree of freedom number 4) is constrained to be zero. Figure 4 shows a workable listing of the global numbers, and also &#x201C;local&#x201D; numbers for each individual element.</p>
+<fig id="fig_4">
+<label>Fig 4</label>
+<caption>Global and local numbering for the two-element truss.</caption>
+<graphic href="figure4_global_local_numbering.jpg"/>
+</fig>
+<p>Using the local numbers, the 4 &#x00D7; 4 element stiffness matrix of each of the two elements can be evaluated according to Equation 5.3.2. The inclination angle is calculated from the nodal coordinates as</p>
+<p>The resulting matrix for element 1 is:</p>
+<math display='block'>
+<mrow>
+<msup><mi>k</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msup>
+<mo>=</mo>
+<mfenced open='[' close=']'>
+<mtable>
+<mtr>
+<mtd><mn>25.00</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>43.30</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>25.00</mn></mtd>
+<mtd><mn>43.30</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mo>&#x2212;</mo><mn>43.30</mn></mtd>
+<mtd><mn>75.00</mn></mtd>
+<mtd><mn>43.30</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>75.00</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mo>&#x2212;</mo><mn>25.00</mn></mtd>
+<mtd><mn>43.30</mn></mtd>
+<mtd><mn>25.00</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>43.30</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mn>43.30</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>75.00</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>43.30</mn></mtd>
+<mtd><mn>75.00</mn></mtd>
+</mtr>
+</mtable>
+</mfenced>
+<mo>&#x00D7;</mo>
+<msup><mn>10</mn><mn>3</mn></msup>
+</mrow>
+</math>
+<p>and for element 2:</p>
+<math display='block'>
+<mrow>
+<msup><mi>k</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msup>
+<mo>=</mo>
+<mfenced open='[' close=']'>
+<mtable>
+<mtr>
+<mtd><mn>25.00</mn></mtd>
+<mtd><mn>43.30</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>25.00</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>43.30</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mn>43.30</mn></mtd>
+<mtd><mn>75.00</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>43.30</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>75.00</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mo>&#x2212;</mo><mn>25.00</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>43.30</mn></mtd>
+<mtd><mn>25.00</mn></mtd>
+<mtd><mn>43.30</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mo>&#x2212;</mo><mn>43.30</mn></mtd>
+<mtd><mo>&#x2212;</mo><mn>75.00</mn></mtd>
+<mtd><mn>43.30</mn></mtd>
+<mtd><mn>75.00</mn></mtd>
+</mtr>
+</mtable>
+</mfenced>
+<mo>&#x00D7;</mo>
+<msup><mn>10</mn><mn>3</mn></msup>
+</mrow>
+</math>
+<p>(It is important the units be consistent; here lengths are in inches, forces in pounds, and moduli in psi. The modulus of both elements is <italic>E</italic> = 10 Mpsi and both have area <italic>A</italic> = 0.1 in<sup>2</sup>.) These matrices have rows and columns numbered from 1 to 4, corresponding to the local degrees of freedom of the element.</p>
+<p>However, each of the local degrees of freedom can be matched to one of the global degrees of the overall problem. By inspection of Figure 4, we can form the following table that maps local to global numbers:</p>
+<table-wrap id="T5.3.1" position="float" orientation="portrait">
+<label>Table 5.3.1</label>
+<caption>
+<title>Local to global degree-of-freedom mapping.</title>
+</caption>
+<table frame="box" rules="all">
+<thead>
+<row>
+<entry align="center" valign="top"><para>local</para></entry>
+<entry align="center" valign="top"><para>global, element 1</para></entry>
+<entry align="center" valign="top"><para>global, element 2</para></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="center" valign="top"><para>1</para></entry>
+<entry align="center" valign="top"><para>1</para></entry>
+<entry align="center" valign="top"><para>3</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>2</para></entry>
+<entry align="center" valign="top"><para>2</para></entry>
+<entry align="center" valign="top"><para>4</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>3</para></entry>
+<entry align="center" valign="top"><para>3</para></entry>
+<entry align="center" valign="top"><para>5</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>4</para></entry>
+<entry align="center" valign="top"><para>4</para></entry>
+<entry align="center" valign="top"><para>6</para></entry>
+</row>
+</tbody>
+</table>
+</table-wrap>
+<p>Using this table, we see for instance that the second degree of freedom for element 2 is the fourth degree of freedom in the global numbering system, and the third local degree of freedom corresponds to the fifth global degree of freedom. Hence the value in the second row and third column of the element stiffness matrix of element 2, denoted <italic>k</italic><sub>23</sub><sup>(2)</sup>, should be added into the position in the fourth row and fifth column of the 6 &#x00D7; 6 global stiffness matrix. We write this as</p>
+<math display='block'>
+<mrow>
+<msubsup><mi>k</mi><mn>23</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup>
+<mo>&#x2192;</mo>
+<msub><mi>K</mi><mrow><mn>4</mn><mo>,</mo><mn>5</mn></mrow></msub>
+</mrow>
+</math>
+<p>Each of the sixteen positions in the stiffness matrix of each of the two elements must be added into the global matrix according to the mapping given by the table. This gives the result</p>
+<math display='block'>
+<mrow>
+<mi>K</mi>
+<mo>=</mo>
+<mfenced open='[' close=']'>
+<mtable>
+<mtr>
+<mtd><msubsup><mi>k</mi><mn>11</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>12</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>13</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>14</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><mn>0</mn></mtd>
+<mtd><mn>0</mn></mtd>
+</mtr>
+<mtr>
+<mtd><msubsup><mi>k</mi><mn>21</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>22</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>23</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>24</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><mn>0</mn></mtd>
+<mtd><mn>0</mn></mtd>
+</mtr>
+<mtr>
+<mtd><msubsup><mi>k</mi><mn>31</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>32</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>33</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup><mo>+</mo><msubsup><mi>k</mi><mn>11</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>34</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup><mo>+</mo><msubsup><mi>k</mi><mn>12</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>13</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>14</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+</mtr>
+<mtr>
+<mtd><msubsup><mi>k</mi><mn>41</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>42</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>43</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup><mo>+</mo><msubsup><mi>k</mi><mn>21</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>44</mn><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></msubsup><mo>+</mo><msubsup><mi>k</mi><mn>22</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>23</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>24</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+</mtr>
+<mtr>
+<mtd><mn>0</mn></mtd>
+<mtd><mn>0</mn></mtd>
+<mtd><msubsup><mi>k</mi><mn>31</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>32</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>33</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>34</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+</mtr>
+<mtr>
+<mtd><mn>0</mn></mtd>
+<mtd><mn>0</mn></mtd>
+<mtd><msubsup><mi>k</mi><mn>41</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>42</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>43</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+<mtd><msubsup><mi>k</mi><mn>44</mn><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></msubsup></mtd>
+</mtr>
+</mtable>
+</mfenced>
+</mrow>
+</math>
+<p>This matrix premultiplies the vector of nodal displacements according to Equation 5.3.1 to yield the vector of externally applied nodal forces. The full system equations, taking into account the known forces and displacements, are then as noted.</p>
+<p>Note that either the force or the displacement for each degree of freedom is known, with the accompanying displacement or force being unknown. Here only one of the displacements (<italic>u</italic><sub>4</sub>) is unknown, but in most problems the unknown displacements far outnumber the unknown forces. Note also that only those elements that are physically connected to a given node can contribute a force to that node. In most cases, this results in the global stiffness matrix containing many zeroes corresponding to nodal pairs that are not spanned by an element. Effective computer implementations will take advantage of the matrix sparseness to conserve memory and reduce execution time.</p>
+<p>In larger problems the matrix equations are solved for the unknown displacements and forces by Gaussian reduction or other techniques. In this two-element problem, the solution for the single unknown displacement can be written down almost from inspection. Multiplying out the fourth row of the system, we have</p>
+<math display='block'>
+<mrow>
+<mn>0</mn><mo>+</mo><mn>0</mn><mo>+</mo><mn>0</mn>
+<mo>+</mo>
+<mn>150</mn><mo>&#x00D7;</mo><msup><mn>10</mn><mn>3</mn></msup>
+<msub><mi>u</mi><mn>4</mn></msub>
+<mo>+</mo><mn>0</mn><mo>+</mo><mn>0</mn>
+<mo>=</mo>
+<mo>&#x2212;</mo><mn>1732</mn>
+</mrow>
+</math>
+<math display='block'>
+<mrow>
+<msub><mi>u</mi><mn>4</mn></msub>
+<mo>=</mo>
+<mfrac>
+<mrow><mo>&#x2212;</mo><mn>1732</mn></mrow>
+<mrow><mn>150</mn><mo>&#x00D7;</mo><msup><mn>10</mn><mn>3</mn></msup></mrow>
+</mfrac>
+<mo>=</mo>
+<mo>&#x2212;</mo><mn>0.01155</mn><mspace width='0.2em'/><mtext>in</mtext>
+</mrow>
+</math>
+<p>Now any of the unknown forces can be obtained directly. Multiplying out the first row for instance gives</p>
+<math display='block'>
+<mrow>
+<mn>0</mn><mo>+</mo><mn>0</mn><mo>+</mo><mn>0</mn>
+<mo>+</mo>
+<mo>(</mo><mn>43.4</mn><mo>)</mo>
+<mo>(</mo><mo>&#x2212;</mo><mn>0.0115</mn><mo>)</mo>
+<mo>&#x00D7;</mo><msup><mn>10</mn><mn>3</mn></msup>
+<mo>+</mo><mn>0</mn><mo>+</mo><mn>0</mn>
+<mo>=</mo>
+<msub><mi>f</mi><mn>1</mn></msub>
+</mrow>
+</math>
+<p>The negative sign here indicates the horizontal force on global node #1 is to the left, opposite the direction assumed in Figure 4.</p>
+ </sec>
+<p>The process of cycling through each element to form the element stiffness matrix, assembling the element matrix into the correct positions in the global matrix, solving the equations for displacements and then back-multiplying to compute the forces, and printing the results can be automated to make a very versatile computer code.</p>
+<p>Larger-scale truss (and other) finite element analysis are best done with a dedicated computer code, and an excellent one for learning the method is available from the web at http://felt.sourceforge.net/. This code, named felt, was authored by Jason Gobat and Darren Atkinson for educational use, and incorporates a number of novel features to promote user-friendliness. Complete information describing this code, as well as the C-language source and a number of trial runs and auxiliary code modules is available via their web pages. If you have access to X-window workstations, a graphical shell named velvet is available as well.</p>
+ <sec id="example_5.3.2" content-type="example">
+<label>Example 5.3.2</label>
+<fig id="fig_5">
+<label>Fig 5</label>
+<caption>The six-element truss, as developed in the velvet/felt FEA graphical interface.</caption>
+<graphic href="figure5_six_element_truss.jpg"/>
+</fig>
+<p>To illustrate how this code operates for a somewhat larger problem, consider the six-element truss of Figure 5, which was analyzed in Module 5 both by the joint-at-a-time free body analysis approach and by Castigliano&#x2019;s method.</p>
+<p>The input dataset, which can be written manually or developed graphically in velvet, employs parsing techniques to simplify what can be a very tedious and error-prone step in finite element analysis. The dataset for this 6-element truss is:</p>
+<p>The meaning of these lines should be fairly evident on inspection, although the felt documentation should be consulted for more detail. The output produced by felt for these data is:</p>
+<table-wrap id="T5.3.2" position="float" orientation="portrait">
+<label>Table 5.3.2</label>
+<caption><title>Nodal Displacements.</title></caption>
+<table frame="box" rules="all">
+<thead>
+<row>
+<entry align="center" valign="top"><para>Node #</para></entry>
+<entry align="center" valign="top"><para>DOF 1</para></entry>
+<entry align="center" valign="top"><para>DOF 2</para></entry>
+<entry align="center" valign="top"><para>DOF 3</para></entry>
+<entry align="center" valign="top"><para>DOF 4</para></entry>
+<entry align="center" valign="top"><para>DOF 5</para></entry>
+<entry align="center" valign="top"><para>DOF 6</para></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="center" valign="top"><para>1</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>2</para></entry>
+<entry align="center" valign="top"><para>0.013333</para></entry>
+<entry align="center" valign="top"><para>&#x2212;0.03219</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>3</para></entry>
+<entry align="center" valign="top"><para>0.02</para></entry>
+<entry align="center" valign="top"><para>&#x2212;0.084379</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>4</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>5</para></entry>
+<entry align="center" valign="top"><para>&#x2212;0.0066667</para></entry>
+<entry align="center" valign="top"><para>&#x2212;0.038856</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+</tbody>
+</table>
+</table-wrap>
+
+<table-wrap id="T5.3.3" position="float" orientation="portrait">
+<label>Table 5.3.3</label>
+<caption><title>Element Stresses.</title></caption>
+<table frame="box" rules="all">
+<thead>
+<row>
+<entry align="center" valign="top"><para>Element</para></entry>
+<entry align="center" valign="top"><para>Stress (psi)</para></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="center" valign="top"><para>1</para></entry>
+<entry align="center" valign="top"><para>4000</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>2</para></entry>
+<entry align="center" valign="top"><para>2000</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>3</para></entry>
+<entry align="center" valign="top"><para>&#x2212;2828.4</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>4</para></entry>
+<entry align="center" valign="top"><para>2000</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>5</para></entry>
+<entry align="center" valign="top"><para>&#x2212;2828.4</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>6</para></entry>
+<entry align="center" valign="top"><para>&#x2212;2000</para></entry>
+</row>
+</tbody>
+</table>
+</table-wrap>
+
+<table-wrap id="T5.3.4" position="float" orientation="portrait">
+<label>Table 5.3.4</label>
+<caption><title>Reaction Forces.</title></caption>
+<table frame="box" rules="all">
+<thead>
+<row>
+<entry align="center" valign="top"><para>Node #</para></entry>
+<entry align="center" valign="top"><para>DOF</para></entry>
+<entry align="center" valign="top"><para>Reaction Force (lb)</para></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="center" valign="top"><para>1</para></entry>
+<entry align="center" valign="top"><para>Tx</para></entry>
+<entry align="center" valign="top"><para>&#x2212;2000</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>1</para></entry>
+<entry align="center" valign="top"><para>Ty</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>1</para></entry>
+<entry align="center" valign="top"><para>Tz</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>2</para></entry>
+<entry align="center" valign="top"><para>Tz</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>3</para></entry>
+<entry align="center" valign="top"><para>Tz</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>4</para></entry>
+<entry align="center" valign="top"><para>Tx</para></entry>
+<entry align="center" valign="top"><para>2000</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>4</para></entry>
+<entry align="center" valign="top"><para>Ty</para></entry>
+<entry align="center" valign="top"><para>1000</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>4</para></entry>
+<entry align="center" valign="top"><para>Tz</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+<row>
+<entry align="center" valign="top"><para>5</para></entry>
+<entry align="center" valign="top"><para>Tz</para></entry>
+<entry align="center" valign="top"><para>0</para></entry>
+</row>
+</tbody>
+</table>
+</table-wrap>
+<table-wrap id="T5.3.5" position="float" orientation="portrait">
+<label>Table 5.3.5</label>
+<caption><title>Material Usage Summary.</title></caption>
+<table frame="box" rules="all">
+<tbody>
+<row>
+<entry align="left" valign="top"><para>Material</para></entry>
+<entry align="left" valign="top"><para>steel</para></entry>
+</row>
+<row>
+<entry align="left" valign="top"><para>Number</para></entry>
+<entry align="left" valign="top"><para>6</para></entry>
+</row>
+<row>
+<entry align="left" valign="top"><para>Length</para></entry>
+<entry align="left" valign="top"><para>682.8427</para></entry>
+</row>
+<row>
+<entry align="left" valign="top"><para>Mass</para></entry>
+<entry align="left" valign="top"><para>0.0000</para></entry>
+</row>
+<row>
+<entry align="left" valign="top"><para>Total mass</para></entry>
+<entry align="left" valign="top"><para>0.0000</para></entry>
+</row>
+</tbody>
+</table>
+</table-wrap>
+<p>The vertical displacement of node 3 (the DOF 2 value) is &#x2212;0.0844, the same value obtained by the closed-form methods of Module 5. Figure 6 shows the velvet graphical output for the truss deflections (greatly magnified).</p>
+<fig id="fig_6">
+<label>Fig 6</label>
+<caption>The 6-element truss in its original and deformed shape.</caption>
+<graphic href="figure6_truss_deformed.jpg"/>
+</fig>
+ </sec>
+</sec>
+<sec id="5.3.general-stress-analysis">
+<title>General Stress Analysis</title>
+<p>The element stiffness matrix could be formed exactly for truss elements, but this is not the case for general stress analysis situations. The relation between nodal forces and displacements are not known in advance for general two- or three-dimensional stress analysis problems, and an approximate relation must be used in order to write out an element stiffness matrix.</p>
+<p>In the usual &#x201C;displacement formulation&#x201D; of the finite element method, the governing equations are combined so as to have only displacements appearing as unknowns; this can be done by using the Hookean constitutive equations to replace the stresses in the equilibrium equations by the strains, and then using the kinematic equations to replace the strains by the displacements. This gives</p>
+<math display='block'>
+<mrow>
+<msup><mi>L</mi><mi>T</mi></msup>
+<mi>&#x03C3;</mi>
+<mo>=</mo>
+<msup><mi>L</mi><mi>T</mi></msup>
+<msub><mi>D</mi><mi>&#x03B5;</mi></msub>
+<mo>=</mo>
+<msup><mi>L</mi><mi>T</mi></msup>
+<mi>D</mi>
+<mi>L</mi>
+<mi>u</mi>
+<mo>=</mo>
+<mn>0</mn>
+</mrow>
+</math>
+<p>Of course, it is often impossible to solve these equations in closed form for the irregular boundary conditions encountered in practical problems. However, the equations are amenable to discretization and solution by numerical techniques such as finite differences or finite elements.</p>
+<p>Finite element methods are one of several approximate numerical techniques available for the solution of engineering boundary value problems. Problems in the mechanics of materials often lead to equations of this type, and finite element methods have a number of advantages in handling them. The method is particularly well suited to problems with irregular geometries and boundary conditions, and it can be implemented in general computer codes that can be used for many different problems.</p>
+<p>To obtain a numerical solution for the stress analysis problem, let us postulate a function <italic>&#x1E75;</italic>(<italic>x</italic>,<italic>y</italic>) as an approximation to <italic>u</italic>:</p>
+<math display='block'>
+<mrow>
+<mover accent='true'><mi>u</mi><mo>&#x02DC;</mo></mover>
+<mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo>
+<mo>&#x2248;</mo>
+<mi>u</mi><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo>
+</mrow>
+</math>
+<p>Many different forms might be adopted for the approximation <italic>&#x1E75;</italic>. The finite element method discretizes the solution domain into an assemblage of subregions, or &#x201C;elements,&#x201D; each of which has its own approximating functions. Specifically, the approximation for the displacement <italic>&#x1E75;</italic>(<italic>x</italic>,<italic>y</italic>) within an element is written as a combination of the (as yet unknown) displacements at the nodes belonging to that element:</p>
+<math display='block'>
+<mrow>
+<mover accent='true'><mi>u</mi><mo>&#x02DC;</mo></mover>
+<mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo>
+<mo>=</mo>
+<msub><mi>N</mi><mi>j</mi></msub>
+<mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo>
+<msub><mi>u</mi><mi>j</mi></msub>
+</mrow>
+</math>
+<p>Here the index <italic>j</italic> ranges over the element&#x2019;s nodes, <italic>u</italic><sub><italic>j</italic></sub> are the nodal displacements, and the <italic>N</italic><sub><italic>j</italic></sub> are &#x201C;interpolation functions.&#x201D; These interpolation functions are usually simple polynomials (generally linear, quadratic, or occasionally cubic polynomials) that are chosen to become unity at node <italic>j</italic> and zero at the other element nodes. The interpolation functions can be evaluated at any position within the element by means of standard subroutines, so the approximate displacement at any position within the element can be obtained in terms of the nodal displacements directly from Equation 5.3.5.</p>
+<fig id="fig_7">
+<label>Fig 7</label>
+<caption>Interpolation in one dimension.</caption>
+<graphic href="figure7_interpolation.jpg"/>
+</fig>
+<p>The interpolation concept can be illustrated by asking how we might guess the value of a function <italic>u</italic>(<italic>x</italic>) at an arbitrary point <italic>x</italic> located between two nodes at <italic>x</italic> = 0 and <italic>x</italic> = 1, assuming we know somehow the nodal values <italic>u</italic>(0) and <italic>u</italic>(1). We might assume that as a reasonable approximation <italic>u</italic>(<italic>x</italic>) simply varies linearly between these two values as shown in Figure 7, and write</p>
+<p>Here the <italic>N</italic><sub>0</sub> and <italic>N</italic><sub>1</sub> are the linear interpolation functions for this one-dimensional approximation. Finite element codes have subroutines that extend this interpolation concept to two and three dimensions.</p>
+<p>Approximations for the strain and stress follow directly from the displacements:</p>
+<math display='block'>
+<mrow>
+<mover accent='true'><mi>&#x03B5;</mi><mo>&#x02DC;</mo></mover>
+<mover accent='true'><mi>L</mi><mo>&#x02DC;</mo></mover>
+<mover accent='true'><mi>u</mi><mo>&#x02DC;</mo></mover>
+<mo>=</mo>
+<mi>L</mi>
+<msub><mi>N</mi><mi>j</mi></msub>
+<msub><mi>u</mi><mi>j</mi></msub>
+<mo>&#x2261;</mo>
+<msub><mi>B</mi><mi>j</mi></msub>
+<msub><mi>u</mi><mi>j</mi></msub>
+</mrow>
+</math>
+<math display='block'>
+<mrow>
+<mover accent='true'><mi>&#x03C3;</mi><mo>&#x02DC;</mo></mover>
+<mi>D</mi>
+<mover accent='true'><mi>&#x03B5;</mi><mo>&#x02DC;</mo></mover>
+<mo>=</mo>
+<mi>D</mi>
+<msub><mi>B</mi><mi>j</mi></msub>
+<msub><mi>u</mi><mi>j</mi></msub>
+</mrow>
+</math>
+<p>where <italic>B</italic><sub><italic>j</italic></sub>(<italic>x</italic>,<italic>y</italic>) = <italic>LN</italic><sub><italic>j</italic></sub>(<italic>x</italic>,<italic>y</italic>) is an array of derivatives of the interpolation functions:</p>
+<math display='block'>
+<mrow>
+<msub><mi>B</mi><mi>j</mi></msub>
+<mo>=</mo>
+<mfenced open='[' close=']'>
+<mtable>
+<mtr>
+<mtd><msub><mi>N</mi><mrow><mi>j</mi><mo>,</mo><mi>x</mi></mrow></msub></mtd>
+<mtd><mn>0</mn></mtd>
+</mtr>
+<mtr>
+<mtd><mn>0</mn></mtd>
+<mtd><msub><mi>N</mi><mrow><mi>j</mi><mo>,</mo><mi>y</mi></mrow></msub></mtd>
+</mtr>
+<mtr>
+<mtd><msub><mi>N</mi><mrow><mi>j</mi><mo>,</mo><mi>y</mi></mrow></msub></mtd>
+<mtd><msub><mi>N</mi><mrow><mi>j</mi><mo>,</mo><mi>x</mi></mrow></msub></mtd>
+</mtr>
+</mtable>
+</mfenced>
+</mrow>
+</math>
+<p>A &#x201C;virtual work&#x201D; argument can now be invoked to relate the nodal displacement <italic>u</italic><sub><italic>j</italic></sub> appearing at node <italic>j</italic> to the forces applied externally at node <italic>i</italic>: if a small, or &#x201C;virtual,&#x201D; displacement <italic>&#x03B4;u</italic><sub><italic>i</italic></sub> is superimposed on node <italic>i</italic>, the increase in strain energy <italic>&#x03B4;U</italic> within an element connected to that node is given by:</p>
+<math display='block'>
+<mrow>
+<mi>&#x03B4;</mi><mi>U</mi>
+<mo>=</mo>
+<msub><mo>&#x222B;</mo><mi>V</mi></msub>
+<mi>&#x03B4;</mi>
+<msup><mi>&#x03B5;</mi><mi>T</mi></msup>
+<mi>&#x03C3;</mi>
+<mspace width='0.2em'/>
+<mi>d</mi><mi>V</mi>
+</mrow>
+</math>
+<p>where <italic>V</italic> is the volume of the element. Using the approximate strain obtained from the interpolated displacements, <italic>&#x03B4;&#x03B5;&#x0303;</italic> = <italic>B</italic><sub><italic>i</italic></sub><italic>&#x03B4;u</italic><sub><italic>i</italic></sub> is the approximate virtual increase in strain induced by the virtual nodal displacement. Using Equation 5.3.7 and the matrix identity (<italic>AB</italic>)<sup><italic>T</italic></sup> = <italic>B</italic><sup><italic>T</italic></sup><italic>A</italic><sup><italic>T</italic></sup>, we have:</p>
+<math display='block'>
+<mrow>
+<mi>&#x03B4;</mi><mi>U</mi>
+<mo>=</mo>
+<mi>&#x03B4;</mi>
+<msubsup><mi>u</mi><mi>i</mi><mi>T</mi></msubsup>
+<msub><mo>&#x222B;</mo><mi>V</mi></msub>
+<msubsup><mi>B</mi><mi>i</mi><mi>T</mi></msubsup>
+<mi>D</mi>
+<msub><mi>B</mi><mi>j</mi></msub>
+<mspace width='0.2em'/>
+<mi>d</mi><mi>V</mi>
+<mspace width='0.2em'/>
+<msub><mi>u</mi><mi>j</mi></msub>
+</mrow>
+</math>
+<p>(The nodal displacements <italic>&#x03B4;u</italic><sub><italic>i</italic></sub><sup><italic>T</italic></sup> and <italic>u</italic><sub><italic>j</italic></sub> are not functions of <italic>x</italic> and <italic>y</italic>, and so can be brought from inside the integral.) The increase in strain energy <italic>&#x03B4;U</italic> must equal the work done by the nodal forces; this is:</p>
+<math display='block'>
+<mrow>
+<mi>&#x03B4;</mi><mi>W</mi>
+<mo>=</mo>
+<mi>&#x03B4;</mi>
+<msubsup><mi>u</mi><mi>i</mi><mi>T</mi></msubsup>
+<msub><mi>f</mi><mi>i</mi></msub>
+</mrow>
+</math>
+<p>Equating Eqns. 5.3.10 and 5.3.11 and canceling the common factor <italic>&#x03B4;u</italic><sub><italic>i</italic></sub><sup><italic>T</italic></sup>, we have</p>
+<math display='block'>
+<mrow>
+<mfenced open='[' close=']'>
+<mrow>
+<msub><mo>&#x222B;</mo><mi>V</mi></msub>
+<msubsup><mi>B</mi><mi>i</mi><mi>T</mi></msubsup>
+<mi>D</mi>
+<msub><mi>B</mi><mi>j</mi></msub>
+<mspace width='0.2em'/>
+<mi>d</mi><mi>V</mi>
+</mrow>
+</mfenced>
+<msub><mi>u</mi><mi>j</mi></msub>
+<mo>=</mo>
+<msub><mi>f</mi><mi>i</mi></msub>
+</mrow>
+</math>
+<p>This is of the desired form <italic>k</italic><sub><italic>ij</italic></sub><italic>u</italic><sub><italic>j</italic></sub> = <italic>f</italic><sub><italic>i</italic></sub>, where <italic>k</italic><sub><italic>ij</italic></sub> = &#x222B;<sub><italic>V</italic></sub><italic>B</italic><sub><italic>i</italic></sub><sup><italic>T</italic></sup><italic>DB</italic><sub><italic>j</italic></sub><italic>dV</italic> is the element stiffness.</p>
+<p>Finally, the integral in Equation 12 must be replaced by a numerical equivalent acceptable to the computer. Gauss-Legendre numerical integration is commonly used in finite element codes for this purpose, since that technique provides a high ratio of accuracy to computing effort. Stated briefly, the integration consists of evaluating the integrand at optimally selected integration points within the element, and forming a weighted summation of the integrand values at these points. In the case of integration over two-dimensional element areas, this can be written:</p>
+<math display='block'>
+<mrow>
+<msub><mo>&#x222B;</mo><mi>A</mi></msub>
+<mi>f</mi><mo>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>)</mo>
+<mspace width='0.2em'/>
+<mi>d</mi><mi>A</mi>
+<mo>&#x2248;</mo>
+<munder><mo>&#x2211;</mo><mi>l</mi></munder>
+<mi>f</mi>
+<mo>(</mo><msub><mi>x</mi><mi>l</mi></msub><mo>,</mo><msub><mi>y</mi><mi>l</mi></msub><mo>)</mo>
+<msub><mi>w</mi><mi>l</mi></msub>
+</mrow>
+</math>
+<p>The location of the sampling points <italic>x</italic><sub><italic>l</italic></sub>, <italic>y</italic><sub><italic>l</italic></sub> and the associated weights <italic>w</italic><sub><italic>l</italic></sub> are provided by standard subroutines. In most modern codes, these routines map the element into a convenient shape, determine the integration points and weights in the transformed coordinate frame, and then map the results back to the original frame. The functions <italic>N</italic><sub><italic>j</italic></sub> used earlier for interpolation can be used for the mapping as well, achieving a significant economy in coding. This yields what are known as &#x201C;numerically integrated isoparametric elements,&#x201D; and these are a mainstay of the finite element industry.</p>
+<p>Equation 5.3.12, with the integral replaced by numerical integrations of the form in Equation 5.3.13, is the finite element counterpart of Equation 5.3.3, the differential governing equation. The computer will carry out the analysis by looping over each element, and within each element looping over the individual integration points. At each integration point the components of the element stiffness matrix <italic>k</italic><sub><italic>ij</italic></sub> are computed according to Equation 5.3.12, and added into the appropriate positions of the <italic>K</italic><sub><italic>ij</italic></sub> global stiffness matrix as was done in the assembly step of matrix truss method described in the previous section. It can be appreciated that a good deal of computation is involved just in forming the terms of the stiffness matrix, and that the finite element method could never have been developed without convenient and inexpensive access to a computer.</p>
+</sec>
+<sec id="5.3.circular-hole">
+<title>Stresses around a circular hole</title>
+<p>We have considered the problem of a uniaxially loaded plate containing a circular hole in previous modules, including the theoretical Kirsch solution (Module 16) and experimental determinations using both photoelastic and moire methods (Module 17). This problem is of practical importance &#x2013; for instance, we have noted the dangerous stress concentration that appears near rivet holes &#x2013; and it is also quite demanding in both theoretical and numerical analyses. Since the stresses rise sharply near the hole, a finite element grid must be refined there in order to produce acceptable results.</p>
+<fig id="fig_8">
+<label>Fig 8</label>
+<caption>Mesh for circular-hole problem.</caption>
+<graphic href="figure8_mesh_circular_hole.jpg"/>
+</fig>
+<p>Figure 8 shows a mesh of three-noded triangular elements developed by the felt-velvet graphical FEA package that can be used to approximate the displacements and stresses around a uniaxially loaded plate containing a circular hole. Since both theoretical and experimental results for this stress field are available as mentioned above, the circular-hole problem is a good one for becoming familiar with code operation.</p>
+<p>The user should take advantage of symmetry to reduce problem size whenever possible, and in this case only one quadrant of the problem need be meshed. The center of the hole is kept fixed, so the symmetry requires that nodes along the left edge be allowed to move vertically but not horizontally. Similarly, nodes along the lower edge are constrained vertically but left free to move horizontally. Loads are applied to the nodes along the upper edge, with each load being the resultant of the far-field stress acting along half of the element boundaries between the given node and its neighbors. (The far-field stress is taken as unity.) Portions of the felt input dataset for this problem are:</p>
+<p>The <italic>y</italic>-displacements and vertical stresses &#x03C3;<sub><italic>y</italic></sub> are contoured in Figure 9(a) and (b) respectively; these should be compared with the photoelastic and moire analyses given in Module 17, Figs. 8 and 10(a). The stress at the integration point closest to the x-axis at the hole is computed to be &#x03C3;<sub><italic>y</italic>,max</sub> = 3.26, 9% larger than the theoretical value of 3.00. In drawing the contours of Figure 9b, the postprocessor extrapolated the stresses to the nodes by fitting a least-squares plane through the stresses at all four integration points within the element. This produces an even higher value for the stress concentration factor, 3.593. The user must be aware that graphical postprocessors smooth results that are themselves only approximations, so numerical inaccuracy is a real possibility. Refining the mesh, especially near the region of highest stress gradient at the hole meridian, would reduce this error.</p>
+<fig id="fig_9">
+<label>Fig 9</label>
+<caption>Vertical displacements (a) and stresses (b) as computed for the mesh of Figure 8.</caption>
+<graphic href="figure9_displacements_stresses.jpg"/>
+</fig>
+</sec>
+<sec id="5.3.exercises">
+<title>Exercises</title>
+ <sec id="exercise_5.3.1" content-type="exercise">
+<label>Exercise 5.3.1</label>
+<p>(a) &#x2013; (h) Use FEA to determine the force in each element of the trusses drawn below.</p>
+<fig id="fig_ex1">
+<label>Fig Ex1</label>
+<caption>Truss problems (a)&#x2013;(h) for Exercise 5.3.1.</caption>
+<graphic href="exercise1_trusses.jpg"/>
+</fig>
+ </sec>
+ <sec id="exercise_5.3.2" content-type="exercise">
+<label>Exercise 5.3.2</label>
+<p>(a) &#x2013; (c) Write out the global stiffness matrices for the trusses listed below, and solve for the unknown forces and displacements. For each element assume <italic>E</italic> = 30 Mpsi and <italic>A</italic> = 0.1 in<sup>2</sup>.</p>
+<fig id="fig_ex2">
+<label>Fig Ex2</label>
+<caption>Truss problems (a)&#x2013;(c) for Exercise 5.3.2.</caption>
+<graphic href="exercise2_trusses.jpg"/>
+</fig>
+ </sec>
+ <sec id="exercise_5.3.3" content-type="exercise">
+<label>Exercise 5.3.3</label>
+<p>Obtain a plane-stress finite element solution for a cantilevered beam with a single load at the free end. Use arbitrarily chosen (but reasonable) dimensions and material properties. Plot the stresses &#x03C3;<sub><italic>x</italic></sub> and &#x03C4;<sub><italic>xy</italic></sub> as functions of <italic>y</italic> at an arbitrary station along the span; also plot the stresses given by the elementary theory of beam bending (c.f. Module 13) and assess the magnitude of the numerical error.</p>
+<fig id="fig_ex3">
+<label>Fig Ex3</label>
+<caption>Cantilevered beam with end load for Exercise 5.3.3.</caption>
+<graphic href="exercise3_cantilever_beam.jpg"/>
+</fig>
+ </sec>
+ <sec id="exercise_5.3.4" content-type="exercise">
+<label>Exercise 5.3.4</label>
+<p>Repeat the previous problem, but with a symmetrically-loaded beam in three-point bending.</p>
+<fig id="fig_ex4">
+<label>Fig Ex4</label>
+<caption>Symmetrically-loaded beam in three-point bending for Exercise 5.3.4.</caption>
+<graphic href="exercise4_three_point_bending.jpg"/>
+</fig>
+ </sec>
+ <sec id="exercise_5.3.5" content-type="exercise">
+<label>Exercise 5.3.5</label>
+<p>Use axisymmetric elements to obtain a finite element solution for the radial stress in a thick-walled pressure vessel (using arbitrary geometry and material parameters). Compare the results with the theoretical solution (c.f. Prob. 2 in Module 16).</p>
+ </sec>
+</sec>
+<p>This page titled 5.3: Finite Element Analysis is shared under a CC BY-NC-SA 4.0 license and was authored, remixed, and/or curated by David Roylance (MIT OpenCourseWare) via source content that was edited to the style and standards of the LibreTexts platform.</p>
+</sec>
+</p>
+</p>
+</sec>
+</sec>
+</sec>
+</sec>
+</sec>
+</sec>
+</body>
+</book-part>
