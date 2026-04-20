@@ -1,0 +1,1323 @@
+<chapter id="chap5">
+<label>Chapter 5</label>
+<title>Stoichiometry and the Mole</title>
+<sec id="opening-essay">
+<p role="noindent">At Contrived State University in Anytown, Ohio, a new building was dedicated in March 2010 to house the College of Education. The 100,000-square-foot building has enough office space to accommodate 86 full-time faculty members and 167 full-time staff.</p>
+<p role="noindent">In a fit of monetary excess, the university administration offered to buy new furniture (desks and chairs) and computer workstations for all faculty and staff members moving into the new building. However, to save on long-term energy and materials costs, the university offered to buy only 1 laser printer per 10 employees, with the plan to network the printers together.</p>
+<p role="noindent">How many laser printers did the administration have to buy? It is rather simple to show that 26 laser printers are needed for all the employees. However, what if a chemist was calculating quantities for a chemical reaction? Interestingly enough, similar calculations can be performed for chemicals as well as laser printers.</p>
+<fig id="fig_5_1">
+<label>Figure 5.1</label>
+<caption>Outfitting a New Building</caption>
+<graphic href="figure4_1.jpg"/>
+</fig>
+</sec>
+<sec id="5.1">
+<label>5.1</label>
+<title>Stoichiometry</title>
+<subtitle>LEARNING OBJECTIVES</subtitle>
+<ol type="1">
+<li>Define stoichiometry.</li>
+<li>Relate quantities in a balanced chemical reaction on a molecular basis.</li>
+</ol>
+<p role="noindent">Consider a classic recipe for pound cake: 1 pound of eggs, 1 pound of butter, 1 pound of flour, and 1 pound of sugar. (That’s why it’s called “pound cake.”) If you have 4 pounds of butter, how many pounds of sugar, flour, and eggs do you need? You would need 4 pounds each of sugar, flour, and eggs.</p>
+<p role="noindent">Now suppose you have 1.00 g H2. If the chemical reaction follows the balanced chemical equation <math display="inline"><mrow><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo></mrow></math> then what mass of oxygen do you need to make water?</p>
+<p role="noindent">Curiously, this chemical reaction question is very similar to the pound cake question. Both of them involve relating a quantity of one substance to a quantity of another substance or substances. The relating of one chemical substance to another using a balanced chemical reaction is called stoichiometry. Using stoichiometry is a fundamental skill in chemistry; it greatly broadens your ability to predict what will occur and, more importantly, how much is produced.</p>
+<p role="noindent">Let us consider a more complicated example. A recipe for pancakes calls for 2 cups (c) of pancake mix, 1 egg, and 1/2 c of milk. We can write this in the form of a chemical equation:</p>
+<math display="inline"><mrow><mn>2</mn><mtext> c mix</mtext><mo>+</mo><mn>1</mn><mtext> egg</mtext><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> c milk</mtext><mo>→</mo><mn>1</mn><mtext> batch of pancakes</mtext></mrow></math><p role="noindent"></p>
+<target target-type="page" id="page_750">750</target>
+<p role="noindent">If you have 9 c of pancake mix, how many eggs and how much milk do you need? It might take a little bit of work, but eventually you will find you need 4½ eggs and 2¼ c milk.</p>
+<p role="noindent">How can we formalize this? We can make a conversion factor using our original recipe and use that conversion factor to convert from a quantity of one substance to a quantity of another substance, similar to the way we constructed a conversion factor between feet and yards in - ball-ch02. Because one recipe’s worth of pancakes requires 2 c of pancake mix, 1 egg, and 1/2 c of milk, we actually have the following mathematical relationships that relate these quantities:</p>
+<p role="noindent">2 c pancake mix <sup>TM</sup> 1 egg <sup>TM</sup> 1/2 c milk</p>
+<p role="noindent">where <math display="inline"><mo>≡</mo></math> is the mathematical symbol for “is equivalent to.” This does not mean that 2 c of pancake mix equal 1 egg. However, <em>as far as this recipe is concerned</em>, these are the equivalent quantities needed for a single recipe of pancakes. So, any possible quantities of two or more ingredients must have the same numerical ratio as the ratios in the equivalence.</p>
+<p role="noindent">We can deal with these equivalences in the same way we deal with equalities in unit conversions: we can make conversion factors that essentially equal 1. For example, to determine how many eggs we need for 9 c of pancake mix, we construct the conversion factor <math display="inline"><mfrac><mrow><mn>1</mn><mtext> egg</mtext></mrow><mrow><mn>2</mn><mtext> c pancake mix</mtext></mrow></mfrac></math></p>
+<p role="noindent">This conversion factor is, in a strange way, equivalent to 1 because the recipe relates the two quantities.</p>
+<p role="noindent">Starting with our initial quantity and multiplying by our conversion factor, <math display="inline"><mrow><mn>9</mn><mtext> c pancake mix</mtext><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> egg</mtext></mrow><mrow><mn>2</mn><mtext> c pancake mix</mtext></mrow></mfrac><mo>=</mo><mn>4.5</mn><mtext> eggs</mtext></mrow></math></p>
+<p role="noindent">Note how the units <em>cups pancake mix</em> canceled, leaving us with units of eggs. This is the formal, mathematical way of getting our amounts to mix with 9 c of pancake mix. We can use a similar conversion factor for the amount of milk: <math display="inline"><mrow><mn>9</mn><mtext> c pancake mix</mtext><mo>×</mo><mfrac><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> c milk</mtext></mrow><mrow><mn>2</mn><mtext> c pancake mix</mtext></mrow></mfrac><mo>=</mo><mn>2.25</mn><mtext> c milk</mtext></mrow></math></p>
+<p role="noindent">Again, units cancel, and new units are introduced.</p><p role="noindent"></p>
+<target target-type="page" id="page_14">14</target>
+<p role="noindent">A balanced chemical equation is nothing more than a <em>recipe for a chemical reaction</em>. The difference is that a balanced chemical equation is written in terms of atoms and molecules, not cups, pounds, and eggs.</p>
+
+<p role="noindent">For example, consider the following chemical equation: <math display="inline"><mrow><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">)</mo><mo>→</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></math></p>
+
+<p role="noindent">We can interpret this as, literally, “two hydrogen molecules react with one oxygen molecule to make two water molecules.” That interpretation leads us directly to some equivalences, just as our pancake recipe did:</p>
+
+<math display="display"><mrow><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mtext> molecules</mtext><mo>≡</mo><mn>1</mn><msub><mi>O</mi><mn>2</mn></msub><mtext> molecule</mtext><mo>≡</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mtext> molecules</mtext></mrow></math>
+
+<p role="noindent">These equivalences allow us to construct conversion factors:</p>
+
+<math display="display"><mrow><mfrac><mrow><mn>2</mn><mtext> molecules </mtext><msub><mi>H</mi><mn>2</mn></msub></mrow><mrow><mn>1</mn><mtext> molecule </mtext><msub><mi>O</mi><mn>2</mn></msub></mrow></mfrac></mrow></math> <math display="inline"><mrow><mfrac><mrow><mn>2</mn><mtext> molecules </mtext><msub><mi>H</mi><mn>2</mn></msub></mrow><mrow><mn>2</mn><mtext> molecules </mtext><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub></mrow></mfrac></mrow></math> <math display="inline"><mrow><mfrac><mrow><mn>1</mn><mtext> molecule </mtext><msub><mi>O</mi><mn>2</mn></msub></mrow><mrow><mn>2</mn><mtext> molecules </mtext><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub></mrow></mfrac></mrow></math>
+
+<p role="noindent">and so forth. These conversions can be used to relate quantities of one substance to quantities of another.</p>
+
+<p role="noindent">For example, suppose we need to know how many molecules of oxygen are needed to react with 16 molecules of H₂. As we did with converting units, we start with our given quantity and use the appropriate conversion factor:</p>
+
+<math display="display"><mrow><mn>16</mn><mtext> molecules </mtext><msub><mi>H</mi><mn>2</mn></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> molecule </mtext><msub><mi>O</mi><mn>2</mn></msub></mrow><mrow><mn>2</mn><mtext> molecules </mtext><msub><mi>H</mi><mn>2</mn></msub></mrow></mfrac><mo>=</mo><mn>8</mn><mtext> molecules </mtext><msub><mi>O</mi><mn>2</mn></msub></mrow></math>
+
+<p role="noindent">Note how the unit <em>molecules H₂</em> cancels algebraically, just as any unit does in a conversion like this. The conversion factor came directly from the coefficients in the balanced chemical equation. This is another reason why a properly balanced chemical equation is important.</p>
+<sec id="example_1">
+<p role="noindent">How many molecules of SO<sub>3</sub> are needed to react with 144 molecules of Fe<sub>2</sub>O<sub>3</sub> given this balanced chemical equation?</p>
+<p role="noindent">
+<math display="block">
+<msub><mi>Fe</mi><mn>2</mn></msub><msub><mi mathvariant="normal">O</mi><mn>3</mn></msub><mo>(</mo><mi mathvariant="normal">s</mi><mo>)</mo>
+<mo>+</mo>
+<mn>3</mn><msub><mi>SO</mi><mn>3</mn></msub><mo>(</mo><mi mathvariant="normal">g</mi><mo>)</mo>
+<mo>&rarr;</mo>
+<msub><mi>Fe</mi><mn>2</mn></msub><mo>(</mo><msub><mi>SO</mi><mn>4</mn></msub><msub><mo>)</mo><mn>3</mn></msub>
+</math>
+</p>
+<target target-type="page" id="page_752">752</target>
+<p role="noindent">We use the balanced chemical equation to construct a conversion factor between Fe<sub>2</sub>O<sub>3</sub> and SO<sub>3</sub>. The number of molecules of Fe<sub>2</sub>O<sub>3</sub> goes on the bottom of our conversion factor so it cancels with our given amount, and the molecules of SO<sub>3</sub> go on the top. Thus, the appropriate conversion factor is:</p>
+<math display="block">
+<mfrac>
+<mrow><mn>3</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>SO</mi><mn>3</mn></msub></mrow>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>Fe</mi><mn>2</mn></msub><msub><mi mathvariant="normal">O</mi><mn>3</mn></msub></mrow>
+</mfrac>
+</math>
+<p role="noindent">Starting with our given amount and applying the conversion factor, the result is:</p>
+<math display="block">
+<mn>144</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>Fe</mi><mn>2</mn></msub><msub><mi mathvariant="normal">O</mi><mn>3</mn></msub>
+<mo>&times;</mo>
+<mfrac>
+<mrow><mn>3</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>SO</mi><mn>3</mn></msub></mrow>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>Fe</mi><mn>2</mn></msub><msub><mi mathvariant="normal">O</mi><mn>3</mn></msub></mrow>
+</mfrac>
+<mo>=</mo>
+<mn>432</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>SO</mi><mn>3</mn></msub>
+</math>
+<p role="noindent">We need 432 molecules of SO<sub>3</sub> to react with 144 molecules of Fe<sub>2</sub>O<sub>3</sub>.</p>
+ <p role="noindent">Test Yourself</p>
+<p role="noindent">How many molecules of H<sub>2</sub> are needed to react with 29 molecules of N<sub>2</sub> to make ammonia if the balanced chemical equation is N<sub>2</sub> + 3H<sub>2</sub> &rarr; 2NH<sub>3</sub>?</p>
+<p role="noindent">Answer</p>
+<p role="noindent">87 molecules</p>
+ </sec>
+<p role="noindent">Chemical equations also allow us to make conversions regarding the number of atoms in a chemical reaction because a chemical formula lists the number of atoms of each element in a compound. The formula H<sub>2</sub>O indicates that there are two hydrogen atoms and one oxygen atom in each molecule, and these relationships can be used to make conversion factors:</p>
+=<math display="block">
+<mfrac>
+<mrow>
+<mn>2</mn>
+<mtext>&nbsp;atoms&nbsp;H</mtext>
+</mrow>
+<mrow>
+<mn>1</mn>
+<mtext>&nbsp;molecule&nbsp;</mtext>
+<msub>
+<mi>H</mi>
+<mn>2</mn>
+</msub>
+<mi>O</mi>
+</mrow>
+</mfrac>
+<mspace width="2em"/>
+<mfrac>
+<mrow>
+<mn>1</mn>
+<mtext>&nbsp;molecule&nbsp;</mtext>
+<msub>
+<mi>H</mi>
+<mn>2</mn>
+</msub>
+<mi>O</mi>
+</mrow>
+<mrow>
+<mn>1</mn>
+<mtext>&nbsp;atom&nbsp;O</mtext>
+</mrow>
+</mfrac>
+</math>
+<p role="noindent">Conversion factors like this can also be used in stoichiometry calculations.</p>
+<target target-type="page" id="page_752">752</target>
+<sec id="example_2">
+<p role="noindent">How many molecules of NH<sub>3</sub> can you make if you have 228 atoms of H<sub>2</sub>?</p>
+<p role="noindent">Solution</p>
+<p role="noindent">From the formula, we know that one molecule of NH<sub>3</sub> has three H atoms. Use that fact as a conversion factor:</p>
+<math display="block">
+<mn>228</mn>
+<mtext>&nbsp;atoms&nbsp;H</mtext>
+<mo>&times;</mo>
+<mfrac>
+<mrow>
+<mn>1</mn>
+<mtext>&nbsp;molecule&nbsp;</mtext>
+<msub>
+<mi>NH</mi>
+<mn>3</mn>
+</msub>
+</mrow>
+<mrow>
+<mn>3</mn>
+<mtext>&nbsp;atoms&nbsp;H</mtext>
+</mrow>
+</mfrac>
+<mo>=</mo>
+<mn>76</mn>
+<mtext>&nbsp;molecules&nbsp;</mtext>
+<msub>
+<mi>NH</mi>
+<mn>3</mn>
+</msub>
+</math>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">How many molecules of Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> can you make from 777 atoms of S?</p>
+<p role="noindent">Answer</p>
+<p role="noindent">259 molecules</p>
+</sec>
+
+<subtitle>KEY TAKEAWAY</subtitle>
+<ul><li>Quantities of substances can be related to each other using balanced chemical equations.</li></ul>
+<sec id="exercises">
+<ol type="1">
+<li>Think back to the pound cake recipe. What possible conversion factors can you construct relating the components of the recipe?</li>
+<target target-type="page" id="page_753">753</target>
+<li>Think back to the pancake recipe. What possible conversion factors can you construct relating the components of the recipe?</li>
+<li>What are all the conversion factors that can be constructed from the balanced chemical reaction
+<math display="block">
+<mn>2</mn>
+<msub>
+<mi>H</mi>
+<mn>2</mn>
+</msub>
+<mo>(</mo>
+<mi>g</mi>
+<mo>)</mo>
+<mo>+</mo>
+<msub>
+<mi>O</mi>
+<mn>2</mn>
+</msub>
+<mo>(</mo>
+<mi>g</mi>
+<mo>)</mo>
+<mo>&rarr;</mo>
+<mn>2</mn>
+<msub>
+<mi>H</mi>
+<mn>2</mn>
+</msub>
+<mi>O</mi>
+<mo>(</mo>
+<mi>l</mi>
+<mo>)</mo>
+<mo>?</mo>
+</math>
+</li>
+<li>What are all the conversion factors that can be constructed from the balanced chemical reaction
+<math display="block">
+<msub>
+<mi>N</mi>
+<mn>2</mn>
+</msub>
+<mo>(</mo>
+<mi>g</mi>
+<mo>)</mo>
+<mo>+</mo>
+<mn>3</mn>
+<msub>
+<mi>H</mi>
+<mn>2</mn>
+</msub>
+<mo>(</mo>
+<mi>g</mi>
+<mo>)</mo>
+<mo>&rarr;</mo>
+<mn>2</mn>
+<msub>
+<mi>NH</mi>
+<mn>3</mn>
+</msub>
+<mo>(</mo>
+<mi>g</mi>
+<mo>)</mo>
+<mo>?</mo>
+</math>
+</li>
+<li>Given the chemical equation
+<math display="block">
+<mi>Na</mi>
+<mo>(</mo>
+<mi>s</mi>
+<mo>)</mo>
+<mo>+</mo>
+<msub>
+<mi>H</mi>
+<mn>2</mn>
+</msub>
+<mi>O</mi>
+<mo>(</mo>
+<mi>l</mi>
+<mo>)</mo>
+<mo>&rarr;</mo>
+<mi>NaOH</mi>
+<mo>(</mo>
+<mi>aq</mi>
+<mo>)</mo>
+<mo>+</mo>
+<msub>
+<mi>H</mi>
+<mn>2</mn>
+</msub>
+<mo>(</mo>
+<mi>g</mi>
+<mo>)</mo>
+</math>
+<ul type="a">
+<li>Balance the equation.</li>
+<li>How many molecules of H<sub>2</sub> are produced when 332 atoms of Na react?</li>
+</ul>
+</li>
+<li>Given the chemical equation
+<math display="block">
+<mi>S</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>&rarr;</mo><msub><mi>SO</mi><mn>3</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<ol type="a">
+<li>Balance the equation.</li>
+<li>How many molecules of O<sub>2</sub> are needed when 38 atoms of S react?</li>
+</ol>
+</li>
+<li>For the balanced chemical equation
+<math display="block">
+<mn>6</mn><msup><mi>H</mi><mo>+</mo></msup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>2</mn><msubsup><mi>MnO</mi><mn>4</mn><mo>-</mo></msubsup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>5</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>l</mi><mo>)</mo><mo>&rarr;</mo><mn>2</mn><msup><mi>Mn</mi><mrow><mn>2</mn><mo>+</mo></mrow></msup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>5</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>8</mn><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+how many molecules of H<sub>2</sub>O are produced when 75 molecules of H<sub>2</sub>O<sub>2</sub> react?</li>
+<li>For the balanced chemical reaction
+<math display="block">
+<mn>2</mn><msub><mi>C</mi><mn>6</mn></msub><msub><mi>H</mi><mn>6</mn></msub><mo>(</mo><mi>l</mi><mo>)</mo><mo>+</mo><mn>15</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>&rarr;</mo><mn>12</mn><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>6</mn><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+how many molecules of CO<sub>2</sub> are produced when 56 molecules of C<sub>6</sub>H<sub>6</sub> react?</li>
+<li>Given the balanced chemical equation
+<math display="block">
+<msub><mi>Fe</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>SO</mi><mn>3</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>&rarr;</mo><msub><mi>Fe</mi><mn>2</mn></msub><mo>(</mo><msub><mi>SO</mi><mn>4</mn></msub><msub><mo>)</mo><mn>3</mn></msub>
+</math>
+<target target-type="page" id="page_754">754</target>
+how many molecules of Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> are produced if 321 atoms of S are reacted?
+</li>
+<li>
+For the balanced chemical equation
+<math display="block">
+<mi>CuO</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><mi>S</mi><mo>(</mo><mi>g</mi><mo>)</mo><mo>&rarr;</mo><mi>CuS</mi><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+how many molecules of CuS are formed if 9,044 atoms of H react?
+</li>
+<li>
+For the balanced chemical equation
+<math display="block">
+<msub><mi>Fe</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>SO</mi><mn>3</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>&rarr;</mo><msub><mi>Fe</mi><mn>2</mn></msub><mo>(</mo><msub><mi>SO</mi><mn>4</mn></msub><msub><mo>)</mo><mn>3</mn></msub>
+</math>
+suppose we need to make 145,000 molecules of Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>. How many molecules of SO<sub>3</sub> do we need?
+</li>
+<li>
+One way to make sulfur hexafluoride is to react thioformaldehyde, CH<sub>2</sub>S, with elemental fluorine:
+<math display="block">
+<msub><mi>CH</mi><mn>2</mn></msub><mi>S</mi><mo>+</mo><mn>6</mn><msub><mi>F</mi><mn>2</mn></msub><mo>&rarr;</mo><msub><mi>CF</mi><mn>4</mn></msub><mo>+</mo><mn>2</mn><mi>HF</mi><mo>+</mo><msub><mi>SF</mi><mn>6</mn></msub>
+</math>
+If 45,750 molecules of SF<sub>6</sub> are needed, how many molecules of F<sub>2</sub> are required?
+</li>
+<li>
+Construct the three independent conversion factors possible for these two reactions:
+<ol type="a">
+<li>
+<math display="inline">
+<mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>&rarr;</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi>
+</math>
+</li>
+<li>
+<math display="inline">
+<msub><mi>H</mi><mn>2</mn></msub><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>&rarr;</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub>
+</math>
+</li>
+</ol>
+<p role="indent">Why are the ratios between H<sub>2</sub> and O<sub>2</sub> different?</p>
+<p role="indent">The conversion factors are different because the stoichiometries of the balanced chemical reactions are different.</p>
+</li>
+<li>
+Construct the three independent conversion factors possible for these two reactions:
+<ol type="a">
+<li>
+<math display="inline">
+<mn>2</mn><mi>Na</mi><mo>+</mo><msub><mi>Cl</mi><mn>2</mn></msub><mo>&rarr;</mo><mn>2</mn><mi>NaCl</mi>
+</math>
+</li>
+<li>
+<math display="inline">
+<mn>4</mn><mi>Na</mi><mo>+</mo><mn>2</mn><msub><mi>Cl</mi><mn>2</mn></msub><mo>&rarr;</mo><mn>4</mn><mi>NaCl</mi>
+</math>
+</li>
+</ol>
+<p role="indent">What similarities, if any, exist in the conversion factors from these two reactions? role="indent"</p>
+</li>
+</ol>
+<title>ANSWERS</title>
+<target target-type="page" id="page_753">753</target>
+<ol>
+<li>
+<math display="inline">
+<mfrac>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub></mrow>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>O</mi><mn>2</mn></msub></mrow>
+</mfrac>
+<mo>,</mo>
+<mfrac>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>O</mi><mn>2</mn></msub></mrow>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi></mrow>
+</mfrac>
+<mo>,</mo>
+<mfrac>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub></mrow>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi></mrow>
+</mfrac>
+</math>
+are two conversion factors that can be constructed from the pound cake recipe. Other conversion factors are also possible.
+</li>
+</ol>
+
+<ol start="3">
+<li>
+<math display="inline">
+<mfrac>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub></mrow>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>O</mi><mn>2</mn></msub></mrow>
+</mfrac>
+<mo>,</mo>
+<mfrac>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>O</mi><mn>2</mn></msub></mrow>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi></mrow>
+</mfrac>
+<mo>,</mo>
+<mfrac>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub></mrow>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi></mrow>
+</mfrac>
+</math>, and their reciprocals are the conversion factors that can be constructed.
+</li>
+</ol>
+
+<ol start="5">
+<ol role="lower-alpha">
+<li>
+<math display="inline">
+<mn>2</mn><mi>Na</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi><mo>(</mo><mi>l</mi><mo>)</mo><mo>&rarr;</mo><mn>2</mn><mi>NaOH</mi><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+</li>
+<li>166 molecules</li>
+</ol>
+</ol>
+
+<ol start="7">
+<li>120 molecules</li>
+</ol>
+
+<ol start="9">
+<li>107 molecules</li>
+</ol>
+
+<ol start="11">
+<li>435,000 molecules</li>
+</ol>
+
+<ol start="13">
+<ol role="lower-alpha">
+<li>
+<math display="inline">
+<mfrac>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub></mrow>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>O</mi><mn>2</mn></msub></mrow>
+</mfrac>
+<mo>,</mo>
+<mfrac>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>O</mi><mn>2</mn></msub></mrow>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi></mrow>
+</mfrac>
+<mtext>, and </mtext>
+<mfrac>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub></mrow>
+<mrow><mn>2</mn><mtext>&nbsp;molecules&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub><mi>O</mi></mrow>
+</mfrac>
+</math>
+</li>
+<li>
+<math display="inline">
+<mfrac>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub></mrow>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>O</mi><mn>2</mn></msub></mrow>
+</mfrac>
+<mo>,</mo>
+<mfrac>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>O</mi><mn>2</mn></msub></mrow>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow>
+</mfrac>
+<mtext>, and </mtext>
+<mfrac>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub></mrow>
+<mrow><mn>1</mn><mtext>&nbsp;molecule&nbsp;</mtext><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn>2</mn></msub></mrow>
+</mfrac>
+</math>
+</li>
+</ol>
+</ol>
+
+</sec>
+<p role="noindent"></p>
+<p role="noindent"></p>
+<p role="noindent"></p>
+<p role="noindent"></p>
+
+<target target-type="page" id="page_14">14</target>
+</sec>
+<sec id="5.2">
+<label>5.2</label>
+<title>The Mole</title>
+<subtitle>LEARNING OBJECTIVES</subtitle>
+<ol type="1">
+<li>Describe the unit mole.</li>
+<li>Relate the mole quantity of substance to its mass.</li>
+</ol>
+<target target-type="page" id="page_756">756</target>
+<p role="noindent">So far, we have been talking about chemical substances in terms of individual atoms and molecules. Yet we don’t typically deal with substances an atom or a molecule at a time; we work with millions, billions, and trillions of atoms and molecules at a time. What we need is a way to deal with macroscopic, rather than microscopic, amounts of matter. We need a unit of amount that relates quantities of substances on a scale that we can interact with.</p>
+<p role="noindent">Chemistry uses a unit called mole. A mole (mol) is a number of things equal to the number of atoms in exactly 12 g of carbon-12. Experimental measurements have determined that this number is very large: <math display="inline"><mrow><mn>1</mn><mtext> mol </mtext><mo>=</mo><mn>6.02214179</mn><mo>×</mo><mn>10</mn><msup><mn>23</mn></msup><mtext> things</mtext></mrow></math></p>
+<p role="noindent">Understand that a mole means a number of things, just like a dozen means a certain number of things—twelve, in the case of a dozen. But a mole is a much larger number of things. These things can be atoms, or molecules, or eggs; however, in chemistry, we usually use the mole to refer to the amounts of atoms or molecules. Although the number of things in a mole is known to eight decimal places, it is usually fine to use only two or three decimal places in calculations. The numerical value of things in a mole is often called Avogadro’s number (N<sub>A</sub>), which is also known as the Avogadro constant, after Amadeo Avogadro, an Italian chemist who first proposed its importance.</p>
+<target target-type="page" id="page_757">757</target>
+<sec id="example_3">
+<p role="noindent">How many molecules are present in 2.76 mol of H₂O? How many atoms is this?</p>
+<p role="noindent">Solution</p>
+<p role="noindent">The definition of a mole is an equality that can be used to construct a conversion factor. Also, because we know that there are three atoms in each molecule of H₂O, we can also determine the number of atoms in the sample.</p>
+<math display="block">
+<mn>2.76</mn><mtext> mol H</mtext><msub><mi>2</mi></msub><mtext>O</mtext><mo>×</mo><mfrac><mrow><mn>6.022</mn><mo>×</mo><mn>10</mn><msup><mn>23</mn></msup><mtext> molecules H</mtext><msub><mi>2</mi></msub><mtext>O</mtext></mrow><mrow><mtext>mol H</mtext><msub><mi>2</mi></msub><mtext>O</mtext></mrow></mfrac><mo>=</mo><mn>1.66</mn><mo>×</mo><mn>10</mn><msup><mn>24</mn></msup><mtext> molecules H</mtext><msub><mi>2</mi></msub><mtext>O</mtext>
+</math>
+<p role="noindent">To determine the total number of atoms, we have</p>
+<math display="block">
+<mn>1.66</mn><mo>×</mo><mn>10</mn><msup><mn>24</mn></msup><mtext> molecules H</mtext><msub><mi>2</mi></msub><mtext>O</mtext><mo>×</mo><mfrac><mrow><mn>3</mn><mtext> atoms</mtext></mrow><mrow><mn>1</mn><mtext> molecule</mtext></mrow></mfrac><mo>=</mo><mn>4.99</mn><mo>×</mo><mn>10</mn><msup><mn>24</mn></msup><mtext> atoms</mtext>
+</math>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">How many molecules are present in 4.61 × 10⁻² mol of O₂?</p>
+<p role="noindent">Answer</p>
+<p role="noindent">2.78 × 10²² molecules</p>
+</sec>
+<target target-type="page" id="page_758">758</target>
+<p role="noindent">How big is a mole? It is very large. Suppose you had a mole of dollar bills that need to be counted. If everyone on earth (about 6 billion people) counted one bill per second, it would take about 3.2 million years to count all the bills. A mole of sand would fill a cube about 32 km on a side. A mole of pennies stacked on top of each other would have about the same diameter as our galaxy, the Milky Way. A mole is a lot of things—but atoms and molecules are very tiny. One mole of carbon atoms would make a cube that is 1.74 cm on a side, small enough to carry in your pocket.</p>
+<p role="noindent">Why is the mole unit so important? It represents the link between the microscopic and the macroscopic, especially in terms of mass. A mole of a substance has the same mass in grams as one unit (atom or molecule) has in atomic mass units. The mole unit allows us to express amounts of atoms and molecules in visible amounts that we can understand.</p>
+<p role="noindent">For example, we already know that, by definition, a mole of carbon has a mass of exactly 12 g. This means that exactly 12 g of C has 6.022 × 10²³ atoms:</p>
+<math display="block">
+<mn>12</mn><mtext> g C </mtext><mo>=</mo><mn>6.022</mn><mo>×</mo><mn>10</mn><msup><mn>23</mn></msup><mtext> atoms C</mtext>
+</math>
+<p role="noindent">We can use this equality as a conversion factor between the number of atoms of carbon and the number of grams of carbon. How many grams are there, say, in 1.50 × 10²⁵ atoms of carbon? This is a one-step conversion:</p>
+<math display="block">
+<mn>1.50</mn><mo>×</mo><mn>10</mn><msup><mn>25</mn></msup><mtext> atoms C</mtext><mo>×</mo><mfrac><mrow><mn>12.0000</mn><mtext> g C</mtext></mrow><mrow><mn>6.022</mn><mo>×</mo><mn>10</mn><msup><mn>23</mn></msup><mtext> atoms C</mtext></mrow></mfrac><mo>=</mo><mn>299</mn><mtext> g C</mtext>
+</math>
+<p role="noindent">But it also goes beyond carbon. Previously we defined atomic and molecular masses as the number of atomic mass units per atom or molecule. Now we can do so in terms of grams. The atomic mass of an element is the number of grams in 1 mol of atoms of that element, while the molecular mass of a compound is the number of grams in 1 mol of molecules of that compound. Sometimes these masses are called molar masses to emphasize the fact that they are the mass for 1 mol of things. (The term <em>molar</em> is the adjective form of mole and has nothing to do with teeth.)</p>
+<p role="noindent">Here are some examples. The mass of a hydrogen atom is 1.0079 u; the mass of 1 mol of hydrogen atoms is 1.0079 g. Elemental hydrogen exists as a diatomic molecule, H₂. One molecule has a mass of 1.0079 + 1.0079 = 2.0158 u, while 1 mol H₂ has a mass of 2.0158 g. A molecule of H₂O has a mass of about 18.01 u; 1 mol H₂O has a mass of 18.01 g. A single unit of NaCl has a mass of 58.45 u; NaCl has a molar mass of 58.45 g. In each of these moles of substances, there are 6.022 × 10²³ units: 6.022 × 10²³ atoms of H, 6.022 × 10²³ molecules of H₂ and H₂O, 6.022 × 10²³ units of NaCl ions. These relationships give us plenty of opportunities to construct conversion factors for simple calculations.</p>
+<target target-type="page" id="page_759">759</target>
+<sec id="example_4">
+<p role="noindent">What is the molar mass of C₆H₁₂O₆?</p>
+<p role="noindent">Solution</p>
+<p role="noindent">To determine the molar mass, we simply add the atomic masses of the atoms in the molecular formula but express the total in grams per mole, not atomic mass units. The masses of the atoms can be taken from the periodic table or the list of elements in:</p>
+<math display="block">
+<mtable>
+<mtr><mtd><mn>6</mn><mtext> C </mtext><mo>=</mo><mn>6</mn><mo>×</mo><mn>12.011</mn></mtd><mtd><mo>=</mo><mn>72.066</mn></mtd></mtr>
+<mtr><mtd><mn>12</mn><mtext> H </mtext><mo>=</mo><mn>12</mn><mo>×</mo><mn>1.0079</mn></mtd><mtd><mo>=</mo><mn>12.0948</mn></mtd></mtr>
+<mtr><mtd><mn>6</mn><mtext> O </mtext><mo>=</mo><mn>6</mn><mo>×</mo><mn>15.999</mn></mtd><mtd><mo>=</mo><mn>95.994</mn></mtd></mtr>
+<mtr><mtd><mtext>TOTAL</mtext></mtd><mtd><mo>=</mo><mn>180.155</mn><mtext> g/mol</mtext></mtd></mtr>
+</mtable>
+</math>
+<p role="noindent">Per convention, the unit grams per mole is written as a fraction.</p>
+</sec>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">What is the molar mass of AgNO₃?</p>
+<p role="noindent">Answer</p>
+<p role="noindent">169.87 g/mol</p>
+<target target-type="page" id="page_760">760</target>
+<p role="noindent">Knowing the molar mass of a substance, we can calculate the number of moles in a certain mass of a substance and vice versa, as these examples illustrate. The molar mass is used as the conversion factor.</p>
+<sec id="example_5">
+<p role="noindent">What is the mass of 3.56 mol of HgCl₂? The molar mass of HgCl₂ is 271.49 g/mol.</p>
+<p role="noindent">Solution</p>
+<p role="noindent">Use the molar mass as a conversion factor between moles and grams. Because we want to cancel the mole unit and introduce the gram unit, we can use the molar mass as given:</p>
+<math display="block">
+<mn>3.56</mn><mtext> mol HgCl</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>271.49</mn><mtext> g HgCl</mtext><msub><mi>2</mi></msub></mrow><mrow><mtext>mol HgCl</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>967</mn><mtext> g HgCl</mtext><msub><mi>2</mi></msub>
+</math>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">What is the mass of 33.7 mol of H₂O?</p>
+<p role="noindent">Answer</p>
+<p role="noindent">607 g</p>
+</sec>
+<target target-type="page" id="page_761">761</target>
+<sec id="example_6">
+<p role="noindent">How many moles of H₂O are present in 240.0 g of water (about the mass of a cup of water)?</p>
+<p role="noindent">Solution</p>
+<p role="noindent">Use the molar mass of H₂O as a conversion factor from mass to moles. The molar mass of water is (1.0079 + 1.0079 + 15.999) = 18.015 g/mol. However, because we want to cancel the gram unit and introduce moles, we need to take the reciprocal of this quantity, or 1 mol/18.015 g:</p>
+<math display="block">
+<mfrac><mrow><mn>240.0</mn><mtext> g H</mtext><msub><mi>2</mi></msub><mtext>O</mtext></mrow><mrow><mn>18.015</mn><mtext> g H</mtext><msub><mi>2</mi></msub><mtext>O</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol H</mtext><msub><mi>2</mi></msub><mtext>O</mtext></mrow><mrow><mn>18.015</mn><mtext> g H</mtext><msub><mi>2</mi></msub><mtext>O</mtext></mrow></mfrac><mo>=</mo><mn>13.32</mn><mtext> mol H</mtext><msub><mi>2</mi></msub><mtext>O</mtext>
+</math>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">How many moles are present in 35.6 g of H₂SO₄ (molar mass = 98.08 g/mol)?</p>
+<p role="noindent">Answer</p>
+<p role="noindent">0.363 mol</p>
+</sec>
+<p role="noindent">Other conversion factors can be combined with the definition of mole—density, for example.</p>
+<sec id="example_7">
+<p role="noindent">The density of ethanol is 0.789 g/mL. How many moles are in 100.0 mL of ethanol? The molar mass of ethanol is 46.08 g/mol.</p>
+<p role="noindent">Solution</p>
+<p role="noindent">Here, we use density to convert from volume to mass and then use the molar mass to determine the number of moles.</p>
+<math display="block">
+<mfrac><mrow><mn>100.0</mn><mtext> mL ethanol</mtext></mrow><mrow><mn>1</mn><mtext> mL</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>0.789</mn><mtext> g</mtext></mrow><mrow><mn>1</mn><mtext> mL</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol</mtext></mrow><mrow><mn>46.08</mn><mtext> g</mtext></mrow></mfrac><mo>=</mo><mn>1.71</mn><mtext> mol ethanol</mtext>
+</math>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">If the density of benzene, C₆H₆, is 0.879 g/mL, how many moles are present in 17.9 mL of benzene?</p>
+<p role="noindent">Answer</p>
+<p role="noindent">0.201 mol</p>
+</sec>
+<target target-type="page" id="page_762">762</target>
+<subtitle>KEY TAKEAWAYS</subtitle>
+<ul>
+<li>The mole is a key unit in chemistry.</li>
+<li>The molar mass of a substance, in grams, is numerically equal to one atom’s or molecule’s mass in atomic mass units.</li>
+</ul>
+<sec id="exercises">
+<p role="noindent">EXERCISES</p>
+<ol type="1">
+<li>How many atoms are present in 4.55 mol of Fe?</li>
+<li>How many atoms are present in 0.0665 mol of K?</li>
+<li>How many molecules are present in 2.509 mol of H₂S?</li>
+<li>How many molecules are present in 0.336 mol of acetylene (C₂H₂)?</li>
+<li>How many moles are present in 3.55 × 10²⁴ Pb atoms?</li>
+</ol>
+</sec>
+<target target-type="page" id="page_763">763</target>
+<ol start="6" type="1">
+<li>How many moles are present in 2.09 × 10²³ Ti atoms?</li>
+<li>How many moles are present in 1.00 × 10²³ PF₃ molecules?</li>
+<li>How many moles are present in 5.52 × 10²⁵ penicillin molecules?</li>
+<li>Determine the molar mass of each substance.<ol type="a"><li>Si</li><li>SiH₄</li><li>K₂O</li></ol></li>
+<li>Determine the molar mass of each substance.<ol type="a"><li>Cl₂</li><li>SeCl₂</li><li>Ca(C₂H₃O₂)₂</li></ol></li>
+<li>Determine the molar mass of each substance.<ol type="a"><li>Al</li><li>Al₂O₃</li><li>CoCl₃</li></ol></li>
+<li>Determine the molar mass of each substance.<ol type="a"><li>O₃</li><li>NaI</li></ol></li>
+</ol>
+<target target-type="page" id="page_764">764</target>
+<ol start="13" type="1">
+<li>What is the mass of 4.44 mol of Rb?</li>
+<li>What is the mass of 0.311 mol of Xe?</li>
+<li>What is the mass of 12.34 mol of Al₂(SO₄)₃?</li>
+<li>What is the mass of 0.0656 mol of PbCl₂?</li>
+<li>How many moles are present in 45.6 g of CO?</li>
+<li>How many moles are present in 0.00339 g of LiF?</li>
+<li>How many moles are present in 1.223 g of SF₆?</li>
+<li>How many moles are present in 48.8 g of BaCO₃?</li>
+<li>How many moles are present in 54.8 mL of mercury if the density of mercury is 13.6 g/mL?</li>
+<li>How many moles are present in 56.83 mL of O₂ if the density of O₂ is 0.00133 g/mL?</li>
+</ol>
+<title>ANSWERS</title>
+<ol type="1">
+<li>2.74 × 10²⁴ atoms</li>
+<li>1.511 × 10²⁴ molecules</li>
+<li>5.90 mol</li>
+</ol>
+<target target-type="page" id="page_765">765</target>
+<ol start="7" type="1">
+<li>0.166 mol</li>
+<li>a. 28.086 g b. 32.118 g c. 94.195 g</li>
+<li>a. 26.981 g b. 101.959 g c. 165.292 g</li>
+<li>379 g</li>
+<li>4,222 g</li>
+<li>1.63 mol</li>
+<li>0.008374 mol</li>
+<li>3.72 mol</li>
+</ol>
+</sec>
+<sec id="5.3">
+<label>5.3</label>
+<title>The Mole in Chemical Reactions</title>
+<subtitle>LEARNING OBJECTIVES</subtitle>
+<ol type="1">
+<li>Balance a chemical equation in terms of moles.</li>
+<li>Use the balanced equation to construct conversion factors in terms of moles.</li>
+<li>Calculate moles of one substance from moles of another substance using a balanced chemical equation.</li>
+</ol>
+<target target-type="page" id="page_766">766</target>
+<p role="noindent">Consider this balanced chemical equation:</p>
+<math display="block">
+<mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<p role="noindent">We interpret this as “two molecules of hydrogen react with one molecule of oxygen to make two molecules of water.” The chemical equation is balanced as long as the coefficients are in the ratio 2:1:2. For instance, this chemical equation is also balanced:</p>
+<math display="block">
+<mn>100</mn><msub><mi>H</mi><mn>2</mn></msub><mo>+</mo><mn>50</mn><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>100</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<p role="noindent">This equation is not conventional—because convention says that we use the lowest ratio of coefficients—but it is balanced. So is this chemical equation:</p>
+<math display="block">
+<mn>5,000</mn><msub><mi>H</mi><mn>2</mn></msub><mo>+</mo><mn>2,500</mn><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>5,000</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<p role="noindent">Again, this is not conventional, but it is still balanced. Suppose we use a much larger number:</p>
+<math display="block">
+<mn>12.044</mn><mo>×</mo><mn>10</mn><msup><mn>23</mn></msup><msub><mi>H</mi><mn>2</mn></msub><mo>+</mo><mn>6.022</mn><mo>×</mo><mn>10</mn><msup><mn>23</mn></msup><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>12.044</mn><mo>×</mo><mn>10</mn><msup><mn>23</mn></msup><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<p role="noindent">These coefficients are also in the ratio of 2:1:2. But these numbers are related to the number of things in a mole: the first and last numbers are two times Avogadro’s number, while the second number is Avogadro’s number. That means that the first and last numbers represent 2 mol, while the middle number is just 1 mol. Well, why not just use the number of moles in balancing the chemical equation?</p>
+<math display="block">
+<mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<p role="noindent">is the same balanced chemical equation we started with! What this means is that chemical equations are not just balanced in terms of molecules; they are also balanced in terms of moles. We can just as easily read this chemical equation as “two moles of hydrogen react with one mole of oxygen to make two moles of water.” All balanced chemical reactions are balanced in terms of moles.</p>
+<target target-type="page" id="page_767">767</target>
+<sec id="example_8">
+<p role="noindent">Interpret this balanced chemical equation in terms of moles.</p>
+<math display="block">
+<msub><mi>P</mi><mn>4</mn></msub><mo>+</mo><mn>5</mn><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><msub><mi>P</mi><mn>4</mn></msub><msub><mi>O</mi><mn>10</mn></msub>
+</math>
+<p role="noindent">Solution</p>
+<p role="noindent">The coefficients represent the number of moles that react, not just molecules. We would speak of this equation as “one mole of molecular phosphorus reacts with five moles of elemental oxygen to make one mole of tetraphosphorus decoxide.”</p>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">Interpret this balanced chemical equation in terms of moles.</p>
+<math display="block">
+<msub><mi>N</mi><mn>2</mn></msub><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><mo>→</mo><mn>2</mn><msub><mi>NH</mi><mn>3</mn></msub>
+</math>
+<p role="noindent">Answer</p>
+<p role="noindent">One mole of elemental nitrogen reacts with three moles of elemental hydrogen to produce two moles of ammonia.</p>
+</sec>
+<p role="noindent">In Chapter 4 "Chemical Reactions and Equations", Section 4.1 "The Chemical Equation", we stated that a chemical equation is simply a recipe for a chemical reaction. As such, chemical equations also give us equivalences—equivalences between the reactants and the products. However, now we understand that these equivalences are expressed in terms of moles. Consider the chemical equation</p>
+<math display="block">
+<mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<p role="noindent">This chemical reaction gives us the following equivalences:</p>
+<math display="block">
+<mn>2</mn><mtext> mol H</mtext><msub><mi>2</mi></msub><mtext> ≡ 1 mol O</mtext><msub><mi>2</mi></msub><mtext> ≡ 2 mol H</mtext><msub><mi>2</mi></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<p role="noindent">Any two of these quantities can be used to construct a conversion factor that lets us relate the number of moles of one substance to an equivalent number of moles of another substance. If, for example, we want to know how many moles of oxygen will react with 17.6 mol of hydrogen, we construct a conversion factor between 2 mol of H₂ and 1 mol of O₂ and use it to convert from moles of one substance to moles of another:</p>
+<math display="block">
+<mn>17.6</mn><mtext> mol H</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol O</mtext><msub><mi>2</mi></msub></mrow><mrow><mn>2</mn><mtext> mol H</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>8.80</mn><mtext> mol O</mtext><msub><mi>2</mi></msub>
+</math>
+<p role="noindent">Note how the mol H₂ unit cancels, and mol O₂ is the new unit introduced. This is an example of a mole-mole calculation, when you start with moles of one substance and convert to moles of another substance by using the balanced chemical equation. The example may seem simple because the numbers are small, but numbers won't always be so simple!</p>
+<target target-type="page" id="page_768">768</target>
+<sec id="example_9">
+<p role="noindent">For the balanced chemical equation</p>
+<math display="block">
+<mn>2</mn><msub><mi>C</mi><mn>4</mn></msub><msub><mi>H</mi><mn>10</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>13</mn><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>8</mn><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>10</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+<p role="noindent">if 154 mol of O₂ are reacted, how many moles of CO₂ are produced?</p>
+<p role="noindent">Solution</p>
+<p role="noindent">We are relating an amount of oxygen to an amount of carbon dioxide, so we need the equivalence between these two substances. According to the balanced chemical equation, the equivalence is</p>
+<math display="block">
+<mn>13</mn><mtext> mol O</mtext><msub><mi>2</mi></msub><mtext> ≡ 8 mol CO</mtext><msub><mi>2</mi></msub>
+</math>
+<p role="noindent">We can use this equivalence to construct the proper conversion factor. We start with what we are given and apply the conversion factor:</p>
+<math display="block">
+<mn>154</mn><mtext> mol O</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>8</mn><mtext> mol CO</mtext><msub><mi>2</mi></msub></mrow><mrow><mn>13</mn><mtext> mol O</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>94.8</mn><mtext> mol CO</mtext><msub><mi>2</mi></msub>
+</math>
+<p role="noindent">The mol O₂ unit is in the denominator of the conversion factor so it cancels. Both the 8 and the 13 are exact numbers, so they don't contribute to the number of significant figures in the final answer.</p>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">Using the above equation, how many moles of H₂O are produced when 154 mol of O₂ react?</p>
+<p role="noindent">Answer</p>
+<p role="noindent">118 mol</p>
+</sec>
+<target target-type="page" id="page_769">769</target>
+<p role="noindent">It is important to reiterate that balanced chemical equations are balanced in terms of moles. Not grams, kilograms, or liters—but moles. Any stoichiometry problem will likely need to work through the mole unit at some point, especially if you are working with a balanced chemical reaction.</p>
+<subtitle>KEY TAKEAWAYS</subtitle>
+<ul>
+<li>Balanced chemical reactions are balanced in terms of moles.</li>
+<li>A balanced chemical reaction gives equivalences in moles that allow stoichiometry calculations to be performed.</li>
+</ul>
+<sec id="exercises">
+<p role="noindent">EXERCISES</p>
+<ol type="1">
+<li>Express in mole terms what this chemical equation means.</li>
+<math display="block">
+<msub><mi>CH</mi><mn>4</mn></msub><mo>+</mo><mn>2</mn><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><msub><mi>CO</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<li>Express in mole terms what this chemical equation means.</li>
+<math display="block">
+<msub><mi>Na</mi><mn>2</mn></msub><msub><mi>CO</mi><mn>3</mn></msub><mo>+</mo><mn>2</mn><msub><mi>HCl</mi><mn></mn></msub><mo>→</mo><mn>2</mn><msub><mi>NaCl</mi><mn></mn></msub><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>+</mo><msub><mi>CO</mi><mn>2</mn></msub>
+</math>
+<li>How many molecules of each substance are involved in the equation in Exercise 1 if it is interpreted in terms of moles?</li>
+<li>How many molecules of each substance are involved in the equation in Exercise 2 if it is interpreted in terms of moles?</li>
+<li>For the chemical equation</li>
+<math display="block">
+<mn>2</mn><msub><mi>C</mi><mn>2</mn></msub><msub><mi>H</mi><mn>6</mn></msub><mo>+</mo><mn>7</mn><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>4</mn><msub><mi>CO</mi><mn>2</mn></msub><mo>+</mo><mn>6</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<p role="noindent">what equivalences can you write in terms of moles? Use the ≡ sign.</p>
+<li>For the chemical equation</li>
+<math display="block">
+<mn>2</mn><mi>Al</mi><mo>+</mo><mn>3</mn><msub><mi>Cl</mi><mn>2</mn></msub><mo>→</mo><mn>2</mn><msub><mi>AlCl</mi><mn>3</mn></msub>
+</math>
+<p role="noindent">what equivalences can you write in terms of moles? Use the ≡ sign.</p>
+</ol>
+</sec>
+<target target-type="page" id="page_770">770</target>
+<ol start="7" type="1">
+<li>Write the balanced chemical reaction for the combustion of C₅H₁₂ (the products are CO₂ and H₂O) and determine how many moles of H₂O are formed when 5.8 mol of O₂ are reacted.</li>
+<li>Write the balanced chemical reaction for the formation of Fe₂(SO₄)₃ from Fe₂O₃ and SO₃ and determine how many moles of Fe₂(SO₄)₃ are formed when 12.7 mol of SO₃ are reacted.</li>
+<li>For the balanced chemical equation</li>
+<math display="block">
+<mn>3</mn><mi>Cu</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msubsup><mi>NO</mi><mn>3</mn><mo>-</mo></msubsup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>8</mn><msup><mi>H</mi><mo>+</mo></msup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>→</mo><mn>3</mn><msup><mi>Cu</mi><mn>2+</mn></msup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>4</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo><mo>+</mo><mn>2</mn><mi>NO</mi><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">how many moles of Cu²⁺ are formed when 55.7 mol of H⁺ are reacted?</p>
+<li>For the balanced chemical equation</li>
+<math display="block">
+<mi>Al</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msup><mi>Ag</mi><mo>+</mo></msup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>→</mo><msup><mi>Al</mi><mn>3+</mn></msup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>3</mn><mi>Ag</mi><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<p role="noindent">how many moles of Ag are produced when 0.661 mol of Al are reacted?</p>
+<li>For the balanced chemical reaction</li>
+<math display="block">
+<mn>4</mn><msub><mi>NH</mi><mn>3</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>5</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>4</mn><mi>NO</mi><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>6</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo>
+</math>
+<p role="noindent">how many moles of H₂O are produced when 0.669 mol of NH₃ react?</p>
+<li>For the balanced chemical reaction</li>
+<math display="block">
+<mn>4</mn><msub><mi>NaOH</mi><mn></mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>2</mn><mi>S</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>Na</mi><mn>2</mn></msub><msub><mi>SO</mi><mn>4</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo>
+</math>
+<p role="noindent">how many moles of Na₂SO₄ are formed when 1.22 mol of O₂ react?</p>
+<li>For the balanced chemical reaction</li>
+<math display="block">
+<mn>4</mn><msub><mi>KO</mi><mn>2</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>K</mi><mn>2</mn></msub><msub><mi>CO</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">determine the number of moles of both products formed when 6.88 mol of KO₂ react.</p>
+</ol>
+<target target-type="page" id="page_771">771</target>
+<ol start="14" type="1">
+<li>For the balanced chemical reaction</li>
+<math display="block">
+<mn>2</mn><msub><mi>AlCl</mi><mn>3</mn></msub><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo><mo>→</mo><msub><mi>Al</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>+</mo><mn>6</mn><msub><mi>HCl</mi><mn></mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">determine the number of moles of both products formed when 0.0552 mol of AlCl₃ react.</p>
+</ol>
+<title>ANSWERS</title>
+<ol type="1">
+<li>One mole of CH₄ reacts with 2 mol of O₂ to make 1 mol of CO₂ and 2 mol of H₂O.</li>
+<li>6.022 × 10²³ molecules of CH₄, 1.2044 × 10²⁴ molecules of O₂, 6.022 × 10²³ molecules of CO₂, and 1.2044 × 10²⁴ molecules of H₂O</li>
+<li>2 mol of C₂H₆ ≡ 7 mol of O₂ ≡ 4 mol of CO₂ ≡ 6 mol of H₂O</li>
+<li>C₅H₁₂ + 8O₂ → 5CO₂ + 6H₂O; 4.4 mol</li>
+<li>20.9 mol</li>
+<li>1.00 mol</li>
+<li>3.44 mol of K₂CO₃; 5.16 mol of O₂</li>
+</ol>
+<target target-type="page" id="page_772">772</target>
+</sec>
+<sec id="5.4">
+<label>5.4</label>
+<title>Mole-Mass and Mass-Mass Calculations</title>
+<subtitle>LEARNING OBJECTIVES</subtitle>
+<ol type="1">
+<li>From a given number of moles of a substance, calculate the mass of another substance involved using the balanced chemical equation.</li>
+<li>From a given mass of a substance, calculate the moles of another substance involved using the balanced chemical equation.</li>
+<li>From a given mass of a substance, calculate the mass of another substance involved using the balanced chemical equation.</li>
+</ol>
+<p role="noindent">Mole-mole calculations are not the only type of calculations that can be performed using balanced chemical equations. Recall that the molar mass can be determined from a chemical formula and used as a conversion factor. We can add that conversion factor as another step in a calculation to make a <strong>mole-mass calculation</strong>, where we start with a given number of moles of a substance and calculate the mass of another substance involved in the chemical equation, or vice versa.</p>
+<p role="noindent">For example, suppose we have the balanced chemical equation</p>
+<math display="block">
+<mn>2</mn><mi>Al</mi><mo>+</mo><mn>3</mn><msub><mi>Cl</mi><mn>2</mn></msub><mo>→</mo><mn>2</mn><msub><mi>AlCl</mi><mn>3</mn></msub>
+</math>
+<p role="noindent">Suppose we know we have 123.2 g of Cl₂. How can we determine how many moles of AlCl₃ we will get when the reaction is complete? First and foremost, <em>chemical equations are not balanced in terms of grams; they are balanced in terms of moles</em>. So to use the balanced chemical equation to relate an amount of Cl₂ to an amount of AlCl₃, we need to convert the given amount of Cl₂ into moles. We know how to do this by simply using the molar mass of Cl₂ as a conversion factor. The molar mass of Cl₂ (which we get from the atomic mass of Cl from the periodic table) is 70.90 g/mol. We must invert this fraction so that the units cancel properly:</p>
+<math display="block">
+<mn>123.2</mn><mtext> g Cl</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Cl</mtext><msub><mi>2</mi></msub></mrow><mrow><mn>70.90</mn><mtext> g Cl</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>1.738</mn><mtext> mol Cl</mtext><msub><mi>2</mi></msub>
+</math>
+<p role="noindent">Now that we have the quantity in moles, we can use the balanced chemical equation to construct a conversion factor that relates the number of moles of Cl₂ to the number of moles of AlCl₃. The numbers in the conversion factor come from the coefficients in the balanced chemical equation:</p>
+<math display="block">
+<mfrac><mrow><mn>2</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>3</mn><mtext> mol Cl</mtext><msub><mi>2</mi></msub></mrow></mfrac>
+</math>
+<p role="noindent">Using this conversion factor with the molar quantity we calculated above, we get</p>
+<math display="block">
+<mn>1.738</mn><mtext> mol Cl</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>2</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>3</mn><mtext> mol Cl</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>1.159</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub>
+</math>
+<target target-type="page" id="page_773">773</target>
+<p role="noindent">So, we will get 1.159 mol of AlCl₃ if we react 123.2 g of Cl₂.</p>
+<p role="noindent">In this last example, we did the calculation in two steps. However, it is mathematically equivalent to perform the two calculations sequentially on one line:</p>
+<math display="block">
+<mn>123.2</mn><mtext> g Cl</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Cl</mtext><msub><mi>2</mi></msub></mrow><mrow><mn>70.90</mn><mtext> g Cl</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>2</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>3</mn><mtext> mol Cl</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>1.159</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub>
+</math>
+<p role="noindent">The units still cancel appropriately, and we get the same numerical answer in the end. Sometimes the answer may be slightly different from doing it one step at a time because of rounding of the intermediate answers, but the final answers should be effectively the same.</p>
+<sec id="example_10">
+<p role="noindent">How many moles of HCl will be produced when 249 g of AlCl₃ are reacted according to this chemical equation?</p>
+<math display="block">
+<mn>2</mn><msub><mi>AlCl</mi><mn>3</mn></msub><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo><mo>→</mo><msub><mi>Al</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>+</mo><mn>6</mn><msub><mi>HCl</mi><mn></mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">Solution</p>
+<p role="noindent">We will do this in two steps: convert the mass of AlCl₃ to moles and then use the balanced chemical equation to find the number of moles of HCl formed. The molar mass of AlCl₃ is 133.33 g/mol, which we have to invert to get the appropriate conversion factor:</p>
+<math display="block">
+<mn>249</mn><mtext> g AlCl</mtext><msub><mi>3</mi></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>133.33</mn><mtext> g AlCl</mtext><msub><mi>3</mi></msub></mrow></mfrac><mo>=</mo><mn>1.87</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub>
+</math>
+<p role="noindent">Now we can use this quantity to determine the number of moles of HCl that will form. From the balanced chemical equation, we construct a conversion factor between the number of moles of AlCl₃ and the number of moles of HCl:</p>
+<math display="block">
+<mfrac><mrow><mn>6</mn><mtext> mol HCl</mtext></mrow><mrow><mn>2</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub></mrow></mfrac>
+</math>
+<p role="noindent">Applying this conversion factor to the quantity of AlCl₃, we get</p>
+<math display="block">
+<mn>1.87</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub><mo>×</mo><mfrac><mrow><mn>6</mn><mtext> mol HCl</mtext></mrow><mrow><mn>2</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub></mrow></mfrac><mo>=</mo><mn>5.61</mn><mtext> mol HCl</mtext>
+</math>
+<target target-type="page" id="page_774">774</target>
+<p role="noindent">Alternatively, we could have done this in one line:</p>
+<math display="block">
+<mn>249</mn><mtext> g AlCl</mtext><msub><mi>3</mi></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>133.33</mn><mtext> g AlCl</mtext><msub><mi>3</mi></msub></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>6</mn><mtext> mol HCl</mtext></mrow><mrow><mn>2</mn><mtext> mol AlCl</mtext><msub><mi>3</mi></msub></mrow></mfrac><mo>=</mo><mn>5.60</mn><mtext> mol HCl</mtext>
+</math>
+<p role="noindent">The last digit in our final answer is slightly different because of rounding differences, but the answer is essentially the same.</p>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">How many moles of Al₂O₃ will be produced when 23.9 g of H₂O are reacted according to this chemical equation?</p>
+<math display="block">
+<mn>2</mn><msub><mi>AlCl</mi><mn>3</mn></msub><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo><mo>→</mo><msub><mi>Al</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>+</mo><mn>6</mn><msub><mi>HCl</mi><mn></mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">Answer</p>
+<p role="noindent">0.442 mol</p>
+</sec>
+<p role="noindent">A variation of the mole-mass calculation is to start with an amount in moles and then determine an amount of another substance in grams. The steps are the same but are performed in reverse order.</p>
+<sec id="example_11">
+<p role="noindent">How many grams of NH₃ will be produced when 33.9 mol of H₂ are reacted according to this chemical equation?</p>
+<math display="block">
+<msub><mi>N</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>NH</mi><mn>3</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">Solution</p>
+<p role="noindent">The conversions are the same, but they are applied in a different order. Start by using the balanced chemical equation to convert to moles of another substance and then use its molar mass to determine the mass of the final substance. In two steps, we have</p>
+<math display="block">
+<mn>33.9</mn><mtext> mol H</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>2</mn><mtext> mol NH</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>3</mn><mtext> mol H</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>22.6</mn><mtext> mol NH</mtext><msub><mi>3</mi></msub>
+</math>
+<p role="noindent">Now, using the molar mass of NH₃, which is 17.03 g/mol, we get</p>
+<math display="block">
+<mn>22.6</mn><mtext> mol NH</mtext><msub><mi>3</mi></msub><mo>×</mo><mfrac><mrow><mn>17.03</mn><mtext> g NH</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>1</mn><mtext> mol NH</mtext><msub><mi>3</mi></msub></mrow></mfrac><mo>=</mo><mn>385</mn><mtext> g NH</mtext><msub><mi>3</mi></msub>
+</math>
+<target target-type="page" id="page_775">775</target>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">How many grams of N₂ are needed to produce 2.17 mol of NH₃ when reacted according to this chemical equation?</p>
+<math display="block">
+<msub><mi>N</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>NH</mi><mn>3</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">Answer</p>
+<p role="noindent">30.4 g (Note: here we go from a product to a reactant, showing that mole-mass problems can begin and end with any substance in the chemical equation.)</p>
+</sec>
+<p role="noindent">It should be a trivial task now to extend the calculations to <strong>mass-mass calculations</strong>, in which we start with a mass of some substance and end with the mass of another substance in the chemical reaction. For this type of calculation, the molar masses of two different substances must be used—be sure to keep track of which is which. Again, however, it is important to emphasize that before the balanced chemical reaction is used, the mass quantity must first be converted to moles. Then the coefficients of the balanced chemical reaction can be used to convert to moles of another substance, which can then be converted to a mass.</p>
+<p role="noindent">For example, let us determine the number of grams of SO₃ that can be produced by the reaction of 45.3 g of SO₂ and O₂:</p>
+<math display="block">
+<mn>2</mn><msub><mi>SO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>SO</mi><mn>3</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">First, we convert the given amount, 45.3 g of SO₂, to moles of SO₂ using its molar mass (64.06 g/mol):</p>
+<math display="block">
+<mn>45.3</mn><mtext> g SO</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol SO</mtext><msub><mi>2</mi></msub></mrow><mrow><mn>64.06</mn><mtext> g SO</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>0.707</mn><mtext> mol SO</mtext><msub><mi>2</mi></msub>
+</math>
+<p role="noindent">Second, we use the balanced chemical reaction to convert from moles of SO₂ to moles of SO₃:</p>
+<math display="block">
+<mn>0.707</mn><mtext> mol SO</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>2</mn><mtext> mol SO</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>2</mn><mtext> mol SO</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>=</mo><mn>0.707</mn><mtext> mol SO</mtext><msub><mi>3</mi></msub>
+</math>
+<p role="noindent">Finally, we use the molar mass of SO₃ (80.06 g/mol) to convert to the mass of SO₃:</p>
+<math display="block">
+<mn>0.707</mn><mtext> mol SO</mtext><msub><mi>3</mi></msub><mo>×</mo><mfrac><mrow><mn>80.06</mn><mtext> g SO</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>1</mn><mtext> mol SO</mtext><msub><mi>3</mi></msub></mrow></mfrac><mo>=</mo><mn>56.6</mn><mtext> g SO</mtext><msub><mi>3</mi></msub>
+</math>
+<target target-type="page" id="page_776">776</target>
+<p role="noindent">We can also perform all three steps sequentially, writing them on one line as</p>
+<math display="block">
+<mn>45.3</mn><mtext> g SO</mtext><msub><mi>2</mi></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol SO</mtext><msub><mi>2</mi></msub></mrow><mrow><mn>64.06</mn><mtext> g SO</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>2</mn><mtext> mol SO</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>2</mn><mtext> mol SO</mtext><msub><mi>2</mi></msub></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>80.06</mn><mtext> g SO</mtext><msub><mi>3</mi></msub></mrow><mrow><mn>1</mn><mtext> mol SO</mtext><msub><mi>3</mi></msub></mrow></mfrac><mo>=</mo><mn>56.6</mn><mtext> g SO</mtext><msub><mi>3</mi></msub>
+</math>
+<p role="noindent">We get the same answer. Note how the initial and all the intermediate units cancel, leaving grams of SO₃, which is what we are looking for, as our final answer.</p>
+<sec id="example_12">
+<p role="noindent">What mass of Mg will be produced when 86.4 g of K are reacted?</p>
+<math display="block">
+<msub><mi>MgCl</mi><mn>2</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><mi>K</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>→</mo><mi>Mg</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>KCl</mi><mn></mn></msub><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<p role="noindent">Solution</p>
+<p role="noindent">We will simply follow the steps</p>
+<p role="noindent">mass K → mol K → mol Mg → mass Mg</p>
+<p role="noindent">In addition to the balanced chemical equation, we need the molar masses of K (39.09 g/mol) and Mg (24.31 g/mol). In one line,</p>
+<math display="block">
+<mn>86.4</mn><mtext> g K</mtext><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol K</mtext></mrow><mrow><mn>39.09</mn><mtext> g K</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Mg</mtext></mrow><mrow><mn>2</mn><mtext> mol K</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>24.31</mn><mtext> g Mg</mtext></mrow><mrow><mn>1</mn><mtext> mol Mg</mtext></mrow></mfrac><mo>=</mo><mn>26.87</mn><mtext> g Mg</mtext>
+</math>
+<target target-type="page" id="page_777">777</target>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">What mass of H₂ will be produced when 122 g of Zn are reacted?</p>
+<math display="block">
+<mi>Zn</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>HCl</mi><mn></mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>→</mo><msub><mi>ZnCl</mi><mn>2</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">Answer</p>
+<p role="noindent">3.77 g</p>
+</sec>
+<subtitle>KEY TAKEAWAYS</subtitle>
+<ul>
+<li>Mole quantities of one substance can be related to mass quantities using a balanced chemical equation.</li>
+<li>Mass quantities of one substance can be related to mass quantities using a balanced chemical equation.</li>
+<li>In all cases, quantities of a substance must be converted to moles before the balanced chemical equation can be used to convert to moles of another substance.</li>
+</ul>
+<sec id="exercises">
+<p role="noindent">EXERCISES</p>
+<ol type="1">
+<li>What mass of CO₂ is produced by the combustion of 1.00 mol of CH₄?</li>
+<math display="block">
+<msub><mi>CH</mi><mn>4</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+<li>What mass of H₂O is produced by the combustion of 1.00 mol of CH₄?</li>
+<math display="block">
+<msub><mi>CH</mi><mn>4</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+<li>What mass of HgO is required to produce 0.692 mol of O₂?</li>
+<math display="block">
+<mn>2</mn><msub><mi>HgO</mi><mn></mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>→</mo><mn>2</mn><mi>Hg</mi><mo>(</mo><mi>l</mi><mo>)</mo><mo>+</mo><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+</ol>
+</sec>
+<target target-type="page" id="page_778">778</target>
+<ol start="4" type="1">
+<li>What mass of NaHCO₃ is needed to produce 2.659 mol of CO₂?</li>
+<math display="block">
+<mn>2</mn><msub><mi>NaHCO</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>→</mo><msub><mi>Na</mi><mn>2</mn></msub><msub><mi>CO</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo><mo>+</mo><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<li>How many moles of Al can be produced from 10.87 g of Ag?</li>
+<math display="block">
+<msub><mi>Al</mi><mo>(</mo><msub><mi>NO</mi><mn>3</mn></msub><mo>)</mo><msub><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><mi>Ag</mi><mo>→</mo><mi>Al</mi><mo>+</mo><mn>3</mn><msub><mi>AgNO</mi><mn>3</mn></msub>
+</math>
+<li>How many moles of HCl can be produced from 0.226 g of SOCl₂?</li>
+<math display="block">
+<msub><mi>SOCl</mi><mn>2</mn></msub><mo>(</mo><mi>l</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo><mo>→</mo><msub><mi>SO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>HCl</mi><mn></mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<li>How many moles of O₂ are needed to prepare 1.00 g of Ca(NO₃)₂?</li>
+<math display="block">
+<mi>Ca</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>N</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><msub><mi>Ca</mi><mo>(</mo><msub><mi>NO</mi><mn>3</mn></msub><mo>)</mo><msub><mn>2</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<li>How many moles of C₂H₅OH are needed to generate 106.7 g of H₂O?</li>
+<math display="block">
+<msub><mi>C</mi><mn>2</mn></msub><msub><mi>H</mi><mn>5</mn></msub><msub><mi>OH</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+<li>What mass of O₂ can be generated by the decomposition of 100.0 g of NaClO₃?</li>
+<math display="block">
+<mn>2</mn><msub><mi>NaClO</mi><mn>3</mn></msub><mo>→</mo><mn>2</mn><msub><mi>NaCl</mi><mn></mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+</ol>
+<target target-type="page" id="page_779">779</target>
+<ol start="10" type="1">
+<li>What mass of Li₂O is needed to react with 1,060 g of CO₂?</li>
+<math display="block">
+<msub><mi>Li</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><msub><mi>Li</mi><mn>2</mn></msub><msub><mi>CO</mi><mn>3</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo>
+</math>
+<li>What mass of Fe₂O₃ must be reacted to generate 324 g of Al₂O₃?</li>
+<math display="block">
+<msub><mi>Fe</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><mi>Al</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>→</mo><mn>2</mn><mi>Fe</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>Al</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<li>What mass of Fe is generated when 100.0 g of Al are reacted?</li>
+<math display="block">
+<msub><mi>Fe</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><mi>Al</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>→</mo><mn>2</mn><mi>Fe</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>Al</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<li>What mass of MnO₂ is produced when 445 g of H₂O are reacted?</li>
+<math display="block">
+<msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo><mo>+</mo><mn>2</mn><msubsup><mi>MnO</mi><mn>4</mn><mo>-</mo></msubsup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><msup><mi>Br</mi><mo>-</mo></msup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>→</mo><msubsup><mi>BrO</mi><mn>3</mn><mo>-</mo></msubsup><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>MnO</mi><mn>2</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msup><mi>OH</mi><mo>-</mo></msup><mo>(</mo><mi>aq</mi><mo>)</mo>
+</math>
+<li>What mass of PbSO₄ is produced when 29.6 g of H₂SO₄ are reacted?</li>
+<math display="block">
+<mi>Pb</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>PbO</mi><mn>2</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>SO</mi><mn>4</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>PbSO</mi><mn>4</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo>
+</math>
+<li>If 83.9 g of ZnO are formed, what mass of Mn₂O₃ is formed with it?</li>
+<math display="block">
+<mi>Zn</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>MnO</mi><mn>2</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>→</mo><msub><mi>ZnO</mi><mn></mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>Mn</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+</ol>
+<target target-type="page" id="page_780">780</target>
+<ol start="16" type="1">
+<li>If 14.7 g of NO₂ are reacted, what mass of H₂O is reacted with it?</li>
+<math display="block">
+<mn>3</mn><msub><mi>NO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>HNO</mi><mn>3</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mi>NO</mi><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<li>If 88.4 g of CH₂S are reacted, what mass of HF is produced?</li>
+<math display="block">
+<msub><mi>CH</mi><mn>2</mn></msub><mi>S</mi><mo>+</mo><mn>6</mn><msub><mi>F</mi><mn>2</mn></msub><mo>→</mo><msub><mi>CF</mi><mn>4</mn></msub><mo>+</mo><mn>2</mn><msub><mi>HF</mi><mn></mn></msub><mo>+</mo><msub><mi>SF</mi><mn>6</mn></msub>
+</math>
+<li>If 100.0 g of Cl₂ are needed, what mass of NaOCl must be reacted?</li>
+<math display="block">
+<msub><mi>NaOCl</mi><mn></mn></msub><mo>+</mo><msub><mi>HCl</mi><mn></mn></msub><mo>→</mo><msub><mi>NaOH</mi><mn></mn></msub><mo>+</mo><msub><mi>Cl</mi><mn>2</mn></msub>
+</math>
+</ol>
+<title>ANSWERS</title>
+<ol type="1">
+<li>44.0 g</li>
+<li>3.00 × 10² g</li>
+<li>0.0336 mol</li>
+<li>0.0183 mol</li>
+<li>45.1 g</li>
+<li>507 g</li>
+<li>4.30 × 10³ g</li>
+<li>163 g</li>
+<li>76.7 g</li>
+</ol>
+</sec>
+<sec id="5.5">
+<label>5.5</label>
+<title>Yields</title>
+<subtitle>LEARNING OBJECTIVE</subtitle>
+<ol type="1">
+<li>Define and determine theoretical yields, actual yields, and percent yields.</li>
+</ol>
+<p role="noindent">In all the previous calculations we have performed involving balanced chemical equations, we made two assumptions: (1) the reaction goes exactly as written, and (2) the reaction proceeds completely. In reality, such things as side reactions occur that make some chemical reactions rather messy. For example, in the actual combustion of some carbon-containing compounds, such as methane, some CO is produced as well as CO₂. However, we will continue to ignore side reactions, unless otherwise noted.</p>
+<p role="noindent">The second assumption, that the reaction proceeds completely, is more troublesome. Many chemical reactions do not proceed to completion as written, for a variety of reasons (some of which we will consider in Chapter 13 "Chemical Equilibrium"). When we calculate an amount of product assuming that all the reactant reacts, we calculate the <strong>theoretical yield</strong>, an amount that is theoretically produced as calculated using the balanced chemical reaction.</p>
+<p role="noindent">In many cases, however, this is not what really happens. In many cases, less—sometimes much less—of a product is made during the course of a chemical reaction. The amount that is actually produced in a reaction is called the <strong>actual yield</strong>. By definition, the actual yield is less than or equal to the theoretical yield. If it is not, then an error has been made.</p>
+<p role="noindent">Both theoretical yields and actual yields are expressed in units of moles or grams. It is also common to see something called a percent yield. The <strong>percent yield</strong> is a comparison between the actual yield and the theoretical yield and is defined as</p>
+<math display="block">
+<mtext>percent yield</mtext><mo>=</mo><mfrac><mrow><mtext>actual yield</mtext></mrow><mrow><mtext>theoretical yield</mtext></mrow></mfrac><mo>×</mo><mn>100</mn><mtext>%</mtext>
+</math>
+<target target-type="page" id="page_781">781</target>
+<p role="noindent">It does not matter whether the actual and theoretical yields are expressed in moles or grams, as long as they are expressed in the same units. However, the percent yield always has units of percent. Proper percent yields are between 0% and 100%—again, if percent yield is greater than 100%, an error has been made.</p>
+<sec id="example_13">
+<p role="noindent">A worker reacts 30.5 g of Zn with nitric acid and evaporates the remaining water to obtain 65.2 g of Zn(NO₃)₂. What are the theoretical yield, the actual yield, and the percent yield?</p>
+<math display="block">
+<mi>Zn</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>HNO</mi><mn>3</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>→</mo><msub><mi>Zn</mi><mo>(</mo><msub><mi>NO</mi><mn>3</mn></msub><mo>)</mo><msub><mn>2</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">Solution</p>
+<p role="noindent">A mass-mass calculation can be performed to determine the theoretical yield. We need the molar masses of Zn (65.39 g/mol) and Zn(NO₃)₂ (189.41 g/mol). In three steps, the mass-mass calculation is</p>
+<math display="block">
+<mn>30.5</mn><mtext> g Zn</mtext><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Zn</mtext></mrow><mrow><mn>65.39</mn><mtext> g Zn</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Zn(NO</mtext><msub><mn>3</mn></msub><mo>)</mo><msub><mn>2</mn></msub></mrow><mrow><mn>1</mn><mtext> mol Zn</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>189.41</mn><mtext> g Zn(NO</mtext><msub><mn>3</mn></msub><mo>)</mo><msub><mn>2</mn></msub></mrow><mrow><mn>1</mn><mtext> mol Zn(NO</mtext><msub><mn>3</mn></msub><mo>)</mo><msub><mn>2</mn></msub></mrow></mfrac><mo>=</mo><mn>88.3</mn><mtext> g Zn(NO</mtext><msub><mn>3</mn></msub><mo>)</mo><msub><mn>2</mn></msub>
+</math>
+<p role="noindent">Thus, the theoretical yield is 88.3 g of Zn(NO₃)₂. The actual yield is the amount that was actually made, which was 65.2 g of Zn(NO₃)₂. To calculate the percent yield, we take the actual yield and divide it by the theoretical yield and multiply by 100:</p>
+<math display="block">
+<mfrac><mrow><mn>65.2</mn><mtext> g Zn(NO</mtext><msub><mn>3</mn></msub><mo>)</mo><msub><mn>2</mn></msub></mrow><mrow><mn>88.3</mn><mtext> g Zn(NO</mtext><msub><mn>3</mn></msub><mo>)</mo><msub><mn>2</mn></msub></mrow></mfrac><mo>×</mo><mn>100</mn><mtext>%</mtext><mo>=</mo><mn>73.8</mn><mtext>%</mtext>
+</math>
+<p role="noindent">The worker achieved almost three-fourths of the possible yield.</p>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">A synthesis produced 2.05 g of NH₃ from 16.5 g of N₂. What is the theoretical yield and the percent yield?</p>
+<math display="block">
+<msub><mi>N</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>NH</mi><mn>3</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">Answer</p>
+<p role="noindent">theoretical yield = 20.1 g; percent yield = 10.2%</p>
+</sec>
+<target target-type="page" id="page_782">782</target>
+<p role="noindent">Chemistry Is Everywhere: Actual Yields in Drug Synthesis and Purification</p>
+<p role="noindent">Many drugs are the product of several steps of chemical synthesis. Each step typically occurs with less than 100% yield, so the overall percent yield might be very small. The general rule is that the overall percent yield is the product of the percent yields of the individual synthesis steps. For a drug synthesis that has many steps, the overall percent yield can be very tiny, which is one factor in the huge cost of some drugs. For example, if a 10-step synthesis has a percent yield of 90% for each step, the overall yield for the entire synthesis is only 35%. Many scientists work every day trying to improve percent yields of the steps in the synthesis to decrease costs, improve profits, and minimize waste.</p>
+<p role="noindent">Even purifications of complex molecules into drug-quality purity are subject to percent yields. Consider the purification of impure albuterol. Albuterol (C₁₃H₂₁NO₂; accompanying figure) is an inhaled drug used to treat asthma, bronchitis, and other obstructive pulmonary diseases. It is synthesized from norepinephrine, a naturally occurring hormone and neurotransmitter. Its initial synthesis makes very impure albuterol that is purified in five chemical steps. The details of the steps do not concern us; only the percent yields do:</p>
+<p role="noindent">impure albuterol → intermediate A percent yield = 70%</p>
+<p role="noindent">intermediate A → intermediate B percent yield = 100%</p>
+<p role="noindent">intermediate B → intermediate C percent yield = 40%</p>
+<p role="noindent">intermediate C → intermediate D percent yield = 72%</p>
+<p role="noindent">intermediate D → purified albuterol percent yield = 35%</p>
+<p role="noindent">overall percent yield = 70% × 100% × 40% × 72% × 35% = 7.5%</p>
+<p role="noindent">That is, only about one-fourteenth of the original material was turned into the purified drug.</p>
+<p role="noindent">This gives you one reason why some drugs are so expensive; a lot of material is lost in making a high-purity pharmaceutical.</p>
+<subtitle>KEY TAKEAWAYS</subtitle>
+<ul>
+<li>Theoretical yield is what you calculate the yield will be using the balanced chemical reaction.</li>
+<li>Actual yield is what you actually get in a chemical reaction.</li>
+<li>Percent yield is a comparison of the actual yield with the theoretical yield.</li>
+</ul>
+<sec id="exercises">
+<p role="noindent">EXERCISES</p>
+<ol type="1">
+<li>What is the difference between the theoretical yield and the actual yield?</li>
+<li>What is the difference between the actual yield and the percent yield?</li>
+<li>A worker isolates 2.675 g of SiF₄ after reacting 2.339 g of SiO₂ with HF. What are the theoretical yield and the actual yield?</li>
+<math display="block">
+<msub><mi>SiO</mi><mn>2</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>4</mn><msub><mi>HF</mi><mn></mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><msub><mi>SiF</mi><mn>4</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+<li>A worker synthesizes aspirin, C₉H₈O₄, according to this chemical equation. If 12.66 g of C₇H₆O₃ are reacted and 12.03 g of aspirin are isolated, what are the theoretical yield and the actual yield?</li>
+<math display="block">
+<msub><mi>C</mi><mn>7</mn></msub><msub><mi>H</mi><mn>6</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>+</mo><msub><mi>C</mi><mn>4</mn></msub><msub><mi>H</mi><mn>6</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>→</mo><msub><mi>C</mi><mn>9</mn></msub><msub><mi>H</mi><mn>8</mn></msub><msub><mi>O</mi><mn>4</mn></msub><mo>+</mo><msub><mi>HC</mi><mn>2</mn></msub><msub><mi>H</mi><mn>3</mn></msub><msub><mi>O</mi><mn>2</mn></msub>
+</math>
+</ol>
+<target target-type="page" id="page_783">783</target>
+<ol start="5" type="1">
+<li>A chemist decomposes 1.006 g of NaHCO₃ and obtains 0.0334 g of Na₂CO₃. What are the theoretical yield and the actual yield?</li>
+<math display="block">
+<mn>2</mn><msub><mi>NaHCO</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>→</mo><msub><mi>Na</mi><mn>2</mn></msub><msub><mi>CO</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo><mo>+</mo><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<li>A chemist combusts a 3.009 g sample of C₅H₁₂ and obtains 3.774 g of H₂O. What are the theoretical yield and the actual yield?</li>
+<math display="block">
+<msub><mi>C</mi><mn>5</mn></msub><msub><mi>H</mi><mn>12</mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo><mo>+</mo><mn>8</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>5</mn><msub><mi>CO</mi><mn>2</mn></msub><mo>+</mo><mn>6</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>ℓ</mi><mo>)</mo>
+</math>
+<li>What is the percent yield in Exercise 3?</li>
+<li>What is the percent yield in Exercise 4?</li>
+<li>What is the percent yield in Exercise 5?</li>
+<li>What is the percent yield in Exercise 6?</li>
+</ol>
+<title>ANSWERS</title>
+<ol type="1">
+<li>Theoretical yield is what you expect stoichiometrically from a chemical reaction; actual yield is what you actually get from a chemical reaction.</li>
+<li>theoretical yield = 4.052 g; actual yield = 2.675 g</li>
+<li>theoretical yield = 0.635 g; actual yield = 0.0334 g</li>
+<li>66.02%</li>
+<li>5.26%</li>
+</ol>
+</sec>
+</sec>
+<sec id="5.6">
+<label>5.6</label>
+<title>Limiting Reagents</title>
+<subtitle>LEARNING OBJECTIVES</subtitle>
+<target target-type="page" id="page_784">784</target>
+<ol type="1">
+<li>Identify a limiting reagent from a set of reactants.</li>
+<li>Calculate how much product will be produced from the limiting reagent.</li>
+<li>Calculate how much reactant(s) remains when the reaction is complete.</li>
+</ol>
+<p role="noindent">One additional assumption we have made about chemical reactions—in addition to the assumption that reactions proceed all the way to completion—is that all the reactants are present in the proper quantities to react to products. This is not always the case.</p>
+<p role="noindent">Consider Figure 5.2 "Making Water". Here we are taking hydrogen atoms and oxygen atoms (left) to make water molecules (right). However, there are not enough oxygen atoms to use up all the hydrogen atoms. We run out of oxygen atoms and cannot make any more water molecules, so the process stops when we run out of oxygen atoms.</p>
+<p role="noindent"><strong>Figure 5.2 Making Water</strong></p>
+<target target-type="page" id="page_785">785</target>
+<p role="noindent">In this scenario for making water molecules, we run out of O atoms before we use up all the H atoms.</p>
+<p role="noindent">Similar situations exist for many chemical reactions when one reactant runs out before the other.</p>
+<p role="noindent">A similar situation exists for many chemical reactions: you usually run out of one reactant before all of the other reactant has reacted. The reactant you run out of is called the <strong>limiting reagent</strong>; the other reactant or reactants are considered to be in excess. A crucial skill in evaluating the conditions of a chemical process is to determine which reactant is the limiting reagent and which is in excess.</p>
+<p role="noindent">The key to recognizing which reactant is the limiting reagent is based on a mole-mass or mass-mass calculation: whichever reactant gives the lesser amount of product is the limiting reagent. What we need to do is determine an amount of one product (either moles or mass) assuming all of each reactant reacts.</p>
+<p role="noindent">Whichever reactant gives the least amount of that particular product is the limiting reagent. It does not matter which product we use, as long as we use the same one each time. It does not matter whether we determine the number of moles or grams of that product; however, we will see shortly that knowing the final mass of product can be useful.</p>
+<p role="noindent">For example, consider this reaction:</p>
+<math display="block">
+<mn>4</mn><mi>As</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>As</mi><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<p role="noindent">Suppose we start a reaction with 50.0 g of As and 50.0 g of O₂. Which one is the limiting reagent? We need to perform two mole-mass calculations, each assuming that each reactant reacts completely. Then we compare the amount of the product produced by each and determine which is less.</p>
+<p role="noindent">The calculations are as follows:</p>
+<math display="block">
+<mn>50.0</mn><mtext> g As</mtext><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol As</mtext></mrow><mrow><mn>74.92</mn><mtext> g As</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>2</mn><mtext> mol As</mtext><msub><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub></mrow><mrow><mn>4</mn><mtext> mol As</mtext></mrow></mfrac><mo>=</mo><mn>0.334</mn><mtext> mol As</mtext><msub><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub>
+</math>
+<math display="block">
+<mn>50.0</mn><mtext> g O</mtext><msub><mn>2</mn></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol O</mtext><msub><mn>2</mn></msub></mrow><mrow><mn>32.00</mn><mtext> g O</mtext><msub><mn>2</mn></msub></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>2</mn><mtext> mol As</mtext><msub><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub></mrow><mrow><mn>3</mn><mtext> mol O</mtext><msub><mn>2</mn></msub></mrow></mfrac><mo>=</mo><mn>1.04</mn><mtext> mol As</mtext><msub><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub>
+</math>
+<p role="noindent">Comparing these two answers, it is clear that 0.334 mol of As₂O₃ is less than 1.04 mol of As₂O₃, so arsenic is the limiting reagent. If this reaction is performed under these initial conditions, the arsenic will run out before the oxygen runs out. We say that the oxygen is “in excess.”</p>
+<target target-type="page" id="page_786">786</target>
+<p role="noindent">Identifying the limiting reagent, then, is straightforward. However, there are usually two associated questions: (1) what mass of product (or products) is then actually formed? and (2) what mass of what reactant is left over? The first question is straightforward to answer: simply perform a conversion from the number of moles of product formed to its mass, using its molar mass. For As₂O₃, the molar mass is 197.84 g/mol; knowing that we will form 0.334 mol of As₂O₃ under the given conditions, we will get</p>
+<math display="block">
+<mn>0.334</mn><mtext> mol As</mtext><msub><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub><mo>×</mo><mfrac><mrow><mn>197.84</mn><mtext> g As</mtext><msub><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub></mrow><mrow><mn>1</mn><mtext> mol As</mtext><msub><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub></mrow></mfrac><mo>=</mo><mn>66.1</mn><mtext> g As</mtext><msub><mn>2</mn></msub><msub><mi>O</mi><mn>3</mn></msub>
+</math>
+<p role="noindent">The second question is somewhat more convoluted to answer. First, we must do a mass-mass calculation relating the limiting reagent (here, As) to the other reagent (O₂). Once we determine the mass of O₂ that reacted, we subtract that from the original amount to determine the amount left over. According to the mass-mass calculation,</p>
+<math display="block">
+<mn>50.0</mn><mtext> g As</mtext><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol As</mtext></mrow><mrow><mn>74.92</mn><mtext> g As</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>3</mn><mtext> mol O</mtext><msub><mn>2</mn></msub></mrow><mrow><mn>4</mn><mtext> mol As</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>32.00</mn><mtext> g O</mtext><msub><mn>2</mn></msub></mrow><mrow><mn>1</mn><mtext> mol O</mtext><msub><mn>2</mn></msub></mrow></mfrac><mo>=</mo><mn>16.0</mn><mtext> g O</mtext><msub><mn>2</mn></msub><mtext> reacted</mtext>
+</math>
+<p role="noindent">Because we reacted 16.0 g of our original O₂, we subtract that from the original amount, 50.0 g, to get the mass of O₂ remaining:</p>
+<p role="noindent">50.0 g O₂ − 16.0 g O₂ reacted = 34.0 g O₂ left over</p>
+<p role="noindent">You must remember to perform this final subtraction to determine the amount remaining; a common error is to report the 16.0 g as the amount remaining.</p>
+<sec id="example_14">
+<p role="noindent">A 5.00 g quantity of Rb are combined with 3.44 g of MgCl₂ according to this chemical reaction:</p>
+<math display="block">
+<mn>2</mn><mi>Rb</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>MgCl</mi><mn>2</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>→</mo><mi>Mg</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>2</mn><msub><mi>RbCl</mi><mn></mn></msub><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<p role="noindent">What mass of Mg is formed, and what mass of what reactant is left over?</p>
+<p role="noindent">Solution</p>
+<p role="noindent">Because the question asks what mass of magnesium is formed, we can perform two mass-mass calculations and determine which amount is less.</p>
+<math display="block">
+<mn>5.00</mn><mtext> g Rb</mtext><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Rb</mtext></mrow><mrow><mn>85.47</mn><mtext> g Rb</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Mg</mtext></mrow><mrow><mn>2</mn><mtext> mol Rb</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>24.31</mn><mtext> g Mg</mtext></mrow><mrow><mn>1</mn><mtext> mol Mg</mtext></mrow></mfrac><mo>=</mo><mn>0.711</mn><mtext> g Mg</mtext>
+</math>
+<math display="block">
+<mn>3.44</mn><mtext> g MgCl</mtext><msub><mn>2</mn></msub><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol MgCl</mtext><msub><mn>2</mn></msub></mrow><mrow><mn>95.21</mn><mtext> g MgCl</mtext><msub><mn>2</mn></msub></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Mg</mtext></mrow><mrow><mn>1</mn><mtext> mol MgCl</mtext><msub><mn>2</mn></msub></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>24.31</mn><mtext> g Mg</mtext></mrow><mrow><mn>1</mn><mtext> mol Mg</mtext></mrow></mfrac><mo>=</mo><mn>0.878</mn><mtext> g Mg</mtext>
+</math>
+<target target-type="page" id="page_787">787</target>
+<p role="noindent">The 0.711 g of Mg is the lesser quantity, so the associated reactant—5.00 g of Rb—is the limiting reagent. To determine how much of the other reactant is left, we have to do one more mass-mass calculation to determine what mass of MgCl₂ reacted with the 5.00 g of Rb and then subtract the amount reacted from the original amount.</p>
+<math display="block">
+<mn>5.00</mn><mtext> g Rb</mtext><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol Rb</mtext></mrow><mrow><mn>85.47</mn><mtext> g Rb</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>1</mn><mtext> mol MgCl</mtext><msub><mn>2</mn></msub></mrow><mrow><mn>2</mn><mtext> mol Rb</mtext></mrow></mfrac><mo>×</mo><mfrac><mrow><mn>95.21</mn><mtext> g MgCl</mtext><msub><mn>2</mn></msub></mrow><mrow><mn>1</mn><mtext> mol MgCl</mtext><msub><mn>2</mn></msub></mrow></mfrac><mo>=</mo><mn>2.78</mn><mtext> g MgCl</mtext><msub><mn>2</mn></msub><mtext> reacted</mtext>
+</math>
+<p role="noindent">Because we started with 3.44 g of MgCl₂, we have</p>
+<p role="noindent">3.44 g MgCl₂ − 2.78 g MgCl₂ reacted = 0.66 g MgCl₂ left</p>
+<p role="noindent">Test Yourself</p>
+<p role="noindent">Given the initial amounts listed, what is the limiting reagent, and what is the mass of the leftover reagent?</p>
+<math display="block">
+<msub><mi>MgO</mi><mn></mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><mi>S</mi><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><msub><mi>MgS</mi><mn></mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+<p role="noindent">22.7 g 17.9 g</p>
+<p role="noindent">Answer</p>
+<p role="noindent">H₂S is the limiting reagent; 1.5 g of MgO are left over.</p>
+</sec>
+<subtitle>KEY TAKEAWAYS</subtitle>
+<ul>
+<li>The limiting reagent is that reactant that produces the least amount of product.</li>
+<li>Mass-mass calculations can determine how much product is produced and how much of the other reactants remain.</li>
+</ul>
+<sec id="exercises">
+<p role="noindent">EXERCISES</p>
+<ol type="1">
+<li>The box below shows a group of nitrogen and hydrogen molecules that will react to produce ammonia, NH₃. What is the limiting reagent?</li>
+<target target-type="page" id="page_788">788</target>
+<li>The box below shows a group of hydrogen and oxygen molecules that will react to produce water, H₂O. What is the limiting reagent?</li>
+<li>Given the statement “20.0 g of methane is burned in excess oxygen,” is it obvious which reactant is the limiting reagent?</li>
+<li>Given the statement “the metal is heated in the presence of excess hydrogen,” is it obvious which substance is the limiting reagent despite not specifying any quantity of reactant?</li>
+<target target-type="page" id="page_790">790</target>
+<li>Acetylene (C₂H₂) is formed by reacting 7.08 g of C and 4.92 g of H₂.</li>
+<math display="block">
+<mn>2</mn><mi>C</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><msub><mi>C</mi><mn>2</mn></msub><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">What is the limiting reagent? How much of the other reactant is in excess?</p>
+<li>Ethane (C₂H₆) is formed by reacting 7.08 g of C and 4.92 g of H₂.</li>
+<math display="block">
+<mn>2</mn><mi>C</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><msub><mi>C</mi><mn>2</mn></msub><msub><mi>H</mi><mn>6</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">What is the limiting reagent? How much of the other reactant is in excess?</p>
+</ol>
+<target target-type="page" id="page_791">791</target>
+<ol start="7" type="1">
+<li>Given the initial amounts listed, what is the limiting reagent, and how much of the other reactant is in excess?</li>
+<math display="block">
+<msub><mi>P</mi><mn>4</mn></msub><mo>+</mo><mn>6</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo><mo>→</mo><mn>4</mn><msub><mi>H</mi><mn>3</mn></msub><msub><mi>PO</mi><mn>4</mn></msub>
+</math>
+<li>Given the initial amounts listed, what is the limiting reagent, and how much of the other reactant is in excess?</li>
+<math display="block">
+<mn>3</mn><msub><mi>NO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo><mo>→</mo><mn>2</mn><msub><mi>HNO</mi><mn>3</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mi>NO</mi><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<li>To form the precipitate PbCl₂, 2.88 g of NaCl and 7.21 g of Pb(NO₃)₂ are mixed in solution. How much precipitate is formed? How much of which reactant is in excess?</li>
+<li>In a neutralization reaction, 18.06 g of KOH are reacted with 13.43 g of HNO₃. What mass of H₂O is produced, and what mass of which reactant is in excess?</li>
+</ol>
+<title>ANSWERS</title>
+<ol type="1">
+<li>Nitrogen is the limiting reagent.</li>
+<li>Yes; methane is the limiting reagent.</li>
+<li>C is the limiting reagent; 4.33 g of H₂ are left over.</li>
+<li>H₂O is the limiting reagent; 25.9 g of P₄O₆ are left over.</li>
+<li>6.06 g of PbCl₂ are formed; 0.33 g of NaCl is left over.</li>
+</ol>
+</sec>
+</sec>
+<sec id="5.7">
+<label>5.7</label>
+<title>End-of-Chapter Material</title>
+<subtitle>ADDITIONAL EXERCISES</subtitle>
+<ol type="1">
+<li>How many molecules of O₂ will react with 6.022 × 10²³ molecules of H₂ to make water? The reaction is 2H₂(g) + O₂(g) → 2H₂O(l).</li>
+<li>How many molecules of H₂ will react with 6.022 × 10²³ molecules of N₂ to make ammonia? The reaction is N₂(g) + 3H₂(g) → 2NH₃(g).</li>
+<li>How many moles are present in 6.411 kg of CO₂? How many molecules is this?</li>
+<li>How many moles are present in 2.998 mg of SiCl₄? How many molecules is this?</li>
+<li>What is the mass in milligrams of 7.22 × 10²⁰ molecules of CO₂?</li>
+<li>What is the mass in kilograms of 3.408 × 10²⁵ molecules of SiS₂?</li>
+<li>What is the mass in grams of 1 molecule of H₂O?</li>
+</ol>
+<ol start="8" type="1">
+<li>What is the mass in grams of 1 atom of Al?</li>
+<li>What is the volume of 3.44 mol of Ga if the density of Ga is 6.08 g/mL?</li>
+<li>What is the volume of 0.662 mol of He if the density of He is 0.1785 g/L?</li>
+<li>For the chemical reaction</li>
+<math display="block">
+<mn>2</mn><msub><mi>C</mi><mn>4</mn></msub><msub><mi>H</mi><mn>10</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>13</mn><msub><mi>O</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>8</mn><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>10</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+<p role="noindent">assume that 13.4 g of C₄H₁₀ reacts completely to products. The density of CO₂ is 1.96 g/L. What volume in liters of CO₂ is produced?</p>
+<li>For the chemical reaction</li>
+<math display="block">
+<mn>2</mn><msub><mi>GaCl</mi><mn>3</mn></msub><mo>(</mo><mi>s</mi><mo>)</mo><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>→</mo><mn>2</mn><mi>Ga</mi><mo>(</mo><mi>l</mi><mo>)</mo><mo>+</mo><mn>6</mn><msub><mi>HCl</mi><mn></mn></msub><mo>(</mo><mi>g</mi><mo>)</mo>
+</math>
+<p role="noindent">if 223 g of GaCl₃ reacts completely to products and the density of Ga is 6.08 g/mL, what volume in milliliters of Ga is produced?</p>
+<li>Calculate the mass of each product when 100.0 g of CuCl react according to the reaction</li>
+<math display="block">
+<mn>2</mn><msub><mi>CuCl</mi><mn></mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>→</mo><msub><mi>CuCl</mi><mn>2</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mi>Cu</mi><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<p role="noindent">What do you notice about the sum of the masses of the products? What concept is being illustrated here?</p>
+</ol>
+<target target-type="page" id="page_792">792</target>
+<ol start="14" type="1">
+<li>Calculate the mass of each product when 500.0 g of SnCl₂ react according to the reaction</li>
+<math display="block">
+<mn>2</mn><msub><mi>SnCl</mi><mn>2</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>→</mo><msub><mi>SnCl</mi><mn>4</mn></msub><mo>(</mo><mi>aq</mi><mo>)</mo><mo>+</mo><mi>Sn</mi><mo>(</mo><mi>s</mi><mo>)</mo>
+</math>
+<p role="noindent">What do you notice about the sum of the masses of the products? What concept is being illustrated here?</p>
+<li>What mass of CO₂ is produced from the combustion of 1 gal of gasoline? The chemical formula of gasoline can be approximated as C₈H₁₈. Assume that there are 2,801 g of gasoline per gallon.</li>
+<li>What mass of H₂O is produced from the combustion of 1 gal of gasoline? The chemical formula of gasoline can be approximated as C₈H₁₈. Assume that there are 2,801 g of gasoline per gallon.</li>
+<li>A chemical reaction has a theoretical yield of 19.98 g and a percent yield of 88.40%. What is the actual yield?</li>
+<li>A chemical reaction has an actual yield of 19.98 g and a percent yield of 88.40%. What is the theoretical yield?</li>
+</ol>
+<target target-type="page" id="page_793">793</target>
+<ol start="19" type="1">
+<li>Given the initial amounts listed, what is the limiting reagent, and how much of the other reactants are in excess?</li>
+<math display="block">
+<msub><mi>P</mi><mn>4</mn></msub><mo>+</mo><mn>3</mn><msub><mi>NaOH</mi><mn></mn></msub><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>→</mo><mn>2</mn><msub><mi>Na</mi><mn>2</mn></msub><msub><mi>HPO</mi><mn>4</mn></msub><mo>+</mo><msub><mi>PH</mi><mn>3</mn></msub>
+</math>
+<li>Given the initial amounts listed, what is the limiting reagent, and how much of the other reactants are in excess?</li>
+<math display="block">
+<mn>2</mn><msub><mi>NaCrO</mi><mn>4</mn></msub><mo>+</mo><mn>3</mn><msub><mi>NaBrO</mi><mn>4</mn></msub><mo>+</mo><mn>2</mn><msub><mi>NaOH</mi><mn></mn></msub><mo>→</mo><mn>3</mn><msub><mi>NaBrO</mi><mn>3</mn></msub><mo>+</mo><mn>2</mn><msub><mi>Na</mi><mn>2</mn></msub><msub><mi>CrO</mi><mn>4</mn></msub><mo>+</mo><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub>
+</math>
+<li>Verify that it does not matter which product you use to predict the limiting reagent by using both products in this combustion reaction to determine the limiting reagent and the amount of the reactant in excess. Initial amounts of each reactant are given.</li>
+<math display="block">
+<msub><mi>C</mi><mn>3</mn></msub><msub><mi>H</mi><mn>8</mn></msub><mo>+</mo><mn>5</mn><msub><mi>O</mi><mn>2</mn></msub><mo>→</mo><mn>3</mn><msub><mi>CO</mi><mn>2</mn></msub><mo>(</mo><mi>g</mi><mo>)</mo><mo>+</mo><mn>4</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>(</mo><mi>l</mi><mo>)</mo>
+</math>
+<li>Just in case you suspect Exercise 21 is rigged, do it for another chemical reaction and verify that it does not matter which product you use to predict the limiting reagent by using both products in this combustion reaction to determine the limiting reagent and the amount of the reactant in excess. Initial amounts of each reactant are given.</li>
+<math display="block">
+<mn>2</mn><msub><mi>P</mi><mn>4</mn></msub><mo>+</mo><mn>6</mn><msub><mi>NaOH</mi><mn></mn></msub><mo>+</mo><mn>6</mn><msub><mi>H</mi><mn>2</mn></msub><msub><mi>O</mi><mn></mn></msub><mo>→</mo><mn>3</mn><msub><mi>Na</mi><mn>2</mn></msub><msub><mi>HPO</mi><mn>4</mn></msub><mo>+</mo><mn>5</mn><msub><mi>PH</mi><mn>3</mn></msub>
+</math>
+</ol>
+<target target-type="page" id="page_794">794</target>
+<title>ANSWERS</title>
+<ol type="1">
+<li>1.2044 × 10²⁴ molecules</li>
+<li>145.7 mol; 8.77 × 10²⁵ molecules</li>
+<li>52.8 mg</li>
+<li>2.99 × 10⁻²³ g</li>
+<li>39.4 mL</li>
+<li>20.7 L</li>
+<li>67.91 g of CuCl₂; 32.09 g of Cu. The two masses add to 100.0 g, the initial amount of starting material, demonstrating the law of conservation of matter.</li>
+<li>8,632 g</li>
+<li>17.66 g</li>
+<li>The limiting reagent is NaOH; 21.9 g of P₄ and 3.61 g of H₂O are left over.</li>
+<li>Both products predict that O₂ is the limiting reagent; 20.3 g of C₃H₈ are left over.</li>
+</ol>
+</sec>
+</chapter>
